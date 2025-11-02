@@ -4,7 +4,8 @@ pyaudio==0.2.14
 pyttsx3==2.90
 speechrecognition==3.10.1
 pvporcupine==1.9.5
-
+groq==0.4.2
+dotenv==0.0.5
 
 
 
@@ -32,7 +33,8 @@ wmi==1.5.1
 comtypes==1.4.1
 
 # Utilities
-
+python-dotenv==1.0.0
 colorama==0.4.6
 pygetwindow==0.0.9
 pywin32==306
+openai
