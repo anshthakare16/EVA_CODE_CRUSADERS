@@ -1,6 +1,6 @@
 """Screenshot capture functionality"""
 
-import mss
+import pyautogui
 import os
 from datetime import datetime
 import config
@@ -11,24 +11,18 @@ class ScreenshotHandler:
     
     def __init__(self):
         self.logger = setup_logger('ScreenshotHandler')
-        self.sct = mss.mss()
         
     def capture(self, monitor_number=1):
         """Capture screenshot of specified monitor"""
         try:
-            # Get monitor info
-            monitor = self.sct.monitors[monitor_number]
-            
-            # Capture screenshot
-            screenshot = self.sct.grab(monitor)
-            
             # Generate filename
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
             filename = f"screen_{timestamp}.png"
             filepath = os.path.join(config.SCREENSHOT_TEMP_DIR, filename)
             
-            # Save screenshot
-            mss.tools.to_png(screenshot.rgb, screenshot.size, output=filepath)
+            # Capture and save screenshot
+            screenshot = pyautogui.screenshot()
+            screenshot.save(filepath)
             
             self.logger.info(f"Screenshot saved: {filepath}")
             return filepath

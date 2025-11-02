@@ -857,7 +857,7 @@ def get_message_from_user(app_name, recipient):
     message = input("\n📝 Enter your message (or press Enter to cancel): ").strip()
     
     if not message:
-        print("\n❌ Message cancelled.")
+        print("\n❌ Message cancelle.")
         return None
     
     print(f"\n✅ Message will be sent: \"{message}\"")

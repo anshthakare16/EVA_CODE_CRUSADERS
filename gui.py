@@ -2,11 +2,23 @@ import tkinter as tk
 from tkinter import scrolledtext
 import re
 import threading
+import speech_recognition as sr
+import pvporcupine
+import pyaudio
+import struct
+from groq import Groq
+import os
+from dotenv import load_dotenv
+from execution.execution_handler import ExecutionHandler
+
+# Load environment variables from .env file
+load_dotenv()
 
 # ============================================================================ 
 # LOGIC FROM EVA_TER.py
 # ============================================================================ 
 
+# ... (rest of the logic from EVA_TER.py remains the same) ...
 MODEL1_TRAINING_DATA = [
     ("open application", "OPEN_APP"), ("launch program", "OPEN_APP"), ("start software", "OPEN_APP"),
     ("run app", "OPEN_APP"), ("open app", "OPEN_APP"), ("open chrome", "OPEN_APP"), ("launch spotify", "OPEN_APP"),
@@ -51,7 +63,7 @@ STEP_TEMPLATES = {
         {"action_type": "TYPE_TEXT", "parameters": {"text": "{search_target}"}, "description": "Search for: {search_target}"},
         {"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Execute search"},
         {"action_type": "WAIT", "parameters": {"duration": 2}, "description": "Wait for search results"},
-        {"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Open first result"},
+        {"action_type": "SCREEN_ANALYSIS", "parameters": {"target": "{search_target}"}, "description": "Click on first result"},
     ],
     "chrome_with_profile": [
         {"action_type": "PRESS_KEY", "parameters": {"key": "win"}, "description": "Open Start Menu"},
@@ -73,14 +85,15 @@ STEP_TEMPLATES = {
         {"action_type": "TYPE_TEXT", "parameters": {"text": "{search_query}"}, "description": "Type: {search_query}"},
         {"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Search"},
         {"action_type": "WAIT", "parameters": {"duration": 2}, "description": "Wait for results"},
+        {"action_type": "SCREEN_ANALYSIS", "parameters": {"target": "{search_query}"}, "description": "Click on result"},
     ],
-    "open_chat_contact": [
+    "whatsapp_open_chat": [
         {"action_type": "PRESS_KEY", "parameters": {"key": "ctrl+n"}, "description": "New chat"},
         {"action_type": "WAIT", "parameters": {"duration": 1}, "description": "Wait for search"},
         {"action_type": "TYPE_TEXT", "parameters": {"text": "{recipient}"}, "description": "Search: {recipient}"},
-        {"action_type": "WAIT", "parameters": {"duration": 1}, "description": "Wait for results"},
-        {"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Open chat"},
-        {"action_type": "WAIT", "parameters": {"duration": 1}, "description": "Chat opened"},
+        {"action_type": "WAIT", "parameters": {"duration": 2}, "description": "Wait for search results"},
+        {"action_type": "PRESS_KEY", "parameters": {"key": "tab"}, "description": "Press Tab"},
+        {"action_type": "PRESS_KEY", "parameters": {"key": "tab"}, "description": "Press Tab"},
     ],
     "type_and_send_message": [
         {"action_type": "TYPE_TEXT", "parameters": {"text": "{message_content}"}, "description": "Type message"},
@@ -99,7 +112,7 @@ MODEL2_STEP_RULES = {
         *STEP_TEMPLATES["search_on_page"],
     ],
     "TYPE_TEXT": [{"action_type": "TYPE_TEXT", "parameters": {"text": "{text_content}"}, "description": "Type: {text_content}"}],
-    "MOUSE_CLICK": [{"action_type": "MOUSE_CLICK", "parameters": {"target": "{action_target}"}, "description": "Click: {action_target}"}],
+    "MOUSE_CLICK": [{"action_type": "SCREEN_ANALYSIS", "parameters": {"target": "{action_target}"}, "description": "Click: {action_target}"}],
     "MOUSE_RIGHTCLICK": [{"action_type": "MOUSE_RIGHTCLICK", "parameters": {}, "description": "Right click"}],
     "MOUSE_DOUBLECLICK": [{"action_type": "MOUSE_DOUBLECLICK", "parameters": {}, "description": "Double click"}],
     "WINDOW_ACTION": [{"action_type": "PRESS_KEY", "parameters": {"key": "win+up"}, "description": "Window action: {window_action}"}],
@@ -112,6 +125,8 @@ MODEL2_STEP_RULES = {
         {"action_type": "PRESS_KEY", "parameters": {"key": "ctrl+l"}, "description": "Focus search/input"},
         {"action_type": "TYPE_TEXT", "parameters": {"text": "{action_content}"}, "description": "Enter: {action_content}"},
         {"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Execute"},
+        {"action_type": "WAIT", "parameters": {"duration": 2}, "description": "Wait for results"},
+        {"action_type": "SCREEN_ANALYSIS", "parameters": {"target": "{action_content}"}, "description": "Click on result"},
     ],
     "MEDIA_CONTROL": [
         *STEP_TEMPLATES["open_app_windows"],
@@ -119,11 +134,16 @@ MODEL2_STEP_RULES = {
         {"action_type": "PRESS_KEY", "parameters": {"key": "ctrl+l"}, "description": "Focus search"},
         {"action_type": "TYPE_TEXT", "parameters": {"text": "{media_query}"}, "description": "Search: {media_query}"},
         {"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Play"},
+        {"action_type": "WAIT", "parameters": {"duration": 2}, "description": "Wait for results"},
+        {"action_type": "SCREEN_ANALYSIS", "parameters": {"target": "{media_query}"}, "description": "Click on media"},
     ],
     "SEND_MESSAGE": [
         *STEP_TEMPLATES["open_app_windows"],
         {"action_type": "WAIT", "parameters": {"duration": 3}, "description": "Wait for app to load"},
-        *STEP_TEMPLATES["open_chat_contact"],
+        *STEP_TEMPLATES["whatsapp_open_chat"],
+        {"action_type": "SCREEN_ANALYSIS", "parameters": {"target": "{recipient}"}, "description": "Click on contact"},
+        {"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Confirm contact"},
+        {"action_type": "WAIT", "parameters": {"duration": 2}, "description": "Wait for chat to open"},
         {"action_type": "CONDITIONAL", "parameters": {"condition": "has_message_content"}, "description": "Check if message provided"},
         *STEP_TEMPLATES["type_and_send_message"],
     ],
@@ -319,48 +339,58 @@ def generate_steps_model2(command_type, extracted_keywords):
         generated_steps.append(step_copy)
     return generated_steps
 
-def calculate_tfidf_similarity(str1, str2):
-    words1, words2 = str1.lower().split(), str2.lower().split()
-    matches = sum(1 for word in words1 if word in words2)
-    similarity = matches / max(len(words1), len(words2)) if max(len(words1), len(words2)) > 0 else 0
-    order_bonus = sum(0.1 for i in range(min(len(words1), len(words2))) if words1[i] == words2[i])
-    return min(1.0, similarity + order_bonus)
-
-def process_command_model1(input_text):
-    best_match, highest_similarity = None, 0
-    for pattern, cmd_type in MODEL1_TRAINING_DATA:
-        similarity = calculate_tfidf_similarity(input_text, pattern)
-        if similarity > highest_similarity:
-            highest_similarity = similarity
-            best_match = (pattern, cmd_type)
-    return {
-        "input": input_text, "command_type": best_match[1], "confidence": highest_similarity,
-        "training_pattern": best_match[0],
-    } if best_match else None
+def analyze_query_with_groq(query):
+    """
+    Analyzes the user's query using the Groq API to determine the command type.
+    """
+    try:
+        client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
+        chat_completion = client.chat.completions.create(
+            messages=[
+                {
+                    "role": "system",
+                    "content": "You are a command classifier. Classify the user's command into one of the following categories: OPEN_APP, CLOSE_APP, FILE_FOLDER_OPERATION, WEB_SEARCH, TYPE_TEXT, MOUSE_CLICK, MOUSE_RIGHTCLICK, MOUSE_DOUBLECLICK, WINDOW_ACTION, KEYBOARD, SYSTEM, APP_WITH_ACTION, MEDIA_CONTROL, SEND_MESSAGE. Respond with only the command type.",
+                },
+                {
+                    "role": "user",
+                    "content": query,
+                },
+            ],
+            model="llama3-8b-8192",
+        )
+        command_type = chat_completion.choices[0].message.content.strip()
+        return {
+            "input": query,
+            "command_type": command_type,
+            "confidence": 1.0,  # Groq doesn't provide a confidence score, so we'll use 1.0
+            "training_pattern": "Groq Analysis",
+        }
+    except Exception as e:
+        print(f"Error analyzing query with Groq: {e}")
+        return None
 
 # ============================================================================ 
 # GUI SPECIFIC LOGIC
 # ============================================================================ 
 
-def run_eva_pipeline(prompt, response_widget):
+def run_eva_pipeline(prompt, response_widget, execution_handler):
     """
     This function runs the EVA pipeline and displays the output in the GUI.
     """
     response_widget.config(state=tk.NORMAL)
     response_widget.delete(1.0, tk.END) # Clear previous output
 
-    # STEP 1: Model 1 - Classification
-    model1_result = process_command_model1(prompt)
+    # STEP 1: Model 1 - Classification (using Groq)
+    model1_result = analyze_query_with_groq(prompt)
     if not model1_result:
-        response_widget.insert(tk.END, "⚠️ No match found for your command!")
+        response_widget.insert(tk.END, "⚠️ Error analyzing your command with Groq!")
         response_widget.config(state=tk.DISABLED)
         return
 
-    response_widget.insert(tk.END, "STEP 1: Command Classification\n")
+    response_widget.insert(tk.END, "STEP 1: Command Classification (Groq)\n")
     response_widget.insert(tk.END, "------------------------------------\n")
     response_widget.insert(tk.END, f"Input: \"{model1_result['input']}\"\n")
-    response_widget.insert(tk.END, f"Type: {model1_result['command_type']}\n")
-    response_widget.insert(tk.END, f"Confidence: {model1_result['confidence'] * 100:.2f}%\n\n")
+    response_widget.insert(tk.END, f"Type: {model1_result['command_type']}\n\n")
 
     # STEP 2: Keyword Extraction
     extracted_keywords = extract_keywords_by_command_type(model1_result['input'], model1_result['command_type'])
@@ -391,6 +421,9 @@ def run_eva_pipeline(prompt, response_widget):
 
     response_widget.config(state=tk.DISABLED)
 
+    # STEP 4: Automatic Execution
+    execution_handler.execute_steps(steps)
+
 
 def create_gui():
     """
@@ -400,35 +433,66 @@ def create_gui():
     window.title("EVA - Integrated Logic Assistant")
     window.geometry("800x600")
 
-    input_frame = tk.Frame(window, pady=10)
-    input_frame.pack(fill=tk.X)
-
-    prompt_label = tk.Label(input_frame, text="Your Prompt:", padx=10)
-    prompt_label.pack(side=tk.LEFT)
-
-    prompt_entry = tk.Entry(input_frame, width=80)
-    prompt_entry.pack(side=tk.LEFT, fill=tk.X, expand=True)
-
-    send_button = tk.Button(input_frame, text="Send")
-    send_button.pack(side=tk.RIGHT, padx=10)
+    status_label = tk.Label(window, text="Listening for 'Jarvis'...", font=("Arial", 12), pady=10)
+    status_label.pack()
 
     response_area = scrolledtext.ScrolledText(window, wrap=tk.WORD, width=100, height=30, bg="#f0f0f0", fg="black")
     response_area.pack(padx=10, pady=10, fill=tk.BOTH, expand=True)
     response_area.config(state=tk.DISABLED)
 
-    def on_send_button_click():
-        prompt = prompt_entry.get()
-        if not prompt:
-            return
-        
-        # Run the pipeline in a separate thread to keep the GUI responsive
-        thread = threading.Thread(target=run_eva_pipeline, args=(prompt, response_area))
-        thread.start()
-        
-        prompt_entry.delete(0, tk.END)
+    execution_handler = ExecutionHandler()
 
-    send_button.config(command=on_send_button_click)
-    window.bind('<Return>', lambda event: on_send_button_click())
+    def listen_for_wake_word():
+        porcupine = None
+        pa = None
+        audio_stream = None
+        try:
+            # Replace with your Picovoice Access Key
+            access_key = os.environ.get("PICOVOICE_ACCESS_KEY") 
+            porcupine = pvporcupine.create(access_key=access_key, keywords=["jarvis"])
+            pa = pyaudio.PyAudio()
+            audio_stream = pa.open(
+                rate=porcupine.sample_rate,
+                channels=1,
+                format=pyaudio.paInt16,
+                input=True,
+                frames_per_buffer=porcupine.frame_length,
+            )
+
+            while True:
+                pcm = audio_stream.read(porcupine.frame_length)
+                pcm = struct.unpack_from("h" * porcupine.frame_length, pcm)
+                keyword_index = porcupine.process(pcm)
+                if keyword_index >= 0:
+                    status_label.config(text="Wake word detected! Listening for command...")
+                    recognizer = sr.Recognizer()
+                    with sr.Microphone() as source:
+                        try:
+                            audio = recognizer.listen(source, timeout=5, phrase_time_limit=5)
+                            prompt = recognizer.recognize_google(audio)
+                            status_label.config(text=f"Recognized: {prompt}")
+                            thread = threading.Thread(target=run_eva_pipeline, args=(prompt, response_area, execution_handler))
+                            thread.start()
+                        except sr.UnknownValueError:
+                            status_label.config(text="Could not understand audio. Listening for 'Jarvis'...")
+                        except sr.RequestError as e:
+                            status_label.config(text=f"Could not request results; {e}. Listening for 'Jarvis'...")
+                        except Exception as e:
+                            status_label.config(text=f"An error occurred: {e}. Listening for 'Jarvis'...")
+                    status_label.config(text="Listening for 'Jarvis'...")
+
+
+        finally:
+            if audio_stream is not None:
+                audio_stream.close()
+            if pa is not None:
+                pa.terminate()
+            if porcupine is not None:
+                porcupine.delete()
+
+    wake_word_thread = threading.Thread(target=listen_for_wake_word)
+    wake_word_thread.daemon = True
+    wake_word_thread.start()
 
     window.mainloop()
 

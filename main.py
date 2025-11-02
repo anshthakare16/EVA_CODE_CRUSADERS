@@ -1,7 +1,13 @@
+
+
 import tkinter as tk
-from tkinter import scrolledtext, simpledialog
+from tkinter import scrolledtext
 import re
 import threading
+import speech_recognition as sr
+
+import os
+from dotenv import load_dotenv
 import config
 from execution.executor_bridge import ExecutorBridge
 from execution.action_router import ActionRouter
@@ -9,6 +15,12 @@ from execution.system_executor import SystemExecutor
 from vision.screenshot_handler import ScreenshotHandler
 from vision.screen_analyzer import ScreenAnalyzer
 from vision.omniparser_executor import OmniParserExecutor
+from speech.wake_word_detector import WakeWordDetector
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.linear_model import LogisticRegression
+
+# Load environment variables from .env file
+load_dotenv()
 
 # ============================================================================ 
 # EVA_TER LOGIC (INTEGRATED)
@@ -59,7 +71,7 @@ STEP_TEMPLATES = {
         {"action_type": "TYPE_TEXT", "parameters": {"text": "{search_target}"}, "description": "Search for: {search_target}"},
         {"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Execute search"},
         {"action_type": "WAIT", "parameters": {"duration": 2}, "description": "Wait for search results"},
-        {"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Open first result"},
+        {"action_type": "SCREEN_ANALYSIS", "parameters": {"target": "{search_target}"}, "description": "Click on first result"},
     ],
     "chrome_with_profile": [
         {"action_type": "PRESS_KEY", "parameters": {"key": "win"}, "description": "Open Start Menu"},
@@ -81,16 +93,18 @@ STEP_TEMPLATES = {
         {"action_type": "TYPE_TEXT", "parameters": {"text": "{search_query}"}, "description": "Type: {search_query}"},
         {"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Search"},
         {"action_type": "WAIT", "parameters": {"duration": 2}, "description": "Wait for results"},
+        {"action_type": "SCREEN_ANALYSIS", "parameters": {"target": "{search_query}"}, "description": "Click on result"},
     ],
-    "open_chat_contact": [
-        {"action_type": "PRESS_KEY", "parameters": {"key": "ctrl+n"}, "description": "New chat"},
+    "whatsapp_open_chat": [
+        {"action_type": "PRESS_KEY", "parameters": {"key": "ctrl+f"}, "description": "New chat"},
         {"action_type": "WAIT", "parameters": {"duration": 1}, "description": "Wait for search"},
         {"action_type": "TYPE_TEXT", "parameters": {"text": "{recipient}"}, "description": "Search: {recipient}"},
-        {"action_type": "WAIT", "parameters": {"duration": 1}, "description": "Wait for results"},
-        {"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Open chat"},
-        {"action_type": "WAIT", "parameters": {"duration": 1}, "description": "Chat opened"},
+        {"action_type": "WAIT", "parameters": {"duration": 2}, "description": "Wait for search results"},
+        {"action_type": "PRESS_KEY", "parameters": {"key": "tab"}, "description": "Press Tab"},
+        {"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Press Enter"},
     ],
     "type_and_send_message": [
+        {"action_type": "WAIT", "parameters": {"duration": 1}, "description": "Wait before typing"},
         {"action_type": "TYPE_TEXT", "parameters": {"text": "{message_content}"}, "description": "Type message"},
         {"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Send message"},
     ],
@@ -108,7 +122,7 @@ MODEL2_STEP_RULES = {
     ],
     "TYPE_TEXT": [{"action_type": "TYPE_TEXT", "parameters": {"text": "{text_content}"}, "description": "Type: {text_content}"}],
     "FOCUS_WINDOW": [{"action_type": "FOCUS_WINDOW", "parameters": {"title": "{app_name}"}, "description": "Focus: {app_name}"}],
-    "MOUSE_CLICK": [{"action_type": "MOUSE_CLICK", "parameters": {"target": "{action_target}"}, "description": "Click: {action_target}"}],
+    "MOUSE_CLICK": [{"action_type": "SCREEN_ANALYSIS", "parameters": {"target": "{action_target}"}, "description": "Click: {action_target}"}],
     "MOUSE_RIGHTCLICK": [{"action_type": "MOUSE_RIGHTCLICK", "parameters": {}, "description": "Right click"}],
     "MOUSE_DOUBLECLICK": [{"action_type": "MOUSE_DOUBLECLICK", "parameters": {}, "description": "Double click"}],
     "WINDOW_ACTION": [{"action_type": "PRESS_KEY", "parameters": {"key": "win+up"}, "description": "Window action: {window_action}"}],
@@ -121,6 +135,8 @@ MODEL2_STEP_RULES = {
         {"action_type": "PRESS_KEY", "parameters": {"key": "ctrl+l"}, "description": "Focus search/input"},
         {"action_type": "TYPE_TEXT", "parameters": {"text": "{action_content}"}, "description": "Enter: {action_content}"},
         {"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Execute"},
+        {"action_type": "WAIT", "parameters": {"duration": 2}, "description": "Wait for results"},
+        {"action_type": "SCREEN_ANALYSIS", "parameters": {"target": "{action_content}"}, "description": "Click on result"},
     ],
     "MEDIA_CONTROL": [
         *STEP_TEMPLATES["open_app_windows"],
@@ -128,11 +144,13 @@ MODEL2_STEP_RULES = {
         {"action_type": "PRESS_KEY", "parameters": {"key": "ctrl+l"}, "description": "Focus search"},
         {"action_type": "TYPE_TEXT", "parameters": {"text": "{media_query}"}, "description": "Search: {media_query}"},
         {"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Play"},
+        {"action_type": "WAIT", "parameters": {"duration": 2}, "description": "Wait for results"},
+        {"action_type": "SCREEN_ANALYSIS", "parameters": {"target": "{media_query}"}, "description": "Click on media"},
     ],
     "SEND_MESSAGE": [
         *STEP_TEMPLATES["open_app_windows"],
         {"action_type": "WAIT", "parameters": {"duration": 3}, "description": "Wait for app to load"},
-        *STEP_TEMPLATES["open_chat_contact"],
+        *STEP_TEMPLATES["whatsapp_open_chat"],
     ],
     "SEND_MESSAGE_PHASE_2": [
         *STEP_TEMPLATES["type_and_send_message"],
@@ -149,25 +167,41 @@ class EvaGui:
         self.current_steps = []
         self.current_model1_result = None
         self.current_extracted_keywords = None
+        self.action_router = None
 
         self.create_widgets()
         self.initialize_backend()
 
+        # Start wake word listener
+        wake_word_thread = threading.Thread(target=self.listen_for_wake_word)
+        wake_word_thread.daemon = True
+        wake_word_thread.start()
+
     def create_widgets(self):
-        input_frame = tk.Frame(self.root, pady=10)
-        input_frame.pack(fill=tk.X)
-        prompt_label = tk.Label(input_frame, text="Your Prompt:", padx=10)
-        prompt_label.pack(side=tk.LEFT)
-        self.prompt_entry = tk.Entry(input_frame, width=80)
-        self.prompt_entry.pack(side=tk.LEFT, fill=tk.X, expand=True)
-        self.prompt_entry.bind("<Return>", self.on_send_button_click)
-        send_button = tk.Button(input_frame, text="Send", command=self.on_send_button_click)
-        send_button.pack(side=tk.RIGHT, padx=10)
+        self.status_label = tk.Label(self.root, text="Listening for 'Jarvis'...", font=("Arial", 12), pady=10)
+        self.status_label.pack()
+
         self.response_area = scrolledtext.ScrolledText(self.root, wrap=tk.WORD, bg="#f0f0f0", fg="black")
         self.response_area.pack(padx=10, pady=10, fill=tk.BOTH, expand=True)
         self.response_area.config(state=tk.DISABLED)
-        self.execute_button = tk.Button(self.root, text="Execute Steps", command=self.execute_steps, state=tk.DISABLED)
-        self.execute_button.pack(pady=5)
+
+        input_frame = tk.Frame(self.root)
+        input_frame.pack(padx=10, pady=5, fill=tk.X)
+
+        self.command_entry = tk.Entry(input_frame, font=("Arial", 12))
+        self.command_entry.pack(side=tk.LEFT, fill=tk.X, expand=True)
+        self.command_entry.bind("<Return>", self.process_text_command)
+
+        self.submit_button = tk.Button(input_frame, text="Submit", command=self.process_text_command)
+        self.submit_button.pack(side=tk.RIGHT, padx=5)
+
+    def process_text_command(self, event=None):
+        prompt = self.command_entry.get()
+        if prompt:
+            self.command_entry.delete(0, tk.END)
+            self.update_status(f"Recognized: {prompt}")
+            thread = threading.Thread(target=self.run_eva_pipeline, args=(prompt,))
+            thread.start()
 
     def initialize_backend(self):
         try:
@@ -182,35 +216,52 @@ class EvaGui:
             self.action_router = ActionRouter(self.system_executor, self.screenshot_handler, self.screen_analyzer, self.omniparser)
             self.vision_enabled = True
             self.update_response_area("✓ Vision system loaded successfully.\n")
+            
+            self.wake_word_detector = WakeWordDetector()
+            self.update_response_area("✓ Wake word detector loaded successfully.\n")
+
+            # Train command classifier
+            self.vectorizer = TfidfVectorizer()
+            self.classifier = LogisticRegression()
+            X, y = zip(*MODEL1_TRAINING_DATA)
+            X_vectorized = self.vectorizer.fit_transform(X)
+            self.classifier.fit(X_vectorized, y)
+            self.update_response_area("✓ Command classifier trained.\n")
+
             self.update_response_area("Ready to receive commands.\n")
         except Exception as e:
             error_message = f"❌ CRITICAL ERROR: Could not initialize backend.\n{e}\nVision features will be disabled.\nCheck your .env file for GEMINI_API_KEY and ensure all model weights are downloaded."
             self.update_response_area(error_message)
-            # Fallback to a non-vision ActionRouter if it exists, or handle gracefully
-            if hasattr(self, 'system_executor'):
-                self.action_router = ActionRouter(self.system_executor, self.screenshot_handler, None, None)
-            else:
-                self.action_router = None # Or some other fallback
 
-    def on_send_button_click(self, event=None):
-        prompt = self.prompt_entry.get()
-        if not prompt:
-            return
-
-        self.prompt_entry.delete(0, tk.END)
-        self.response_area.config(state=tk.NORMAL)
-        self.response_area.delete(1.0, tk.END)
-        self.response_area.insert(tk.END, f"Processing command: \"{prompt}\"\n\n")
-        self.response_area.config(state=tk.DISABLED)
-        self.execute_button.config(state=tk.DISABLED)
-
-        thread = threading.Thread(target=self.run_eva_pipeline, args=(prompt,))
-        thread.start()
+    def listen_for_wake_word(self):
+        self.wake_word_detector.start()
+        while True:
+            if self.wake_word_detector.listen():
+                self.root.after_idle(self.update_status, "Wake word detected! Listening for command...")
+                recognizer = sr.Recognizer()
+                with sr.Microphone() as source:
+                    try:
+                        audio = recognizer.listen(source, timeout=5, phrase_time_limit=10)
+                        prompt = recognizer.recognize_google(audio)
+                        self.root.after_idle(self.update_status, f"Recognized: {prompt}")
+                        # Run pipeline in a new thread to keep GUI responsive
+                        thread = threading.Thread(target=self.run_eva_pipeline, args=(prompt,))
+                        thread.start()
+                    except sr.UnknownValueError:
+                        self.root.after_idle(self.update_status, "Could not understand audio. Listening for 'Jarvis'...")
+                    except sr.RequestError as e:
+                        self.root.after_idle(self.update_status, f"Could not request results; {e}. Listening for 'Jarvis'...")
+                    except Exception as e:
+                        self.root.after_idle(self.update_status, f"An error occurred: {e}. Listening for 'Jarvis'...")
+                self.root.after_idle(self.update_status, "Listening for 'Jarvis'...")
 
     def run_eva_pipeline(self, prompt):
-        self.current_model1_result = self.process_command_model1(prompt)
+        self.root.after_idle(self.clear_response_area)
+        self.root.after_idle(self.update_response_area, f"Processing command: \"{prompt}\"\n\n")
+
+        self.current_model1_result = self.analyze_query_with_model(prompt)
         if not self.current_model1_result:
-            self.root.after_idle(self.update_response_area, "⚠️ No match found for your command!")
+            self.root.after_idle(self.update_response_area, "⚠️ Error analyzing command!")
             return
 
         self.root.after_idle(self.display_classification_results)
@@ -219,18 +270,80 @@ class EvaGui:
         self.root.after_idle(self.display_keyword_results)
 
         command_type = self.current_model1_result['command_type']
+        
         if command_type == "SEND_MESSAGE":
-            self.root.after_idle(self.handle_interactive_messaging)
+            self.handle_interactive_messaging()
         else:
-            steps = self.generate_steps_model2(command_type, self.current_extracted_keywords)
-            self.current_steps = steps
+            self.current_steps = self.generate_steps_model2(command_type, self.current_extracted_keywords)
             self.root.after_idle(self.display_step_results)
+            self.execute_steps() # Automatic execution
+
+    def handle_interactive_messaging(self):
+        if self.current_extracted_keywords.get('message_content'):
+            # Message is already present, execute all steps at once
+            self.root.after_idle(self.update_response_area, "STEP 3: Generated Steps\n" + "-"*40 + "\n")
+            steps = self.generate_steps_model2("SEND_MESSAGE", self.current_extracted_keywords)
+            steps.extend(self.generate_steps_model2("SEND_MESSAGE_PHASE_2", self.current_extracted_keywords))
+            self.root.after_idle(self.display_steps, steps)
+            self.current_steps = steps
+            self.execute_steps()
+        else:
+            # Message not present, ask for it
+            # Phase 1: Open the chat
+            self.root.after_idle(self.update_response_area, "STEP 3: Generated Steps (Phase 1: Open Chat)\n" + "-"*40 + "\n")
+            steps_phase1 = self.generate_steps_model2("SEND_MESSAGE", self.current_extracted_keywords)
+            self.root.after_idle(self.display_steps, steps_phase1)
+            
+            # Execute phase 1
+            self.current_steps = steps_phase1
+            self.execute_steps()
+
+            # Phase 2: Get message content via voice
+            self.root.after_idle(self.update_status, "What message do you want to send?")
+            recognizer = sr.Recognizer()
+            with sr.Microphone() as source:
+                try:
+                    audio = recognizer.listen(source, timeout=7, phrase_time_limit=15)
+                    message = recognizer.recognize_google(audio)
+                    self.root.after_idle(self.update_status, f"Message: {message}")
+                    self.current_extracted_keywords['message_content'] = message
+                    
+                    # Generate and execute phase 2
+                    self.root.after_idle(self.update_response_area, "\nSTEP 4: Generated Steps (Phase 2: Send Message)\n" + "-"*40 + "\n")
+                    steps_phase2 = self.generate_steps_model2("SEND_MESSAGE_PHASE_2", self.current_extracted_keywords)
+                    self.root.after_idle(self.display_steps, steps_phase2, len(self.current_steps) + 1)
+                    
+                    self.current_steps = steps_phase2
+                    self.execute_steps()
+
+                except sr.UnknownValueError:
+                    self.root.after_idle(self.update_status, "Could not understand message. Cancelling.")
+                except sr.RequestError as e:
+                    self.root.after_idle(self.update_status, f"Could not request results; {e}. Cancelling.")
+
+    def execute_steps(self):
+        if not self.current_steps or not self.action_router:
+            return
+        self.root.after_idle(self.update_response_area, "\nEXECUTING STEPS...\n" + "-"*40 + "\n")
+        
+        # Run execution in a separate thread to avoid blocking the GUI
+        thread = threading.Thread(target=self._execute_action_router)
+        thread.start()
+
+    def _execute_action_router(self):
+        result = self.action_router.execute(
+            self.current_model1_result['command_type'],
+            self.current_steps,
+            self.current_extracted_keywords,
+            self.current_model1_result['input'],
+            self.current_model1_result
+        )
+        self.root.after_idle(self.display_execution_result, result)
 
     def display_classification_results(self):
         self.update_response_area("STEP 1: Command Classification\n" + "-"*40 + "\n")
         self.update_response_area(f"Input: \"{self.current_model1_result['input']}\"\n")
-        self.update_response_area(f"Type: {self.current_model1_result['command_type']}\n")
-        self.update_response_area(f"Confidence: {self.current_model1_result['confidence'] * 100:.2f}%\n\n")
+        self.update_response_area(f"Type: {self.current_model1_result['command_type']}\n\n")
 
     def display_keyword_results(self):
         self.update_response_area("STEP 2: Keyword Extraction\n" + "-"*40 + "\n")
@@ -242,26 +355,6 @@ class EvaGui:
     def display_step_results(self):
         self.update_response_area("STEP 3: Generated Steps\n" + "-"*40 + "\n")
         self.display_steps(self.current_steps)
-        if self.current_steps:
-            self.execute_button.config(state=tk.NORMAL)
-
-    def handle_interactive_messaging(self):
-        self.update_response_area("STEP 3: Generated Steps (Phase 1: Open Chat)\n" + "-"*40 + "\n")
-        steps_phase1 = self.generate_steps_model2("SEND_MESSAGE", self.current_extracted_keywords)
-        self.display_steps(steps_phase1)
-        self.current_steps = steps_phase1
-        self.execute_button.config(state=tk.NORMAL)
-
-        message = simpledialog.askstring("Message Content", "What message do you want to send?", parent=self.root)
-
-        if message:
-            self.current_extracted_keywords['message_content'] = message
-            self.update_response_area("\nSTEP 4: Generated Steps (Phase 2: Send Message)\n" + "-"*40 + "\n")
-            steps_phase2 = self.generate_steps_model2("SEND_MESSAGE_PHASE_2", self.current_extracted_keywords)
-            self.display_steps(steps_phase2, start_index=len(self.current_steps) + 1)
-            self.current_steps.extend(steps_phase2)
-        else:
-            self.update_response_area("\nMessage sending cancelled.\n")
 
     def display_steps(self, steps, start_index=1):
         step_count = start_index - 1
@@ -277,25 +370,6 @@ class EvaGui:
                         self.update_response_area(f"   {k}: {v}\n")
             self.update_response_area("\n")
 
-    def execute_steps(self):
-        if not self.current_steps or not self.action_router:
-            return
-        self.update_response_area("\nEXECUTING STEPS...\n" + "-"*40 + "\n")
-        self.execute_button.config(state=tk.DISABLED)
-        
-        thread = threading.Thread(target=self._execute_action_router)
-        thread.start()
-
-    def _execute_action_router(self):
-        result = self.action_router.execute(
-            self.current_model1_result['command_type'],
-            self.current_steps,
-            self.current_extracted_keywords,
-            self.current_model1_result['input'],
-            self.current_model1_result
-        )
-        self.root.after_idle(self.display_execution_result, result)
-
     def display_execution_result(self, result):
         if result.get('success'):
             self.update_response_area("✅ Command executed successfully!\n")
@@ -307,25 +381,31 @@ class EvaGui:
         self.response_area.insert(tk.END, text)
         self.response_area.see(tk.END)
         self.response_area.config(state=tk.DISABLED)
+    
+    def clear_response_area(self):
+        self.response_area.config(state=tk.NORMAL)
+        self.response_area.delete(1.0, tk.END)
+        self.response_area.config(state=tk.DISABLED)
 
-    def calculate_tfidf_similarity(self, str1, str2):
-        words1, words2 = str1.lower().split(), str2.lower().split()
-        matches = sum(1 for word in words1 if word in words2)
-        similarity = matches / max(len(words1), len(words2)) if max(len(words1), len(words2)) > 0 else 0
-        order_bonus = sum(0.1 for i in range(min(len(words1), len(words2))) if words1[i] == words2[i])
-        return min(1.0, similarity + order_bonus)
+    def update_status(self, text):
+        self.status_label.config(text=text)
 
-    def process_command_model1(self, input_text):
-        best_match, highest_similarity = None, 0
-        for pattern, cmd_type in MODEL1_TRAINING_DATA:
-            similarity = self.calculate_tfidf_similarity(input_text, pattern)
-            if similarity > highest_similarity:
-                highest_similarity = similarity
-                best_match = (pattern, cmd_type)
-        return {
-            "input": input_text, "command_type": best_match[1], "confidence": highest_similarity,
-            "training_pattern": best_match[0],
-        } if best_match else None
+    def analyze_query_with_model(self, query):
+        try:
+            query_vectorized = self.vectorizer.transform([query])
+            prediction = self.classifier.predict(query_vectorized)
+            confidence = self.classifier.predict_proba(query_vectorized).max()
+            return {
+                "input": query,
+                "command_type": prediction[0],
+                "confidence": confidence,
+                "training_pattern": "Local Model Analysis",
+            }
+        except Exception as e:
+            print(f"Error analyzing query with model: {e}")
+            return None
+
+
 
     def extract_keywords_by_command_type(self, raw_command, command_type):
         raw_command_lower = raw_command.lower().strip()
@@ -387,11 +467,33 @@ class EvaGui:
                 'instagram': 'instagram', 'telegram': 'telegram',
             }
             extracted['app_name'] = next((v for k, v in apps_map.items() if k in raw_command_lower), 'whatsapp')
+
+            # Pattern 1: send {message} to {recipient}
+            match = re.search(r'send\s+(.*?)\s+to\s+(.*)', raw_command_lower)
+            if match:
+                extracted['message_content'] = match.group(1)
+                extracted['recipient'] = match.group(2)
+                return extracted
+
+            # Pattern 2: to {recipient} message {message}
+            match = re.search(r'to\s+(.*?)\s+(?:message|saying|that)\s+(.*)', raw_command_lower)
+            if match:
+                extracted['recipient'] = match.group(1)
+                extracted['message_content'] = match.group(2)
+                return extracted
+
+            # Pattern 3: to {recipient} {message} (single word recipient)
+            match = re.search(r'to\s+(\w+)\s+(.*)', raw_command_lower)
+            if match:
+                extracted['recipient'] = match.group(1)
+                extracted['message_content'] = match.group(2)
+                return extracted
+
+            # Fallback: to {recipient}
             if 'to' in words:
                 to_idx = words.index('to')
-                recipient_words = words[to_idx + 1:]
-                if recipient_words:
-                    extracted['recipient'] = ' '.join(recipient_words)
+                extracted['recipient'] = ' '.join(words[to_idx + 1:])
+
         return extracted
 
     def generate_steps_model2(self, command_type, extracted_keywords):
