@@ -9,6 +9,7 @@ import platform
 from pathlib import Path
 from utils.logger import setup_logger
 import pygetwindow as gw
+import subprocess
 
 
 class ExecutorBridge:
@@ -69,27 +70,36 @@ class ExecutorBridge:
         self.c_lib.keyboard_type_string.argtypes = [ctypes.c_char_p]
         self.c_lib.keyboard_type_string.restype = ctypes.c_int
     
-    def launch_application(self, app_name):
-        """Launch application (Windows: Win+Search+Enter)"""
+    def launch_application(self, app_name=None, url=None):
+        """Launch application or open URL"""
         try:
-            self.logger.info(f"Launching: {app_name}")
-            
-            # Press Windows key
-            self.c_lib.keyboard_press_key(0x5B)  # VK_LWIN
-            import time
-            time.sleep(0.5)
-            
-            # Type app name
-            app_bytes = app_name.encode('utf-8')
-            self.c_lib.keyboard_type_string(app_bytes)
-            time.sleep(0.5)
-            
-            # Press Enter
-            self.c_lib.keyboard_press_key(0x0D)  # VK_RETURN
-            
-            return {'success': True}
+            if url:
+                self.logger.info(f"Opening URL: {url}")
+                if self.system_platform == 'Windows':
+                    os.startfile(url)
+                else:
+                    subprocess.Popen(['xdg-open', url])  # For Linux
+                return {'success': True}
+            elif app_name:
+                self.logger.info(f"Launching application: {app_name}")
+                # Press Windows key
+                self.c_lib.keyboard_press_key(0x5B)  # VK_LWIN
+                import time
+                time.sleep(0.5)
+                
+                # Type app name
+                app_bytes = app_name.encode('utf-8')
+                self.c_lib.keyboard_type_string(app_bytes)
+                time.sleep(0.5)
+                
+                # Press Enter
+                self.c_lib.keyboard_press_key(0x0D)  # VK_RETURN
+                
+                return {'success': True}
+            else:
+                return {'success': False, 'error': "No application name or URL provided"}
         except Exception as e:
-            self.logger.error(f"App launch error: {e}")
+            self.logger.error(f"Launch error: {e}")
             return {'success': False, 'error': str(e)}
     
     def execute_action(self, action_type, coordinates, parameters):
@@ -137,6 +147,10 @@ class ExecutorBridge:
             if vk_code != 0x00:
                 self.c_lib.keyboard_press_key(vk_code)
 
+        # Add a small delay
+        import time
+        time.sleep(0.1)
+
         # Release keys in reverse order
         for vk_code in reversed(vk_codes):
             if vk_code != 0x00:
@@ -171,24 +185,41 @@ class ExecutorBridge:
             'j': 0x4A, 'k': 0x4B, 'l': 0x4C, 'm': 0x4D, 'n': 0x4E, 'o': 0x4F, 'p': 0x50, 'q': 0x51, 'r': 0x52, 
             's': 0x53, 't': 0x54, 'u': 0x55, 'v': 0x56, 'w': 0x57, 'x': 0x58, 'y': 0x59, 'z': 0x5A,
             '0': 0x30, '1': 0x31, '2': 0x32, '3': 0x33, '4': 0x34, '5': 0x35, '6': 0x36, '7': 0x37, '8': 0x38, '9': 0x39,
+            '/': 0xBF,
         }
         return key_map.get(key.lower(), 0x00)
 
     def focus_window_by_title(self, title):
-        """Focus a window by its title"""
+        """Focus a window by its title using fuzzy matching"""
         try:
-            self.logger.info(f"Focusing window with title: {title}")
-            windows = gw.getWindowsWithTitle(title)
-            if windows:
-                window = windows[0]
-                if window.isMinimized:
-                    window.restore()
-                window.activate()
-                self.logger.info(f"Successfully focused window: {title}")
+            from thefuzz import fuzz
+
+            self.logger.info(f"Attempting to focus window with title: {title}")
+            windows = gw.getAllWindows()
+            
+            if not windows:
+                self.logger.warning("No open windows found.")
+                return {'success': False, 'error': "No open windows found."}
+
+            best_match = None
+            highest_score = 0
+
+            for window in windows:
+                score = fuzz.partial_ratio(title.lower(), window.title.lower())
+                if score > highest_score:
+                    highest_score = score
+                    best_match = window
+
+            if best_match and highest_score > 80:
+                self.logger.info(f"Best match: '{best_match.title}' with score {highest_score}")
+                if best_match.isMinimized:
+                    best_match.restore()
+                best_match.activate()
+                self.logger.info(f"Successfully focused window: {best_match.title}")
                 return {'success': True}
             else:
-                self.logger.warning(f"Window with title '{title}' not found.")
-                return {'success': False, 'error': f"Window with title '{title}' not found."}
+                self.logger.warning(f"No suitable window found for title '{title}'. Best match: '{best_match.title if best_match else 'None'}' with score {highest_score}")
+                return {'success': False, 'error': f"Window with title like '{title}' not found."}
         except Exception as e:
             self.logger.error(f"Failed to focus window: {e}")
             return {'success': False, 'error': str(e)}

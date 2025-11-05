@@ -4,9 +4,10 @@ import tkinter as tk
 from tkinter import scrolledtext
 import re
 import threading
+import time
+
 import speech_recognition as sr
 
-import os
 from dotenv import load_dotenv
 import config
 from execution.executor_bridge import ExecutorBridge
@@ -31,11 +32,9 @@ MODEL1_TRAINING_DATA = [
     ("run app", "OPEN_APP"), ("open app", "OPEN_APP"), ("open chrome", "OPEN_APP"), ("launch spotify", "OPEN_APP"),
     ("close application", "CLOSE_APP"), ("close this", "CLOSE_APP"), ("close window", "CLOSE_APP"),
     ("exit application", "CLOSE_APP"), ("quit app", "CLOSE_APP"),
-    ("open file", "FILE_FOLDER_OPERATION"), ("open folder", "FILE_FOLDER_OPERATION"), ("open document", "FILE_FOLDER_OPERATION"),
-    ("launch file", "FILE_FOLDER_OPERATION"), ("open my documents", "FILE_FOLDER_OPERATION"), ("open downloads folder", "FILE_FOLDER_OPERATION"),
-    ("open desktop", "FILE_FOLDER_OPERATION"), ("show file", "FILE_FOLDER_OPERATION"), ("browse to folder", "FILE_FOLDER_OPERATION"),
-    ("open pictures", "FILE_FOLDER_OPERATION"), ("open videos folder", "FILE_FOLDER_OPERATION"), ("open music", "FILE_FOLDER_OPERATION"),
-    ("show folder", "FILE_FOLDER_OPERATION"), ("browse file", "FILE_FOLDER_OPERATION"),
+    ("open file explorer", "OPEN_FILE_EXPLORER"), ("open file manager", "OPEN_FILE_EXPLORER"),
+    ("search for file", "SEARCH_FILE"), ("find document", "SEARCH_FILE"),
+    ("open documents", "OPEN_FOLDER"), ("open downloads", "OPEN_FOLDER"), ("open pictures", "OPEN_FOLDER"),
     ("type text", "TYPE_TEXT"), ("write something", "TYPE_TEXT"), ("enter text", "TYPE_TEXT"),
     ("click on something", "MOUSE_CLICK"), ("click here", "MOUSE_CLICK"),
     ("right click", "MOUSE_RIGHTCLICK"), ("double click", "MOUSE_DOUBLECLICK"),
@@ -45,6 +44,7 @@ MODEL1_TRAINING_DATA = [
     ("open app and search", "APP_WITH_ACTION"), ("launch app and type", "APP_WITH_ACTION"),
     ("open app and play", "APP_WITH_ACTION"), ("start app and compose", "APP_WITH_ACTION"),
     ("play music", "MEDIA_CONTROL"), ("play video", "MEDIA_CONTROL"), ("stream music", "MEDIA_CONTROL"), ("stream video", "MEDIA_CONTROL"),
+    ("open spotify and play", "MEDIA_CONTROL"), ("open youtube and play", "MEDIA_CONTROL"),
     ("send whatsapp to", "SEND_MESSAGE"), ("send message to", "SEND_MESSAGE"), ("whatsapp to", "SEND_MESSAGE"),
     ("email to", "SEND_MESSAGE"), ("post on social", "SEND_MESSAGE"), ("message to", "SEND_MESSAGE"),
     ("whatsapp mom", "SEND_MESSAGE"), ("email john", "SEND_MESSAGE"),
@@ -60,7 +60,8 @@ STEP_TEMPLATES = {
         {"action_type": "WAIT", "parameters": {"duration": 0.5}, "description": "Wait for menu"},
         {"action_type": "TYPE_TEXT", "parameters": {"text": "{app_name}"}, "description": "Type: {app_name}"},
         {"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Launch {app_name}"},
-        {"action_type": "WAIT", "parameters": {"duration": 3}, "description": "Wait for app to load"},
+        {"action_type": "WAIT", "parameters": {"duration": 5}, "description": "Wait for app to load"},
+        {"action_type": "WAIT", "parameters": {"duration": 2}, "description": "Wait before focusing"},
         {"action_type": "FOCUS_WINDOW", "parameters": {"title": "{app_name}"}, "description": "Focus {app_name} window"},
     ],
     "search_file_explorer": [
@@ -90,6 +91,7 @@ STEP_TEMPLATES = {
     ],
     "search_on_page": [
         {"action_type": "PRESS_KEY", "parameters": {"key": "/"}, "description": "Focus search"},
+        {"action_type": "WAIT", "parameters": {"duration": 2}, "description": "Wait for results"},
         {"action_type": "TYPE_TEXT", "parameters": {"text": "{search_query}"}, "description": "Type: {search_query}"},
         {"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Search"},
         {"action_type": "WAIT", "parameters": {"duration": 2}, "description": "Wait for results"},
@@ -110,10 +112,13 @@ STEP_TEMPLATES = {
     ],
 }
 
+
 MODEL2_STEP_RULES = {
     "OPEN_APP": STEP_TEMPLATES["open_app_windows"],
     "CLOSE_APP": [{"action_type": "PRESS_KEY", "parameters": {"key": "alt+f4"}, "description": "Close window"}],
-    "FILE_FOLDER_OPERATION": [*STEP_TEMPLATES["search_file_explorer"]],
+    "OPEN_FILE_EXPLORER": [{"action_type": "PRESS_KEY", "parameters": {"key": "win+e"}, "description": "Open File Explorer"}],
+    "SEARCH_FILE": [*STEP_TEMPLATES["search_file_explorer"]],
+    "OPEN_FOLDER": [{"action_type": "PRESS_KEY", "parameters": {"key": "win+e"}, "description": "Open File Explorer"}, {"action_type": "WAIT", "parameters": {"duration": 1.5}, "description": "Wait for Explorer"}, {"action_type": "PRESS_KEY", "parameters": {"key": "ctrl+l"}, "description": "Focus address bar"}, {"action_type": "TYPE_TEXT", "parameters": {"text": "{file_path}"}, "description": "Navigate to folder"}, {"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Open folder"}],
     "WEB_SEARCH": [
         *STEP_TEMPLATES["chrome_with_profile"],
         *STEP_TEMPLATES["navigate_to_website"],
@@ -140,12 +145,12 @@ MODEL2_STEP_RULES = {
     ],
     "MEDIA_CONTROL": [
         *STEP_TEMPLATES["open_app_windows"],
-        {"action_type": "WAIT", "parameters": {"duration": 2}, "description": "Wait for media app"},
-        {"action_type": "PRESS_KEY", "parameters": {"key": "ctrl+l"}, "description": "Focus search"},
+        {"action_type": "WAIT", "parameters": {"duration": 4}, "description": "Wait for media app"},
+        {"action_type": "PRESS_KEY", "parameters": {"key": "ctrl+k"}, "description": "Focus search"},
+        {"action_type": "WAIT", "parameters": {"duration": 1}, "description": "Wait for search"},
         {"action_type": "TYPE_TEXT", "parameters": {"text": "{media_query}"}, "description": "Search: {media_query}"},
+        {"action_type": "WAIT", "parameters": {"duration": 2}, "description": "Wait for search"},
         {"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Play"},
-        {"action_type": "WAIT", "parameters": {"duration": 2}, "description": "Wait for results"},
-        {"action_type": "SCREEN_ANALYSIS", "parameters": {"target": "{media_query}"}, "description": "Click on media"},
     ],
     "SEND_MESSAGE": [
         *STEP_TEMPLATES["open_app_windows"],
@@ -168,6 +173,8 @@ class EvaGui:
         self.current_model1_result = None
         self.current_extracted_keywords = None
         self.action_router = None
+        self.is_awake = False
+        self.is_muted = False
 
         self.create_widgets()
         self.initialize_backend()
@@ -232,28 +239,58 @@ class EvaGui:
         except Exception as e:
             error_message = f"❌ CRITICAL ERROR: Could not initialize backend.\n{e}\nVision features will be disabled.\nCheck your .env file for GEMINI_API_KEY and ensure all model weights are downloaded."
             self.update_response_area(error_message)
-
     def listen_for_wake_word(self):
         self.wake_word_detector.start()
         while True:
-            if self.wake_word_detector.listen():
-                self.root.after_idle(self.update_status, "Wake word detected! Listening for command...")
+            if not self.is_awake:
+                self.root.after_idle(self.update_status, "Listening for 'Jarvis'...")
+                if self.wake_word_detector.listen():
+                    self.is_awake = True
+                    self.root.after_idle(self.update_status, "Wake word detected! Listening for command...")
+            else:
+                if self.is_muted:
+                    self.root.after_idle(self.update_status, "Muted. Say 'unmute' to resume.")
+                    # Still listen for 'unmute'
+                    recognizer = sr.Recognizer()
+                    with sr.Microphone() as source:
+                        try:
+                            audio = recognizer.listen(source, timeout=5, phrase_time_limit=2)
+                            command = recognizer.recognize_google(audio).lower()
+                            if "unmute" in command:
+                                self.is_muted = False
+                                self.root.after_idle(self.update_status, "Unmuted. Listening for command...")
+                        except (sr.UnknownValueError, sr.RequestError):
+                            pass # Ignore errors when muted
+                    time.sleep(1) # Avoid busy-waiting
+                    continue
+
+                self.root.after_idle(self.update_status, "Listening for command...")
                 recognizer = sr.Recognizer()
                 with sr.Microphone() as source:
                     try:
                         audio = recognizer.listen(source, timeout=5, phrase_time_limit=10)
                         prompt = recognizer.recognize_google(audio)
                         self.root.after_idle(self.update_status, f"Recognized: {prompt}")
+
+                        if "go to sleep" in prompt.lower():
+                            self.is_awake = False
+                            self.root.after_idle(self.update_status, "Going to sleep. Listening for 'Jarvis'...")
+                            continue
+                        
+                        if "mute" in prompt.lower():
+                            self.is_muted = True
+                            self.root.after_idle(self.update_status, "Muted.")
+                            continue
+
                         # Run pipeline in a new thread to keep GUI responsive
                         thread = threading.Thread(target=self.run_eva_pipeline, args=(prompt,))
                         thread.start()
                     except sr.UnknownValueError:
-                        self.root.after_idle(self.update_status, "Could not understand audio. Listening for 'Jarvis'...")
+                        self.root.after_idle(self.update_status, "Could not understand audio. Listening for command...")
                     except sr.RequestError as e:
-                        self.root.after_idle(self.update_status, f"Could not request results; {e}. Listening for 'Jarvis'...")
+                        self.root.after_idle(self.update_status, f"Could not request results; {e}. Listening for command...")
                     except Exception as e:
-                        self.root.after_idle(self.update_status, f"An error occurred: {e}. Listening for 'Jarvis'...")
-                self.root.after_idle(self.update_status, "Listening for 'Jarvis'...")
+                        self.root.after_idle(self.update_status, f"An error occurred: {e}. Listening for command...")
 
     def run_eva_pipeline(self, prompt):
         self.root.after_idle(self.clear_response_area)
@@ -392,7 +429,7 @@ class EvaGui:
 
     def analyze_query_with_model(self, query):
         try:
-            query_vectorized = self.vectorizer.transform([query])
+            query_vectorized = self.vectorizer.transform([query.lower()])
             prediction = self.classifier.predict(query_vectorized)
             confidence = self.classifier.predict_proba(query_vectorized).max()
             return {
@@ -422,77 +459,83 @@ class EvaGui:
         elif command_type == "CLOSE_APP":
             trigger = ['close', 'exit', 'quit']
             extracted['app_name'] = self.extract_app_name(words, trigger) or 'current'
-        elif command_type == "FILE_FOLDER_OPERATION":
+        elif command_type == "OPEN_FOLDER":
             is_file_op, target_name, target_type, is_known = self.extract_file_or_folder_path(words, raw_command_lower)
-            extracted['is_file_operation'] = True
-            extracted['is_known_folder'] = is_known
-            extracted['needs_search'] = not is_known
-            extracted['target_type'] = target_type
             if is_known:
                 extracted['file_path'] = target_name
             else:
                 extracted['search_target'] = target_name
+        elif command_type == "SEARCH_FILE":
+            is_file_op, target_name, target_type, is_known = self.extract_file_or_folder_path(words, raw_command_lower)
+            extracted['search_target'] = target_name
         elif command_type == "WEB_SEARCH":
             extracted['profile_name'] = self.extract_profile_name(raw_command_lower)
             website, query = self.extract_website_and_action(raw_command_lower)
             extracted['website'] = website
             extracted['search_query'] = query
         elif command_type == "TYPE_TEXT":
-            extracted['text_content'] = self.extract_text_after_keywords(words, ['type', 'write', 'enter'], {'text', 'message'})
+            extracted['text_content'] = self.extract_text_after_keywords(raw_command.split(), ['type', 'write', 'enter'], {'text', 'message'})
         elif command_type in ["MOUSE_CLICK", "MOUSE_RIGHTCLICK", "MOUSE_DOUBLECLICK"]:
             skip = {'click', 'on', 'here', 'it', 'this', 'right', 'double'}
-            extracted['action_target'] = ' '.join([w for w in words if w not in skip]) or 'current'
+            extracted['action_target'] = ' '.join([w for w in raw_command.split() if w.lower() not in skip]) or 'current'
         elif command_type == "WINDOW_ACTION":
-            extracted['window_action'] = 'maximize' if any(w in words for w in ['maximize', 'fullscreen']) else 'minimize'
+            extracted['window_action'] = 'maximize' if any(w in raw_command.lower().split() for w in ['maximize', 'fullscreen']) else 'minimize'
         elif command_type == "KEYBOARD":
             shortcuts = {'copy': 'ctrl+c', 'paste': 'ctrl+v', 'save': 'ctrl+s', 'undo': 'ctrl+z'}
             for word, shortcut in shortcuts.items():
-                if word in words:
+                if word in raw_command.lower():
                     extracted['keyboard_shortcut'] = shortcut
                     break
         elif command_type == "SYSTEM":
-            extracted['system_action'] = 'screenshot' if 'screenshot' in words or 'capture' in words else 'lock'
+            extracted['system_action'] = 'screenshot' if 'screenshot' in raw_command.lower() or 'capture' in raw_command.lower() else 'lock'
         elif command_type == "APP_WITH_ACTION":
-            if 'and' in words:
-                and_idx = words.index('and')
-                extracted['app_name'] = self.extract_app_name(words[:and_idx], ['open', 'launch', 'start'])
-                extracted['action_content'] = ' '.join([w for w in words[and_idx+1:] if w not in ['search', 'type', 'play']])
+            if 'and' in raw_command.lower():
+                and_idx = raw_command.lower().split().index('and')
+                extracted['app_name'] = self.extract_app_name(raw_command.split()[:and_idx], ['open', 'launch', 'start'])
+                extracted['action_content'] = ' '.join([w for w in raw_command.split()[and_idx+1:] if w.lower() not in ['search', 'type', 'play']])
         elif command_type == "MEDIA_CONTROL":
             apps = ['spotify', 'netflix', 'youtube', 'vlc']
-            extracted['app_name'] = next((app for app in apps if app in words), 'spotify')
-            extracted['media_query'] = ' '.join([w for w in words if w not in ['play', 'stream', 'music', 'video', extracted['app_name']]])
+            app_name = next((app for app in apps if app in raw_command.lower()), 'spotify')
+            extracted['app_name'] = app_name
+            play_idx = -1
+            if 'play' in raw_command.lower():
+                play_idx = raw_command.lower().split().index('play')
+            elif 'stream' in raw_command.lower():
+                play_idx = raw_command.lower().split().index('stream')
+            if play_idx != -1:
+                extracted['media_query'] = ' '.join(raw_command.split()[play_idx+1:])
         elif command_type == "SEND_MESSAGE":
             apps_map = {
                 'whatsapp': 'whatsapp', 'email': 'outlook', 'social': 'facebook', 'twitter': 'twitter',
                 'instagram': 'instagram', 'telegram': 'telegram',
             }
-            extracted['app_name'] = next((v for k, v in apps_map.items() if k in raw_command_lower), 'whatsapp')
+            extracted['app_name'] = next((v for k, v in apps_map.items() if k in raw_command.lower()), 'whatsapp')
 
             # Pattern 1: send {message} to {recipient}
-            match = re.search(r'send\s+(.*?)\s+to\s+(.*)', raw_command_lower)
+            match = re.search(r'send\s+(.*?)\s+to\s+(.*)', raw_command, re.IGNORECASE)
             if match:
                 extracted['message_content'] = match.group(1)
                 extracted['recipient'] = match.group(2)
                 return extracted
 
             # Pattern 2: to {recipient} message {message}
-            match = re.search(r'to\s+(.*?)\s+(?:message|saying|that)\s+(.*)', raw_command_lower)
+            match = re.search(r'to\s+(.*?)\s+(?:message|saying|that)\s+(.*)', raw_command, re.IGNORECASE)
             if match:
                 extracted['recipient'] = match.group(1)
                 extracted['message_content'] = match.group(2)
                 return extracted
 
             # Pattern 3: to {recipient} {message} (single word recipient)
-            match = re.search(r'to\s+(\w+)\s+(.*)', raw_command_lower)
+            match = re.search(r'to\s+(\w+)\s+(.*)', raw_command, re.IGNORECASE)
             if match:
                 extracted['recipient'] = match.group(1)
                 extracted['message_content'] = match.group(2)
                 return extracted
 
             # Fallback: to {recipient}
-            if 'to' in words:
-                to_idx = words.index('to')
-                extracted['recipient'] = ' '.join(words[to_idx + 1:])
+            if 'to' in raw_command.lower():
+                to_idx = raw_command.lower().split().index('to')
+                extracted['recipient'] = ' '.join(raw_command.split()[to_idx + 1:])
 
         return extracted
 
@@ -504,16 +547,6 @@ class EvaGui:
         for step in steps_template:
             if step.get("action_type") == "CONDITIONAL":
                 condition = step["parameters"].get("condition")
-                if condition == "is_known_folder":
-                    if not extracted_keywords.get('is_known_folder'):
-                        continue
-                    else:
-                        continue
-                if condition == "needs_search":
-                    if not extracted_keywords.get('needs_search'):
-                        break
-                    else:
-                        continue
                 if condition == "search_query_exists":
                     if not extracted_keywords.get('search_query'):
                         break
@@ -557,7 +590,7 @@ class EvaGui:
             r'profile ([\w\s]+?)(?:\s+(?:search|open|go|and))',
         ]
         for pattern in patterns:
-            match = re.search(pattern, text.lower())
+            match = re.search(pattern, text, re.IGNORECASE)
             if match:
                 return match.group(1).strip()
         return "Default"
@@ -600,18 +633,14 @@ class EvaGui:
         return None
 
     def extract_file_or_folder_path(self, words, raw_command):
-        file_indicators = ['file', 'document', 'doc', 'pdf', 'image', 'video', 'folder', 'directory']
         common_folders = {
             'documents': r'%USERPROFILE%\Documents', 'downloads': r'%USERPROFILE%\Downloads', 'desktop': r'%USERPROFILE%\Desktop',
             'pictures': r'%USERPROFILE%\Pictures', 'videos': r'%USERPROFILE%\Videos', 'music': r'%USERPROFILE%\Music',
         }
-        is_file_operation = any(indicator in words for indicator in file_indicators)
-        if not is_file_operation:
-            return False, None, None, False
         for folder_keyword, folder_path in common_folders.items():
             if folder_keyword in words:
                 return True, folder_path, 'folder', True
-        skip_words = {'open', 'file', 'folder', 'document', 'my', 'the', 'launch', 'show', 'browse', 'to'}
+        skip_words = {'open', 'file', 'folder', 'document', 'my', 'the', 'launch', 'show', 'browse', 'to', 'for', 'find'}
         target_words = [w for w in words if w not in skip_words]
         if target_words:
             target_name = ' '.join(target_words)

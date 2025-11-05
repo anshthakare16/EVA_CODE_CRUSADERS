@@ -102,14 +102,13 @@ STEP_TEMPLATES = {
 }
 
 MODEL2_STEP_RULES = {
-    "OPEN_APP": STEP_TEMPLATES["open_app_windows"],
+    "OPEN_APP": [
+        {"action_type": "OPEN_APP", "parameters": {"app_name": "{app_name}"}, "description": "Open {app_name}"},
+    ],
     "CLOSE_APP": [{"action_type": "PRESS_KEY", "parameters": {"key": "alt+f4"}, "description": "Close window"}],
     "FILE_FOLDER_OPERATION": [*STEP_TEMPLATES["search_file_explorer"]],
     "WEB_SEARCH": [
-        *STEP_TEMPLATES["chrome_with_profile"],
-        *STEP_TEMPLATES["navigate_to_website"],
-        {"action_type": "CONDITIONAL", "parameters": {"condition": "search_query_exists"}, "description": "Check search needed"},
-        *STEP_TEMPLATES["search_on_page"],
+        {"action_type": "OPEN_URL", "parameters": {"url": "https://{website}{search_path}"}, "description": "Open {website} with search query"},
     ],
     "TYPE_TEXT": [{"action_type": "TYPE_TEXT", "parameters": {"text": "{text_content}"}, "description": "Type: {text_content}"}],
     "MOUSE_CLICK": [{"action_type": "SCREEN_ANALYSIS", "parameters": {"target": "{action_target}"}, "description": "Click: {action_target}"}],
@@ -320,6 +319,14 @@ def generate_steps_model2(command_type, extracted_keywords):
                     continue
             continue
         step_copy = {"action_type": step["action_type"], "parameters": dict(step["parameters"]), "description": step["description"]}
+
+        # Handle OPEN_URL specific logic
+        if step_copy["action_type"] == "OPEN_URL":
+            website = extracted_keywords.get('website', 'google.com')
+            search_query = extracted_keywords.get('search_query')
+            search_path = f"/search?q={search_query}" if search_query else ""
+            step_copy["parameters"]['url'] = f"https://{website}{search_path}"
+
         replacements = {
             "{app_name}": extracted_keywords.get('app_name', 'app'), "{website}": extracted_keywords.get('website', 'google.com'),
             "{profile_name}": extracted_keywords.get('profile_name', 'Default'), "{search_query}": extracted_keywords.get('search_query', ''),
