@@ -80,6 +80,8 @@ STEP_TEMPLATES = {
         {"action_type": "TYPE_TEXT", "parameters": {"text": "chrome"}, "description": "Type Chrome"},
         {"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Launch Chrome"},
         {"action_type": "WAIT", "parameters": {"duration": 2}, "description": "Wait for Chrome"},
+        {"action_type": "FOCUS_WINDOW", "parameters": {"title": "Chrome"}, "description": "Focus Chrome window"},
+        {"action_type": "WAIT", "parameters": {"duration": 0.5}, "description": "Wait for focus"},
         {"action_type": "SCREEN_ANALYSIS", "parameters": {"profile_name": "{profile_name}"}, "description": "Select profile: {profile_name}"},
         {"action_type": "WAIT", "parameters": {"duration": 1}, "description": "Profile loaded"},
     ],
@@ -455,7 +457,7 @@ class EvaGui:
         }
         if command_type == "OPEN_APP":
             trigger = ['open', 'launch', 'start', 'run']
-            extracted['app_name'] = self.extract_app_name(words, trigger) or ('chrome' if 'chrome' in words else 'current')
+            extracted['app_name'] = self.extract_app_name(words, trigger)
         elif command_type == "CLOSE_APP":
             trigger = ['close', 'exit', 'quit']
             extracted['app_name'] = self.extract_app_name(words, trigger) or 'current'
@@ -565,7 +567,7 @@ class EvaGui:
                 continue
             step_copy = {"action_type": step["action_type"], "parameters": dict(step["parameters"]), "description": step["description"]}
             replacements = {
-                "{app_name}": extracted_keywords.get('app_name', 'app'), "{website}": extracted_keywords.get('website', 'google.com'),
+                "{app_name}": extracted_keywords.get('app_name', 'app'), "{website}": extracted_keywords.get('website', ''),
                 "{profile_name}": extracted_keywords.get('profile_name', 'Default'), "{search_query}": extracted_keywords.get('search_query', ''),
                 "{text_content}": extracted_keywords.get('text_content', ''), "{action_target}": extracted_keywords.get('action_target', 'target'),
                 "{keyboard_shortcut}": extracted_keywords.get('keyboard_shortcut', ''), "{system_action}": extracted_keywords.get('system_action', ''),
@@ -602,7 +604,7 @@ class EvaGui:
             'reddit': 'reddit.com', 'amazon': 'amazon.com', 'netflix': 'netflix.com', 'spotify': 'open.spotify.com',
         }
         text_l = text.lower()
-        website = 'google.com'
+        website = None
         for keyword, url in websites.items():
             if keyword in text_l:
                 website = url
