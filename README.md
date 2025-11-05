@@ -1,3 +1,4 @@
+
 # EVA - Integrated Logic Assistant
 
 EVA is a voice-controlled AI assistant for your Windows desktop. It can understand your voice commands and perform actions on your computer, such as opening applications, searching the web, and interacting with UI elements on the screen.
@@ -153,3 +154,4 @@ Let's trace the query: **"Open Chrome and search for MrBeast on YouTube"** to un
     4.  **`SystemExecutor.executor.execute_action("MOUSE_CLICK", ...)`**: Clicks on the coordinate returned by the analyzer.
 
 This entire process, from voice to action, allows EVA to robustly understand and interact with your system.
+
