@@ -15,6 +15,7 @@ from dotenv import load_dotenv
 import speech_recognition as sr
 from PySide6.QtGui import QTextCursor
 
+
 import config
 from execution.executor_bridge import ExecutorBridge
 from vision.face_auth import FaceAuthenticator
