@@ -1,14 +1,14 @@
-
-
-import tkinter as tk
-from tkinter import scrolledtext
+import os
+import sys
 import re
 import threading
 import time
-
-import speech_recognition as sr
+import warnings
 
 from dotenv import load_dotenv
+import speech_recognition as sr
+from PySide6.QtGui import QTextCursor
+
 import config
 from execution.executor_bridge import ExecutorBridge
 from execution.action_router import ActionRouter
@@ -17,14 +17,26 @@ from vision.screenshot_handler import ScreenshotHandler
 from vision.screen_analyzer import ScreenAnalyzer
 from vision.omniparser_executor import OmniParserExecutor
 from speech.wake_word_detector import WakeWordDetector
+
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
+
+# === Qt (PySide6) ===
+from PySide6.QtCore import Qt, QTimer, Signal, QObject, QSize
+from PySide6.QtGui import QIcon, QMovie, QAction
+from PySide6.QtWidgets import (
+    QApplication, QWidget, QLabel, QPushButton, QLineEdit, QPlainTextEdit,
+    QVBoxLayout, QHBoxLayout, QFrame, QStackedWidget, QSizePolicy
+)
+
+# Hide that pkg_resources deprecation notice from dependencies
+warnings.filterwarnings("ignore", message="pkg_resources is deprecated as an API", category=UserWarning)
 
 # Load environment variables from .env file
 load_dotenv()
 
 # ============================================================================ 
-# EVA_TER LOGIC (INTEGRATED)
+# EVA_TER LOGIC (INTEGRATED) — unchanged datasets and step templates
 # ============================================================================ 
 
 MODEL1_TRAINING_DATA = [
@@ -51,7 +63,7 @@ MODEL1_TRAINING_DATA = [
     ("search for something", "WEB_SEARCH"), ("google something", "WEB_SEARCH"), ("youtube search", "WEB_SEARCH"),
     ("open youtube", "WEB_SEARCH"), ("profile work search python", "WEB_SEARCH"), ("with profile personal search", "WEB_SEARCH"),
     ("chrome profile dev open youtube", "WEB_SEARCH"), ("open gmail", "WEB_SEARCH"), ("go to facebook", "WEB_SEARCH"),
-    ("search amazon", "WEB_SEARCH"), 
+    ("search amazon", "WEB_SEARCH"),
 ]
 
 STEP_TEMPLATES = {
@@ -114,13 +126,18 @@ STEP_TEMPLATES = {
     ],
 }
 
-
 MODEL2_STEP_RULES = {
     "OPEN_APP": STEP_TEMPLATES["open_app_windows"],
     "CLOSE_APP": [{"action_type": "PRESS_KEY", "parameters": {"key": "alt+f4"}, "description": "Close window"}],
     "OPEN_FILE_EXPLORER": [{"action_type": "PRESS_KEY", "parameters": {"key": "win+e"}, "description": "Open File Explorer"}],
     "SEARCH_FILE": [*STEP_TEMPLATES["search_file_explorer"]],
-    "OPEN_FOLDER": [{"action_type": "PRESS_KEY", "parameters": {"key": "win+e"}, "description": "Open File Explorer"}, {"action_type": "WAIT", "parameters": {"duration": 1.5}, "description": "Wait for Explorer"}, {"action_type": "PRESS_KEY", "parameters": {"key": "ctrl+l"}, "description": "Focus address bar"}, {"action_type": "TYPE_TEXT", "parameters": {"text": "{file_path}"}, "description": "Navigate to folder"}, {"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Open folder"}],
+    "OPEN_FOLDER": [
+        {"action_type": "PRESS_KEY", "parameters": {"key": "win+e"}, "description": "Open File Explorer"},
+        {"action_type": "WAIT", "parameters": {"duration": 1.5}, "description": "Wait for Explorer"},
+        {"action_type": "PRESS_KEY", "parameters": {"key": "ctrl+l"}, "description": "Focus address bar"},
+        {"action_type": "TYPE_TEXT", "parameters": {"text": "{file_path}"}, "description": "Navigate to folder"},
+        {"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Open folder"},
+    ],
     "WEB_SEARCH": [
         *STEP_TEMPLATES["chrome_with_profile"],
         *STEP_TEMPLATES["navigate_to_website"],
@@ -164,272 +181,443 @@ MODEL2_STEP_RULES = {
     ],
 }
 
-class EvaGui:
-    def __init__(self, root):
-        self.root = root
-        self.root.title("EVA - Integrated Logic Assistant")
-        self.root.geometry("800x700")
+# ----------------- Utility: asset path helper -----------------
+def asset_path(name: str) -> str:
+    base, ext = os.path.splitext(name)
+    variants = {
+        name,
+        name.replace("/", os.sep).replace("\\", os.sep),
+        base + ext.lower(),
+        (base.capitalize() + ext.lower()),
+        name.lower(),
+        name.upper(),
+    }
+    folders = [
+        os.getcwd(),
+        os.path.join(os.getcwd(), "graphics"),
+        os.path.join(os.getcwd(), "Frontend", "Graphics"),
+    ]
+    for folder in folders:
+        for v in variants:
+            p = os.path.join(folder, v)
+            if os.path.exists(p):
+                return p
+    return name  # let QMovie try
 
+# ----------------- Signals container -----------------
+class Bus(QObject):
+    log = Signal(str)
+    status = Signal(str)
+    steps_ready = Signal(list)
+    exec_done = Signal(dict)
+
+# ----------------- Main App -----------------
+class EvaGui(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("EVA - Integrated Logic Assistant")
+        self.resize(1100, 680)
+        self.setStyleSheet("background-color: #000000; color: #e6e6e6;")
+
+        self.bus = Bus()
+        self.bus.log.connect(self.append_log)
+        self.bus.status.connect(self.set_status)
+        self.bus.exec_done.connect(self.display_execution_result)
+
+        self._is_muted = False
+        self._is_awake = False
+        self._movie = None
+
+        # Backend fields
         self.vision_enabled = False
         self.current_steps = []
         self.current_model1_result = None
         self.current_extracted_keywords = None
         self.action_router = None
-        self.is_awake = False
-        self.is_muted = False
 
-        self.create_widgets()
-        self.initialize_backend()
+        self._build_ui()
+        self._init_backend_async()
+        self._start_wake_word_thread()
 
-        # Start wake word listener
-        wake_word_thread = threading.Thread(target=self.listen_for_wake_word)
-        wake_word_thread.daemon = True
-        wake_word_thread.start()
+    # ---------- UI ----------
+    def _build_ui(self):
+        root = QVBoxLayout(self)
+        root.setContentsMargins(12, 12, 12, 12)
+        root.setSpacing(12)
 
-    def create_widgets(self):
-        self.status_label = tk.Label(self.root, text="Listening for 'Jarvis'...", font=("Arial", 12), pady=10)
-        self.status_label.pack()
+        # Top bar with Home/Chats
+        top = QHBoxLayout()
+        top.setSpacing(8)
 
-        self.response_area = scrolledtext.ScrolledText(self.root, wrap=tk.WORD, bg="#f0f0f0", fg="black")
-        self.response_area.pack(padx=10, pady=10, fill=tk.BOTH, expand=True)
-        self.response_area.config(state=tk.DISABLED)
+        self.btn_home = QPushButton("  Home")
+        self.btn_home.setIcon(QIcon(asset_path(r"graphics\home.png")))
+        self.btn_home.clicked.connect(lambda: self._switch_tab(0))
+        self._style_tab_button(self.btn_home, active=True)
 
-        input_frame = tk.Frame(self.root)
-        input_frame.pack(padx=10, pady=5, fill=tk.X)
+        self.btn_chats = QPushButton("  Chats")
+        self.btn_chats.setIcon(QIcon(asset_path(r"graphics\Chats.png")))
+        self.btn_chats.clicked.connect(lambda: self._switch_tab(1))
+        self._style_tab_button(self.btn_chats, active=False)
 
-        self.command_entry = tk.Entry(input_frame, font=("Arial", 12))
-        self.command_entry.pack(side=tk.LEFT, fill=tk.X, expand=True)
-        self.command_entry.bind("<Return>", self.process_text_command)
+        spacer = QFrame()
+        spacer.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
 
-        self.submit_button = tk.Button(input_frame, text="Submit", command=self.process_text_command)
-        self.submit_button.pack(side=tk.RIGHT, padx=5)
+        top.addWidget(self.btn_home)
+        top.addWidget(self.btn_chats)
+        top.addWidget(spacer)
+        root.addLayout(top)
 
-    def process_text_command(self, event=None):
-        prompt = self.command_entry.get()
-        if prompt:
-            self.command_entry.delete(0, tk.END)
-            self.update_status(f"Recognized: {prompt}")
-            thread = threading.Thread(target=self.run_eva_pipeline, args=(prompt,))
-            thread.start()
+        # Stacked pages
+        self.stack = QStackedWidget()
+        root.addWidget(self.stack, 1)
 
-    def initialize_backend(self):
-        try:
-            self.update_response_area("Initializing backend components...\n")
-            self.executor_bridge = ExecutorBridge()
-            self.system_executor = SystemExecutor(self.executor_bridge)
-            self.screenshot_handler = ScreenshotHandler()
-            self.update_response_area("✓ Execution engine loaded.\n")
+        # --- Home page ---
+        page_home = QWidget()
+        ph_layout = QVBoxLayout(page_home)
+        ph_layout.setAlignment(Qt.AlignmentFlag.AlignHCenter | Qt.AlignmentFlag.AlignVCenter)
+        ph_layout.setSpacing(16)
 
-            self.screen_analyzer = ScreenAnalyzer(config.GEMINI_API_KEY)
-            self.omniparser = OmniParserExecutor()
-            self.action_router = ActionRouter(self.system_executor, self.screenshot_handler, self.screen_analyzer, self.omniparser)
-            self.vision_enabled = True
-            self.update_response_area("✓ Vision system loaded successfully.\n")
-            
-            self.wake_word_detector = WakeWordDetector()
-            self.update_response_area("✓ Wake word detector loaded successfully.\n")
+        self.gif_label = QLabel()
+        self.gif_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.gif_label.setStyleSheet("background: transparent;")
+        ph_layout.addWidget(self.gif_label, 0, Qt.AlignmentFlag.AlignHCenter)
 
-            # Train command classifier
-            self.vectorizer = TfidfVectorizer()
-            self.classifier = LogisticRegression()
-            X, y = zip(*MODEL1_TRAINING_DATA)
-            X_vectorized = self.vectorizer.fit_transform(X)
-            self.classifier.fit(X_vectorized, y)
-            self.update_response_area("✓ Command classifier trained.\n")
+        self.status_label = QLabel("Available...")
+        self.status_label.setStyleSheet("color: #ffffff; font-size: 14px;")
+        self.status_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        ph_layout.addWidget(self.status_label, 0, Qt.AlignmentFlag.AlignHCenter)
 
-            self.update_response_area("Ready to receive commands.\n")
-        except Exception as e:
-            error_message = f"❌ CRITICAL ERROR: Could not initialize backend.\n{e}\nVision features will be disabled.\nCheck your .env file for GEMINI_API_KEY and ensure all model weights are downloaded."
-            self.update_response_area(error_message)
-    def listen_for_wake_word(self):
-        self.wake_word_detector.start()
-        while True:
-            if not self.is_awake:
-                self.root.after_idle(self.update_status, "Listening for 'Jarvis'...")
-                if self.wake_word_detector.listen():
-                    self.is_awake = True
-                    self.root.after_idle(self.update_status, "Wake word detected! Listening for command...")
-            else:
-                if self.is_muted:
-                    self.root.after_idle(self.update_status, "Muted. Say 'unmute' to resume.")
-                    # Still listen for 'unmute'
+        mic_row = QHBoxLayout()
+        mic_row.setSpacing(8)
+        mic_row.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.btn_mic = QPushButton()
+        self.btn_mic.setIcon(QIcon(asset_path(r"graphics\mic_on.png")))
+        self.btn_mic.setIconSize(QSize(48, 48))
+        self.btn_mic.setFixedSize(56, 56)
+        self.btn_mic.setStyleSheet("border: none;")
+        self.btn_mic.clicked.connect(self._toggle_mic)
+        mic_row.addWidget(self.btn_mic)
+
+        self.entry = QLineEdit()
+        self.entry.setPlaceholderText("Type a command and press Enter…")
+        self.entry.setStyleSheet("background:#111; color:#fff; padding:10px; border:1px solid #222;")
+        self.entry.returnPressed.connect(self._on_submit)
+        mic_row.addWidget(self.entry)
+
+        self.btn_submit = QPushButton("Submit")
+        self.btn_submit.setStyleSheet("background:#1e90ff; border:none; padding:8px 14px; color:#fff;")
+        self.btn_submit.clicked.connect(self._on_submit)
+        mic_row.addWidget(self.btn_submit)
+
+        ph_layout.addLayout(mic_row)
+
+        # start GIF via QMovie
+        self._start_movie(asset_path(r"graphics\jarvis.gif"))
+
+        # --- Chats page ---
+        page_chats = QWidget()
+        pc_layout = QVBoxLayout(page_chats)
+        pc_layout.setContentsMargins(0, 0, 0, 0)
+        pc_layout.setSpacing(8)
+
+        self.log_view = QPlainTextEdit()
+        self.log_view.setReadOnly(True)
+        self.log_view.setStyleSheet("background:#0b0b0b; color:#e6e6e6; border:1px solid #222;")
+        pc_layout.addWidget(self.log_view, 1)
+
+        input_row = QHBoxLayout()
+        input_row.setSpacing(8)
+        self.entry2 = QLineEdit()
+        self.entry2.setPlaceholderText("Type a command and press Enter…")
+        self.entry2.setStyleSheet("background:#111; color:#fff; padding:10px; border:1px solid #222;")
+        self.entry2.returnPressed.connect(self._on_submit_from_chats)
+        input_row.addWidget(self.entry2, 1)
+
+        self.btn_submit2 = QPushButton("Submit")
+        self.btn_submit2.setStyleSheet("background:#1e90ff; border:none; padding:8px 14px; color:#fff;")
+        self.btn_submit2.clicked.connect(self._on_submit_from_chats)
+        input_row.addWidget(self.btn_submit2)
+        pc_layout.addLayout(input_row)
+
+        self.stack.addWidget(page_home)   # index 0
+        self.stack.addWidget(page_chats)  # index 1
+
+    def _style_tab_button(self, btn: QPushButton, active: bool):
+        if active:
+            btn.setStyleSheet("""
+                QPushButton {
+                    background:#ffffff; color:#000; border:none; padding:8px 12px; border-radius:8px; font-weight:600;
+                }
+            """)
+        else:
+            btn.setStyleSheet("""
+                QPushButton {
+                    background:#222; color:#e6e6e6; border:none; padding:8px 12px; border-radius:8px;
+                }
+                QPushButton:hover { background:#333; }
+            """)
+
+    def _switch_tab(self, idx: int):
+        self.stack.setCurrentIndex(idx)
+        self._style_tab_button(self.btn_home, active=(idx == 0))
+        self._style_tab_button(self.btn_chats, active=(idx == 1))
+
+    def _start_movie(self, path: str):
+        self._movie = QMovie(path)
+        # Fastest Qt can do is the GIF's own frame delay
+        self._movie.setCacheMode(QMovie.CacheAll)
+        self.gif_label.setMovie(self._movie)
+        self._movie.start()
+
+    # ---------- UI events ----------
+    def _toggle_mic(self):
+        self._is_muted = not self._is_muted
+        self.btn_mic.setIcon(QIcon(asset_path(r"graphics\mic_off.png" if self._is_muted else r"graphics\mic_on.png")))
+        self.bus.status.emit("Muted." if self._is_muted else "Listening for command...")
+
+    def _on_submit(self):
+        text = self.entry.text().strip()
+        if text:
+            self.entry.clear()
+            self.bus.status.emit(f"Recognized: {text}")
+            threading.Thread(target=self._run_eva_pipeline, args=(text,), daemon=True).start()
+            # jump to Chats so user sees logs
+            self._switch_tab(1)
+
+    def _on_submit_from_chats(self):
+        text = self.entry2.text().strip()
+        if text:
+            self.entry2.clear()
+            self.bus.status.emit(f"Recognized: {text}")
+            threading.Thread(target=self._run_eva_pipeline, args=(text,), daemon=True).start()
+
+    # ---------- Logging / status ----------
+    def append_log(self, text: str):
+        self.log_view.moveCursor(QTextCursor.End)
+        self.log_view.insertPlainText(text)
+        self.log_view.moveCursor(QTextCursor.End)
+        self.log_view.ensureCursorVisible()
+    def set_status(self, text: str):
+        self.status_label.setText(text)
+
+    # ---------- Backend init ----------
+    def _init_backend_async(self):
+        def work():
+            try:
+                self.bus.log.emit("Initializing backend components...\n")
+                self.executor_bridge = ExecutorBridge()
+                self.system_executor = SystemExecutor(self.executor_bridge)
+                self.screenshot_handler = ScreenshotHandler()
+                self.bus.log.emit("✓ Execution engine loaded.\n")
+
+                self.screen_analyzer = ScreenAnalyzer(config.GEMINI_API_KEY)
+                self.omniparser = OmniParserExecutor()
+                self.action_router = ActionRouter(
+                    self.system_executor, self.screenshot_handler, self.screen_analyzer, self.omniparser
+                )
+                self.vision_enabled = True
+                self.bus.log.emit("✓ Vision system loaded successfully.\n")
+
+                self.wake_word_detector = WakeWordDetector()
+                self.bus.log.emit("✓ Wake word detector loaded successfully.\n")
+
+                # Train classifier
+                self.vectorizer = TfidfVectorizer()
+                self.classifier = LogisticRegression()
+                X, y = zip(*MODEL1_TRAINING_DATA)
+                X_vectorized = self.vectorizer.fit_transform(X)
+                self.classifier.fit(X_vectorized, y)
+                self.bus.log.emit("✓ Command classifier trained.\n")
+                self.bus.log.emit("Ready to receive commands.\n")
+            except Exception as e:
+                msg = (
+                    "❌ CRITICAL ERROR: Could not initialize backend.\n"
+                    f"{e}\nVision features will be disabled.\n"
+                    "Check your .env for GEMINI_API_KEY and ensure all model weights are downloaded.\n"
+                )
+                self.bus.log.emit(msg)
+        threading.Thread(target=work, daemon=True).start()
+
+    def _start_wake_word_thread(self):
+        def work():
+            # ensure backend wake_word_detector exists
+            while not hasattr(self, "wake_word_detector"):
+                time.sleep(0.2)
+            self.wake_word_detector.start()
+            while True:
+                if not self._is_awake:
+                    self.bus.status.emit("Listening for 'Jarvis'...")
+                    if self.wake_word_detector.listen():
+                        self._is_awake = True
+                        self.bus.status.emit("Wake word detected! Listening for command...")
+                else:
+                    if self._is_muted:
+                        self.bus.status.emit("Muted. Say 'unmute' to resume.")
+                        recognizer = sr.Recognizer()
+                        with sr.Microphone() as source:
+                            try:
+                                audio = recognizer.listen(source, timeout=5, phrase_time_limit=2)
+                                command = recognizer.recognize_google(audio).lower()
+                                if "unmute" in command:
+                                    self._is_muted = False
+                                    self.bus.status.emit("Unmuted. Listening for command...")
+                                    # update mic icon
+                                    self.btn_mic.setIcon(QIcon(asset_path(r"graphics\mic_on.png")))
+                            except (sr.UnknownValueError, sr.RequestError):
+                                pass
+                        time.sleep(1)
+                        continue
+
+                    self.bus.status.emit("Listening for command...")
                     recognizer = sr.Recognizer()
                     with sr.Microphone() as source:
                         try:
-                            audio = recognizer.listen(source, timeout=5, phrase_time_limit=2)
-                            command = recognizer.recognize_google(audio).lower()
-                            if "unmute" in command:
-                                self.is_muted = False
-                                self.root.after_idle(self.update_status, "Unmuted. Listening for command...")
-                        except (sr.UnknownValueError, sr.RequestError):
-                            pass # Ignore errors when muted
-                    time.sleep(1) # Avoid busy-waiting
-                    continue
+                            audio = recognizer.listen(source, timeout=5, phrase_time_limit=10)
+                            prompt = recognizer.recognize_google(audio)
+                            self.bus.status.emit(f"Recognized: {prompt}")
 
-                self.root.after_idle(self.update_status, "Listening for command...")
-                recognizer = sr.Recognizer()
-                with sr.Microphone() as source:
-                    try:
-                        audio = recognizer.listen(source, timeout=5, phrase_time_limit=10)
-                        prompt = recognizer.recognize_google(audio)
-                        self.root.after_idle(self.update_status, f"Recognized: {prompt}")
+                            if "go to sleep" in prompt.lower():
+                                self._is_awake = False
+                                self.bus.status.emit("Going to sleep. Listening for 'Jarvis'...")
+                                continue
 
-                        if "go to sleep" in prompt.lower():
-                            self.is_awake = False
-                            self.root.after_idle(self.update_status, "Going to sleep. Listening for 'Jarvis'...")
-                            continue
-                        
-                        if "mute" in prompt.lower():
-                            self.is_muted = True
-                            self.root.after_idle(self.update_status, "Muted.")
-                            continue
+                            if "mute" in prompt.lower():
+                                self._is_muted = True
+                                self.bus.status.emit("Muted.")
+                                self.btn_mic.setIcon(QIcon(asset_path(r"graphics\mic_off.png")))
+                                continue
 
-                        # Run pipeline in a new thread to keep GUI responsive
-                        thread = threading.Thread(target=self.run_eva_pipeline, args=(prompt,))
-                        thread.start()
-                    except sr.UnknownValueError:
-                        self.root.after_idle(self.update_status, "Could not understand audio. Listening for command...")
-                    except sr.RequestError as e:
-                        self.root.after_idle(self.update_status, f"Could not request results; {e}. Listening for command...")
-                    except Exception as e:
-                        self.root.after_idle(self.update_status, f"An error occurred: {e}. Listening for command...")
+                            threading.Thread(target=self._run_eva_pipeline, args=(prompt,), daemon=True).start()
+                            # switch to chats to show logs
+                            self._switch_tab(1)
+                        except sr.UnknownValueError:
+                            self.bus.status.emit("Could not understand audio. Listening for command...")
+                        except sr.RequestError as e:
+                            self.bus.status.emit(f"Could not request results; {e}. Listening for command...")
+                        except Exception as e:
+                            self.bus.status.emit(f"An error occurred: {e}. Listening for command...")
+        threading.Thread(target=work, daemon=True).start()
 
-    def run_eva_pipeline(self, prompt):
-        self.root.after_idle(self.clear_response_area)
-        self.root.after_idle(self.update_response_area, f"Processing command: \"{prompt}\"\n\n")
+    # ---------- EVA pipeline (same logic, threaded) ----------
+    def _run_eva_pipeline(self, prompt: str):
+        self._clear_log()
+        self.bus.log.emit(f"Processing command: \"{prompt}\"\n\n")
 
-        self.current_model1_result = self.analyze_query_with_model(prompt)
+        self.current_model1_result = self._analyze_query_with_model(prompt)
         if not self.current_model1_result:
-            self.root.after_idle(self.update_response_area, "⚠️ Error analyzing command!")
+            self.bus.log.emit("⚠️ Error analyzing command!")
             return
 
-        self.root.after_idle(self.display_classification_results)
+        self._display_classification_results()
 
-        self.current_extracted_keywords = self.extract_keywords_by_command_type(self.current_model1_result['input'], self.current_model1_result['command_type'])
-        self.root.after_idle(self.display_keyword_results)
+        self.current_extracted_keywords = self._extract_keywords_by_command_type(
+            self.current_model1_result['input'], self.current_model1_result['command_type']
+        )
+        self._display_keyword_results()
 
         command_type = self.current_model1_result['command_type']
-        
         if command_type == "SEND_MESSAGE":
-            self.handle_interactive_messaging()
+            self._handle_interactive_messaging()
         else:
-            self.current_steps = self.generate_steps_model2(command_type, self.current_extracted_keywords)
-            self.root.after_idle(self.display_step_results)
-            self.execute_steps() # Automatic execution
+            self.current_steps = self._generate_steps_model2(command_type, self.current_extracted_keywords)
+            self._display_step_results()
+            self._execute_steps()  # Automatic execution
 
-    def handle_interactive_messaging(self):
+    def _handle_interactive_messaging(self):
         if self.current_extracted_keywords.get('message_content'):
-            # Message is already present, execute all steps at once
-            self.root.after_idle(self.update_response_area, "STEP 3: Generated Steps\n" + "-"*40 + "\n")
-            steps = self.generate_steps_model2("SEND_MESSAGE", self.current_extracted_keywords)
-            steps.extend(self.generate_steps_model2("SEND_MESSAGE_PHASE_2", self.current_extracted_keywords))
-            self.root.after_idle(self.display_steps, steps)
+            self.bus.log.emit("STEP 3: Generated Steps\n" + "-"*40 + "\n")
+            steps = self._generate_steps_model2("SEND_MESSAGE", self.current_extracted_keywords)
+            steps.extend(self._generate_steps_model2("SEND_MESSAGE_PHASE_2", self.current_extracted_keywords))
+            self._display_steps(steps)
             self.current_steps = steps
-            self.execute_steps()
+            self._execute_steps()
         else:
-            # Message not present, ask for it
-            # Phase 1: Open the chat
-            self.root.after_idle(self.update_response_area, "STEP 3: Generated Steps (Phase 1: Open Chat)\n" + "-"*40 + "\n")
-            steps_phase1 = self.generate_steps_model2("SEND_MESSAGE", self.current_extracted_keywords)
-            self.root.after_idle(self.display_steps, steps_phase1)
-            
-            # Execute phase 1
-            self.current_steps = steps_phase1
-            self.execute_steps()
+            self.bus.log.emit("STEP 3: Generated Steps (Phase 1: Open Chat)\n" + "-"*40 + "\n")
+            steps_phase1 = self._generate_steps_model2("SEND_MESSAGE", self.current_extracted_keywords)
+            self._display_steps(steps_phase1)
 
-            # Phase 2: Get message content via voice
-            self.root.after_idle(self.update_status, "What message do you want to send?")
+            self.current_steps = steps_phase1
+            self._execute_steps()
+
+            self.bus.status.emit("What message do you want to send?")
             recognizer = sr.Recognizer()
             with sr.Microphone() as source:
                 try:
                     audio = recognizer.listen(source, timeout=7, phrase_time_limit=15)
                     message = recognizer.recognize_google(audio)
-                    self.root.after_idle(self.update_status, f"Message: {message}")
+                    self.bus.status.emit(f"Message: {message}")
                     self.current_extracted_keywords['message_content'] = message
-                    
-                    # Generate and execute phase 2
-                    self.root.after_idle(self.update_response_area, "\nSTEP 4: Generated Steps (Phase 2: Send Message)\n" + "-"*40 + "\n")
-                    steps_phase2 = self.generate_steps_model2("SEND_MESSAGE_PHASE_2", self.current_extracted_keywords)
-                    self.root.after_idle(self.display_steps, steps_phase2, len(self.current_steps) + 1)
-                    
+
+                    self.bus.log.emit("\nSTEP 4: Generated Steps (Phase 2: Send Message)\n" + "-"*40 + "\n")
+                    steps_phase2 = self._generate_steps_model2("SEND_MESSAGE_PHASE_2", self.current_extracted_keywords)
+                    self._display_steps(steps_phase2, start_index=len(self.current_steps) + 1)
+
                     self.current_steps = steps_phase2
-                    self.execute_steps()
+                    self._execute_steps()
 
                 except sr.UnknownValueError:
-                    self.root.after_idle(self.update_status, "Could not understand message. Cancelling.")
+                    self.bus.status.emit("Could not understand message. Cancelling.")
                 except sr.RequestError as e:
-                    self.root.after_idle(self.update_status, f"Could not request results; {e}. Cancelling.")
+                    self.bus.status.emit(f"Could not request results; {e}. Cancelling.")
 
-    def execute_steps(self):
+    def _execute_steps(self):
         if not self.current_steps or not self.action_router:
             return
-        self.root.after_idle(self.update_response_area, "\nEXECUTING STEPS...\n" + "-"*40 + "\n")
-        
-        # Run execution in a separate thread to avoid blocking the GUI
-        thread = threading.Thread(target=self._execute_action_router)
-        thread.start()
+        self.bus.log.emit("\nEXECUTING STEPS...\n" + "-"*40 + "\n")
+        def work():
+            result = self.action_router.execute(
+                self.current_model1_result['command_type'],
+                self.current_steps,
+                self.current_extracted_keywords,
+                self.current_model1_result['input'],
+                self.current_model1_result
+            )
+            self.bus.exec_done.emit(result)
+        threading.Thread(target=work, daemon=True).start()
 
-    def _execute_action_router(self):
-        result = self.action_router.execute(
-            self.current_model1_result['command_type'],
-            self.current_steps,
-            self.current_extracted_keywords,
-            self.current_model1_result['input'],
-            self.current_model1_result
-        )
-        self.root.after_idle(self.display_execution_result, result)
+    def display_execution_result(self, result: dict):
+        if result.get('success'):
+            self.bus.log.emit("✅ Command executed successfully!\n")
+        else:
+            self.bus.log.emit(f"❌ ERROR: {result.get('error', 'Unknown error')}\n")
 
-    def display_classification_results(self):
-        self.update_response_area("STEP 1: Command Classification\n" + "-"*40 + "\n")
-        self.update_response_area(f"Input: \"{self.current_model1_result['input']}\"\n")
-        self.update_response_area(f"Type: {self.current_model1_result['command_type']}\n\n")
+    # ---------- Log helpers ----------
+    def _clear_log(self):
+        self.log_view.setPlainText("")
 
-    def display_keyword_results(self):
-        self.update_response_area("STEP 2: Keyword Extraction\n" + "-"*40 + "\n")
+    def _display_classification_results(self):
+        self.bus.log.emit("STEP 1: Command Classification\n" + "-"*40 + "\n")
+        self.bus.log.emit(f"Input: \"{self.current_model1_result['input']}\"\n")
+        self.bus.log.emit(f"Type: {self.current_model1_result['command_type']}\n\n")
+
+    def _display_keyword_results(self):
+        self.bus.log.emit("STEP 2: Keyword Extraction\n" + "-"*40 + "\n")
         for key, value in self.current_extracted_keywords.items():
             if value:
-                self.update_response_area(f" • {key.replace('_', ' ').title()}: {value}\n")
-        self.update_response_area("\n")
+                self.bus.log.emit(f" • {key.replace('_', ' ').title()}: {value}\n")
+        self.bus.log.emit("\n")
 
-    def display_step_results(self):
-        self.update_response_area("STEP 3: Generated Steps\n" + "-"*40 + "\n")
-        self.display_steps(self.current_steps)
+    def _display_step_results(self):
+        self.bus.log.emit("STEP 3: Generated Steps\n" + "-"*40 + "\n")
+        self._display_steps(self.current_steps)
 
-    def display_steps(self, steps, start_index=1):
+    def _display_steps(self, steps, start_index=1):
         step_count = start_index - 1
         for step in steps:
-            if step['action_type'] == "CONDITIONAL":
+            if step.get('action_type') == "CONDITIONAL":
                 continue
             step_count += 1
-            self.update_response_area(f"{step_count}. {step['description']}\n")
-            self.update_response_area(f"   Action: {step['action_type']}\n")
+            self.bus.log.emit(f"{step_count}. {step['description']}\n")
+            self.bus.log.emit(f"   Action: {step['action_type']}\n")
             if step['parameters']:
                 for k, v in step['parameters'].items():
                     if v:
-                        self.update_response_area(f"   {k}: {v}\n")
-            self.update_response_area("\n")
+                        self.bus.log.emit(f"   {k}: {v}\n")
+            self.bus.log.emit("\n")
 
-    def display_execution_result(self, result):
-        if result.get('success'):
-            self.update_response_area("✅ Command executed successfully!\n")
-        else:
-            self.update_response_area(f"❌ ERROR: {result.get('error', 'Unknown error')}\n")
-
-    def update_response_area(self, text):
-        self.response_area.config(state=tk.NORMAL)
-        self.response_area.insert(tk.END, text)
-        self.response_area.see(tk.END)
-        self.response_area.config(state=tk.DISABLED)
-    
-    def clear_response_area(self):
-        self.response_area.config(state=tk.NORMAL)
-        self.response_area.delete(1.0, tk.END)
-        self.response_area.config(state=tk.DISABLED)
-
-    def update_status(self, text):
-        self.status_label.config(text=text)
-
-    def analyze_query_with_model(self, query):
+    # ---------- Model & NLP ----------
+    def _analyze_query_with_model(self, query):
         try:
             query_vectorized = self.vectorizer.transform([query.lower()])
             prediction = self.classifier.predict(query_vectorized)
@@ -444,9 +632,7 @@ class EvaGui:
             print(f"Error analyzing query with model: {e}")
             return None
 
-
-
-    def extract_keywords_by_command_type(self, raw_command, command_type):
+    def _extract_keywords_by_command_type(self, raw_command, command_type):
         raw_command_lower = raw_command.lower().strip()
         words = raw_command_lower.split()
         extracted = {
@@ -457,26 +643,26 @@ class EvaGui:
         }
         if command_type == "OPEN_APP":
             trigger = ['open', 'launch', 'start', 'run']
-            extracted['app_name'] = self.extract_app_name(words, trigger)
+            extracted['app_name'] = self._extract_app_name(words, trigger)
         elif command_type == "CLOSE_APP":
             trigger = ['close', 'exit', 'quit']
-            extracted['app_name'] = self.extract_app_name(words, trigger) or 'current'
+            extracted['app_name'] = self._extract_app_name(words, trigger) or 'current'
         elif command_type == "OPEN_FOLDER":
-            is_file_op, target_name, target_type, is_known = self.extract_file_or_folder_path(words, raw_command_lower)
+            is_file_op, target_name, target_type, is_known = self._extract_file_or_folder_path(words, raw_command_lower)
             if is_known:
                 extracted['file_path'] = target_name
             else:
                 extracted['search_target'] = target_name
         elif command_type == "SEARCH_FILE":
-            is_file_op, target_name, target_type, is_known = self.extract_file_or_folder_path(words, raw_command_lower)
+            is_file_op, target_name, target_type, is_known = self._extract_file_or_folder_path(words, raw_command_lower)
             extracted['search_target'] = target_name
         elif command_type == "WEB_SEARCH":
-            extracted['profile_name'] = self.extract_profile_name(raw_command_lower)
-            website, query = self.extract_website_and_action(raw_command_lower)
+            extracted['profile_name'] = self._extract_profile_name(raw_command_lower)
+            website, query = self._extract_website_and_action(raw_command_lower)
             extracted['website'] = website
             extracted['search_query'] = query
         elif command_type == "TYPE_TEXT":
-            extracted['text_content'] = self.extract_text_after_keywords(raw_command.split(), ['type', 'write', 'enter'], {'text', 'message'})
+            extracted['text_content'] = self._extract_text_after_keywords(raw_command.split(), ['type', 'write', 'enter'], {'text', 'message'})
         elif command_type in ["MOUSE_CLICK", "MOUSE_RIGHTCLICK", "MOUSE_DOUBLECLICK"]:
             skip = {'click', 'on', 'here', 'it', 'this', 'right', 'double'}
             extracted['action_target'] = ' '.join([w for w in raw_command.split() if w.lower() not in skip]) or 'current'
@@ -485,25 +671,25 @@ class EvaGui:
         elif command_type == "KEYBOARD":
             shortcuts = {'copy': 'ctrl+c', 'paste': 'ctrl+v', 'save': 'ctrl+s', 'undo': 'ctrl+z'}
             for word, shortcut in shortcuts.items():
-                if word in raw_command.lower():
+                if word in raw_command_lower:
                     extracted['keyboard_shortcut'] = shortcut
                     break
         elif command_type == "SYSTEM":
-            extracted['system_action'] = 'screenshot' if 'screenshot' in raw_command.lower() or 'capture' in raw_command.lower() else 'lock'
+            extracted['system_action'] = 'screenshot' if 'screenshot' in raw_command_lower or 'capture' in raw_command_lower else 'lock'
         elif command_type == "APP_WITH_ACTION":
-            if 'and' in raw_command.lower():
-                and_idx = raw_command.lower().split().index('and')
-                extracted['app_name'] = self.extract_app_name(raw_command.split()[:and_idx], ['open', 'launch', 'start'])
+            if 'and' in raw_command_lower:
+                and_idx = raw_command_lower.split().index('and')
+                extracted['app_name'] = self._extract_app_name(raw_command.split()[:and_idx], ['open', 'launch', 'start'])
                 extracted['action_content'] = ' '.join([w for w in raw_command.split()[and_idx+1:] if w.lower() not in ['search', 'type', 'play']])
         elif command_type == "MEDIA_CONTROL":
             apps = ['spotify', 'netflix', 'youtube', 'vlc']
-            app_name = next((app for app in apps if app in raw_command.lower()), 'spotify')
+            app_name = next((app for app in apps if app in raw_command_lower), 'spotify')
             extracted['app_name'] = app_name
             play_idx = -1
-            if 'play' in raw_command.lower():
-                play_idx = raw_command.lower().split().index('play')
-            elif 'stream' in raw_command.lower():
-                play_idx = raw_command.lower().split().index('stream')
+            if 'play' in raw_command_lower:
+                play_idx = raw_command_lower.split().index('play')
+            elif 'stream' in raw_command_lower:
+                play_idx = raw_command_lower.split().index('stream')
             if play_idx != -1:
                 extracted['media_query'] = ' '.join(raw_command.split()[play_idx+1:])
         elif command_type == "SEND_MESSAGE":
@@ -511,37 +697,33 @@ class EvaGui:
                 'whatsapp': 'whatsapp', 'email': 'outlook', 'social': 'facebook', 'twitter': 'twitter',
                 'instagram': 'instagram', 'telegram': 'telegram',
             }
-            extracted['app_name'] = next((v for k, v in apps_map.items() if k in raw_command.lower()), 'whatsapp')
+            extracted['app_name'] = next((v for k, v in apps_map.items() if k in raw_command_lower), 'whatsapp')
 
-            # Pattern 1: send {message} to {recipient}
             match = re.search(r'send\s+(.*?)\s+to\s+(.*)', raw_command, re.IGNORECASE)
             if match:
                 extracted['message_content'] = match.group(1)
                 extracted['recipient'] = match.group(2)
                 return extracted
 
-            # Pattern 2: to {recipient} message {message}
             match = re.search(r'to\s+(.*?)\s+(?:message|saying|that)\s+(.*)', raw_command, re.IGNORECASE)
             if match:
                 extracted['recipient'] = match.group(1)
                 extracted['message_content'] = match.group(2)
                 return extracted
 
-            # Pattern 3: to {recipient} {message} (single word recipient)
             match = re.search(r'to\s+(\w+)\s+(.*)', raw_command, re.IGNORECASE)
             if match:
                 extracted['recipient'] = match.group(1)
                 extracted['message_content'] = match.group(2)
                 return extracted
 
-            # Fallback: to {recipient}
-            if 'to' in raw_command.lower():
-                to_idx = raw_command.lower().split().index('to')
+            if 'to' in raw_command_lower:
+                to_idx = raw_command_lower.split().index('to')
                 extracted['recipient'] = ' '.join(raw_command.split()[to_idx + 1:])
 
         return extracted
 
-    def generate_steps_model2(self, command_type, extracted_keywords):
+    def _generate_steps_model2(self, command_type, extracted_keywords):
         if command_type not in MODEL2_STEP_RULES:
             return [{"action_type": "EXECUTE", "parameters": {}, "description": f"Execute: {command_type}"}]
         steps_template = MODEL2_STEP_RULES[command_type]
@@ -585,7 +767,8 @@ class EvaGui:
             generated_steps.append(step_copy)
         return generated_steps
 
-    def extract_profile_name(self, text):
+    # ---------- small helpers ----------
+    def _extract_profile_name(self, text):
         patterns = [
             r'with chrome profile ([\w\s]+?)(?:\s+(?:search|open|go|and))', r'chrome profile ([\w\s]+?)(?:\s+(?:search|open|go|and))',
             r'with profile ([\w\s]+?)(?:\s+(?:search|open|go|and))', r'use profile ([\w\s]+?)(?:\s+(?:search|open|go|and))',
@@ -597,7 +780,7 @@ class EvaGui:
                 return match.group(1).strip()
         return "Default"
 
-    def extract_website_and_action(self, text):
+    def _extract_website_and_action(self, text):
         websites = {
             'youtube': 'youtube.com', 'google': 'google.com', 'gmail': 'mail.google.com', 'facebook': 'facebook.com',
             'twitter': 'twitter.com', 'instagram': 'instagram.com', 'linkedin': 'linkedin.com', 'github': 'github.com',
@@ -616,7 +799,7 @@ class EvaGui:
         query_words = [w for w in query_text.split() if w not in skip_words and w.strip()]
         return website, ' '.join(query_words) if query_words else None
 
-    def extract_app_name(self, words, trigger_words):
+    def _extract_app_name(self, words, trigger_words):
         for trigger in trigger_words:
             if trigger in words:
                 idx = words.index(trigger)
@@ -625,7 +808,7 @@ class EvaGui:
                     return ' '.join(app_words)
         return None
 
-    def extract_text_after_keywords(self, words, keywords, skip_words):
+    def _extract_text_after_keywords(self, words, keywords, skip_words):
         for keyword in keywords:
             if keyword in words:
                 idx = words.index(keyword)
@@ -634,7 +817,7 @@ class EvaGui:
                     return ' '.join(text_words)
         return None
 
-    def extract_file_or_folder_path(self, words, raw_command):
+    def _extract_file_or_folder_path(self, words, raw_command):
         common_folders = {
             'documents': r'%USERPROFILE%\Documents', 'downloads': r'%USERPROFILE%\Downloads', 'desktop': r'%USERPROFILE%\Desktop',
             'pictures': r'%USERPROFILE%\Pictures', 'videos': r'%USERPROFILE%\Videos', 'music': r'%USERPROFILE%\Music',
@@ -650,7 +833,12 @@ class EvaGui:
             return True, target_name, target_type, False
         return False, None, None, False
 
+
+def main():
+    app = QApplication(sys.argv)
+    ui = EvaGui()
+    ui.show()
+    sys.exit(app.exec())
+
 if __name__ == "__main__":
-    root = tk.Tk()
-    app = EvaGui(root)
-    root.mainloop()
+    main()
