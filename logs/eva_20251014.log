@@ -1,0 +1,348 @@
+2025-10-14 19:22:15 - EVA - INFO - Initializing EVA Assistant...
+2025-10-14 19:22:15 - WakeWordDetector - ERROR - Failed to initialize wake word detector: create() missing 1 required positional argument: 'access_key'
+2025-10-14 19:22:16 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-14 19:22:16 - TextToSpeech - INFO - Text-to-speech initialized
+2025-10-14 19:22:16 - CommandProcessor - INFO - Model loaded from C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\models\model_weights\command_model.pkl
+2025-10-14 19:22:16 - StepGenerator - INFO - Model loaded from C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\models\model_weights\step_model.pkl
+2025-10-14 19:22:16 - ScreenAnalyzer - INFO - Gemini screen analyzer initialized
+2025-10-14 19:22:16 - ExecutorBridge - ERROR - Failed to load C library: Could not find module 'C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\c_executors\executor.dll' (or one of its dependencies). Try using the full path with constructor syntax.
+2025-10-14 19:22:16 - ExecutorBridge - WARNING - Falling back to Python automation (PyAutoGUI)
+2025-10-14 19:22:16 - EVA - INFO - EVA is now active. Say 'JARVIS' to begin...
+2025-10-14 19:22:17 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-14 19:22:17 - SpeechToText - INFO - Recording...
+2025-10-14 19:22:23 - SpeechToText - INFO - Transcription:  Jarvis?
+2025-10-14 19:22:23 - EVA - INFO - Wake word detected!
+2025-10-14 19:22:28 - SessionManager - INFO - Session started
+2025-10-14 19:22:28 - EVA - INFO - Listening...
+2025-10-14 19:22:28 - SpeechToText - INFO - Recording...
+2025-10-14 19:22:34 - SpeechToText - INFO - Transcription: 
+2025-10-14 19:22:34 - EVA - INFO - Listening...
+2025-10-14 19:22:34 - SpeechToText - INFO - Recording...
+2025-10-14 19:22:41 - SpeechToText - INFO - Transcription:  Open whatsapp.
+2025-10-14 19:22:41 - EVA - INFO - Screen Resolution: 1920x1080
+2025-10-14 19:22:41 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_192241_702404.png
+2025-10-14 19:22:41 - EVA - INFO - Screenshot captured: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_192241_702404.png
+2025-10-14 19:22:42 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 19:22:42 - EVA - INFO - Screen analysis: Unable to analyze screen
+2025-10-14 19:22:42 - CommandProcessor - INFO - Raw: 'Open whatsapp.' -> Processed: 'OPEN_APP:chrome' (confidence: 23.26%)
+2025-10-14 19:22:42 - CommandProcessor - WARNING - Low confidence (23.26%), using fallback
+2025-10-14 19:22:42 - EVA - INFO - Processed command: OPEN_APP:whatsapp
+2025-10-14 19:22:42 - StepGenerator - INFO - Generated 4 steps for 'OPEN_APP'
+2025-10-14 19:22:42 - EVA - INFO - Generated 4 execution steps
+2025-10-14 19:22:42 - EVA - INFO - Executing step 1/4: Press Windows key
+2025-10-14 19:22:42 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_192242_617167.png
+2025-10-14 19:22:43 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 19:22:43 - EVA - INFO - Executing step 2/4: Wait for start menu
+2025-10-14 19:22:44 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_192243_982160.png
+2025-10-14 19:22:44 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 19:22:45 - EVA - INFO - Executing step 3/4: Type application name
+2025-10-14 19:22:45 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_192245_758937.png
+2025-10-14 19:22:46 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 19:22:47 - EVA - INFO - Executing step 4/4: Press Enter
+2025-10-14 19:22:47 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_192247_627314.png
+2025-10-14 19:22:48 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 19:22:51 - EVA - INFO - Listening...
+2025-10-14 19:22:51 - SpeechToText - INFO - Recording...
+2025-10-14 19:22:58 - SpeechToText - INFO - Transcription:  Thank you very much.
+2025-10-14 19:22:58 - EVA - INFO - Screen Resolution: 1920x1080
+2025-10-14 19:22:58 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_192258_868866.png
+2025-10-14 19:22:58 - EVA - INFO - Screenshot captured: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_192258_868866.png
+2025-10-14 19:22:59 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 19:22:59 - EVA - INFO - Screen analysis: Unable to analyze screen
+2025-10-14 19:22:59 - CommandProcessor - INFO - Raw: 'Thank you very much.' -> Processed: 'CLOSE_APP:current' (confidence: 7.14%)
+2025-10-14 19:22:59 - CommandProcessor - WARNING - Low confidence (7.14%), using fallback
+2025-10-14 19:22:59 - EVA - INFO - Processed command: EXECUTE:thank you very much
+2025-10-14 19:22:59 - StepGenerator - INFO - Generated 1 steps for 'EXECUTE'
+2025-10-14 19:22:59 - EVA - INFO - Generated 1 execution steps
+2025-10-14 19:22:59 - EVA - INFO - Executing step 1/1: Execute: EXECUTE:thank you very much
+2025-10-14 19:22:59 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_192259_535295.png
+2025-10-14 19:23:00 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 19:23:00 - ExecutorBridge - WARNING - Unknown action type: GENERIC
+2025-10-14 19:23:06 - EVA - INFO - Listening...
+2025-10-14 19:23:07 - SpeechToText - INFO - Recording...
+2025-10-14 19:23:17 - SpeechToText - INFO - Transcription:  I'm not sure if I can get a license.  I'm not sure if I can get a license.
+2025-10-14 19:23:17 - EVA - INFO - Screen Resolution: 1920x1080
+2025-10-14 19:23:18 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_192318_015341.png
+2025-10-14 19:23:18 - EVA - INFO - Screenshot captured: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_192318_015341.png
+2025-10-14 19:23:18 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 19:23:18 - EVA - INFO - Screen analysis: Unable to analyze screen
+2025-10-14 19:23:18 - CommandProcessor - INFO - Raw: 'I'm not sure if I can get a license.  I'm not sure if I can get a license.' -> Processed: 'CLOSE_APP:current' (confidence: 7.14%)
+2025-10-14 19:23:18 - CommandProcessor - WARNING - Low confidence (7.14%), using fallback
+2025-10-14 19:23:18 - EVA - INFO - Processed command: EXECUTE:im not sure if i can get a license im not sure if i can get a license
+2025-10-14 19:23:18 - StepGenerator - INFO - Generated 1 steps for 'EXECUTE'
+2025-10-14 19:23:18 - EVA - INFO - Generated 1 execution steps
+2025-10-14 19:23:18 - EVA - INFO - Executing step 1/1: Execute: EXECUTE:im not sure if i can get a license im not sure if i can get a license
+2025-10-14 19:23:18 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_192318_876375.png
+2025-10-14 19:23:19 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 19:23:19 - ExecutorBridge - WARNING - Unknown action type: GENERIC
+2025-10-14 19:23:26 - EVA - INFO - Listening...
+2025-10-14 19:23:26 - SpeechToText - INFO - Recording...
+2025-10-14 19:23:32 - SpeechToText - INFO - Transcription:  this. Good bye Jarvis.
+2025-10-14 19:23:32 - EVA - INFO - Screen Resolution: 1920x1080
+2025-10-14 19:23:32 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_192332_332033.png
+2025-10-14 19:23:32 - EVA - INFO - Screenshot captured: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_192332_332033.png
+2025-10-14 19:23:33 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 19:23:33 - EVA - INFO - Screen analysis: Unable to analyze screen
+2025-10-14 19:23:33 - CommandProcessor - INFO - Raw: 'this. Good bye Jarvis.' -> Processed: 'CLOSE_APP:current' (confidence: 19.67%)
+2025-10-14 19:23:33 - CommandProcessor - WARNING - Low confidence (19.67%), using fallback
+2025-10-14 19:23:33 - EVA - INFO - Processed command: EXECUTE:this good bye jarvis
+2025-10-14 19:23:33 - StepGenerator - INFO - Generated 1 steps for 'EXECUTE'
+2025-10-14 19:23:33 - EVA - INFO - Generated 1 execution steps
+2025-10-14 19:23:33 - EVA - INFO - Executing step 1/1: Execute: EXECUTE:this good bye jarvis
+2025-10-14 19:23:33 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_192333_106863.png
+2025-10-14 19:23:33 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 19:23:33 - ExecutorBridge - WARNING - Unknown action type: GENERIC
+2025-10-14 19:23:40 - EVA - INFO - Listening...
+2025-10-14 19:23:40 - SpeechToText - INFO - Recording...
+2025-10-14 19:23:46 - SpeechToText - INFO - Transcription:  goodbye Jarvis.
+2025-10-14 19:23:49 - SessionManager - INFO - Session ended. Duration: 80.66 seconds
+2025-10-14 19:23:49 - EVA - INFO - Listening for wake word again...
+2025-10-14 19:23:49 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-14 19:23:50 - SpeechToText - INFO - Recording...
+2025-10-14 19:23:52 - EVA - INFO - Shutting down EVA...
+2025-10-14 19:23:54 - EVA - INFO - EVA stopped
+2025-10-14 20:10:50 - EVA - INFO - Initializing EVA Assistant...
+2025-10-14 20:10:50 - WakeWordDetector - ERROR - Failed to initialize wake word detector: create() missing 1 required positional argument: 'access_key'
+2025-10-14 20:10:50 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-14 20:10:51 - TextToSpeech - INFO - Text-to-speech initialized
+2025-10-14 20:10:51 - CommandProcessor - INFO - Model loaded from C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\models\model_weights\command_model.pkl
+2025-10-14 20:10:51 - StepGenerator - INFO - Model loaded from C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\models\model_weights\step_model.pkl
+2025-10-14 20:10:51 - ScreenAnalyzer - INFO - Gemini screen analyzer initialized
+2025-10-14 20:10:51 - ExecutorBridge - ERROR - Failed to load C libraries: Could not find module 'C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\c_executors\executor.dll' (or one of its dependencies). Try using the full path with constructor syntax.
+2025-10-14 20:10:51 - ExecutorBridge - WARNING - Falling back to Python automation (PyAutoGUI)
+2025-10-14 20:10:51 - ExecutorBridge - INFO - PyAutoGUI fallback initialized
+2025-10-14 20:10:51 - EVA - INFO - EVA is now active. Say 'JARVIS' to begin...
+2025-10-14 20:10:51 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-14 20:10:52 - SpeechToText - INFO - Recording...
+2025-10-14 20:10:58 - SpeechToText - INFO - Transcription:  Jarvis?
+2025-10-14 20:10:58 - EVA - INFO - Wake word detected!
+2025-10-14 20:11:03 - SessionManager - INFO - Session started
+2025-10-14 20:11:03 - EVA - INFO - Listening...
+2025-10-14 20:11:03 - SpeechToText - INFO - Recording...
+2025-10-14 20:11:09 - SpeechToText - INFO - Transcription:  Set my volume to 30%
+2025-10-14 20:11:09 - ExecutorBridge - DEBUG - Screen size from PyAutoGUI: Size(width=1920, height=1080)
+2025-10-14 20:11:09 - EVA - INFO - Screen Resolution: 1920x1080
+2025-10-14 20:11:09 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_201109_764751.png
+2025-10-14 20:11:09 - EVA - INFO - Screenshot captured: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_201109_764751.png
+2025-10-14 20:11:10 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 20:11:10 - EVA - INFO - Screen analysis: Unable to analyze screen
+2025-10-14 20:11:10 - CommandProcessor - INFO - Raw: 'Set my volume to 30%' -> Processed: 'TYPE_TEXT:my name' (confidence: 9.91%)
+2025-10-14 20:11:10 - CommandProcessor - WARNING - Low confidence (9.91%), using fallback
+2025-10-14 20:11:10 - EVA - INFO - Processed command: EXECUTE:set my volume to 30
+2025-10-14 20:11:10 - StepGenerator - INFO - Generated 1 steps for 'EXECUTE'
+2025-10-14 20:11:10 - EVA - INFO - Generated 1 execution steps
+2025-10-14 20:11:10 - EVA - INFO - Executing step 1/1: Execute: EXECUTE:set my volume to 30
+2025-10-14 20:11:10 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_201110_707326.png
+2025-10-14 20:11:11 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 20:11:11 - ExecutorBridge - INFO - Executing action: GENERIC with params: {'command': 'EXECUTE:set my volume to 30'}
+2025-10-14 20:11:11 - ExecutorBridge - WARNING - Generic command: EXECUTE:set my volume to 30
+2025-10-14 20:11:14 - EVA - INFO - Listening...
+2025-10-14 20:11:14 - SpeechToText - INFO - Recording...
+2025-10-14 20:11:20 - SpeechToText - INFO - Transcription:  You didn't complete that task.
+2025-10-14 20:11:20 - ExecutorBridge - DEBUG - Screen size from PyAutoGUI: Size(width=1920, height=1080)
+2025-10-14 20:11:20 - EVA - INFO - Screen Resolution: 1920x1080
+2025-10-14 20:11:20 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_201120_431983.png
+2025-10-14 20:11:20 - EVA - INFO - Screenshot captured: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_201120_431983.png
+2025-10-14 20:11:21 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 20:11:21 - EVA - INFO - Screen analysis: Unable to analyze screen
+2025-10-14 20:11:21 - CommandProcessor - INFO - Raw: 'You didn't complete that task.' -> Processed: 'CLOSE_APP:current' (confidence: 7.14%)
+2025-10-14 20:11:21 - CommandProcessor - WARNING - Low confidence (7.14%), using fallback
+2025-10-14 20:11:21 - EVA - INFO - Processed command: EXECUTE:you didnt complete that task
+2025-10-14 20:11:21 - StepGenerator - INFO - Generated 1 steps for 'EXECUTE'
+2025-10-14 20:11:21 - EVA - INFO - Generated 1 execution steps
+2025-10-14 20:11:21 - EVA - INFO - Executing step 1/1: Execute: EXECUTE:you didnt complete that task
+2025-10-14 20:11:21 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_201121_213152.png
+2025-10-14 20:11:21 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 20:11:21 - ExecutorBridge - INFO - Executing action: GENERIC with params: {'command': 'EXECUTE:you didnt complete that task'}
+2025-10-14 20:11:21 - ExecutorBridge - WARNING - Generic command: EXECUTE:you didnt complete that task
+2025-10-14 20:11:25 - EVA - INFO - Listening...
+2025-10-14 20:11:25 - SpeechToText - INFO - Recording...
+2025-10-14 20:11:30 - SpeechToText - INFO - Transcription: 
+2025-10-14 20:11:30 - EVA - INFO - Listening...
+2025-10-14 20:11:31 - SpeechToText - INFO - Recording...
+2025-10-14 20:11:36 - SpeechToText - INFO - Transcription:  Signed high to polymorphism, this is called polymorphism, this is called polymorphism,
+2025-10-14 20:11:36 - ExecutorBridge - DEBUG - Screen size from PyAutoGUI: Size(width=1920, height=1080)
+2025-10-14 20:11:36 - EVA - INFO - Screen Resolution: 1920x1080
+2025-10-14 20:11:37 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_201136_964076.png
+2025-10-14 20:11:37 - EVA - INFO - Screenshot captured: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_201136_964076.png
+2025-10-14 20:11:37 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 20:11:37 - EVA - INFO - Screen analysis: Unable to analyze screen
+2025-10-14 20:11:37 - CommandProcessor - INFO - Raw: 'Signed high to polymorphism, this is called polymorphism, this is called polymorphism,' -> Processed: 'TYPE_TEXT:this is a test' (confidence: 19.04%)
+2025-10-14 20:11:37 - CommandProcessor - WARNING - Low confidence (19.04%), using fallback
+2025-10-14 20:11:37 - EVA - INFO - Processed command: EXECUTE:signed high to polymorphism this is called polymorphism this is called polymorphism
+2025-10-14 20:11:37 - StepGenerator - INFO - Generated 1 steps for 'EXECUTE'
+2025-10-14 20:11:37 - EVA - INFO - Generated 1 execution steps
+2025-10-14 20:11:37 - EVA - INFO - Executing step 1/1: Execute: EXECUTE:signed high to polymorphism this is called polymorphism this is called polymorphism
+2025-10-14 20:11:37 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_201137_753433.png
+2025-10-14 20:11:38 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 20:11:38 - ExecutorBridge - INFO - Executing action: GENERIC with params: {'command': 'EXECUTE:signed high to polymorphism this is called polymorphism this is called polymorphism'}
+2025-10-14 20:11:38 - ExecutorBridge - WARNING - Generic command: EXECUTE:signed high to polymorphism this is called polymorphism this is called polymorphism
+2025-10-14 20:11:41 - EVA - INFO - Listening...
+2025-10-14 20:11:41 - SpeechToText - INFO - Recording...
+2025-10-14 20:11:48 - SpeechToText - INFO - Transcription:  signed high to polymorphism.
+2025-10-14 20:11:48 - ExecutorBridge - DEBUG - Screen size from PyAutoGUI: Size(width=1920, height=1080)
+2025-10-14 20:11:48 - EVA - INFO - Screen Resolution: 1920x1080
+2025-10-14 20:11:48 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_201148_438612.png
+2025-10-14 20:11:48 - EVA - INFO - Screenshot captured: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_201148_438612.png
+2025-10-14 20:11:49 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 20:11:49 - EVA - INFO - Screen analysis: Unable to analyze screen
+2025-10-14 20:11:49 - CommandProcessor - INFO - Raw: 'signed high to polymorphism.' -> Processed: 'CLOSE_APP:current' (confidence: 7.14%)
+2025-10-14 20:11:49 - CommandProcessor - WARNING - Low confidence (7.14%), using fallback
+2025-10-14 20:11:49 - EVA - INFO - Processed command: EXECUTE:signed high to polymorphism
+2025-10-14 20:11:49 - StepGenerator - INFO - Generated 1 steps for 'EXECUTE'
+2025-10-14 20:11:49 - EVA - INFO - Generated 1 execution steps
+2025-10-14 20:11:49 - EVA - INFO - Executing step 1/1: Execute: EXECUTE:signed high to polymorphism
+2025-10-14 20:11:49 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_201149_213584.png
+2025-10-14 20:11:49 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 20:11:49 - ExecutorBridge - INFO - Executing action: GENERIC with params: {'command': 'EXECUTE:signed high to polymorphism'}
+2025-10-14 20:11:49 - ExecutorBridge - WARNING - Generic command: EXECUTE:signed high to polymorphism
+2025-10-14 20:11:53 - EVA - INFO - Listening...
+2025-10-14 20:11:53 - SpeechToText - INFO - Recording...
+2025-10-14 20:11:58 - SpeechToText - INFO - Transcription:  Shut down, Jarvis.
+2025-10-14 20:11:58 - ExecutorBridge - DEBUG - Screen size from PyAutoGUI: Size(width=1920, height=1080)
+2025-10-14 20:11:58 - EVA - INFO - Screen Resolution: 1920x1080
+2025-10-14 20:11:58 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_201158_904419.png
+2025-10-14 20:11:58 - EVA - INFO - Screenshot captured: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_201158_904419.png
+2025-10-14 20:11:59 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 20:11:59 - EVA - INFO - Screen analysis: Unable to analyze screen
+2025-10-14 20:11:59 - CommandProcessor - INFO - Raw: 'Shut down, Jarvis.' -> Processed: 'CLOSE_APP:current' (confidence: 7.14%)
+2025-10-14 20:11:59 - CommandProcessor - WARNING - Low confidence (7.14%), using fallback
+2025-10-14 20:11:59 - EVA - INFO - Processed command: EXECUTE:shut down jarvis
+2025-10-14 20:11:59 - StepGenerator - INFO - Generated 1 steps for 'EXECUTE'
+2025-10-14 20:11:59 - EVA - INFO - Generated 1 execution steps
+2025-10-14 20:11:59 - EVA - INFO - Executing step 1/1: Execute: EXECUTE:shut down jarvis
+2025-10-14 20:11:59 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_201159_732045.png
+2025-10-14 20:12:00 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 20:12:00 - ExecutorBridge - INFO - Executing action: GENERIC with params: {'command': 'EXECUTE:shut down jarvis'}
+2025-10-14 20:12:00 - ExecutorBridge - WARNING - Generic command: EXECUTE:shut down jarvis
+2025-10-14 20:12:03 - EVA - INFO - Listening...
+2025-10-14 20:12:03 - SpeechToText - INFO - Recording...
+2025-10-14 20:12:10 - SpeechToText - INFO - Transcription:  service.
+2025-10-14 20:12:10 - ExecutorBridge - DEBUG - Screen size from PyAutoGUI: Size(width=1920, height=1080)
+2025-10-14 20:12:10 - EVA - INFO - Screen Resolution: 1920x1080
+2025-10-14 20:12:10 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_201210_163983.png
+2025-10-14 20:12:10 - EVA - INFO - Screenshot captured: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_201210_163983.png
+2025-10-14 20:12:10 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 20:12:10 - EVA - INFO - Screen analysis: Unable to analyze screen
+2025-10-14 20:12:10 - CommandProcessor - INFO - Raw: 'service.' -> Processed: 'CLOSE_APP:current' (confidence: 7.14%)
+2025-10-14 20:12:10 - CommandProcessor - WARNING - Low confidence (7.14%), using fallback
+2025-10-14 20:12:10 - EVA - INFO - Processed command: EXECUTE:service
+2025-10-14 20:12:10 - StepGenerator - INFO - Generated 1 steps for 'EXECUTE'
+2025-10-14 20:12:10 - EVA - INFO - Generated 1 execution steps
+2025-10-14 20:12:10 - EVA - INFO - Executing step 1/1: Execute: EXECUTE:service
+2025-10-14 20:12:11 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_201210_991958.png
+2025-10-14 20:12:11 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 20:12:11 - ExecutorBridge - INFO - Executing action: GENERIC with params: {'command': 'EXECUTE:service'}
+2025-10-14 20:12:11 - ExecutorBridge - WARNING - Generic command: EXECUTE:service
+2025-10-14 20:12:14 - EVA - INFO - Listening...
+2025-10-14 20:12:14 - SpeechToText - INFO - Recording...
+2025-10-14 20:12:19 - EVA - INFO - Shutting down EVA...
+2025-10-14 20:12:22 - EVA - INFO - EVA stopped
+2025-10-14 20:12:22 - ExecutorBridge - DEBUG - ExecutorBridge cleanup
+2025-10-14 20:50:05 - EVA - INFO - Initializing EVA Assistant...
+2025-10-14 20:50:06 - WakeWordDetector - ERROR - Failed to initialize wake word detector: create() missing 1 required positional argument: 'access_key'
+2025-10-14 20:50:06 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-14 20:50:06 - TextToSpeech - INFO - Text-to-speech initialized
+2025-10-14 20:50:06 - CommandProcessor - INFO - Model loaded from C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\models\model_weights\command_model.pkl
+2025-10-14 20:50:06 - StepGenerator - INFO - Model loaded from C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\models\model_weights\step_model.pkl
+2025-10-14 20:50:06 - ScreenAnalyzer - INFO - Gemini API configured
+2025-10-14 20:50:06 - ScreenAnalyzer - INFO - Attempting to initialize model: gemini-1.5-flash
+2025-10-14 20:50:06 - ExecutorBridge - ERROR - Failed to load C libraries: Could not find module 'C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\c_executors\executor.dll' (or one of its dependencies). Try using the full path with constructor syntax.
+2025-10-14 20:50:06 - ExecutorBridge - WARNING - Falling back to Python automation (PyAutoGUI)
+2025-10-14 20:50:06 - ExecutorBridge - INFO - PyAutoGUI fallback initialized
+2025-10-14 20:50:06 - EVA - INFO - EVA is now active. Say 'JARVIS' to begin...
+2025-10-14 20:50:07 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-14 20:50:08 - SpeechToText - INFO - Recording...
+2025-10-14 20:50:13 - SpeechToText - INFO - Transcription: 
+2025-10-14 20:50:14 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-14 20:50:14 - SpeechToText - INFO - Recording...
+2025-10-14 20:50:20 - SpeechToText - INFO - Transcription: 
+2025-10-14 20:50:21 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-14 20:50:21 - SpeechToText - INFO - Recording...
+2025-10-14 20:50:27 - SpeechToText - INFO - Transcription: 
+2025-10-14 20:50:27 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-14 20:50:28 - SpeechToText - INFO - Recording...
+2025-10-14 20:50:33 - SpeechToText - INFO - Transcription: 
+2025-10-14 20:50:34 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-14 20:50:34 - SpeechToText - INFO - Recording...
+2025-10-14 20:50:40 - SpeechToText - INFO - Transcription: 
+2025-10-14 20:50:41 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-14 20:50:41 - SpeechToText - INFO - Recording...
+2025-10-14 20:50:47 - SpeechToText - INFO - Transcription:  ...  ...  ...  ...  ...
+2025-10-14 20:50:47 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-14 20:50:47 - SpeechToText - INFO - Recording...
+2025-10-14 20:50:53 - SpeechToText - INFO - Transcription: 
+2025-10-14 20:50:54 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-14 20:50:54 - SpeechToText - INFO - Recording...
+2025-10-14 20:51:00 - SpeechToText - INFO - Transcription: 
+2025-10-14 20:51:01 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-14 20:51:01 - SpeechToText - INFO - Recording...
+2025-10-14 20:51:09 - SpeechToText - INFO - Transcription: 
+2025-10-14 20:51:10 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-14 20:51:10 - SpeechToText - INFO - Recording...
+2025-10-14 20:51:16 - SpeechToText - INFO - Transcription:  Jarvis
+2025-10-14 20:51:16 - EVA - INFO - Wake word detected!
+2025-10-14 20:51:21 - SessionManager - INFO - Session started
+2025-10-14 20:51:21 - EVA - INFO - Listening...
+2025-10-14 20:51:21 - SpeechToText - INFO - Recording...
+2025-10-14 20:51:27 - SpeechToText - INFO - Transcription:  Set my volume to 30%
+2025-10-14 20:51:27 - ExecutorBridge - DEBUG - Screen size from PyAutoGUI: Size(width=1920, height=1080)
+2025-10-14 20:51:27 - EVA - INFO - Screen Resolution: 1920x1080
+2025-10-14 20:51:27 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_205127_439798.png
+2025-10-14 20:51:27 - EVA - INFO - Screenshot captured: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251014_205127_439798.png
+2025-10-14 20:51:27 - ScreenAnalyzer - DEBUG - Image resized to (1024, 576)
+2025-10-14 20:51:28 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 20:51:28 - ScreenAnalyzer - WARNING - Model not found error - attempting to reinitialize with fallback
+2025-10-14 20:51:28 - ScreenAnalyzer - INFO - Attempting to initialize model: gemini-1.5-flash
+2025-10-14 20:51:28 - ScreenAnalyzer - DEBUG - Image resized to (1024, 576)
+2025-10-14 20:51:28 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 20:51:28 - ScreenAnalyzer - WARNING - Model not found error - attempting to reinitialize with fallback
+2025-10-14 20:51:28 - ScreenAnalyzer - INFO - Attempting to initialize model: gemini-1.5-flash
+2025-10-14 20:51:28 - ScreenAnalyzer - DEBUG - Image resized to (1024, 576)
+2025-10-14 20:51:29 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 20:51:29 - ScreenAnalyzer - WARNING - Model not found error - attempting to reinitialize with fallback
+2025-10-14 20:51:29 - ScreenAnalyzer - INFO - Attempting to initialize model: gemini-1.5-flash
+2025-10-14 20:51:29 - ScreenAnalyzer - DEBUG - Image resized to (1024, 576)
+2025-10-14 20:51:29 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 20:51:29 - ScreenAnalyzer - WARNING - Model not found error - attempting to reinitialize with fallback
+2025-10-14 20:51:29 - ScreenAnalyzer - INFO - Attempting to initialize model: gemini-1.5-flash
+2025-10-14 20:51:29 - ScreenAnalyzer - DEBUG - Image resized to (1024, 576)
+2025-10-14 20:51:30 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 20:51:30 - ScreenAnalyzer - WARNING - Model not found error - attempting to reinitialize with fallback
+2025-10-14 20:51:30 - ScreenAnalyzer - INFO - Attempting to initialize model: gemini-1.5-flash
+2025-10-14 20:51:30 - ScreenAnalyzer - DEBUG - Image resized to (1024, 576)
+2025-10-14 20:51:31 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 20:51:31 - ScreenAnalyzer - WARNING - Model not found error - attempting to reinitialize with fallback
+2025-10-14 20:51:31 - ScreenAnalyzer - INFO - Attempting to initialize model: gemini-1.5-flash
+2025-10-14 20:51:31 - ScreenAnalyzer - DEBUG - Image resized to (1024, 576)
+2025-10-14 20:51:31 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 20:51:31 - ScreenAnalyzer - WARNING - Model not found error - attempting to reinitialize with fallback
+2025-10-14 20:51:31 - ScreenAnalyzer - INFO - Attempting to initialize model: gemini-1.5-flash
+2025-10-14 20:51:31 - ScreenAnalyzer - DEBUG - Image resized to (1024, 576)
+2025-10-14 20:51:32 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 20:51:32 - ScreenAnalyzer - WARNING - Model not found error - attempting to reinitialize with fallback
+2025-10-14 20:51:32 - ScreenAnalyzer - INFO - Attempting to initialize model: gemini-1.5-flash
+2025-10-14 20:51:32 - ScreenAnalyzer - DEBUG - Image resized to (1024, 576)
+2025-10-14 20:51:32 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 20:51:32 - ScreenAnalyzer - WARNING - Model not found error - attempting to reinitialize with fallback
+2025-10-14 20:51:32 - ScreenAnalyzer - INFO - Attempting to initialize model: gemini-1.5-flash
+2025-10-14 20:51:32 - ScreenAnalyzer - DEBUG - Image resized to (1024, 576)
+2025-10-14 20:51:33 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 20:51:33 - ScreenAnalyzer - WARNING - Model not found error - attempting to reinitialize with fallback
+2025-10-14 20:51:33 - ScreenAnalyzer - INFO - Attempting to initialize model: gemini-1.5-flash
+2025-10-14 20:51:33 - ScreenAnalyzer - DEBUG - Image resized to (1024, 576)
+2025-10-14 20:51:33 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 20:51:33 - ScreenAnalyzer - WARNING - Model not found error - attempting to reinitialize with fallback
+2025-10-14 20:51:33 - ScreenAnalyzer - INFO - Attempting to initialize model: gemini-1.5-flash
+2025-10-14 20:51:34 - ScreenAnalyzer - DEBUG - Image resized to (1024, 576)
+2025-10-14 20:51:34 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 20:51:34 - ScreenAnalyzer - WARNING - Model not found error - attempting to reinitialize with fallback
+2025-10-14 20:51:34 - ScreenAnalyzer - INFO - Attempting to initialize model: gemini-1.5-flash
+2025-10-14 20:51:34 - ScreenAnalyzer - DEBUG - Image resized to (1024, 576)
+2025-10-14 20:51:35 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 20:51:35 - ScreenAnalyzer - WARNING - Model not found error - attempting to reinitialize with fallback
+2025-10-14 20:51:35 - ScreenAnalyzer - INFO - Attempting to initialize model: gemini-1.5-flash
+2025-10-14 20:51:35 - ScreenAnalyzer - DEBUG - Image resized to (1024, 576)
+2025-10-14 20:51:36 - EVA - INFO - Shutting down EVA...
+2025-10-14 20:51:39 - EVA - INFO - EVA stopped
+2025-10-14 20:51:39 - ExecutorBridge - DEBUG - ExecutorBridge cleanup

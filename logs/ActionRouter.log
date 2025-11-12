@@ -1,0 +1,279 @@
+2025-10-15 12:29:28,227 - ActionRouter - INFO - Routing APP_LAUNCH command
+2025-10-15 12:29:28,238 - ActionRouter - INFO - Launching app: youtube.
+2025-10-15 12:29:39,312 - ActionRouter - INFO - Routing IN_APP_ACTION command
+2025-10-15 12:29:39,312 - ActionRouter - INFO - In-app action: None | App: None | Target: None
+2025-10-15 12:29:45,074 - ActionRouter - INFO - Executing 1 steps (confidence: 80%)
+2025-10-15 12:29:45,074 - ActionRouter - INFO - Step 1/1: Type the command 'You' into the terminal where the cursor is blinking.
+2025-10-15 12:29:59,242 - ActionRouter - INFO - Routing APP_LAUNCH command
+2025-10-15 12:29:59,251 - ActionRouter - INFO - Launching app: google chrome.
+2025-10-15 12:30:10,819 - ActionRouter - INFO - Routing IN_APP_ACTION command
+2025-10-15 12:30:10,819 - ActionRouter - INFO - In-app action: type | App: youtube | Target: None
+2025-10-15 12:30:20,869 - ActionRouter - INFO - Executing 2 steps (confidence: 100%)
+2025-10-15 12:30:20,869 - ActionRouter - INFO - Step 1/2: Type 'YouTube' into the search bar.
+2025-10-15 12:30:21,557 - ActionRouter - INFO - Step 2/2: Press Enter to navigate to YouTube.
+2025-10-15 12:30:30,060 - ActionRouter - INFO - Routing IN_APP_ACTION command
+2025-10-15 12:30:30,060 - ActionRouter - INFO - In-app action: click | App: None | Target: None
+2025-10-15 12:30:39,348 - ActionRouter - ERROR - Routing error: Cannot execute: The command 'Now click on' is incomplete. It does not specify what to click on. Without a target, I cannot perform the requested action. (confidence: 0%)
+Traceback (most recent call last):
+  File "C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\action_router.py", line 50, in route
+    return self._handle_in_app_action(entities, processed_command['raw_command'])
+  File "C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\action_router.py", line 167, in _handle_in_app_action
+    raise Exception(f"Cannot execute: {reasoning} (confidence: {confidence:.0%})")
+Exception: Cannot execute: The command 'Now click on' is incomplete. It does not specify what to click on. Without a target, I cannot perform the requested action. (confidence: 0%)
+2025-10-15 12:30:58,845 - ActionRouter - INFO - Routing IN_APP_ACTION command
+2025-10-15 12:30:58,845 - ActionRouter - INFO - In-app action: None | App: None | Target: None
+2025-10-15 12:31:07,297 - ActionRouter - INFO - Executing 1 steps (confidence: 100%)
+2025-10-15 12:31:07,297 - ActionRouter - INFO - Step 1/1: Click on the 'MrBeast' channel link under the 'Subscriptions' section to navigate to his channel page.
+2025-10-15 12:31:15,788 - ActionRouter - INFO - Routing IN_APP_ACTION command
+2025-10-15 12:31:15,788 - ActionRouter - INFO - In-app action: None | App: None | Target: None
+2025-10-15 12:31:25,258 - ActionRouter - INFO - Executing 1 steps (confidence: 100%)
+2025-10-15 12:31:25,258 - ActionRouter - INFO - Step 1/1: Click on the 'mr beast' search suggestion to search for Mr. Beast.
+2025-10-15 12:31:34,672 - ActionRouter - INFO - Routing IN_APP_ACTION command
+2025-10-15 12:31:34,673 - ActionRouter - INFO - In-app action: None | App: None | Target: None
+2025-10-15 12:31:40,382 - ActionRouter - INFO - Executing 1 steps (confidence: 100%)
+2025-10-15 12:31:40,383 - ActionRouter - INFO - Step 1/1: Click the Google Chrome icon on the taskbar to open it.
+2025-10-15 12:31:48,901 - ActionRouter - INFO - Routing IN_APP_ACTION command
+2025-10-15 12:31:48,901 - ActionRouter - INFO - In-app action: None | App: None | Target: None
+2025-10-15 12:31:55,635 - ActionRouter - ERROR - Routing error: Cannot execute: The command 'You' is too ambiguous to determine a specific action. There is no clear context from the screenshot or the previous terminal output that indicates what 'You' should trigger. The previous action was to open Chrome, but the current active window is VS Code, and 'You' does not provide enough information to interact with VS Code or any other application in a meaningful way. (confidence: 0%)
+Traceback (most recent call last):
+  File "C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\action_router.py", line 50, in route
+    return self._handle_in_app_action(entities, processed_command['raw_command'])
+  File "C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\action_router.py", line 167, in _handle_in_app_action
+    raise Exception(f"Cannot execute: {reasoning} (confidence: {confidence:.0%})")
+Exception: Cannot execute: The command 'You' is too ambiguous to determine a specific action. There is no clear context from the screenshot or the previous terminal output that indicates what 'You' should trigger. The previous action was to open Chrome, but the current active window is VS Code, and 'You' does not provide enough information to interact with VS Code or any other application in a meaningful way. (confidence: 0%)
+2025-10-15 12:32:26,321 - ActionRouter - INFO - Routing APP_LAUNCH command
+2025-10-15 12:32:26,321 - ActionRouter - INFO - Launching app: .  what's up?  .  what's up?
+2025-10-15 12:32:40,883 - ActionRouter - INFO - Routing APP_LAUNCH command
+2025-10-15 12:32:40,883 - ActionRouter - INFO - Launching app: what's up.
+2025-10-15 12:33:06,571 - ActionRouter - INFO - Routing IN_APP_ACTION command
+2025-10-15 12:33:06,571 - ActionRouter - INFO - In-app action: None | App: None | Target: None
+2025-10-15 12:33:12,361 - ActionRouter - INFO - Executing 1 steps (confidence: 100%)
+2025-10-15 12:33:12,361 - ActionRouter - INFO - Step 1/1: Type 'You' into the message input field.
+2025-10-15 12:33:20,853 - ActionRouter - INFO - Routing APP_LAUNCH command
+2025-10-15 12:33:20,853 - ActionRouter - INFO - Launching app: the chat of your...
+2025-10-15 12:33:32,844 - ActionRouter - INFO - Routing IN_APP_ACTION command
+2025-10-15 12:33:32,844 - ActionRouter - INFO - In-app action: close | App: None | Target: None
+2025-10-15 12:33:40,691 - ActionRouter - INFO - Executing 1 steps (confidence: 100%)
+2025-10-15 12:33:40,691 - ActionRouter - INFO - Step 1/1: Click the close button of the WhatsApp window.
+2025-10-15 12:34:21,643 - ActionRouter - INFO - Routing IN_APP_ACTION command
+2025-10-15 12:34:21,643 - ActionRouter - INFO - In-app action: None | App: None | Target: 10%
+2025-10-15 12:34:29,670 - ActionRouter - ERROR - Routing error: Cannot execute: The current screenshot shows a VS Code window and a terminal running a Python script. There are no visible UI elements or system controls within this screenshot that would allow me to set the system brightness. To execute this command, I would need access to the operating system's settings or a quick settings panel, which are not present here. (confidence: 0%)
+Traceback (most recent call last):
+  File "C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\action_router.py", line 50, in route
+    return self._handle_in_app_action(entities, processed_command['raw_command'])
+  File "C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\action_router.py", line 167, in _handle_in_app_action
+    raise Exception(f"Cannot execute: {reasoning} (confidence: {confidence:.0%})")
+Exception: Cannot execute: The current screenshot shows a VS Code window and a terminal running a Python script. There are no visible UI elements or system controls within this screenshot that would allow me to set the system brightness. To execute this command, I would need access to the operating system's settings or a quick settings panel, which are not present here. (confidence: 0%)
+2025-10-15 12:34:58,546 - ActionRouter - INFO - Routing IN_APP_ACTION command
+2025-10-15 12:34:58,547 - ActionRouter - INFO - In-app action: None | App: None | Target: None
+2025-10-15 12:35:03,999 - ActionRouter - ERROR - Routing error: Cannot execute: The current screenshot shows a VS Code window and a terminal running a Python script. There are no visible UI elements or system controls within this screenshot that would allow me to set the system volume to 20%. To execute this command, I would need access to the operating system's settings or a quick settings panel, which are not present here. (confidence: 0%)
+Traceback (most recent call last):
+  File "C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\action_router.py", line 50, in route
+    return self._handle_in_app_action(entities, processed_command['raw_command'])
+  File "C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\action_router.py", line 167, in _handle_in_app_action
+    raise Exception(f"Cannot execute: {reasoning} (confidence: {confidence:.0%})")
+Exception: Cannot execute: The current screenshot shows a VS Code window and a terminal running a Python script. There are no visible UI elements or system controls within this screenshot that would allow me to set the system volume to 20%. To execute this command, I would need access to the operating system's settings or a quick settings panel, which are not present here. (confidence: 0%)
+2025-10-15 12:35:33,559 - ActionRouter - INFO - Routing SYSTEM command
+2025-10-15 12:35:33,559 - ActionRouter - INFO - System command: power.sleep
+2025-10-15 15:38:18,133 - ActionRouter - INFO - Routing IN_APP_ACTION command
+2025-10-15 15:38:18,139 - ActionRouter - INFO - In-app action: None | App: None | Target: None
+2025-10-15 16:15:40,208 - ActionRouter - INFO - Routing IN_APP_ACTION command
+2025-10-15 16:15:40,208 - ActionRouter - INFO - In-app action: None | Target: None | Content: None
+2025-10-15 16:16:28,050 - ActionRouter - ERROR - Routing error: Gemini failed to generate action plan
+Traceback (most recent call last):
+  File "C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\action_router.py", line 46, in route
+    return self._handle_in_app_action(entities, raw_command)
+  File "C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\action_router.py", line 129, in _handle_in_app_action
+    raise Exception("Gemini failed to generate action plan")
+Exception: Gemini failed to generate action plan
+2025-10-15 16:17:07,473 - ActionRouter - INFO - Routing APP_LAUNCH command
+2025-10-15 16:17:07,475 - ActionRouter - INFO - Launching: spotify and place a fire
+2025-10-15 16:17:32,750 - ActionRouter - INFO - Routing IN_APP_ACTION command
+2025-10-15 16:17:32,750 - ActionRouter - INFO - In-app action: None | Target: spotify. | Content: None
+2025-10-15 16:18:06,959 - ActionRouter - ERROR - Routing error: Gemini failed to generate action plan
+Traceback (most recent call last):
+  File "C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\action_router.py", line 46, in route
+    return self._handle_in_app_action(entities, raw_command)
+  File "C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\action_router.py", line 129, in _handle_in_app_action
+    raise Exception("Gemini failed to generate action plan")
+Exception: Gemini failed to generate action plan
+2025-10-15 16:18:21,066 - ActionRouter - INFO - Routing IN_APP_ACTION command
+2025-10-15 16:18:21,066 - ActionRouter - INFO - In-app action: None | Target: 30% | Content: None
+2025-10-15 16:18:39,935 - ActionRouter - ERROR - Routing error: Cannot execute: The command is to 'set my volume to 30%'. While a volume icon is visible in the system tray at approximately (2368, 1563), clicking it would likely open a volume slider or control panel which is not visible in the current screenshot. Therefore, I cannot identify the precise coordinates to click or interact with a non-existent slider or input field to set the volume to exactly 30% based on the provided screenshot. (confidence: 0%)
+Traceback (most recent call last):
+  File "C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\action_router.py", line 46, in route
+    return self._handle_in_app_action(entities, raw_command)
+  File "C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\action_router.py", line 135, in _handle_in_app_action
+    raise Exception(f"Cannot execute: {reasoning} (confidence: {confidence:.0%})")
+Exception: Cannot execute: The command is to 'set my volume to 30%'. While a volume icon is visible in the system tray at approximately (2368, 1563), clicking it would likely open a volume slider or control panel which is not visible in the current screenshot. Therefore, I cannot identify the precise coordinates to click or interact with a non-existent slider or input field to set the volume to exactly 30% based on the provided screenshot. (confidence: 0%)
+2025-10-15 16:19:28,162 - ActionRouter - INFO - Routing IN_APP_ACTION command
+2025-10-15 16:19:28,162 - ActionRouter - INFO - In-app action: None | Target: None | Content: None
+2025-10-15 16:19:42,497 - ActionRouter - ERROR - Routing error: Gemini failed to generate action plan
+Traceback (most recent call last):
+  File "C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\action_router.py", line 46, in route
+    return self._handle_in_app_action(entities, raw_command)
+  File "C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\action_router.py", line 129, in _handle_in_app_action
+    raise Exception("Gemini failed to generate action plan")
+Exception: Gemini failed to generate action plan
+2025-10-15 16:19:56,355 - ActionRouter - INFO - Routing SYSTEM command
+2025-10-15 16:19:56,355 - ActionRouter - INFO - System command: power.enable
+2025-10-15 16:19:56,357 - ActionRouter - ERROR - Routing error: System function 'system_power_enable' not found in C library
+Traceback (most recent call last):
+  File "C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\action_router.py", line 40, in route
+    return self._handle_system_command(entities)
+  File "C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\action_router.py", line 78, in _handle_system_command
+    raise Exception(error_msg)
+Exception: System function 'system_power_enable' not found in C library
+2025-10-15 16:20:11,498 - ActionRouter - INFO - Routing IN_APP_ACTION command
+2025-10-15 16:20:11,498 - ActionRouter - INFO - In-app action: None | Target: None | Content: None
+2025-10-15 16:20:21,642 - ActionRouter - ERROR - Routing error: Cannot execute: The user command 'Shut down my laptop' is an operating system level action. The current screenshot shows the VS Code application, which does not provide any direct UI elements or functionalities to shut down the entire laptop. Therefore, this request cannot be fulfilled within the context of the visible application. (confidence: 0%)
+Traceback (most recent call last):
+  File "C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\action_router.py", line 46, in route
+    return self._handle_in_app_action(entities, raw_command)
+  File "C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\action_router.py", line 135, in _handle_in_app_action
+    raise Exception(f"Cannot execute: {reasoning} (confidence: {confidence:.0%})")
+Exception: Cannot execute: The user command 'Shut down my laptop' is an operating system level action. The current screenshot shows the VS Code application, which does not provide any direct UI elements or functionalities to shut down the entire laptop. Therefore, this request cannot be fulfilled within the context of the visible application. (confidence: 0%)
+2025-10-21 01:07:28,905 - ActionRouter - INFO - Routing IN_APP_ACTION command
+2025-10-21 01:07:28,906 - ActionRouter - INFO - In-app action: None | Target: None | Content: None
+2025-10-21 01:07:34,481 - ActionRouter - ERROR - Routing error: Gemini failed to generate action plan
+Traceback (most recent call last):
+  File "D:\Capstone\EVA_CODE_CRUSADERS-main\execution\action_router.py", line 47, in route
+    return self._handle_in_app_action(entities, raw_command)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Capstone\EVA_CODE_CRUSADERS-main\execution\action_router.py", line 130, in _handle_in_app_action
+    raise Exception("Gemini failed to generate action plan")
+Exception: Gemini failed to generate action plan
+2025-10-21 01:07:51,144 - ActionRouter - INFO - Routing IN_APP_ACTION command
+2025-10-21 01:07:51,145 - ActionRouter - INFO - In-app action: None | Target: None | Content: None
+2025-10-21 01:07:57,815 - ActionRouter - ERROR - Routing error: Gemini failed to generate action plan
+Traceback (most recent call last):
+  File "D:\Capstone\EVA_CODE_CRUSADERS-main\execution\action_router.py", line 47, in route
+    return self._handle_in_app_action(entities, raw_command)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Capstone\EVA_CODE_CRUSADERS-main\execution\action_router.py", line 130, in _handle_in_app_action
+    raise Exception("Gemini failed to generate action plan")
+Exception: Gemini failed to generate action plan
+2025-10-27 17:58:07,045 - ActionRouter - INFO - Routing IN_APP_ACTION command
+2025-10-27 17:58:07,046 - ActionRouter - INFO - In-app action: None | Target: None | Content: None
+2025-10-27 17:58:22,410 - ActionRouter - ERROR - Routing error: Gemini failed to generate action plan
+Traceback (most recent call last):
+  File "C:\Users\yasha\OneDrive\Desktop\EVA-main\execution\action_router.py", line 47, in route
+    return self._handle_in_app_action(entities, raw_command)
+  File "C:\Users\yasha\OneDrive\Desktop\EVA-main\execution\action_router.py", line 130, in _handle_in_app_action
+    raise Exception("Gemini failed to generate action plan")
+Exception: Gemini failed to generate action plan
+2025-10-27 17:58:44,796 - ActionRouter - INFO - Routing IN_APP_ACTION command
+2025-10-27 17:58:44,796 - ActionRouter - INFO - In-app action: play | Target: None | Content: None
+2025-10-27 17:58:57,229 - ActionRouter - ERROR - Routing error: Gemini failed to generate action plan
+Traceback (most recent call last):
+  File "C:\Users\yasha\OneDrive\Desktop\EVA-main\execution\action_router.py", line 47, in route
+    return self._handle_in_app_action(entities, raw_command)
+  File "C:\Users\yasha\OneDrive\Desktop\EVA-main\execution\action_router.py", line 130, in _handle_in_app_action
+    raise Exception("Gemini failed to generate action plan")
+Exception: Gemini failed to generate action plan
+2025-10-27 17:59:16,923 - ActionRouter - INFO - Routing APP_LAUNCH command
+2025-10-27 17:59:16,923 - ActionRouter - INFO - Launching: google chrome.
+2025-10-27 17:59:35,818 - ActionRouter - INFO - Routing IN_APP_ACTION command
+2025-10-27 17:59:35,818 - ActionRouter - INFO - In-app action: None | Target: None | Content: None
+2025-10-27 17:59:40,520 - ActionRouter - INFO - Executing 1 steps (confidence: 100%)
+2025-10-27 17:59:40,520 - ActionRouter - INFO - Step 1/1: Click the Google Chrome icon on the taskbar to open it.
+2025-10-27 17:59:55,670 - ActionRouter - INFO - Routing IN_APP_ACTION command
+2025-10-27 17:59:55,670 - ActionRouter - INFO - In-app action: send | Target: 4-7 watts up. | Content: None
+2025-10-27 18:00:25,757 - ActionRouter - ERROR - Routing error: Gemini failed to generate action plan
+Traceback (most recent call last):
+  File "C:\Users\yasha\OneDrive\Desktop\EVA-main\execution\action_router.py", line 47, in route
+    return self._handle_in_app_action(entities, raw_command)
+  File "C:\Users\yasha\OneDrive\Desktop\EVA-main\execution\action_router.py", line 130, in _handle_in_app_action
+    raise Exception("Gemini failed to generate action plan")
+Exception: Gemini failed to generate action plan
+2025-10-27 18:00:41,583 - ActionRouter - INFO - Routing IN_APP_ACTION command
+2025-10-27 18:00:41,583 - ActionRouter - INFO - In-app action: send | Target: polymorphism | Content: None
+2025-10-27 18:00:50,404 - ActionRouter - ERROR - Routing error: Cannot execute: The user wants to send a message on WhatsApp. The current application is Visual Studio Code, and WhatsApp is not open or visible on the screen or in the taskbar. There are no elements within the current screenshot that would allow me to open WhatsApp, find a contact, or send a message. Therefore, I cannot fulfill the request from the current state. (confidence: 0%)
+Traceback (most recent call last):
+  File "C:\Users\yasha\OneDrive\Desktop\EVA-main\execution\action_router.py", line 47, in route
+    return self._handle_in_app_action(entities, raw_command)
+  File "C:\Users\yasha\OneDrive\Desktop\EVA-main\execution\action_router.py", line 136, in _handle_in_app_action
+    raise Exception(f"Cannot execute: {reasoning} (confidence: {confidence:.0%})")
+Exception: Cannot execute: The user wants to send a message on WhatsApp. The current application is Visual Studio Code, and WhatsApp is not open or visible on the screen or in the taskbar. There are no elements within the current screenshot that would allow me to open WhatsApp, find a contact, or send a message. Therefore, I cannot fulfill the request from the current state. (confidence: 0%)
+2025-10-27 18:01:31,117 - ActionRouter - INFO - Routing IN_APP_ACTION command
+2025-10-27 18:01:31,117 - ActionRouter - INFO - In-app action: send | Target: polymorphism. | Content: None
+2025-10-27 18:01:39,881 - ActionRouter - ERROR - Routing error: Gemini failed to generate action plan
+Traceback (most recent call last):
+  File "C:\Users\yasha\OneDrive\Desktop\EVA-main\execution\action_router.py", line 47, in route
+    return self._handle_in_app_action(entities, raw_command)
+  File "C:\Users\yasha\OneDrive\Desktop\EVA-main\execution\action_router.py", line 130, in _handle_in_app_action
+    raise Exception("Gemini failed to generate action plan")
+Exception: Gemini failed to generate action plan
+2025-10-27 18:02:27,418 - ActionRouter - INFO - Routing IN_APP_ACTION command
+2025-10-27 18:02:27,419 - ActionRouter - INFO - In-app action: None | Target: 30% | Content: None
+2025-10-27 18:02:36,737 - ActionRouter - ERROR - Routing error: Gemini failed to generate action plan
+Traceback (most recent call last):
+  File "C:\Users\yasha\OneDrive\Desktop\EVA-main\execution\action_router.py", line 47, in route
+    return self._handle_in_app_action(entities, raw_command)
+  File "C:\Users\yasha\OneDrive\Desktop\EVA-main\execution\action_router.py", line 130, in _handle_in_app_action
+    raise Exception("Gemini failed to generate action plan")
+Exception: Gemini failed to generate action plan
+2025-10-30 17:24:06,524 - ActionRouter - INFO - Routing APP_LAUNCH command
+2025-10-30 17:24:06,524 - ActionRouter - INFO - Launching: spotify.
+2025-10-30 17:24:30,995 - ActionRouter - INFO - Routing IN_APP_ACTION command
+2025-10-30 17:24:30,995 - ActionRouter - INFO - In-app action: close | Target: None | Content: None
+2025-10-30 17:24:38,051 - ActionRouter - ERROR - Routing error: Gemini failed to generate action plan
+Traceback (most recent call last):
+  File "C:\Users\yasha\OneDrive\Desktop\EVA-main\execution\action_router.py", line 47, in route
+    return self._handle_in_app_action(entities, raw_command)
+  File "C:\Users\yasha\OneDrive\Desktop\EVA-main\execution\action_router.py", line 130, in _handle_in_app_action
+    raise Exception("Gemini failed to generate action plan")
+Exception: Gemini failed to generate action plan
+2025-10-30 17:27:45,387 - ActionRouter - INFO - Routing APP_LAUNCH command
+2025-10-30 17:27:45,387 - ActionRouter - INFO - Launching: , what is up?
+2025-10-30 17:27:59,792 - ActionRouter - INFO - Routing APP_LAUNCH command
+2025-10-30 17:27:59,792 - ActionRouter - INFO - Launching: what's up
+2025-10-30 17:28:19,016 - ActionRouter - INFO - Routing IN_APP_ACTION command
+2025-10-30 17:28:19,016 - ActionRouter - INFO - In-app action: send | Target: thakre | Content: None
+2025-10-30 17:28:28,505 - ActionRouter - ERROR - Routing error: Gemini failed to generate action plan
+Traceback (most recent call last):
+  File "C:\Users\yasha\OneDrive\Desktop\EVA-main\execution\action_router.py", line 47, in route
+    return self._handle_in_app_action(entities, raw_command)
+  File "C:\Users\yasha\OneDrive\Desktop\EVA-main\execution\action_router.py", line 130, in _handle_in_app_action
+    raise Exception("Gemini failed to generate action plan")
+Exception: Gemini failed to generate action plan
+2025-10-30 17:28:41,436 - ActionRouter - INFO - Routing IN_APP_ACTION command
+2025-10-30 17:28:41,436 - ActionRouter - INFO - In-app action: None | Target: 30% | Content: None
+2025-10-30 17:28:46,766 - ActionRouter - ERROR - Routing error: Cannot execute: The current application is VS Code, which does not provide direct control over system volume. There are no UI elements visible in the screenshot that would allow me to set the system volume to 30%. This action would typically be performed at the operating system level. (confidence: 0%)
+Traceback (most recent call last):
+  File "C:\Users\yasha\OneDrive\Desktop\EVA-main\execution\action_router.py", line 47, in route
+    return self._handle_in_app_action(entities, raw_command)
+  File "C:\Users\yasha\OneDrive\Desktop\EVA-main\execution\action_router.py", line 136, in _handle_in_app_action
+    raise Exception(f"Cannot execute: {reasoning} (confidence: {confidence:.0%})")
+Exception: Cannot execute: The current application is VS Code, which does not provide direct control over system volume. There are no UI elements visible in the screenshot that would allow me to set the system volume to 30%. This action would typically be performed at the operating system level. (confidence: 0%)
+2025-10-30 19:44:40,899 - ActionRouter - INFO - ✓ Action router initialized
+2025-10-30 20:11:52,493 - ActionRouter - INFO - ✓ Action router initialized
+2025-10-30 20:15:21,950 - ActionRouter - INFO - ✓ Action router initialized
+2025-10-30 20:25:38,768 - ActionRouter - INFO - ✓ Action router initialized
+2025-10-30 20:25:59,904 - ActionRouter - INFO - 📍 Routing APP_LAUNCH command
+2025-10-30 20:25:59,904 - ActionRouter - INFO - 🚀 Launching app: spotify
+2025-10-30 20:25:59,907 - ActionRouter - INFO - Executing 1 predefined steps...
+2025-10-30 20:25:59,907 - ActionRouter - INFO - Step 1/1: Analyze screen to execute: open spotify
+2025-10-30 20:25:59,907 - ActionRouter - WARNING - Unknown action: analyze
+2025-10-30 20:26:17,062 - ActionRouter - INFO - 📍 Routing IN_APP_ACTION command
+2025-10-30 20:26:17,062 - ActionRouter - INFO - 🔄 Full pipeline for: close spotify
+2025-10-30 20:26:17,062 - ActionRouter - INFO - 📸 Step 1: Taking initial screenshot...
+2025-10-30 20:26:17,065 - ActionRouter - ERROR - ❌ Full pipeline error: 'ScreenshotHandler' object has no attribute 'take_screenshot'
+Traceback (most recent call last):
+  File "C:\Users\yasha\OneDrive\Desktop\EVA-main\execution\action_router.py", line 156, in _handle_full_pipeline
+    initial_screenshot = self.screenshot_handler.take_screenshot()
+AttributeError: 'ScreenshotHandler' object has no attribute 'take_screenshot'
+2025-10-30 20:34:17,305 - ActionRouter - INFO - ✓ Action router initialized
+2025-10-30 20:34:37,072 - ActionRouter - INFO - 📍 Routing APP_LAUNCH command
+2025-10-30 20:34:37,072 - ActionRouter - INFO - 🚀 Launching app: spotify
+2025-10-30 20:34:37,074 - ActionRouter - INFO - Executing 1 predefined steps...
+2025-10-30 20:34:37,076 - ActionRouter - INFO - Step 1/1: Analyze screen to execute: Open spotify
+2025-10-30 20:34:37,076 - ActionRouter - WARNING - Unknown action: analyze
+2025-10-30 20:45:33,408 - ActionRouter - INFO - ✓ Action router initialized
+2025-10-30 20:46:43,293 - ActionRouter - INFO - 📍 Routing SYSTEM_ACTION command
+2025-10-30 20:46:43,293 - ActionRouter - INFO - ⚙️ System action: volume
+2025-10-30 20:47:02,495 - ActionRouter - INFO - 📍 Routing APP_LAUNCH command
+2025-10-30 20:47:02,499 - ActionRouter - INFO - 🚀 Launching app: spotify
+2025-10-30 20:47:02,499 - ActionRouter - INFO - Executing 1 predefined steps...
+2025-10-30 20:47:02,499 - ActionRouter - INFO - Step 1/1: Analyze screen to execute: open spotify
+2025-10-30 20:47:02,501 - ActionRouter - WARNING - Unknown action: analyze

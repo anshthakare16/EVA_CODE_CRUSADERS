@@ -1,0 +1,218 @@
+2025-10-14 21:05:07,323 - ScreenAnalyzer - INFO - Gemini API configured
+2025-10-14 21:05:07,324 - ScreenAnalyzer - INFO - Attempting to initialize model: gemini-1.5-flash
+2025-10-14 21:05:07,556 - ScreenAnalyzer - WARNING - [FAIL] Model gemini-1.5-flash initialization OK but generation failed: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 21:05:07,557 - ScreenAnalyzer - INFO - Attempting to initialize model: gemini-1.5-pro
+2025-10-14 21:05:08,098 - ScreenAnalyzer - WARNING - [FAIL] Model gemini-1.5-pro initialization OK but generation failed: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 21:05:08,103 - ScreenAnalyzer - INFO - Attempting to initialize model: gemini-pro-vision
+2025-10-14 21:05:08,257 - ScreenAnalyzer - WARNING - [FAIL] Model gemini-pro-vision initialization OK but generation failed: 404 models/gemini-pro-vision is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 21:05:08,258 - ScreenAnalyzer - INFO - Attempting to initialize model: gemini-pro
+2025-10-14 21:05:08,810 - ScreenAnalyzer - WARNING - [FAIL] Model gemini-pro initialization OK but generation failed: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 21:05:08,810 - ScreenAnalyzer - ERROR - Failed to initialize any Gemini model. Screen analysis will be disabled.
+2025-10-14 21:05:26,610 - ScreenAnalyzer - WARNING - Screen analyzer not available
+2025-10-14 21:05:26,692 - ScreenAnalyzer - WARNING - Screen analyzer not available, using center coordinates
+2025-10-14 21:05:26,692 - ScreenAnalyzer - WARNING - Using fallback coordinates: {'x': 960, 'y': 540, 'confidence': 0.0, 'element_description': 'Fallback: center of screen (Gemini not available)'}
+2025-10-14 21:05:35,678 - ScreenAnalyzer - WARNING - Screen analyzer not available
+2025-10-14 21:05:35,757 - ScreenAnalyzer - WARNING - Screen analyzer not available, using center coordinates
+2025-10-14 21:05:35,757 - ScreenAnalyzer - WARNING - Using fallback coordinates: {'x': 960, 'y': 540, 'confidence': 0.0, 'element_description': 'Fallback: center of screen (Gemini not available)'}
+2025-10-14 21:05:44,782 - ScreenAnalyzer - WARNING - Screen analyzer not available
+2025-10-14 21:05:44,863 - ScreenAnalyzer - WARNING - Screen analyzer not available, using center coordinates
+2025-10-14 21:05:44,863 - ScreenAnalyzer - WARNING - Using fallback coordinates: {'x': 960, 'y': 540, 'confidence': 0.0, 'element_description': 'Fallback: center of screen (Gemini not available)'}
+2025-10-14 21:05:53,881 - ScreenAnalyzer - WARNING - Screen analyzer not available
+2025-10-14 21:05:53,959 - ScreenAnalyzer - WARNING - Screen analyzer not available, using center coordinates
+2025-10-14 21:05:53,959 - ScreenAnalyzer - WARNING - Using fallback coordinates: {'x': 960, 'y': 540, 'confidence': 0.0, 'element_description': 'Fallback: center of screen (Gemini not available)'}
+2025-10-14 21:06:02,998 - ScreenAnalyzer - WARNING - Screen analyzer not available
+2025-10-14 21:06:03,081 - ScreenAnalyzer - WARNING - Screen analyzer not available, using center coordinates
+2025-10-14 21:06:03,081 - ScreenAnalyzer - WARNING - Using fallback coordinates: {'x': 960, 'y': 540, 'confidence': 0.0, 'element_description': 'Fallback: center of screen (Gemini not available)'}
+2025-10-14 21:06:12,070 - ScreenAnalyzer - WARNING - Screen analyzer not available
+2025-10-14 21:06:12,155 - ScreenAnalyzer - WARNING - Screen analyzer not available, using center coordinates
+2025-10-14 21:06:12,155 - ScreenAnalyzer - WARNING - Using fallback coordinates: {'x': 960, 'y': 540, 'confidence': 0.0, 'element_description': 'Fallback: center of screen (Gemini not available)'}
+2025-10-14 21:06:21,152 - ScreenAnalyzer - WARNING - Screen analyzer not available
+2025-10-14 21:06:21,237 - ScreenAnalyzer - WARNING - Screen analyzer not available, using center coordinates
+2025-10-14 21:06:21,237 - ScreenAnalyzer - WARNING - Using fallback coordinates: {'x': 960, 'y': 540, 'confidence': 0.0, 'element_description': 'Fallback: center of screen (Gemini not available)'}
+2025-10-14 21:06:30,240 - ScreenAnalyzer - WARNING - Screen analyzer not available
+2025-10-14 21:06:30,322 - ScreenAnalyzer - WARNING - Screen analyzer not available, using center coordinates
+2025-10-14 21:06:30,322 - ScreenAnalyzer - WARNING - Using fallback coordinates: {'x': 960, 'y': 540, 'confidence': 0.0, 'element_description': 'Fallback: center of screen (Gemini not available)'}
+2025-10-14 21:06:39,774 - ScreenAnalyzer - WARNING - Screen analyzer not available
+2025-10-14 21:06:39,860 - ScreenAnalyzer - WARNING - Screen analyzer not available, using center coordinates
+2025-10-14 21:06:39,861 - ScreenAnalyzer - WARNING - Using fallback coordinates: {'x': 960, 'y': 540, 'confidence': 0.0, 'element_description': 'Fallback: center of screen (Gemini not available)'}
+2025-10-14 21:06:49,933 - ScreenAnalyzer - WARNING - Screen analyzer not available
+2025-10-14 21:06:50,025 - ScreenAnalyzer - WARNING - Screen analyzer not available, using center coordinates
+2025-10-14 21:06:50,025 - ScreenAnalyzer - WARNING - Using fallback coordinates: {'x': 960, 'y': 540, 'confidence': 0.0, 'element_description': 'Fallback: center of screen (Gemini not available)'}
+2025-10-14 21:11:55,869 - ScreenAnalyzer - INFO - Gemini API configured
+2025-10-14 21:11:55,869 - ScreenAnalyzer - INFO - Attempting to initialize model: gemini-1.5-flash
+2025-10-14 21:11:56,113 - ScreenAnalyzer - WARNING - [FAIL] Model gemini-1.5-flash initialization OK but generation failed: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 21:11:56,113 - ScreenAnalyzer - INFO - Attempting to initialize model: gemini-1.5-pro
+2025-10-14 21:11:56,678 - ScreenAnalyzer - WARNING - [FAIL] Model gemini-1.5-pro initialization OK but generation failed: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 21:11:56,679 - ScreenAnalyzer - INFO - Attempting to initialize model: gemini-pro-vision
+2025-10-14 21:11:56,843 - ScreenAnalyzer - WARNING - [FAIL] Model gemini-pro-vision initialization OK but generation failed: 404 models/gemini-pro-vision is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 21:11:56,843 - ScreenAnalyzer - INFO - Attempting to initialize model: gemini-pro
+2025-10-14 21:11:57,399 - ScreenAnalyzer - WARNING - [FAIL] Model gemini-pro initialization OK but generation failed: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-14 21:11:57,400 - ScreenAnalyzer - ERROR - Failed to initialize any Gemini model. Screen analysis will be disabled.
+2025-10-14 21:15:41,635 - ScreenAnalyzer - INFO - Gemini API configured
+2025-10-14 21:15:41,635 - ScreenAnalyzer - INFO - Attempting to initialize model: models/gemini-2.5-flash
+2025-10-14 21:15:42,957 - ScreenAnalyzer - INFO - [OK] Successfully initialized Gemini model: models/gemini-2.5-flash
+2025-10-14 21:19:56,120 - ScreenAnalyzer - INFO - Gemini API configured
+2025-10-14 21:19:56,120 - ScreenAnalyzer - INFO - Attempting to initialize model: models/gemini-2.5-flash
+2025-10-14 21:19:58,504 - ScreenAnalyzer - INFO - [OK] Successfully initialized Gemini model: models/gemini-2.5-flash
+2025-10-14 21:20:41,335 - ScreenAnalyzer - INFO - Screen analysis: The screen displays a full-screen Visual Studio Code window, actively showing a Python project's `co...
+2025-10-14 21:20:46,198 - ScreenAnalyzer - INFO - [OK] Coordinates: (960, 540) - Pressing the Windows key, which is a keyboard action and does not require a specific screen coordinate.
+2025-10-14 21:20:53,259 - ScreenAnalyzer - INFO - [OK] Coordinates: (460, 340) - Search bar in Start Menu
+2025-10-14 21:21:01,059 - ScreenAnalyzer - INFO - [OK] Coordinates: (950, 325) - Search for apps, settings, and documents input field
+2025-10-14 21:21:08,638 - ScreenAnalyzer - INFO - [OK] Coordinates: (960, 540) - General screen focus for 'Press Enter' action after typing in search bar.
+2025-10-14 21:21:49,312 - ScreenAnalyzer - INFO - Screen analysis: The screen displays a maximized Visual Studio Code window, showing Python code in `config.py` and an...
+2025-10-14 21:21:58,389 - ScreenAnalyzer - INFO - [OK] Coordinates: (24, 1056) - Windows Start button in the taskbar
+2025-10-14 21:22:05,331 - ScreenAnalyzer - INFO - [OK] Coordinates: (775, 340) - Search bar in the Start Menu
+2025-10-14 21:22:13,713 - ScreenAnalyzer - INFO - [OK] Coordinates: (619, 338) - Search bar for apps, settings, and documents
+2025-10-14 21:22:20,836 - ScreenAnalyzer - INFO - [OK] Coordinates: (960, 540) - Performing a general 'Press Enter' action to confirm the search query or select the best match.
+2025-10-14 21:22:39,208 - ScreenAnalyzer - INFO - Screen analysis: The screen displays a maximized WhatsApp desktop application, showing a chat list on the left and an...
+2025-10-14 21:22:48,480 - ScreenAnalyzer - INFO - [OK] Coordinates: (1090, 1050) - Text input field to type a message
+2025-10-14 21:23:07,011 - ScreenAnalyzer - INFO - Screen analysis: The screen primarily displays a maximized Visual Studio Code window, featuring a file explorer on th...
+2025-10-14 21:23:12,508 - ScreenAnalyzer - INFO - [OK] Coordinates: (960, 540) - Press Windows key (system action, no specific on-screen element)
+2025-10-14 21:23:20,114 - ScreenAnalyzer - INFO - [OK] Coordinates: (450, 330) - Search bar in the Start Menu
+2025-10-14 21:23:27,810 - ScreenAnalyzer - INFO - [OK] Coordinates: (590, 330) - Search for apps, settings, and documents search bar
+2025-10-14 21:23:38,263 - ScreenAnalyzer - INFO - [OK] Coordinates: (498, 440) - Best match: WhatsApp App
+2025-10-15 10:48:00,041 - ScreenAnalyzer - INFO - Gemini API configured
+2025-10-15 10:48:00,043 - ScreenAnalyzer - INFO - Attempting to initialize model: models/gemini-2.5-flash
+2025-10-15 10:48:01,913 - ScreenAnalyzer - INFO - [OK] Successfully initialized Gemini model: models/gemini-2.5-flash
+2025-10-15 10:48:34,631 - ScreenAnalyzer - INFO - Screen analysis: The screen displays a maximized Visual Studio Code window, showing the "EVA_JARVIS" project structur...
+2025-10-15 10:48:42,774 - ScreenAnalyzer - INFO - [OK] Coordinates: (35, 1575) - Windows Start button icon in the taskbar
+2025-10-15 10:48:50,918 - ScreenAnalyzer - INFO - [OK] Coordinates: (1270, 315) - Search bar in the Start Menu
+2025-10-15 10:48:59,562 - ScreenAnalyzer - INFO - [OK] Coordinates: (1275, 308) - Search for apps, settings, and documents text input field
+2025-10-15 10:49:06,935 - ScreenAnalyzer - INFO - [OK] Coordinates: (1280, 330) - Search input field with 'youtube' typed in
+2025-10-15 11:48:22,256 - ScreenAnalyzer - INFO - Gemini API configured
+2025-10-15 11:48:22,264 - ScreenAnalyzer - INFO - Attempting to initialize model: models/gemini-2.5-flash
+2025-10-15 11:48:24,245 - ScreenAnalyzer - INFO - [OK] Successfully initialized Gemini model: models/gemini-2.5-flash
+2025-10-15 12:12:38,158 - ScreenAnalyzer - INFO - Gemini API configured
+2025-10-15 12:12:38,158 - ScreenAnalyzer - INFO - Attempting to initialize model: models/gemini-2.5-flash
+2025-10-15 12:12:40,057 - ScreenAnalyzer - INFO - [OK] Successfully initialized Gemini model: models/gemini-2.5-flash
+2025-10-15 12:21:42,858 - ScreenAnalyzer - INFO - Gemini API configured
+2025-10-15 12:21:42,859 - ScreenAnalyzer - INFO - Attempting to initialize model: models/gemini-2.5-flash
+2025-10-15 12:21:44,964 - ScreenAnalyzer - INFO - [OK] Successfully initialized Gemini model: models/gemini-2.5-flash
+2025-10-15 12:23:06,103 - ScreenAnalyzer - INFO - Gemini API configured
+2025-10-15 12:23:06,103 - ScreenAnalyzer - INFO - Attempting to initialize model: models/gemini-2.5-flash
+2025-10-15 12:23:07,782 - ScreenAnalyzer - INFO - [OK] Successfully initialized Gemini model: models/gemini-2.5-flash
+2025-10-15 12:26:18,934 - ScreenAnalyzer - INFO - Gemini API configured
+2025-10-15 12:26:18,934 - ScreenAnalyzer - INFO - Attempting to initialize model: models/gemini-2.5-flash
+2025-10-15 12:26:20,344 - ScreenAnalyzer - INFO - [OK] Successfully initialized Gemini model: models/gemini-2.5-flash
+2025-10-15 12:28:07,286 - ScreenAnalyzer - INFO - Gemini API configured
+2025-10-15 12:28:07,286 - ScreenAnalyzer - INFO - Attempting to initialize model: models/gemini-2.5-flash
+2025-10-15 12:28:08,361 - ScreenAnalyzer - INFO - [OK] Successfully initialized Gemini model: models/gemini-2.5-flash
+2025-10-15 12:29:01,048 - ScreenAnalyzer - INFO - Gemini API configured
+2025-10-15 12:29:01,048 - ScreenAnalyzer - INFO - Attempting to initialize model: models/gemini-2.5-flash
+2025-10-15 12:29:02,572 - ScreenAnalyzer - INFO - [OK] Successfully initialized Gemini model: models/gemini-2.5-flash
+2025-10-15 12:29:45,074 - ScreenAnalyzer - INFO - Action plan generated: 1 steps
+2025-10-15 12:30:20,869 - ScreenAnalyzer - INFO - Action plan generated: 2 steps
+2025-10-15 12:30:39,347 - ScreenAnalyzer - INFO - Action plan generated: 0 steps
+2025-10-15 12:31:07,296 - ScreenAnalyzer - INFO - Action plan generated: 1 steps
+2025-10-15 12:31:25,258 - ScreenAnalyzer - INFO - Action plan generated: 1 steps
+2025-10-15 12:31:40,382 - ScreenAnalyzer - INFO - Action plan generated: 1 steps
+2025-10-15 12:31:55,635 - ScreenAnalyzer - INFO - Action plan generated: 0 steps
+2025-10-15 12:33:12,359 - ScreenAnalyzer - INFO - Action plan generated: 1 steps
+2025-10-15 12:33:40,685 - ScreenAnalyzer - INFO - Action plan generated: 1 steps
+2025-10-15 12:34:01,916 - ScreenAnalyzer - INFO - Gemini API configured
+2025-10-15 12:34:01,916 - ScreenAnalyzer - INFO - Attempting to initialize model: models/gemini-2.5-flash
+2025-10-15 12:34:04,082 - ScreenAnalyzer - INFO - [OK] Successfully initialized Gemini model: models/gemini-2.5-flash
+2025-10-15 12:34:29,670 - ScreenAnalyzer - INFO - Action plan generated: 0 steps
+2025-10-15 12:35:03,997 - ScreenAnalyzer - INFO - Action plan generated: 0 steps
+2025-10-15 16:12:30,479 - ScreenAnalyzer - INFO - Gemini API configured
+2025-10-15 16:12:30,488 - ScreenAnalyzer - INFO - [OK] Successfully initialized Gemini model: models/gemini-2.5-flash
+2025-10-15 16:15:27,671 - ScreenAnalyzer - INFO - Gemini API configured
+2025-10-15 16:15:27,671 - ScreenAnalyzer - INFO - [OK] Successfully initialized Gemini model: models/gemini-2.5-flash
+2025-10-15 16:15:40,598 - ScreenAnalyzer - INFO - Sending to Gemini for analysis...
+2025-10-15 16:16:28,048 - ScreenAnalyzer - ERROR - Screen analysis error: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\vision\screen_analyzer.py", line 86, in analyze_and_plan
+    response_text = response_text.split('```json').split('```')
+AttributeError: 'list' object has no attribute 'split'
+2025-10-15 16:17:33,098 - ScreenAnalyzer - INFO - Sending to Gemini for analysis...
+2025-10-15 16:18:06,958 - ScreenAnalyzer - ERROR - Screen analysis error: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\vision\screen_analyzer.py", line 86, in analyze_and_plan
+    response_text = response_text.split('```json').split('```')
+AttributeError: 'list' object has no attribute 'split'
+2025-10-15 16:18:21,388 - ScreenAnalyzer - INFO - Sending to Gemini for analysis...
+2025-10-15 16:18:39,934 - ScreenAnalyzer - INFO - Generated plan: 0 steps, confidence: 0%
+2025-10-15 16:18:39,934 - ScreenAnalyzer - INFO - Reasoning: The command is to 'set my volume to 30%'. While a volume icon is visible in the system tray at approximately (2368, 1563), clicking it would likely open a volume slider or control panel which is not visible in the current screenshot. Therefore, I cannot identify the precise coordinates to click or interact with a non-existent slider or input field to set the volume to exactly 30% based on the provided screenshot.
+2025-10-15 16:19:28,511 - ScreenAnalyzer - INFO - Sending to Gemini for analysis...
+2025-10-15 16:19:42,494 - ScreenAnalyzer - ERROR - Screen analysis error: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\vision\screen_analyzer.py", line 86, in analyze_and_plan
+    response_text = response_text.split('```json').split('```')
+AttributeError: 'list' object has no attribute 'split'
+2025-10-15 16:20:11,810 - ScreenAnalyzer - INFO - Sending to Gemini for analysis...
+2025-10-15 16:20:21,637 - ScreenAnalyzer - INFO - Generated plan: 0 steps, confidence: 0%
+2025-10-15 16:20:21,639 - ScreenAnalyzer - INFO - Reasoning: The user command 'Shut down my laptop' is an operating system level action. The current screenshot shows the VS Code application, which does not provide any direct UI elements or functionalities to shut down the entire laptop. Therefore, this request cannot be fulfilled within the context of the visible application.
+2025-10-21 01:07:00,015 - ScreenAnalyzer - INFO - Gemini API configured
+2025-10-21 01:07:00,015 - ScreenAnalyzer - INFO - [OK] Successfully initialized Gemini model: models/gemini-2.5-flash
+2025-10-21 01:07:29,101 - ScreenAnalyzer - INFO - Sending to Gemini for analysis...
+2025-10-21 01:07:34,478 - ScreenAnalyzer - ERROR - Screen analysis error: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "D:\Capstone\EVA_CODE_CRUSADERS-main\vision\screen_analyzer.py", line 86, in analyze_and_plan
+    response_text = response_text.split('```json').split('```')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'split'
+2025-10-21 01:07:51,242 - ScreenAnalyzer - INFO - Sending to Gemini for analysis...
+2025-10-21 01:07:57,815 - ScreenAnalyzer - ERROR - Screen analysis error: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "D:\Capstone\EVA_CODE_CRUSADERS-main\vision\screen_analyzer.py", line 86, in analyze_and_plan
+    response_text = response_text.split('```json').split('```')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'split'
+2025-10-27 17:57:49,727 - ScreenAnalyzer - INFO - Gemini API configured
+2025-10-27 17:57:49,734 - ScreenAnalyzer - INFO - [OK] Successfully initialized Gemini model: models/gemini-2.5-flash
+2025-10-27 17:58:07,147 - ScreenAnalyzer - INFO - Sending to Gemini for analysis...
+2025-10-27 17:58:22,410 - ScreenAnalyzer - ERROR - Screen analysis error: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "C:\Users\yasha\OneDrive\Desktop\EVA-main\vision\screen_analyzer.py", line 86, in analyze_and_plan
+    response_text = response_text.split('```json').split('```')
+AttributeError: 'list' object has no attribute 'split'
+2025-10-27 17:58:44,884 - ScreenAnalyzer - INFO - Sending to Gemini for analysis...
+2025-10-27 17:58:57,229 - ScreenAnalyzer - ERROR - Screen analysis error: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "C:\Users\yasha\OneDrive\Desktop\EVA-main\vision\screen_analyzer.py", line 86, in analyze_and_plan
+    response_text = response_text.split('```json').split('```')
+AttributeError: 'list' object has no attribute 'split'
+2025-10-27 17:59:35,892 - ScreenAnalyzer - INFO - Sending to Gemini for analysis...
+2025-10-27 17:59:40,520 - ScreenAnalyzer - INFO - Generated plan: 1 steps, confidence: 100%
+2025-10-27 17:59:40,520 - ScreenAnalyzer - INFO - Reasoning: The user command 'Clio's Google Chrome' indicates the need to open Google Chrome. The screenshot clearly shows the Google Chrome icon on the Windows taskbar, and I've identified its precise coordinates.
+2025-10-27 17:59:55,749 - ScreenAnalyzer - INFO - Sending to Gemini for analysis...
+2025-10-27 18:00:25,757 - ScreenAnalyzer - ERROR - Screen analysis error: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "C:\Users\yasha\OneDrive\Desktop\EVA-main\vision\screen_analyzer.py", line 86, in analyze_and_plan
+    response_text = response_text.split('```json').split('```')
+AttributeError: 'list' object has no attribute 'split'
+2025-10-27 18:00:41,663 - ScreenAnalyzer - INFO - Sending to Gemini for analysis...
+2025-10-27 18:00:50,404 - ScreenAnalyzer - INFO - Generated plan: 0 steps, confidence: 0%
+2025-10-27 18:00:50,404 - ScreenAnalyzer - INFO - Reasoning: The user wants to send a message on WhatsApp. The current application is Visual Studio Code, and WhatsApp is not open or visible on the screen or in the taskbar. There are no elements within the current screenshot that would allow me to open WhatsApp, find a contact, or send a message. Therefore, I cannot fulfill the request from the current state.
+2025-10-27 18:01:31,246 - ScreenAnalyzer - INFO - Sending to Gemini for analysis...
+2025-10-27 18:01:39,881 - ScreenAnalyzer - ERROR - Screen analysis error: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "C:\Users\yasha\OneDrive\Desktop\EVA-main\vision\screen_analyzer.py", line 86, in analyze_and_plan
+    response_text = response_text.split('```json').split('```')
+AttributeError: 'list' object has no attribute 'split'
+2025-10-27 18:02:15,189 - ScreenAnalyzer - INFO - Gemini API configured
+2025-10-27 18:02:15,189 - ScreenAnalyzer - INFO - [OK] Successfully initialized Gemini model: models/gemini-2.5-flash
+2025-10-27 18:02:27,557 - ScreenAnalyzer - INFO - Sending to Gemini for analysis...
+2025-10-27 18:02:36,737 - ScreenAnalyzer - ERROR - Screen analysis error: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "C:\Users\yasha\OneDrive\Desktop\EVA-main\vision\screen_analyzer.py", line 86, in analyze_and_plan
+    response_text = response_text.split('```json').split('```')
+AttributeError: 'list' object has no attribute 'split'
+2025-10-30 17:23:49,958 - ScreenAnalyzer - INFO - Gemini API configured
+2025-10-30 17:23:49,958 - ScreenAnalyzer - INFO - [OK] Successfully initialized Gemini model: models/gemini-2.5-flash
+2025-10-30 17:24:31,171 - ScreenAnalyzer - INFO - Sending to Gemini for analysis...
+2025-10-30 17:24:38,050 - ScreenAnalyzer - ERROR - Screen analysis error: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "C:\Users\yasha\OneDrive\Desktop\EVA-main\vision\screen_analyzer.py", line 86, in analyze_and_plan
+    response_text = response_text.split('```json').split('```')
+AttributeError: 'list' object has no attribute 'split'
+2025-10-30 17:28:19,156 - ScreenAnalyzer - INFO - Sending to Gemini for analysis...
+2025-10-30 17:28:28,505 - ScreenAnalyzer - ERROR - Screen analysis error: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "C:\Users\yasha\OneDrive\Desktop\EVA-main\vision\screen_analyzer.py", line 86, in analyze_and_plan
+    response_text = response_text.split('```json').split('```')
+AttributeError: 'list' object has no attribute 'split'
+2025-10-30 17:28:41,516 - ScreenAnalyzer - INFO - Sending to Gemini for analysis...
+2025-10-30 17:28:46,766 - ScreenAnalyzer - INFO - Generated plan: 0 steps, confidence: 0%
+2025-10-30 17:28:46,766 - ScreenAnalyzer - INFO - Reasoning: The current application is VS Code, which does not provide direct control over system volume. There are no UI elements visible in the screenshot that would allow me to set the system volume to 30%. This action would typically be performed at the operating system level
+

@@ -1,0 +1,1000 @@
+2025-10-14 21:05:07,322 - CommandProcessor - INFO - Model loaded from C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\models\model_weights\command_model.pkl
+2025-10-14 21:05:26,611 - CommandProcessor - INFO - Raw: 'Thank you.' -> Processed: 'CLOSE_APP:current' (confidence: 7.14%)
+2025-10-14 21:05:26,611 - CommandProcessor - WARNING - Low confidence (7.14%), using fallback
+2025-10-14 21:05:35,680 - CommandProcessor - INFO - Raw: 'You' -> Processed: 'CLOSE_APP:current' (confidence: 7.14%)
+2025-10-14 21:05:35,680 - CommandProcessor - WARNING - Low confidence (7.14%), using fallback
+2025-10-14 21:05:44,783 - CommandProcessor - INFO - Raw: 'You' -> Processed: 'CLOSE_APP:current' (confidence: 7.14%)
+2025-10-14 21:05:44,783 - CommandProcessor - WARNING - Low confidence (7.14%), using fallback
+2025-10-14 21:05:53,882 - CommandProcessor - INFO - Raw: 'You' -> Processed: 'CLOSE_APP:current' (confidence: 7.14%)
+2025-10-14 21:05:53,882 - CommandProcessor - WARNING - Low confidence (7.14%), using fallback
+2025-10-14 21:06:02,999 - CommandProcessor - INFO - Raw: 'You' -> Processed: 'CLOSE_APP:current' (confidence: 7.14%)
+2025-10-14 21:06:02,999 - CommandProcessor - WARNING - Low confidence (7.14%), using fallback
+2025-10-14 21:06:12,071 - CommandProcessor - INFO - Raw: 'You' -> Processed: 'CLOSE_APP:current' (confidence: 7.14%)
+2025-10-14 21:06:12,072 - CommandProcessor - WARNING - Low confidence (7.14%), using fallback
+2025-10-14 21:06:21,154 - CommandProcessor - INFO - Raw: 'You' -> Processed: 'CLOSE_APP:current' (confidence: 7.14%)
+2025-10-14 21:06:21,154 - CommandProcessor - WARNING - Low confidence (7.14%), using fallback
+2025-10-14 21:06:30,242 - CommandProcessor - INFO - Raw: 'You' -> Processed: 'CLOSE_APP:current' (confidence: 7.14%)
+2025-10-14 21:06:30,242 - CommandProcessor - WARNING - Low confidence (7.14%), using fallback
+2025-10-14 21:06:39,776 - CommandProcessor - INFO - Raw: '...  ...  ...  ...  ...  ...  ...  ...' -> Processed: 'CLOSE_APP:current' (confidence: 7.14%)
+2025-10-14 21:06:39,776 - CommandProcessor - WARNING - Low confidence (7.14%), using fallback
+2025-10-14 21:06:49,934 - CommandProcessor - INFO - Raw: 'Place of iron, what is that?' -> Processed: 'TYPE_TEXT:this is a test' (confidence: 8.78%)
+2025-10-14 21:06:49,935 - CommandProcessor - WARNING - Low confidence (8.78%), using fallback
+2025-10-14 21:11:55,867 - CommandProcessor - INFO - Model loaded from C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\models\model_weights\command_model.pkl
+2025-10-14 21:15:41,634 - CommandProcessor - INFO - Model loaded from C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\models\model_weights\command_model.pkl
+2025-10-14 21:19:56,114 - CommandProcessor - INFO - Model loaded from C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\models\model_weights\command_model.pkl
+2025-10-14 21:20:41,338 - CommandProcessor - INFO - Raw: 'Open what's up.' -> Processed: 'OPEN_APP:chrome' (confidence: 12.84%)
+2025-10-14 21:20:41,338 - CommandProcessor - WARNING - Low confidence (12.84%), using fallback
+2025-10-14 21:21:49,314 - CommandProcessor - INFO - Raw: 'Open YouTube on Google Chrome.' -> Processed: 'OPEN_APP:chrome' (confidence: 59.69%)
+2025-10-14 21:22:39,211 - CommandProcessor - INFO - Raw: 'Thank you very much.' -> Processed: 'CLOSE_APP:current' (confidence: 7.14%)
+2025-10-14 21:22:39,211 - CommandProcessor - WARNING - Low confidence (7.14%), using fallback
+2025-10-14 21:23:07,015 - CommandProcessor - INFO - Raw: 'Open YouTube.' -> Processed: 'OPEN_APP:chrome' (confidence: 23.26%)
+2025-10-14 21:23:07,015 - CommandProcessor - WARNING - Low confidence (23.26%), using fallback
+2025-10-15 10:48:00,015 - CommandProcessor - INFO - Model loaded from C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\models\model_weights\command_model.pkl
+2025-10-15 10:48:34,635 - CommandProcessor - INFO - Raw: 'Open YouTube.' -> Processed: 'OPEN_APP:chrome' (confidence: 23.26%)
+2025-10-15 10:48:34,635 - CommandProcessor - WARNING - Low confidence (23.26%), using fallback
+2025-10-15 12:29:28,227 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "APP_LAUNCH",
+    "confidence": 0.7476753536144436,
+    "subcategory": null,
+    "requires_screen_analysis": false,
+    "raw_command": "Open YouTube."
+  },
+  "entities": {
+    "app_name": "youtube.",
+    "action": "launch"
+  },
+  "raw_command": "Open YouTube."
+}
+2025-10-15 12:29:39,312 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "IN_APP_ACTION",
+    "confidence": 0.7361863008293116,
+    "subcategory": null,
+    "requires_screen_analysis": true,
+    "raw_command": "You"
+  },
+  "entities": {
+    "action": null,
+    "target": null,
+    "content": null,
+    "app_context": null
+  },
+  "raw_command": "You"
+}
+2025-10-15 12:29:59,242 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "APP_LAUNCH",
+    "confidence": 0.5129013340349892,
+    "subcategory": null,
+    "requires_screen_analysis": false,
+    "raw_command": "Open Google Chrome."
+  },
+  "entities": {
+    "app_name": "google chrome.",
+    "action": "launch"
+  },
+  "raw_command": "Open Google Chrome."
+}
+2025-10-15 12:30:10,815 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "IN_APP_ACTION",
+    "confidence": 0.6459743625903173,
+    "subcategory": null,
+    "requires_screen_analysis": true,
+    "raw_command": "Now type YouTube."
+  },
+  "entities": {
+    "action": "type",
+    "target": null,
+    "content": null,
+    "app_context": "youtube"
+  },
+  "raw_command": "Now type YouTube."
+}
+2025-10-15 12:30:30,059 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "IN_APP_ACTION",
+    "confidence": 0.7361863008293116,
+    "subcategory": null,
+    "requires_screen_analysis": true,
+    "raw_command": "Now click on"
+  },
+  "entities": {
+    "action": "click",
+    "target": null,
+    "content": null,
+    "app_context": null
+  },
+  "raw_command": "Now click on"
+}
+2025-10-15 12:30:58,845 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "IN_APP_ACTION",
+    "confidence": 0.7361863008293116,
+    "subcategory": null,
+    "requires_screen_analysis": true,
+    "raw_command": "Sir, Mr. Beast."
+  },
+  "entities": {
+    "action": null,
+    "target": null,
+    "content": null,
+    "app_context": null
+  },
+  "raw_command": "Sir, Mr. Beast."
+}
+2025-10-15 12:31:15,786 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "IN_APP_ACTION",
+    "confidence": 0.7361863008293116,
+    "subcategory": null,
+    "requires_screen_analysis": true,
+    "raw_command": "Sir, Mr. Beast."
+  },
+  "entities": {
+    "action": null,
+    "target": null,
+    "content": null,
+    "app_context": null
+  },
+  "raw_command": "Sir, Mr. Beast."
+}
+2025-10-15 12:31:34,672 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "IN_APP_ACTION",
+    "confidence": 0.5449021720803492,
+    "subcategory": null,
+    "requires_screen_analysis": true,
+    "raw_command": "Let's Google Chrome."
+  },
+  "entities": {
+    "action": null,
+    "target": null,
+    "content": null,
+    "app_context": null
+  },
+  "raw_command": "Let's Google Chrome."
+}
+2025-10-15 12:31:48,899 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "IN_APP_ACTION",
+    "confidence": 0.7361863008293116,
+    "subcategory": null,
+    "requires_screen_analysis": true,
+    "raw_command": "You"
+  },
+  "entities": {
+    "action": null,
+    "target": null,
+    "content": null,
+    "app_context": null
+  },
+  "raw_command": "You"
+}
+2025-10-15 12:32:26,321 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "APP_LAUNCH",
+    "confidence": 0.5858817773626194,
+    "subcategory": null,
+    "requires_screen_analysis": false,
+    "raw_command": "Open.  What's up?  Open.  What's up?"
+  },
+  "entities": {
+    "app_name": ".  what's up?  .  what's up?",
+    "action": "launch"
+  },
+  "raw_command": "Open.  What's up?  Open.  What's up?"
+}
+2025-10-15 12:32:40,883 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "APP_LAUNCH",
+    "confidence": 0.5858817773626194,
+    "subcategory": null,
+    "requires_screen_analysis": false,
+    "raw_command": "Open what's up."
+  },
+  "entities": {
+    "app_name": "what's up.",
+    "action": "launch"
+  },
+  "raw_command": "Open what's up."
+}
+2025-10-15 12:33:06,571 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "IN_APP_ACTION",
+    "confidence": 0.7361863008293116,
+    "subcategory": null,
+    "requires_screen_analysis": true,
+    "raw_command": "You"
+  },
+  "entities": {
+    "action": null,
+    "target": null,
+    "content": null,
+    "app_context": null
+  },
+  "raw_command": "You"
+}
+2025-10-15 12:33:20,853 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "APP_LAUNCH",
+    "confidence": 0.5858817773626194,
+    "subcategory": null,
+    "requires_screen_analysis": false,
+    "raw_command": "Open the chat of your..."
+  },
+  "entities": {
+    "app_name": "the chat of your...",
+    "action": "launch"
+  },
+  "raw_command": "Open the chat of your..."
+}
+2025-10-15 12:33:32,844 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "IN_APP_ACTION",
+    "confidence": 0.7361863008293116,
+    "subcategory": null,
+    "requires_screen_analysis": true,
+    "raw_command": "Close, what's up?"
+  },
+  "entities": {
+    "action": "close",
+    "target": null,
+    "content": null,
+    "app_context": null
+  },
+  "raw_command": "Close, what's up?"
+}
+2025-10-15 12:34:21,642 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "IN_APP_ACTION",
+    "confidence": 0.7361863008293116,
+    "subcategory": null,
+    "requires_screen_analysis": true,
+    "raw_command": "Set my brightness to 10%"
+  },
+  "entities": {
+    "action": null,
+    "target": "10%",
+    "content": null,
+    "app_context": null
+  },
+  "raw_command": "Set my brightness to 10%"
+}
+2025-10-15 12:34:58,546 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "IN_APP_ACTION",
+    "confidence": 0.7361863008293116,
+    "subcategory": null,
+    "requires_screen_analysis": true,
+    "raw_command": "So it's my volume could be 20%"
+  },
+  "entities": {
+    "action": null,
+    "target": null,
+    "content": null,
+    "app_context": null
+  },
+  "raw_command": "So it's my volume could be 20%"
+}
+2025-10-15 12:35:33,542 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "SYSTEM",
+    "confidence": 1.0,
+    "subcategory": "power",
+    "requires_screen_analysis": false,
+    "raw_command": "Put my laptop to sleep."
+  },
+  "entities": {
+    "subcategory": "power",
+    "action": "sleep",
+    "value": null
+  },
+  "raw_command": "Put my laptop to sleep."
+}
+2025-10-15 15:38:18,133 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "IN_APP_ACTION",
+    "confidence": 0.7361863008293116,
+    "subcategory": null,
+    "requires_screen_analysis": true,
+    "raw_command": "You"
+  },
+  "entities": {
+    "action": null,
+    "target": null,
+    "content": null,
+    "app_context": null
+  },
+  "raw_command": "You"
+}
+2025-10-15 16:15:40,208 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "IN_APP_ACTION",
+    "confidence": 0.7361863008293116,
+    "subcategory": null,
+    "requires_screen_analysis": true,
+    "raw_command": "Jarvis?"
+  },
+  "entities": {
+    "action": null,
+    "target": null,
+    "content": null,
+    "app_context": null
+  },
+  "raw_command": "Jarvis?"
+}
+2025-10-15 16:17:07,473 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "APP_LAUNCH",
+    "confidence": 0.6051511402461126,
+    "subcategory": null,
+    "requires_screen_analysis": false,
+    "raw_command": "open spotify and place a fire"
+  },
+  "entities": {
+    "app_name": "spotify and place a fire",
+    "action": "launch"
+  },
+  "raw_command": "open spotify and place a fire"
+}
+2025-10-15 16:17:32,748 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "IN_APP_ACTION",
+    "confidence": 0.6703117345743107,
+    "subcategory": null,
+    "requires_screen_analysis": true,
+    "raw_command": "This is a fire on Spotify."
+  },
+  "entities": {
+    "action": null,
+    "target": "spotify.",
+    "content": null,
+    "app_context": "spotify"
+  },
+  "raw_command": "This is a fire on Spotify."
+}
+2025-10-15 16:18:21,054 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "IN_APP_ACTION",
+    "confidence": 0.7361863008293116,
+    "subcategory": null,
+    "requires_screen_analysis": true,
+    "raw_command": "set my volume to 30%"
+  },
+  "entities": {
+    "action": null,
+    "target": "30%",
+    "content": null,
+    "app_context": null
+  },
+  "raw_command": "set my volume to 30%"
+}
+2025-10-15 16:19:28,162 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "IN_APP_ACTION",
+    "confidence": 0.7361863008293116,
+    "subcategory": null,
+    "requires_screen_analysis": true,
+    "raw_command": "I'm blue, too."
+  },
+  "entities": {
+    "action": null,
+    "target": null,
+    "content": null,
+    "app_context": null
+  },
+  "raw_command": "I'm blue, too."
+}
+2025-10-15 16:19:56,354 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "SYSTEM",
+    "confidence": 1.0,
+    "subcategory": "power",
+    "requires_screen_analysis": false,
+    "raw_command": "My laptop on sleep."
+  },
+  "entities": {
+    "subcategory": "power",
+    "action": "enable",
+    "value": null
+  },
+  "raw_command": "My laptop on sleep."
+}
+2025-10-15 16:20:11,496 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "IN_APP_ACTION",
+    "confidence": 0.7361863008293116,
+    "subcategory": null,
+    "requires_screen_analysis": true,
+    "raw_command": "Shut down my laptop."
+  },
+  "entities": {
+    "action": null,
+    "target": null,
+    "content": null,
+    "app_context": null
+  },
+  "raw_command": "Shut down my laptop."
+}
+2025-10-21 01:07:28,899 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "IN_APP_ACTION",
+    "confidence": 0.7361863008293116,
+    "subcategory": null,
+    "requires_screen_analysis": true,
+    "raw_command": "Do you have this?"
+  },
+  "entities": {
+    "action": null,
+    "target": null,
+    "content": null,
+    "app_context": null
+  },
+  "raw_command": "Do you have this?"
+}
+2025-10-21 01:07:51,143 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "IN_APP_ACTION",
+    "confidence": 0.7361863008293116,
+    "subcategory": null,
+    "requires_screen_analysis": true,
+    "raw_command": "Analyse my screen."
+  },
+  "entities": {
+    "action": null,
+    "target": null,
+    "content": null,
+    "app_context": null
+  },
+  "raw_command": "Analyse my screen."
+}
+2025-10-27 17:58:07,044 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "IN_APP_ACTION",
+    "confidence": 0.7361863008293116,
+    "subcategory": null,
+    "requires_screen_analysis": true,
+    "raw_command": "service"
+  },
+  "entities": {
+    "action": null,
+    "target": null,
+    "content": null,
+    "app_context": null
+  },
+  "raw_command": "service"
+}
+2025-10-27 17:58:44,794 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "IN_APP_ACTION",
+    "confidence": 0.7123920107996333,
+    "subcategory": null,
+    "requires_screen_analysis": true,
+    "raw_command": "Play a YouTube video of Mr. Waste."
+  },
+  "entities": {
+    "action": "play",
+    "target": null,
+    "content": null,
+    "app_context": "youtube"
+  },
+  "raw_command": "Play a YouTube video of Mr. Waste."
+}
+2025-10-27 17:59:16,921 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "APP_LAUNCH",
+    "confidence": 0.5129013340349892,
+    "subcategory": null,
+    "requires_screen_analysis": false,
+    "raw_command": "Open Google Chrome."
+  },
+  "entities": {
+    "app_name": "google chrome.",
+    "action": "launch"
+  },
+  "raw_command": "Open Google Chrome."
+}
+2025-10-27 17:59:35,810 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "IN_APP_ACTION",
+    "confidence": 0.5449021720803492,
+    "subcategory": null,
+    "requires_screen_analysis": true,
+    "raw_command": "Clio's Google Chrome."
+  },
+  "entities": {
+    "action": null,
+    "target": null,
+    "content": null,
+    "app_context": null
+  },
+  "raw_command": "Clio's Google Chrome."
+}
+2025-10-27 17:59:55,663 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "IN_APP_ACTION",
+    "confidence": 0.7695427821570204,
+    "subcategory": null,
+    "requires_screen_analysis": true,
+    "raw_command": "Send high to 4-7 watts up."
+  },
+  "entities": {
+    "action": "send",
+    "target": "4-7 watts up.",
+    "content": null,
+    "app_context": null
+  },
+  "raw_command": "Send high to 4-7 watts up."
+}
+2025-10-27 18:00:41,577 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "IN_APP_ACTION",
+    "confidence": 0.7367908842964271,
+    "subcategory": null,
+    "requires_screen_analysis": true,
+    "raw_command": "Send high to polymorphism on whatsapp."
+  },
+  "entities": {
+    "action": "send",
+    "target": "polymorphism",
+    "content": null,
+    "app_context": "whatsapp"
+  },
+  "raw_command": "Send high to polymorphism on whatsapp."
+}
+2025-10-27 18:01:31,112 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "IN_APP_ACTION",
+    "confidence": 0.7695427821570204,
+    "subcategory": null,
+    "requires_screen_analysis": true,
+    "raw_command": "Send high to polymorphism."
+  },
+  "entities": {
+    "action": "send",
+    "target": "polymorphism.",
+    "content": null,
+    "app_context": null
+  },
+  "raw_command": "Send high to polymorphism."
+}
+2025-10-27 18:02:27,416 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "IN_APP_ACTION",
+    "confidence": 0.7361863008293116,
+    "subcategory": null,
+    "requires_screen_analysis": true,
+    "raw_command": "set volume to 30%"
+  },
+  "entities": {
+    "action": null,
+    "target": "30%",
+    "content": null,
+    "app_context": null
+  },
+  "raw_command": "set volume to 30%"
+}
+2025-10-30 17:24:06,523 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "APP_LAUNCH",
+    "confidence": 0.6051511402461126,
+    "subcategory": null,
+    "requires_screen_analysis": false,
+    "raw_command": "Open Spotify."
+  },
+  "entities": {
+    "app_name": "spotify.",
+    "action": "launch"
+  },
+  "raw_command": "Open Spotify."
+}
+2025-10-30 17:24:30,994 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "IN_APP_ACTION",
+    "confidence": 0.7361863008293116,
+    "subcategory": null,
+    "requires_screen_analysis": true,
+    "raw_command": "0.5, close 0.5."
+  },
+  "entities": {
+    "action": "close",
+    "target": null,
+    "content": null,
+    "app_context": null
+  },
+  "raw_command": "0.5, close 0.5."
+}
+2025-10-30 17:27:45,383 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "APP_LAUNCH",
+    "confidence": 0.5858817773626194,
+    "subcategory": null,
+    "requires_screen_analysis": false,
+    "raw_command": "Open, what is up?"
+  },
+  "entities": {
+    "app_name": ", what is up?",
+    "action": "launch"
+  },
+  "raw_command": "Open, what is up?"
+}
+2025-10-30 17:27:59,787 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "APP_LAUNCH",
+    "confidence": 0.5858817773626194,
+    "subcategory": null,
+    "requires_screen_analysis": false,
+    "raw_command": "Open what's up"
+  },
+  "entities": {
+    "app_name": "what's up",
+    "action": "launch"
+  },
+  "raw_command": "Open what's up"
+}
+2025-10-30 17:28:19,016 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "IN_APP_ACTION",
+    "confidence": 0.7695427821570204,
+    "subcategory": null,
+    "requires_screen_analysis": true,
+    "raw_command": "Send high to Thakre"
+  },
+  "entities": {
+    "action": "send",
+    "target": "thakre",
+    "content": null,
+    "app_context": null
+  },
+  "raw_command": "Send high to Thakre"
+}
+2025-10-30 17:28:41,434 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "IN_APP_ACTION",
+    "confidence": 0.7361863008293116,
+    "subcategory": null,
+    "requires_screen_analysis": true,
+    "raw_command": "Set system volume to 30%"
+  },
+  "entities": {
+    "action": null,
+    "target": "30%",
+    "content": null,
+    "app_context": null
+  },
+  "raw_command": "Set system volume to 30%"
+}
+2025-10-30 20:25:59,902 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "APP_LAUNCH",
+    "confidence": 0.9,
+    "subcategory": null,
+    "requires_screen_analysis": false,
+    "raw_command": "open spotify",
+    "app_name": "spotify"
+  },
+  "entities": {
+    "app_name": "spotify",
+    "action": "launch"
+  },
+  "raw_command": "open spotify"
+}
+2025-10-30 20:26:17,062 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "IN_APP_ACTION",
+    "confidence": 0.85,
+    "subcategory": null,
+    "requires_screen_analysis": true,
+    "raw_command": "close spotify"
+  },
+  "entities": {
+    "action": "close",
+    "target": null,
+    "content": null,
+    "app_context": "spotify"
+  },
+  "raw_command": "close spotify"
+}
+2025-10-30 20:34:37,072 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "APP_LAUNCH",
+    "confidence": 0.9,
+    "subcategory": null,
+    "requires_screen_analysis": false,
+    "raw_command": "Open spotify",
+    "app_name": "spotify"
+  },
+  "entities": {
+    "app_name": "spotify",
+    "action": "launch"
+  },
+  "raw_command": "Open spotify"
+}
+2025-10-30 20:46:43,289 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "SYSTEM_ACTION",
+    "subcategory": "volume",
+    "confidence": 0.95,
+    "requires_screen_analysis": false,
+    "raw_command": "set system volume to 30%"
+  },
+  "entities": {
+    "subcategory": "volume",
+    "action": null,
+    "value": null
+  },
+  "raw_command": "set system volume to 30%"
+}
+2025-10-30 20:47:02,495 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "APP_LAUNCH",
+    "confidence": 0.9,
+    "subcategory": null,
+    "requires_screen_analysis": false,
+    "raw_command": "open spotify",
+    "app_name": "spotify"
+  },
+  "entities": {
+    "app_name": "spotify",
+    "action": "launch"
+  },
+  "raw_command": "open spotify"
+}
+2025-10-30 22:20:38,194 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "SYSTEM_ACTION",
+    "subcategory": "volume",
+    "confidence": 0.95,
+    "requires_screen_analysis": false,
+    "raw_command": "set system volume to 30%"
+  },
+  "entities": {
+    "subcategory": "volume",
+    "action": null,
+    "value": null
+  },
+  "raw_command": "set system volume to 30%"
+}
+2025-10-30 22:36:59,292 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "SYSTEM_ACTION",
+    "subcategory": "volume",
+    "confidence": 0.95,
+    "requires_screen_analysis": false,
+    "raw_command": "volume to 30 percent"
+  },
+  "entities": {
+    "subcategory": "volume",
+    "action": null,
+    "value": null
+  },
+  "raw_command": "volume to 30 percent"
+}
+2025-10-30 22:37:30,630 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "SYSTEM_ACTION",
+    "subcategory": "brightness",
+    "confidence": 0.95,
+    "requires_screen_analysis": false,
+    "raw_command": "set brightness to 1%"
+  },
+  "entities": {
+    "subcategory": "brightness",
+    "action": null,
+    "value": null
+  },
+  "raw_command": "set brightness to 1%"
+}
+2025-10-30 22:38:02,001 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "SYSTEM_ACTION",
+    "subcategory": "volume",
+    "confidence": 0.95,
+    "requires_screen_analysis": false,
+    "raw_command": "set volume to 50%"
+  },
+  "entities": {
+    "subcategory": "volume",
+    "action": null,
+    "value": null
+  },
+  "raw_command": "set volume to 50%"
+}
+2025-10-30 22:38:49,060 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "APP_LAUNCH",
+    "confidence": 0.9,
+    "subcategory": null,
+    "requires_screen_analysis": false,
+    "raw_command": "Open VSCode",
+    "app_name": "vscode"
+  },
+  "entities": {
+    "app_name": "vscode",
+    "action": "launch"
+  },
+  "raw_command": "Open VSCode"
+}
+2025-10-30 22:46:57,539 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "SYSTEM_ACTION",
+    "subcategory": "volume",
+    "confidence": 0.95,
+    "requires_screen_analysis": false,
+    "raw_command": "set volume to 30%"
+  },
+  "entities": {
+    "subcategory": "volume",
+    "action": null,
+    "value": null
+  },
+  "raw_command": "set volume to 30%"
+}
+2025-10-30 22:48:29,927 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "APP_LAUNCH",
+    "confidence": 0.9,
+    "subcategory": null,
+    "requires_screen_analysis": false,
+    "raw_command": "Open VSCode",
+    "app_name": "vscode"
+  },
+  "entities": {
+    "app_name": "vscode",
+    "action": "launch"
+  },
+  "raw_command": "Open VSCode"
+}
+2025-10-30 23:04:05,215 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "APP_LAUNCH",
+    "confidence": 0.9,
+    "subcategory": null,
+    "requires_screen_analysis": false,
+    "raw_command": "open spotify",
+    "app_name": "spotify"
+  },
+  "entities": {
+    "app_name": "spotify",
+    "action": "launch"
+  },
+  "raw_command": "open spotify"
+}
+2025-10-30 23:04:25,596 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "SYSTEM_ACTION",
+    "subcategory": "volume",
+    "confidence": 0.95,
+    "requires_screen_analysis": false,
+    "raw_command": "set volume to 30%"
+  },
+  "entities": {
+    "subcategory": "volume",
+    "action": null,
+    "value": null
+  },
+  "raw_command": "set volume to 30%"
+}
+2025-10-30 23:04:46,021 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "SYSTEM_ACTION",
+    "subcategory": "brightness",
+    "confidence": 0.95,
+    "requires_screen_analysis": false,
+    "raw_command": "set brightness to 2%"
+  },
+  "entities": {
+    "subcategory": "brightness",
+    "action": null,
+    "value": null
+  },
+  "raw_command": "set brightness to 2%"
+}
+2025-10-30 23:05:06,266 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "APP_LAUNCH",
+    "confidence": 0.9,
+    "subcategory": null,
+    "requires_screen_analysis": false,
+    "raw_command": "Open VSCode",
+    "app_name": "vscode"
+  },
+  "entities": {
+    "app_name": "vscode",
+    "action": "launch"
+  },
+  "raw_command": "Open VSCode"
+}
+2025-10-30 23:13:30,282 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "SYSTEM_ACTION",
+    "subcategory": "volume",
+    "confidence": 0.95,
+    "requires_screen_analysis": false,
+    "raw_command": "set volume to 30"
+  },
+  "entities": {
+    "subcategory": "volume",
+    "action": null,
+    "value": null
+  },
+  "raw_command": "set volume to 30"
+}
+2025-10-30 23:13:51,513 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "SYSTEM_ACTION",
+    "subcategory": "volume",
+    "confidence": 0.95,
+    "requires_screen_analysis": false,
+    "raw_command": "set volume to 100"
+  },
+  "entities": {
+    "subcategory": "volume",
+    "action": null,
+    "value": null
+  },
+  "raw_command": "set volume to 100"
+}
+2025-10-30 23:14:12,418 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "APP_LAUNCH",
+    "confidence": 0.9,
+    "subcategory": null,
+    "requires_screen_analysis": false,
+    "raw_command": "Open Spotify.",
+    "app_name": "spotify"
+  },
+  "entities": {
+    "app_name": "spotify.",
+    "action": "launch"
+  },
+  "raw_command": "Open Spotify."
+}
+2025-10-30 23:14:36,613 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "IN_APP_ACTION",
+    "confidence": 0.85,
+    "subcategory": null,
+    "requires_screen_analysis": true,
+    "raw_command": "close spotify."
+  },
+  "entities": {
+    "action": "close",
+    "target": null,
+    "content": null,
+    "app_context": "spotify"
+  },
+  "raw_command": "Close Spotify."
+}
+2025-10-30 23:14:57,019 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "APP_LAUNCH",
+    "confidence": 0.9,
+    "subcategory": null,
+    "requires_screen_analysis": false,
+    "raw_command": "open whatsapp",
+    "app_name": "whatsapp"
+  },
+  "entities": {
+    "app_name": "whatsapp",
+    "action": "launch"
+  },
+  "raw_command": "open whatsapp"
+}
+2025-10-30 23:15:19,119 - CommandProcessor - INFO - Processed command: {
+  "classification": {
+    "category": "APP_LAUNCH",
+    "confidence": 0.9,
+    "subcategory": null,
+    "requires_screen_analysis": false,
+    "raw_command": "open crazy 2.0 text",
+    "app_name": "crazy 20 text"
+  },
+  "entities": {
+    "app_name": "crazy 2.0 text",
+    "action": "launch"
+  },
+  "raw_command": "open crazy 2.0 text"
+}

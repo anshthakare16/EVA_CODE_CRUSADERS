@@ -6,7 +6,7 @@ __pycache__/
 .Python
 env/
 venv/
-eva_env/
+eva_venv/
 *.egg-info/
 dist/
 build/
@@ -15,11 +15,6 @@ build/
 models/model_weights/*.pkl
 models/model_weights/*.joblib
 
-
-
-# Logs
-*.log
-logs/
 
 # OS
 .DS_Store

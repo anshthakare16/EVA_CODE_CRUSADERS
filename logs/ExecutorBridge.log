@@ -1,0 +1,1139 @@
+2025-10-14 21:05:08,814 - ExecutorBridge - ERROR - Failed to load C libraries: Could not find module 'C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\c_executors\executor.dll' (or one of its dependencies). Try using the full path with constructor syntax.
+2025-10-14 21:05:08,814 - ExecutorBridge - WARNING - Falling back to Python automation (PyAutoGUI)
+2025-10-14 21:05:08,847 - ExecutorBridge - INFO - PyAutoGUI fallback initialized
+2025-10-14 21:05:26,692 - ExecutorBridge - INFO - Executing action: GENERIC with params: {'command': 'EXECUTE:thank you'}
+2025-10-14 21:05:26,692 - ExecutorBridge - WARNING - Generic command: EXECUTE:thank you
+2025-10-14 21:05:35,757 - ExecutorBridge - INFO - Executing action: GENERIC with params: {'command': 'EXECUTE:you'}
+2025-10-14 21:05:35,757 - ExecutorBridge - WARNING - Generic command: EXECUTE:you
+2025-10-14 21:05:44,863 - ExecutorBridge - INFO - Executing action: GENERIC with params: {'command': 'EXECUTE:you'}
+2025-10-14 21:05:44,863 - ExecutorBridge - WARNING - Generic command: EXECUTE:you
+2025-10-14 21:05:53,960 - ExecutorBridge - INFO - Executing action: GENERIC with params: {'command': 'EXECUTE:you'}
+2025-10-14 21:05:53,960 - ExecutorBridge - WARNING - Generic command: EXECUTE:you
+2025-10-14 21:06:03,081 - ExecutorBridge - INFO - Executing action: GENERIC with params: {'command': 'EXECUTE:you'}
+2025-10-14 21:06:03,081 - ExecutorBridge - WARNING - Generic command: EXECUTE:you
+2025-10-14 21:06:12,155 - ExecutorBridge - INFO - Executing action: GENERIC with params: {'command': 'EXECUTE:you'}
+2025-10-14 21:06:12,155 - ExecutorBridge - WARNING - Generic command: EXECUTE:you
+2025-10-14 21:06:21,237 - ExecutorBridge - INFO - Executing action: GENERIC with params: {'command': 'EXECUTE:you'}
+2025-10-14 21:06:21,237 - ExecutorBridge - WARNING - Generic command: EXECUTE:you
+2025-10-14 21:06:30,322 - ExecutorBridge - INFO - Executing action: GENERIC with params: {'command': 'EXECUTE:you'}
+2025-10-14 21:06:30,322 - ExecutorBridge - WARNING - Generic command: EXECUTE:you
+2025-10-14 21:06:39,861 - ExecutorBridge - INFO - Executing action: GENERIC with params: {'command': 'EXECUTE:       '}
+2025-10-14 21:06:39,861 - ExecutorBridge - WARNING - Generic command: EXECUTE:       
+2025-10-14 21:06:50,026 - ExecutorBridge - INFO - Executing action: GENERIC with params: {'command': 'EXECUTE:place of iron what is that'}
+2025-10-14 21:06:50,026 - ExecutorBridge - WARNING - Generic command: EXECUTE:place of iron what is that
+2025-10-14 21:11:57,403 - ExecutorBridge - ERROR - Failed to load C libraries: Could not find module 'C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\c_executors\executor.dll' (or one of its dependencies). Try using the full path with constructor syntax.
+2025-10-14 21:11:57,403 - ExecutorBridge - WARNING - Falling back to Python automation (PyAutoGUI)
+2025-10-14 21:11:57,435 - ExecutorBridge - INFO - PyAutoGUI fallback initialized
+2025-10-14 21:15:42,962 - ExecutorBridge - ERROR - Failed to load C libraries: Could not find module 'C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\c_executors\executor.dll' (or one of its dependencies). Try using the full path with constructor syntax.
+2025-10-14 21:15:42,962 - ExecutorBridge - WARNING - Falling back to Python automation (PyAutoGUI)
+2025-10-14 21:15:42,996 - ExecutorBridge - INFO - PyAutoGUI fallback initialized
+2025-10-14 21:19:58,507 - ExecutorBridge - ERROR - Failed to load C libraries: Could not find module 'C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\c_executors\executor.dll' (or one of its dependencies). Try using the full path with constructor syntax.
+2025-10-14 21:19:58,507 - ExecutorBridge - WARNING - Falling back to Python automation (PyAutoGUI)
+2025-10-14 21:19:58,543 - ExecutorBridge - INFO - PyAutoGUI fallback initialized
+2025-10-14 21:20:46,199 - ExecutorBridge - INFO - Executing action: PRESS_KEY with params: {'key': 'win'}
+2025-10-14 21:20:46,308 - ExecutorBridge - INFO - PyAutoGUI pressed key: 'win'
+2025-10-14 21:20:53,259 - ExecutorBridge - INFO - Executing action: WAIT with params: {'duration': 0.5}
+2025-10-14 21:21:01,060 - ExecutorBridge - INFO - Executing action: TYPE_TEXT with params: {'text': 'whats up'}
+2025-10-14 21:21:01,645 - ExecutorBridge - INFO - PyAutoGUI typed: 'whats up'
+2025-10-14 21:21:08,639 - ExecutorBridge - INFO - Executing action: PRESS_KEY with params: {'key': 'enter'}
+2025-10-14 21:21:08,752 - ExecutorBridge - INFO - PyAutoGUI pressed key: 'enter'
+2025-10-14 21:21:58,389 - ExecutorBridge - INFO - Executing action: PRESS_KEY with params: {'key': 'win'}
+2025-10-14 21:21:58,504 - ExecutorBridge - INFO - PyAutoGUI pressed key: 'win'
+2025-10-14 21:22:05,332 - ExecutorBridge - INFO - Executing action: WAIT with params: {'duration': 0.5}
+2025-10-14 21:22:13,713 - ExecutorBridge - INFO - Executing action: TYPE_TEXT with params: {'text': 'whats up'}
+2025-10-14 21:22:14,318 - ExecutorBridge - INFO - PyAutoGUI typed: 'whats up'
+2025-10-14 21:22:20,836 - ExecutorBridge - INFO - Executing action: PRESS_KEY with params: {'key': 'enter'}
+2025-10-14 21:22:20,938 - ExecutorBridge - INFO - PyAutoGUI pressed key: 'enter'
+2025-10-14 21:22:48,481 - ExecutorBridge - INFO - Executing action: GENERIC with params: {'command': 'EXECUTE:thank you very much'}
+2025-10-14 21:22:48,481 - ExecutorBridge - WARNING - Generic command: EXECUTE:thank you very much
+2025-10-14 21:23:12,509 - ExecutorBridge - INFO - Executing action: PRESS_KEY with params: {'key': 'win'}
+2025-10-14 21:23:12,631 - ExecutorBridge - INFO - PyAutoGUI pressed key: 'win'
+2025-10-14 21:23:20,114 - ExecutorBridge - INFO - Executing action: WAIT with params: {'duration': 0.5}
+2025-10-14 21:23:27,812 - ExecutorBridge - INFO - Executing action: TYPE_TEXT with params: {'text': 'whats up'}
+2025-10-14 21:23:28,428 - ExecutorBridge - INFO - PyAutoGUI typed: 'whats up'
+2025-10-14 21:23:38,263 - ExecutorBridge - INFO - Executing action: PRESS_KEY with params: {'key': 'enter'}
+2025-10-14 21:23:38,369 - ExecutorBridge - INFO - PyAutoGUI pressed key: 'enter'
+2025-10-15 10:48:01,935 - ExecutorBridge - ERROR - Failed to load C libraries: Could not find module 'C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\c_executors\executor.dll' (or one of its dependencies). Try using the full path with constructor syntax.
+2025-10-15 10:48:01,935 - ExecutorBridge - WARNING - Falling back to Python automation (PyAutoGUI)
+2025-10-15 10:48:02,104 - ExecutorBridge - INFO - PyAutoGUI fallback initialized
+2025-10-15 10:48:42,776 - ExecutorBridge - INFO - Executing action: PRESS_KEY with params: {'key': 'win'}
+2025-10-15 10:48:42,892 - ExecutorBridge - INFO - PyAutoGUI pressed key: 'win'
+2025-10-15 10:48:50,920 - ExecutorBridge - INFO - Executing action: WAIT with params: {'duration': 0.5}
+2025-10-15 10:48:59,562 - ExecutorBridge - INFO - Executing action: TYPE_TEXT with params: {'text': 'youtube'}
+2025-10-15 10:49:00,117 - ExecutorBridge - INFO - PyAutoGUI typed: 'youtube'
+2025-10-15 10:49:06,946 - ExecutorBridge - INFO - Executing action: PRESS_KEY with params: {'key': 'enter'}
+2025-10-15 10:49:07,051 - ExecutorBridge - INFO - PyAutoGUI pressed key: 'enter'
+2025-10-15 11:48:24,251 - ExecutorBridge - ERROR - Failed to load C library: Could not find module 'C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\c_executors\executor.dll' (or one of its dependencies). Try using the full path with constructor syntax.
+2025-10-15 12:12:40,060 - ExecutorBridge - ERROR - Failed to load C library: function 'mouse_scroll' not found
+2025-10-15 12:21:44,977 - ExecutorBridge - INFO - C executor library loaded: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\c_executors\executor.dll
+2025-10-15 12:23:07,799 - ExecutorBridge - INFO - C executor library loaded: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\c_executors\executor.dll
+2025-10-15 12:26:20,346 - ExecutorBridge - INFO - C executor library loaded: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\c_executors\executor.dll
+2025-10-15 12:28:08,376 - ExecutorBridge - INFO - C executor library loaded: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\c_executors\executor.dll
+2025-10-15 12:29:02,576 - ExecutorBridge - INFO - C executor library loaded: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\c_executors\executor.dll
+2025-10-15 12:29:28,238 - ExecutorBridge - INFO - Launching: youtube.
+2025-10-15 12:29:59,251 - ExecutorBridge - INFO - Launching: google chrome.
+2025-10-15 12:32:26,325 - ExecutorBridge - INFO - Launching: .  what's up?  .  what's up?
+2025-10-15 12:32:40,885 - ExecutorBridge - INFO - Launching: what's up.
+2025-10-15 12:33:20,853 - ExecutorBridge - INFO - Launching: the chat of your...
+2025-10-15 12:34:04,082 - ExecutorBridge - INFO - C executor library loaded: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\c_executors\executor.dll
+2025-10-15 16:12:30,496 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-15 16:15:27,678 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-15 16:17:07,475 - ExecutorBridge - INFO - Launching: spotify and place a fire
+2025-10-21 01:07:00,761 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-27 17:57:49,738 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-27 17:59:16,924 - ExecutorBridge - INFO - Launching: google chrome.
+2025-10-27 18:02:15,193 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-30 17:23:49,965 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-30 17:24:06,524 - ExecutorBridge - INFO - Launching: spotify.
+2025-10-30 17:27:45,387 - ExecutorBridge - INFO - Launching: , what is up?
+2025-10-30 17:27:59,792 - ExecutorBridge - INFO - Launching: what's up
+2025-10-30 19:44:40,890 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-30 19:54:48,639 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-30 19:57:12,550 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-30 20:05:32,094 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-30 20:07:50,177 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-30 20:11:35,071 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-30 20:15:04,346 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-30 20:25:18,562 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-30 20:33:59,307 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-30 20:45:15,306 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-30 22:19:44,944 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-30 22:36:38,986 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-30 22:46:35,473 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-30 22:58:07,259 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-30 23:03:39,196 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-30 23:13:05,505 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-30 23:14:12,418 - ExecutorBridge - INFO - Launching: spotify.
+2025-10-30 23:14:57,019 - ExecutorBridge - INFO - Launching: whatsapp
+2025-10-30 23:15:19,119 - ExecutorBridge - INFO - Launching: crazy 2.0 text
+2025-10-30 23:28:50,063 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-30 23:29:58,861 - ExecutorBridge - INFO - Launching: whatsapp
+2025-10-30 23:31:01,947 - ExecutorBridge - INFO - Launching: spotify
+2025-10-30 23:38:42,018 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-30 23:39:08,655 - ExecutorBridge - INFO - Launching: spotify
+2025-10-30 23:56:51,067 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-31 00:03:55,530 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-31 00:04:32,601 - ExecutorBridge - INFO - Launching: spotify
+2025-10-31 00:08:03,639 - ExecutorBridge - INFO - Launching: 
+2025-10-31 19:37:45,381 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-31 19:38:28,478 - ExecutorBridge - INFO - Launching: spotify
+2025-10-31 20:08:53,246 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-31 20:23:16,179 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-31 21:42:48,256 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-31 21:47:03,470 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-31 21:53:54,113 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-31 21:57:33,933 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-31 22:00:02,262 - ExecutorBridge - INFO - Launching: whatsapp
+2025-10-31 22:06:24,971 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-31 22:09:25,832 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-31 22:11:08,833 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-31 22:16:57,149 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-31 22:40:54,476 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-31 22:42:45,168 - ExecutorBridge - INFO - Launching: spotify
+2025-10-31 22:52:38,148 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-10-31 22:55:30,596 - ExecutorBridge - INFO - Launching: microsoft edge and open unity openit
+2025-11-01 10:49:14,580 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 10:52:23,627 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 10:58:12,869 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 11:07:08,757 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 11:10:07,694 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 11:18:54,475 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 11:26:04,983 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 11:29:30,447 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 11:30:18,846 - ExecutorBridge - INFO - Launching: unknown
+2025-11-01 12:00:32,570 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 12:08:15,779 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 12:09:21,594 - ExecutorBridge - INFO - Launching: unknown
+2025-11-01 12:11:10,029 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 12:41:58,510 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 12:42:29,209 - ExecutorBridge - INFO - Launching: microsoft edge
+2025-11-01 12:44:41,075 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 12:48:21,097 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 12:50:43,998 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 12:51:29,944 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 12:52:34,184 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 12:53:48,970 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 12:55:53,022 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 12:58:41,320 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 12:59:49,182 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 13:10:13,382 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 13:13:43,444 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 13:15:13,641 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 13:17:38,704 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 13:23:18,386 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 13:32:25,630 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 13:39:59,451 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 15:07:28,752 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 15:12:13,759 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 15:27:12,988 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 15:52:16,342 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 16:06:42,737 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 16:18:23,508 - ExecutorBridge - ERROR - Failed to load C library: function 'keyboard_release_key' not found
+2025-11-01 16:24:22,263 - ExecutorBridge - ERROR - Failed to load C library: [WinError 193] %1 is not a valid Win32 application
+2025-11-01 16:25:20,293 - ExecutorBridge - ERROR - Failed to load C library: [WinError 193] %1 is not a valid Win32 application
+2025-11-01 16:27:44,427 - ExecutorBridge - WARNING - executor_x64.dll not found, falling back to executor.dll
+2025-11-01 16:27:44,428 - ExecutorBridge - ERROR - Failed to load C library: [WinError 193] %1 is not a valid Win32 application
+2025-11-01 16:30:03,013 - ExecutorBridge - ERROR - Failed to load C library: [WinError 193] %1 is not a valid Win32 application
+2025-11-01 16:40:23,224 - ExecutorBridge - ERROR - Failed to load C library: [WinError 193] %1 is not a valid Win32 application
+2025-11-01 16:55:17,167 - ExecutorBridge - ERROR - Failed to load C library: [WinError 193] %1 is not a valid Win32 application
+2025-11-01 16:57:54,218 - ExecutorBridge - ERROR - Failed to load C library: [WinError 193] %1 is not a valid Win32 application
+2025-11-01 16:59:23,476 - ExecutorBridge - ERROR - Failed to load C library: [WinError 193] %1 is not a valid Win32 application
+2025-11-01 17:24:30,312 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 17:51:20,777 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 17:52:33,944 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-01 17:52:33,947 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-01 17:53:12,625 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-01 17:53:12,626 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-01 17:54:02,522 - ExecutorBridge - INFO - Focusing window with title: wahtsapp
+2025-11-01 17:54:02,524 - ExecutorBridge - WARNING - Window with title 'wahtsapp' not found.
+2025-11-01 17:54:49,444 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-01 17:54:49,445 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-01 17:55:41,060 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-01 17:55:41,061 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-01 17:56:27,198 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 17:57:24,782 - ExecutorBridge - INFO - Focusing window with title: microsoft edge
+2025-11-01 17:57:24,783 - ExecutorBridge - WARNING - Window with title 'microsoft edge' not found.
+2025-11-01 17:57:58,452 - ExecutorBridge - INFO - Focusing window with title: microsoft edge
+2025-11-01 17:57:58,454 - ExecutorBridge - WARNING - Window with title 'microsoft edge' not found.
+2025-11-01 17:58:34,354 - ExecutorBridge - INFO - Focusing window with title: microsoft edge
+2025-11-01 17:58:34,355 - ExecutorBridge - WARNING - Window with title 'microsoft edge' not found.
+2025-11-01 18:02:14,292 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-01 18:02:14,293 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-01 18:03:25,106 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-01 18:03:25,108 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-01 18:04:31,921 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-01 18:04:31,923 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-01 18:05:32,138 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 18:07:10,575 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-01 18:07:10,578 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-01 18:07:56,747 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-01 18:07:56,749 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-01 18:08:46,067 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-01 18:08:46,069 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-01 18:12:15,179 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 18:13:22,254 - ExecutorBridge - INFO - Focusing window with title: chrome and select the first profile
+2025-11-01 18:13:22,256 - ExecutorBridge - WARNING - Window with title 'chrome and select the first profile' not found.
+2025-11-01 20:23:54,335 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-01 20:25:10,638 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-01 20:25:10,642 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 12:00:30,079 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-02 12:01:55,259 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 12:01:55,263 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 12:07:16,895 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-02 12:08:51,309 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 12:08:51,312 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 12:09:45,210 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 12:09:45,212 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 12:14:11,216 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-02 12:15:28,588 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 12:15:28,590 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 12:21:34,067 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-02 12:22:34,264 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 12:22:34,266 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 12:26:31,440 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-02 12:27:22,684 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 12:27:22,686 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 12:28:12,903 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 12:28:12,904 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 12:29:35,059 - ExecutorBridge - INFO - Focusing window with title: whatsapp chupre lawde jyada bol mat me ai hu
+2025-11-02 12:29:35,061 - ExecutorBridge - WARNING - Window with title 'whatsapp chupre lawde jyada bol mat me ai hu' not found.
+2025-11-02 12:29:52,154 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 12:29:52,156 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 12:34:03,924 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-02 12:35:07,458 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 12:35:07,667 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 12:37:01,429 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-02 12:38:09,227 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 12:38:09,228 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 12:51:06,199 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-02 12:51:18,318 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-02 12:53:11,810 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-02 13:01:17,454 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-02 13:02:05,955 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 13:02:05,960 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 13:23:26,954 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-02 13:24:15,284 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-02 13:25:09,565 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-02 13:26:21,112 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-02 13:27:11,291 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 13:27:11,294 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 13:43:21,702 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-02 13:44:20,863 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 13:44:20,944 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 13:46:12,040 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 13:46:12,043 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 13:48:49,738 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 13:48:49,741 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 13:49:41,774 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 13:49:41,784 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 13:56:12,808 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-02 13:58:05,513 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 13:58:05,521 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 14:03:22,535 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-02 14:04:50,444 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 14:04:50,446 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 14:06:30,027 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 14:06:30,029 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 14:08:36,908 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 14:08:36,910 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 14:10:54,858 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 14:10:54,863 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 14:21:09,239 - ExecutorBridge - INFO - Focusing window with title: edge
+2025-11-02 14:21:09,244 - ExecutorBridge - INFO - Successfully focused window: edge
+2025-11-02 14:25:00,260 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-02 14:28:00,389 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-02 14:29:22,149 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-02 14:32:30,935 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-02 14:34:45,398 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 14:34:45,400 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 14:35:18,538 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-02 14:36:12,216 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 14:36:12,217 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 14:39:14,364 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-02 14:39:48,692 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 14:39:48,695 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 15:16:10,955 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-02 15:17:16,086 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 15:17:16,089 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 15:18:28,223 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-02 15:20:16,636 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 15:20:16,641 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 15:31:59,544 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-02 15:33:00,384 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 15:33:00,388 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 15:36:27,891 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-02 15:37:01,139 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 15:37:01,146 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 15:37:36,170 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 15:37:36,172 - ExecutorBridge - WARNING - Window with title 'whatsapp' not found.
+2025-11-02 15:37:40,690 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 15:37:40,692 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 15:46:00,274 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 15:46:00,277 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 15:46:35,945 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 15:46:35,946 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 15:47:17,193 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 15:47:17,195 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 15:48:59,184 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-02 15:49:51,097 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 15:49:51,098 - ExecutorBridge - ERROR - Failed to focus window: Error code from Windows: 0 - The operation completed successfully.
+2025-11-02 15:51:12,347 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 15:51:12,348 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 15:52:25,798 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 15:52:25,799 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 15:52:56,923 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 15:52:56,924 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 15:53:43,871 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 15:53:43,872 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 15:54:24,968 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 15:54:24,969 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 15:55:18,147 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 15:55:18,148 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 15:55:19,118 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 15:55:19,119 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 15:56:12,253 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 15:56:12,254 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 15:56:31,019 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-02 15:56:31,020 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-02 16:00:56,166 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-02 16:06:51,301 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-02 16:53:26,515 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-03 16:05:47,598 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-03 16:08:31,931 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-03 16:08:31,934 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-03 16:09:19,579 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-03 16:09:19,582 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-03 16:10:11,434 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-03 16:26:04,637 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-03 16:28:31,344 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-03 16:36:10,605 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-03 16:37:54,096 - ExecutorBridge - INFO - Focusing window with title: spotify and play song sapphire
+2025-11-03 16:37:54,101 - ExecutorBridge - WARNING - Window with title 'spotify and play song sapphire' not found.
+2025-11-03 16:38:40,046 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-03 16:38:40,048 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-03 16:40:28,929 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 16:40:28,930 - ExecutorBridge - WARNING - Window with title 'spotify' not found.
+2025-11-03 16:40:49,251 - ExecutorBridge - INFO - Focusing window with title: spotify and play sapphire
+2025-11-03 16:40:49,254 - ExecutorBridge - WARNING - Window with title 'spotify and play sapphire' not found.
+2025-11-03 16:41:37,287 - ExecutorBridge - INFO - Focusing window with title: spotify play sapphire
+2025-11-03 16:41:37,289 - ExecutorBridge - WARNING - Window with title 'spotify play sapphire' not found.
+2025-11-03 16:44:40,371 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-03 16:45:17,235 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 16:45:17,236 - ExecutorBridge - WARNING - Window with title 'spotify' not found.
+2025-11-03 16:47:09,235 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 16:47:09,241 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 16:48:13,470 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-03 16:48:36,161 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 16:48:36,162 - ExecutorBridge - WARNING - Window with title 'spotify' not found.
+2025-11-03 16:49:07,553 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 16:49:07,554 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 16:50:52,602 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 16:50:52,608 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 16:51:26,482 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 16:51:26,484 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 16:51:58,248 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 16:51:58,249 - ExecutorBridge - WARNING - Window with title 'spotify' not found.
+2025-11-03 16:52:27,483 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 16:52:27,489 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 16:53:03,414 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 16:53:03,418 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 16:53:39,964 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 16:53:39,966 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 16:57:19,875 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 16:57:55,409 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 16:58:34,777 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 16:59:10,981 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-03 17:00:44,597 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 17:00:44,598 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-03 17:00:44,599 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 17:00:44,599 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 17:02:16,101 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-03 17:02:43,432 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 17:02:43,433 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 17:03:58,063 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-03 17:04:20,483 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 17:04:20,485 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 17:09:12,251 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-03 17:09:58,316 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 17:09:58,466 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 17:10:52,378 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-03 17:11:17,519 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 17:11:17,522 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 17:12:04,261 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 17:12:04,389 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 17:12:48,391 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 17:12:48,393 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 17:13:50,422 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 17:13:50,424 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 17:15:01,329 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-03 17:15:31,618 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 17:15:31,619 - ExecutorBridge - WARNING - Window with title 'spotify' not found.
+2025-11-03 17:15:32,674 - ExecutorBridge - INFO - Focusing window with title: current
+2025-11-03 17:15:32,675 - ExecutorBridge - WARNING - Window with title 'current' not found.
+2025-11-03 17:15:34,689 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-03 17:15:34,690 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-03 17:15:35,663 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-03 17:15:35,686 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-03 17:15:36,645 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-03 17:15:36,646 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-03 17:15:37,664 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-03 17:15:37,756 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-03 17:15:38,646 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-03 17:15:38,649 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-03 17:15:39,656 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-03 17:15:39,657 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-03 17:15:40,690 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-03 17:15:40,704 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-03 17:15:54,579 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 17:15:54,609 - ExecutorBridge - WARNING - Window with title 'spotify' not found.
+2025-11-03 17:16:25,989 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-03 17:16:52,935 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 17:16:52,936 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 17:17:35,317 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 17:17:35,318 - ExecutorBridge - WARNING - Window with title 'spotify' not found.
+2025-11-03 17:17:36,388 - ExecutorBridge - INFO - Focusing window with title: current
+2025-11-03 17:17:36,389 - ExecutorBridge - WARNING - Window with title 'current' not found.
+2025-11-03 17:17:58,477 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-03 17:18:25,167 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 17:18:25,168 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 17:18:54,782 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 17:18:54,783 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 17:19:33,583 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 17:19:33,584 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 17:20:10,154 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 17:20:10,155 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 17:20:27,749 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 17:20:27,750 - ExecutorBridge - WARNING - Window with title 'spotify' not found.
+2025-11-03 17:20:28,826 - ExecutorBridge - INFO - Focusing window with title: current
+2025-11-03 17:20:28,827 - ExecutorBridge - WARNING - Window with title 'current' not found.
+2025-11-03 17:20:30,807 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-03 17:20:30,808 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-03 17:20:31,829 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-03 17:20:31,832 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-03 17:20:32,833 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-03 17:20:32,865 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-03 17:20:33,803 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-03 17:20:33,804 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-03 17:20:48,552 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-03 17:22:19,460 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 17:22:19,461 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 17:22:57,153 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 17:22:57,155 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 17:29:54,623 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-03 17:30:37,946 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 17:30:37,947 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 17:31:30,695 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 17:31:30,696 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 17:32:31,865 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 17:32:31,866 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 17:33:48,199 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 17:33:48,202 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 17:34:34,201 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 17:34:34,204 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 17:35:40,151 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 17:35:40,152 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 17:36:54,204 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-03 17:37:29,437 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 17:37:29,439 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 17:38:36,838 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-03 17:38:36,839 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-03 17:46:29,321 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-03 20:19:45,164 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-03 20:31:09,266 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 20:31:09,269 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 20:32:40,060 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 20:32:40,065 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-03 20:33:57,672 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-03 20:33:57,679 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-03 20:35:17,419 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-03 20:44:18,148 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 20:44:18,152 - ExecutorBridge - WARNING - Window with title 'spotify' not found.
+2025-11-03 20:44:19,245 - ExecutorBridge - INFO - Focusing window with title: current
+2025-11-03 20:44:19,247 - ExecutorBridge - WARNING - Window with title 'current' not found.
+2025-11-03 20:44:55,958 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-03 20:45:34,119 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 20:45:34,167 - ExecutorBridge - WARNING - Window with title 'spotify' not found.
+2025-11-03 20:45:35,194 - ExecutorBridge - INFO - Focusing window with title: current
+2025-11-03 20:45:35,268 - ExecutorBridge - WARNING - Window with title 'current' not found.
+2025-11-03 20:45:37,261 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-03 20:45:37,263 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-03 20:45:38,281 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-03 20:45:38,324 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-03 20:45:39,304 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-03 20:45:39,310 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-03 20:45:40,322 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-03 20:45:40,396 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-03 20:45:41,409 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-03 20:45:41,516 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-03 20:45:42,502 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-03 20:45:42,537 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-03 20:45:44,812 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-03 20:45:45,200 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-03 20:46:00,983 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-03 20:46:01,258 - ExecutorBridge - WARNING - Window with title 'spotify' not found.
+2025-11-03 20:46:19,408 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-03 20:46:19,571 - ExecutorBridge - ERROR - Failed to focus window: Error code from Windows: 0 - The operation completed successfully.
+2025-11-03 20:46:20,459 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-03 20:46:20,572 - ExecutorBridge - ERROR - Failed to focus window: Error code from Windows: 0 - The operation completed successfully.
+2025-11-03 20:46:22,701 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-03 20:46:22,754 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-03 21:06:47,437 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-03 21:07:56,790 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-03 21:07:56,800 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-03 21:09:09,690 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-04 11:36:38,163 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-04 11:38:44,853 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 11:38:44,898 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-04 11:38:45,863 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 11:38:45,872 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-04 11:38:46,900 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 11:38:46,947 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-04 11:38:47,902 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 11:38:47,962 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-04 11:38:49,035 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 11:38:49,040 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-04 11:38:50,134 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 11:38:50,205 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-04 11:39:18,877 - ExecutorBridge - INFO - Focusing window with title: edge
+2025-11-04 11:39:18,903 - ExecutorBridge - INFO - Successfully focused window: edge
+2025-11-04 11:40:48,254 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-04 11:41:40,482 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 11:41:40,484 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-04 11:42:19,377 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 11:42:19,381 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-04 11:48:38,803 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-04 11:49:27,712 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 11:49:27,716 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-04 11:49:28,759 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 11:49:28,761 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-04 11:49:29,734 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 11:49:29,736 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-04 11:49:30,710 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 11:49:30,770 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-04 11:49:31,808 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 11:49:31,830 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-04 11:49:32,945 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 11:49:32,946 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-04 11:50:43,896 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-04 11:50:43,926 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-04 12:04:23,477 - ExecutorBridge - INFO - Focusing window with title: calculator
+2025-11-04 12:04:23,480 - ExecutorBridge - WARNING - Window with title 'calculator' not found.
+2025-11-04 12:04:34,634 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 12:04:34,756 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-04 12:04:35,673 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 12:04:35,674 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-04 12:04:36,759 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 12:04:36,794 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-04 14:41:24,291 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-04 14:44:00,625 - ExecutorBridge - INFO - Focusing window with title: spotify
+2025-11-04 14:44:00,627 - ExecutorBridge - INFO - Successfully focused window: spotify
+2025-11-04 14:45:03,622 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 14:45:03,624 - ExecutorBridge - WARNING - Window with title 'whatsapp' not found.
+2025-11-04 14:45:04,699 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 14:45:04,703 - ExecutorBridge - WARNING - Window with title 'whatsapp' not found.
+2025-11-04 14:45:05,799 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 14:45:05,801 - ExecutorBridge - WARNING - Window with title 'whatsapp' not found.
+2025-11-04 14:45:06,880 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 14:45:06,881 - ExecutorBridge - WARNING - Window with title 'whatsapp' not found.
+2025-11-04 14:45:07,997 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 14:45:07,998 - ExecutorBridge - WARNING - Window with title 'whatsapp' not found.
+2025-11-04 14:45:09,099 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 14:45:09,102 - ExecutorBridge - WARNING - Window with title 'whatsapp' not found.
+2025-11-04 14:45:10,174 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 14:45:10,175 - ExecutorBridge - WARNING - Window with title 'whatsapp' not found.
+2025-11-04 14:45:28,445 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-04 14:46:20,868 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 14:46:20,870 - ExecutorBridge - WARNING - Window with title 'whatsapp' not found.
+2025-11-04 14:46:22,024 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 14:46:22,025 - ExecutorBridge - WARNING - Window with title 'whatsapp' not found.
+2025-11-04 14:46:23,189 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 14:46:23,191 - ExecutorBridge - WARNING - Window with title 'whatsapp' not found.
+2025-11-04 14:46:24,314 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 14:46:24,316 - ExecutorBridge - WARNING - Window with title 'whatsapp' not found.
+2025-11-04 14:46:25,479 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 14:46:25,481 - ExecutorBridge - WARNING - Window with title 'whatsapp' not found.
+2025-11-04 14:46:26,607 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 14:46:26,608 - ExecutorBridge - WARNING - Window with title 'whatsapp' not found.
+2025-11-04 14:46:27,749 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 14:46:27,750 - ExecutorBridge - WARNING - Window with title 'whatsapp' not found.
+2025-11-04 14:46:28,880 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 14:46:28,881 - ExecutorBridge - WARNING - Window with title 'whatsapp' not found.
+2025-11-04 14:46:30,016 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 14:46:30,017 - ExecutorBridge - WARNING - Window with title 'whatsapp' not found.
+2025-11-04 14:46:31,134 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 14:46:31,138 - ExecutorBridge - WARNING - Window with title 'whatsapp' not found.
+2025-11-04 14:46:32,264 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 14:46:32,266 - ExecutorBridge - WARNING - Window with title 'whatsapp' not found.
+2025-11-04 14:47:22,894 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-04 14:48:22,138 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 14:48:22,146 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-04 14:49:20,495 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 14:49:20,515 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-04 14:49:21,629 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 14:49:21,631 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-04 14:49:22,798 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 14:49:22,809 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-04 14:52:57,871 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-04 14:54:07,407 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 14:54:07,413 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-04 14:54:08,570 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 14:54:08,585 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-04 14:54:09,712 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 14:54:09,721 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-04 14:54:10,885 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 14:54:10,887 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-04 14:54:12,018 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 14:54:12,023 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-04 14:54:13,165 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 14:54:13,166 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-04 14:54:14,274 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 14:54:14,278 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-04 14:54:15,433 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 14:54:15,434 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-04 14:54:29,835 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 14:54:29,836 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-04 14:55:44,821 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-04 14:58:40,118 - ExecutorBridge - INFO - Focusing window with title: whatsapp
+2025-11-04 14:58:40,121 - ExecutorBridge - INFO - Successfully focused window: whatsapp
+2025-11-04 14:59:55,354 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 14:59:55,356 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-04 14:59:56,382 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 14:59:56,417 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-04 14:59:57,382 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 14:59:57,384 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-04 14:59:58,432 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 14:59:58,460 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-04 14:59:59,436 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 14:59:59,545 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-04 15:00:00,451 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 15:00:00,452 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-04 15:00:01,535 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 15:00:01,537 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-04 15:02:22,020 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 15:02:22,026 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-04 15:02:23,066 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 15:02:23,067 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-04 15:02:24,019 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 15:02:24,026 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-04 15:02:25,026 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 15:02:25,092 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-04 15:02:26,025 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 15:02:26,027 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-04 15:02:27,125 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 15:02:27,135 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-04 15:02:28,160 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 15:02:28,162 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-04 15:02:29,178 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 15:02:29,179 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-04 15:02:47,590 - ExecutorBridge - INFO - Focusing window with title: chrome select pyooutube.cm
+2025-11-04 15:02:47,666 - ExecutorBridge - WARNING - Window with title 'chrome select pyooutube.cm' not found.
+2025-11-04 15:02:48,581 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 15:02:48,585 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-04 15:03:50,079 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-04 15:11:15,752 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-04 15:12:13,601 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 15:12:13,603 - ExecutorBridge - ERROR - Failed to focus window: Error code from Windows: 0 - The operation completed successfully.
+2025-11-04 15:12:14,614 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 15:12:14,616 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-04 15:12:15,690 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 15:12:15,718 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-04 15:12:16,719 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 15:12:16,739 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-04 15:12:17,739 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 15:12:17,776 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-04 15:12:18,898 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 15:12:18,928 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-04 15:12:20,281 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 15:12:20,313 - ExecutorBridge - INFO - Successfully focused window: chrome
+2025-11-04 15:13:31,541 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-04 15:33:46,677 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-04 15:35:58,956 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 15:35:58,958 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-04 15:35:59,979 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 15:35:59,981 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-04 15:36:00,991 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 15:36:00,992 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-04 15:36:02,003 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 15:36:02,060 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-04 15:36:02,987 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 15:36:02,989 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-04 15:36:21,287 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-04 15:39:07,039 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 15:39:07,051 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-04 15:39:08,018 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 15:39:08,019 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-04 15:39:09,054 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 15:39:09,056 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-04 15:39:10,034 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 15:39:10,069 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-04 19:36:38,934 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-04 19:37:48,758 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 19:37:48,760 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-04 19:37:49,711 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 19:37:49,724 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-04 19:37:50,684 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 19:37:50,690 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-04 19:37:51,685 - ExecutorBridge - INFO - Focusing window with title: chrome
+2025-11-04 19:37:51,750 - ExecutorBridge - WARNING - Window with title 'chrome' not found.
+2025-11-05 08:31:31,513 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-05 08:35:26,542 - ExecutorBridge - INFO - Attempting to focus window with title: spotify
+2025-11-05 08:35:26,545 - ExecutorBridge - INFO - Best match: 'Spotify Premium' with score 100
+2025-11-05 08:35:26,545 - ExecutorBridge - INFO - Successfully focused window: Spotify Premium
+2025-11-05 08:36:05,725 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 08:36:05,727 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 08:36:05,727 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-05 08:37:14,699 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 08:37:14,725 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 08:37:14,727 - ExecutorBridge - ERROR - Failed to focus window: Error code from Windows: 0 - The operation completed successfully.
+2025-11-05 08:37:15,892 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 08:37:15,910 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 08:37:15,910 - ExecutorBridge - ERROR - Failed to focus window: Error code from Windows: 0 - The operation completed successfully.
+2025-11-05 08:37:49,071 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-05 08:38:48,362 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 08:38:48,366 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 08:38:48,369 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-05 08:39:48,477 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 08:39:48,484 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 08:39:48,485 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-05 08:40:27,887 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 08:40:27,905 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 08:40:27,922 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-05 08:42:19,957 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-05 08:43:06,188 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 08:43:06,191 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 08:43:06,191 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-05 08:44:09,012 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 08:44:09,015 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 08:44:09,016 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-05 08:48:39,171 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 08:48:39,175 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 08:48:39,176 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-05 08:49:47,429 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 08:49:47,495 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 08:49:47,526 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-05 08:49:48,600 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 08:49:48,616 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 08:49:48,659 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-05 08:49:49,785 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 08:49:49,817 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 08:49:49,863 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-05 09:48:57,234 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-05 09:49:57,142 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 09:49:57,145 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 09:49:57,152 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-05 09:50:47,730 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 09:50:47,741 - ExecutorBridge - WARNING - No suitable window found for title 'whatsapp'. Best match: 'EVA - Integrated Logic Assistant' with score 38
+2025-11-05 09:50:48,908 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 09:50:48,910 - ExecutorBridge - WARNING - No suitable window found for title 'whatsapp'. Best match: 'EVA - Integrated Logic Assistant' with score 38
+2025-11-05 09:50:50,047 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 09:50:50,049 - ExecutorBridge - WARNING - No suitable window found for title 'whatsapp'. Best match: 'EVA - Integrated Logic Assistant' with score 38
+2025-11-05 09:50:51,214 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 09:50:51,220 - ExecutorBridge - WARNING - No suitable window found for title 'whatsapp'. Best match: 'EVA - Integrated Logic Assistant' with score 38
+2025-11-05 09:50:52,350 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 09:50:52,355 - ExecutorBridge - WARNING - No suitable window found for title 'whatsapp'. Best match: 'EVA - Integrated Logic Assistant' with score 38
+2025-11-05 09:50:53,521 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 09:50:53,545 - ExecutorBridge - WARNING - No suitable window found for title 'whatsapp'. Best match: 'EVA - Integrated Logic Assistant' with score 38
+2025-11-05 09:50:54,708 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 09:50:54,709 - ExecutorBridge - WARNING - No suitable window found for title 'whatsapp'. Best match: 'EVA - Integrated Logic Assistant' with score 38
+2025-11-05 09:50:55,867 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 09:50:55,869 - ExecutorBridge - WARNING - No suitable window found for title 'whatsapp'. Best match: 'EVA - Integrated Logic Assistant' with score 38
+2025-11-05 09:50:57,006 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 09:50:57,008 - ExecutorBridge - WARNING - No suitable window found for title 'whatsapp'. Best match: 'EVA - Integrated Logic Assistant' with score 38
+2025-11-05 09:50:58,155 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 09:50:58,157 - ExecutorBridge - WARNING - No suitable window found for title 'whatsapp'. Best match: 'EVA - Integrated Logic Assistant' with score 38
+2025-11-05 09:56:15,354 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-05 09:57:01,644 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 09:57:01,645 - ExecutorBridge - WARNING - No suitable window found for title 'whatsapp'. Best match: 'EVA - Integrated Logic Assistant' with score 38
+2025-11-05 10:09:48,991 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-05 10:13:33,500 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-05 10:25:41,821 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-05 10:35:54,655 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-05 10:36:44,152 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 10:36:44,154 - ExecutorBridge - WARNING - No suitable window found for title 'whatsapp'. Best match: 'Windows Input Experience' with score 38
+2025-11-05 10:36:45,085 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 10:36:45,086 - ExecutorBridge - WARNING - No suitable window found for title 'whatsapp'. Best match: 'Windows Input Experience' with score 38
+2025-11-05 10:36:46,214 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 10:36:46,216 - ExecutorBridge - WARNING - No suitable window found for title 'whatsapp'. Best match: 'Windows Input Experience' with score 38
+2025-11-05 10:36:47,356 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 10:36:47,358 - ExecutorBridge - WARNING - No suitable window found for title 'whatsapp'. Best match: 'Windows Input Experience' with score 38
+2025-11-05 10:36:48,492 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 10:36:48,493 - ExecutorBridge - WARNING - No suitable window found for title 'whatsapp'. Best match: 'Windows Input Experience' with score 38
+2025-11-05 10:36:49,570 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 10:36:49,571 - ExecutorBridge - WARNING - No suitable window found for title 'whatsapp'. Best match: 'Windows Input Experience' with score 38
+2025-11-05 10:37:29,427 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-05 10:38:22,468 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 10:38:22,470 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 10:38:22,470 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-05 10:38:37,446 - ExecutorBridge - INFO - Attempting to focus window with title: current
+2025-11-05 10:38:37,447 - ExecutorBridge - WARNING - No suitable window found for title 'current'. Best match: 'import tkinter as tk from tkinter import scrolledtext import re import... - Comet' with score 50
+2025-11-05 10:38:47,782 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 10:38:47,783 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 10:38:47,784 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-05 12:54:30,845 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-05 12:55:21,639 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 12:55:21,651 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 12:55:21,652 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-05 12:55:22,690 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 12:55:22,699 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 12:55:22,700 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-05 12:55:23,813 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 12:55:23,828 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 12:55:23,829 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-05 12:55:24,941 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 12:55:24,943 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 12:55:24,944 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-05 16:26:44,068 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-05 16:40:43,613 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-05 16:42:13,768 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 16:42:16,560 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 16:42:16,560 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-05 16:52:37,464 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-05 16:58:49,221 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-05 17:00:47,530 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 17:00:47,532 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 17:00:47,532 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-05 17:12:42,190 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-05 17:13:23,606 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 17:13:23,609 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 17:13:23,609 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-05 17:14:36,662 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-05 17:14:36,664 - ExecutorBridge - INFO - Best match: 'Google Chrome' with score 100
+2025-11-05 17:14:36,664 - ExecutorBridge - ERROR - Failed to focus window: Error code from Windows: 0 - The operation completed successfully.
+2025-11-05 17:14:43,641 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 17:14:43,662 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 17:14:43,664 - ExecutorBridge - ERROR - Failed to focus window: Error code from Windows: 0 - The operation completed successfully.
+2025-11-05 17:14:51,806 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 17:14:51,815 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 17:14:51,816 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-05 17:15:03,419 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 17:15:03,421 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 17:15:03,421 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-05 17:15:35,167 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 17:15:35,168 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 17:15:35,169 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-05 17:17:04,984 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 17:17:04,986 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 17:17:04,987 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-05 17:17:36,871 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 17:17:36,873 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 17:17:36,873 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-05 17:18:01,070 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-05 17:18:01,084 - ExecutorBridge - INFO - Best match: 'Google - Google Chrome' with score 100
+2025-11-05 17:18:01,085 - ExecutorBridge - INFO - Successfully focused window: Google - Google Chrome
+2025-11-05 17:23:07,561 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-05 17:24:32,887 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 17:24:32,889 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 17:24:32,890 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-05 17:29:47,220 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-05 17:31:27,693 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-05 17:32:29,845 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 17:32:29,847 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 17:32:29,848 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-05 17:33:33,286 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-05 17:34:13,807 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 17:34:13,810 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 17:34:13,811 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-05 17:34:50,548 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-05 17:34:50,551 - ExecutorBridge - INFO - Best match: 'Google Chrome' with score 100
+2025-11-05 17:34:50,551 - ExecutorBridge - INFO - Successfully focused window: Google Chrome
+2025-11-05 17:36:21,303 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-05 17:36:21,308 - ExecutorBridge - INFO - Best match: 'Google Chrome' with score 100
+2025-11-05 17:36:21,310 - ExecutorBridge - INFO - Successfully focused window: Google Chrome
+2025-11-05 17:38:02,141 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-05 17:38:02,151 - ExecutorBridge - INFO - Best match: 'Google Chrome' with score 100
+2025-11-05 17:38:02,155 - ExecutorBridge - INFO - Successfully focused window: Google Chrome
+2025-11-05 17:47:30,635 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-05 17:49:40,108 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 17:49:40,111 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 17:49:40,112 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-05 17:54:38,467 - ExecutorBridge - INFO - Attempting to focus window with title: instagram
+2025-11-05 17:54:38,470 - ExecutorBridge - WARNING - No suitable window found for title 'instagram'. Best match: 'EVA - Integrated Logic Assistant' with score 67
+2025-11-05 17:55:17,916 - ExecutorBridge - INFO - Attempting to focus window with title: instagram
+2025-11-05 17:55:17,919 - ExecutorBridge - INFO - Best match: 'Instagram' with score 100
+2025-11-05 17:55:17,919 - ExecutorBridge - INFO - Successfully focused window: Instagram
+2025-11-05 17:55:43,542 - ExecutorBridge - INFO - Attempting to focus window with title: instagram
+2025-11-05 17:55:43,547 - ExecutorBridge - WARNING - No suitable window found for title 'instagram'. Best match: 'EVA - Integrated Logic Assistant' with score 67
+2025-11-05 17:55:58,851 - ExecutorBridge - INFO - Attempting to focus window with title: calculator
+2025-11-05 17:55:58,856 - ExecutorBridge - INFO - Best match: 'calculator - Search - Personal - Microsoft​ Edge' with score 100
+2025-11-05 17:55:58,856 - ExecutorBridge - ERROR - Failed to focus window: Error code from Windows: 0 - The operation completed successfully.
+2025-11-05 18:02:23,660 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-05 18:02:23,670 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-05 18:02:23,671 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-05 18:02:34,676 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-05 18:02:34,678 - ExecutorBridge - INFO - Best match: 'Google Chrome' with score 100
+2025-11-05 18:02:34,679 - ExecutorBridge - INFO - Successfully focused window: Google Chrome
+2025-11-05 18:02:55,800 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-05 18:02:55,807 - ExecutorBridge - INFO - Best match: 'Google Chrome' with score 100
+2025-11-05 18:02:55,809 - ExecutorBridge - INFO - Successfully focused window: Google Chrome
+2025-11-05 18:03:17,428 - ExecutorBridge - INFO - Attempting to focus window with title: calculator
+2025-11-05 18:03:17,430 - ExecutorBridge - INFO - Best match: 'calculator - Search and 1 more page - Personal - Microsoft​ Edge' with score 100
+2025-11-05 18:03:17,430 - ExecutorBridge - INFO - Successfully focused window: calculator - Search and 1 more page - Personal - Microsoft​ Edge
+2025-11-05 18:03:28,611 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-05 18:03:28,615 - ExecutorBridge - INFO - Best match: 'Google Chrome' with score 100
+2025-11-05 18:03:28,615 - ExecutorBridge - INFO - Successfully focused window: Google Chrome
+2025-11-05 18:05:06,195 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-05 18:08:19,851 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-05 18:08:19,853 - ExecutorBridge - INFO - Best match: 'T5 model overview - Google Chrome' with score 100
+2025-11-05 18:08:19,855 - ExecutorBridge - INFO - Successfully focused window: T5 model overview - Google Chrome
+2025-11-05 18:08:44,800 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-05 18:08:44,804 - ExecutorBridge - INFO - Best match: 'T5 model overview - Google Chrome' with score 100
+2025-11-05 18:08:44,806 - ExecutorBridge - INFO - Successfully focused window: T5 model overview - Google Chrome
+2025-11-05 18:09:02,289 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-05 18:09:57,657 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-05 18:09:57,660 - ExecutorBridge - INFO - Best match: 'Google Chrome' with score 100
+2025-11-05 18:09:57,661 - ExecutorBridge - INFO - Successfully focused window: Google Chrome
+2025-11-05 18:10:22,674 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-05 18:10:22,676 - ExecutorBridge - INFO - Best match: 'T5 model overview - Google Chrome' with score 100
+2025-11-05 18:10:22,677 - ExecutorBridge - INFO - Successfully focused window: T5 model overview - Google Chrome
+2025-11-05 18:18:48,794 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-05 18:19:52,898 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-05 18:19:52,900 - ExecutorBridge - INFO - Best match: 'Google Chrome' with score 100
+2025-11-05 18:19:52,901 - ExecutorBridge - INFO - Successfully focused window: Google Chrome
+2025-11-05 18:20:05,232 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-05 18:20:05,240 - ExecutorBridge - INFO - Best match: 'Google Chrome' with score 100
+2025-11-05 18:20:05,241 - ExecutorBridge - INFO - Successfully focused window: Google Chrome
+2025-11-05 18:20:14,588 - ExecutorBridge - INFO - Attempting to focus window with title: telegram
+2025-11-05 18:20:14,793 - ExecutorBridge - WARNING - No suitable window found for title 'telegram'. Best match: 'EVA - Integrated Logic Assistant' with score 62
+2025-11-05 18:20:34,349 - ExecutorBridge - INFO - Attempting to focus window with title: telegram
+2025-11-05 18:20:34,352 - ExecutorBridge - WARNING - No suitable window found for title 'telegram'. Best match: 'EVA - Integrated Logic Assistant' with score 62
+2025-11-05 18:20:55,662 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-05 18:20:55,684 - ExecutorBridge - INFO - Best match: 'Google Chrome' with score 100
+2025-11-05 18:20:55,684 - ExecutorBridge - INFO - Successfully focused window: Google Chrome
+2025-11-05 18:21:09,247 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-05 18:21:09,252 - ExecutorBridge - INFO - Best match: 'GitHub - Devesh-Soman/My-JARVIS: My-Jarvis is a personal AI-powered assistant that combines voice recognition, natural language processing, and smart automation to help you with everyday tasks. From managing files and browsing the web to fetching real-time information and even having casual conversations, Dev's-Jarvis is your own digital companion. - Google Chrome' with score 100
+2025-11-05 18:21:09,254 - ExecutorBridge - INFO - Successfully focused window: GitHub - Devesh-Soman/My-JARVIS: My-Jarvis is a personal AI-powered assistant that combines voice recognition, natural language processing, and smart automation to help you with everyday tasks. From managing files and browsing the web to fetching real-time information and even having casual conversations, Dev's-Jarvis is your own digital companion. - Google Chrome
+2025-11-05 18:21:19,668 - ExecutorBridge - INFO - Attempting to focus window with title: spotify
+2025-11-05 18:21:19,980 - ExecutorBridge - WARNING - No suitable window found for title 'spotify'. Best match: 'Settings' with score 50
+2025-11-05 18:21:31,877 - ExecutorBridge - INFO - Attempting to focus window with title: spotify
+2025-11-05 18:21:31,879 - ExecutorBridge - WARNING - No suitable window found for title 'spotify'. Best match: 'Settings' with score 50
+2025-11-05 18:21:47,559 - ExecutorBridge - INFO - Attempting to focus window with title: private client
+2025-11-05 18:21:47,564 - ExecutorBridge - INFO - Best match: 'private client select - Search - Personal - Microsoft​ Edge' with score 100
+2025-11-05 18:21:47,566 - ExecutorBridge - INFO - Successfully focused window: private client select - Search - Personal - Microsoft​ Edge
+2025-11-05 18:21:59,587 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-05 18:21:59,590 - ExecutorBridge - INFO - Best match: 'GitHub - Devesh-Soman/My-JARVIS: My-Jarvis is a personal AI-powered assistant that combines voice recognition, natural language processing, and smart automation to help you with everyday tasks. From managing files and browsing the web to fetching real-time information and even having casual conversations, Dev's-Jarvis is your own digital companion. - Google Chrome' with score 100
+2025-11-05 18:21:59,592 - ExecutorBridge - INFO - Successfully focused window: GitHub - Devesh-Soman/My-JARVIS: My-Jarvis is a personal AI-powered assistant that combines voice recognition, natural language processing, and smart automation to help you with everyday tasks. From managing files and browsing the web to fetching real-time information and even having casual conversations, Dev's-Jarvis is your own digital companion. - Google Chrome
+2025-11-05 18:22:28,170 - ExecutorBridge - INFO - Attempting to focus window with title: riot client
+2025-11-05 18:22:28,172 - ExecutorBridge - WARNING - No suitable window found for title 'riot client'. Best match: '● main.py - EVA-main - Visual Studio Code' with score 56
+2025-11-05 18:23:16,642 - ExecutorBridge - INFO - Attempting to focus window with title: camera click picture
+2025-11-05 18:23:16,645 - ExecutorBridge - WARNING - No suitable window found for title 'camera click picture'. Best match: 'EVA - Integrated Logic Assistant' with score 50
+2025-11-05 18:23:25,825 - ExecutorBridge - INFO - Attempting to focus window with title: camera
+2025-11-05 18:23:25,862 - ExecutorBridge - INFO - Best match: 'Camera' with score 100
+2025-11-05 18:23:26,121 - ExecutorBridge - INFO - Successfully focused window: Camera
+2025-11-05 18:24:05,133 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-05 18:24:05,143 - ExecutorBridge - INFO - Best match: 'GitHub - Devesh-Soman/My-JARVIS: My-Jarvis is a personal AI-powered assistant that combines voice recognition, natural language processing, and smart automation to help you with everyday tasks. From managing files and browsing the web to fetching real-time information and even having casual conversations, Dev's-Jarvis is your own digital companion. - Google Chrome' with score 100
+2025-11-05 18:24:05,146 - ExecutorBridge - INFO - Successfully focused window: GitHub - Devesh-Soman/My-JARVIS: My-Jarvis is a personal AI-powered assistant that combines voice recognition, natural language processing, and smart automation to help you with everyday tasks. From managing files and browsing the web to fetching real-time information and even having casual conversations, Dev's-Jarvis is your own digital companion. - Google Chrome
+2025-11-06 11:05:04,207 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-06 11:06:01,549 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-06 11:06:01,551 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-06 11:06:01,551 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-06 12:54:21,608 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-06 13:00:45,365 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-06 13:04:23,535 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-06 13:20:06,479 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-06 13:20:50,946 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-06 13:20:50,948 - ExecutorBridge - WARNING - No suitable window found for title 'whatsapp'. Best match: 'sptify login - Comet' with score 40
+2025-11-06 13:21:02,050 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-06 13:21:02,052 - ExecutorBridge - INFO - Best match: 'Capstone - Tech analysis and suggestions - Google Chrome' with score 100
+2025-11-06 13:21:02,053 - ExecutorBridge - INFO - Successfully focused window: Capstone - Tech analysis and suggestions - Google Chrome
+2025-11-06 13:21:26,972 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-06 13:21:26,974 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-06 13:21:26,975 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-06 13:22:10,440 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-06 13:22:10,442 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-06 13:22:10,442 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-06 13:22:50,788 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-06 13:22:50,789 - ExecutorBridge - INFO - Best match: 'Google Chrome' with score 100
+2025-11-06 13:22:50,790 - ExecutorBridge - INFO - Successfully focused window: Google Chrome
+2025-11-06 13:25:05,194 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-06 13:25:05,197 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-06 13:25:05,197 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-06 13:25:29,211 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-06 13:25:29,213 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-06 13:25:29,213 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-06 13:26:26,846 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-06 13:26:26,848 - ExecutorBridge - INFO - Best match: 'Google Chrome' with score 100
+2025-11-06 13:26:26,848 - ExecutorBridge - INFO - Successfully focused window: Google Chrome
+2025-11-06 13:36:33,167 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-06 13:39:07,696 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-06 13:39:07,697 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-06 13:39:07,697 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-06 13:39:38,110 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-06 13:39:38,112 - ExecutorBridge - INFO - Best match: 'Google Chrome' with score 100
+2025-11-06 13:39:38,112 - ExecutorBridge - INFO - Successfully focused window: Google Chrome
+2025-11-06 13:39:49,008 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-06 13:39:49,014 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-06 13:39:49,015 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-06 13:40:46,137 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-06 13:40:46,139 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-06 13:40:46,140 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-06 13:42:30,948 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-06 13:43:08,931 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-06 13:43:08,932 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-06 13:43:08,933 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-06 13:44:47,839 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-06 13:45:15,530 - ExecutorBridge - INFO - Attempting to focus window with title: edge
+2025-11-06 13:45:15,531 - ExecutorBridge - WARNING - No suitable window found for title 'edge'. Best match: 'main.py - EVA-main - Visual Studio Code' with score 67
+2025-11-06 13:45:23,552 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-06 13:45:23,554 - ExecutorBridge - WARNING - No suitable window found for title 'Chrome'. Best match: 'sptify login - Comet' with score 73
+2025-11-06 18:26:33,089 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-06 18:27:36,169 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-06 18:27:36,171 - ExecutorBridge - WARNING - No suitable window found for title 'whatsapp'. Best match: 'EVA - Integrated Logic Assistant' with score 38
+2025-11-06 18:27:47,065 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-06 18:27:47,067 - ExecutorBridge - WARNING - No suitable window found for title 'Chrome'. Best match: 'main.py - EVA-main - Visual Studio Code' with score 60
+2025-11-06 18:28:13,343 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-06 18:28:13,347 - ExecutorBridge - WARNING - No suitable window found for title 'Chrome'. Best match: 'main.py - EVA-main - Visual Studio Code' with score 60
+2025-11-06 18:28:15,460 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-06 18:28:15,463 - ExecutorBridge - WARNING - No suitable window found for title 'Chrome'. Best match: 'main.py - EVA-main - Visual Studio Code' with score 60
+2025-11-06 18:28:16,223 - ExecutorBridge - INFO - Attempting to focus window with title: chrome and send
+2025-11-06 18:28:16,225 - ExecutorBridge - WARNING - No suitable window found for title 'chrome and send'. Best match: 'Settings' with score 50
+2025-11-06 18:28:16,458 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-06 18:28:16,460 - ExecutorBridge - WARNING - No suitable window found for title 'Chrome'. Best match: 'main.py - EVA-main - Visual Studio Code' with score 60
+2025-11-06 18:28:17,342 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-06 18:28:17,344 - ExecutorBridge - WARNING - No suitable window found for title 'whatsapp'. Best match: 'EVA - Integrated Logic Assistant' with score 38
+2025-11-06 18:28:17,423 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-06 18:28:17,426 - ExecutorBridge - WARNING - No suitable window found for title 'Chrome'. Best match: 'main.py - EVA-main - Visual Studio Code' with score 60
+2025-11-06 18:47:49,614 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-06 18:48:29,532 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-06 18:48:29,535 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-06 18:48:29,536 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-07 20:06:02,539 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-07 20:09:21,181 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-07 20:09:21,186 - ExecutorBridge - WARNING - No suitable window found for title 'whatsapp'. Best match: 'EVA - Integrated Logic Assistant' with score 38
+2025-11-07 20:09:32,169 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-07 20:09:32,171 - ExecutorBridge - WARNING - No suitable window found for title 'Chrome'. Best match: 'passcode_store.json - EVA-main - Visual Studio Code' with score 60
+2025-11-07 20:09:59,093 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-07 20:09:59,095 - ExecutorBridge - WARNING - No suitable window found for title 'Chrome'. Best match: 'passcode_store.json - EVA-main - Visual Studio Code' with score 60
+2025-11-07 20:10:02,845 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-07 20:10:02,847 - ExecutorBridge - WARNING - No suitable window found for title 'Chrome'. Best match: 'passcode_store.json - EVA-main - Visual Studio Code' with score 60
+2025-11-07 20:10:03,108 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-07 20:10:03,110 - ExecutorBridge - WARNING - No suitable window found for title 'whatsapp'. Best match: 'EVA - Integrated Logic Assistant' with score 38
+2025-11-07 20:11:09,195 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-07 20:12:05,715 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-07 20:12:05,718 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-07 20:12:05,718 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-07 20:23:30,113 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-07 20:23:30,118 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-07 20:23:30,120 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-08 20:02:23,895 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-08 20:03:46,636 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-08 20:03:46,640 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-08 20:03:46,641 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-08 20:05:44,080 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-08 20:05:44,084 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-08 20:05:44,085 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-08 21:51:57,322 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-08 21:53:59,947 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-08 21:53:59,948 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-08 21:53:59,949 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-08 21:54:47,569 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-08 21:54:47,570 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-08 21:54:47,571 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-08 21:58:38,311 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-08 21:58:38,313 - ExecutorBridge - INFO - Best match: 'Google Chrome' with score 100
+2025-11-08 21:58:38,313 - ExecutorBridge - INFO - Successfully focused window: Google Chrome
+2025-11-08 21:58:53,571 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-08 21:58:53,573 - ExecutorBridge - INFO - Best match: 'Google Chrome' with score 100
+2025-11-08 21:58:53,574 - ExecutorBridge - INFO - Successfully focused window: Google Chrome
+2025-11-09 14:36:20,508 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-10 11:43:59,956 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-10 11:54:48,018 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-10 11:54:48,020 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-10 11:54:48,020 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-10 12:05:18,867 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-10 12:05:18,874 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-10 12:05:18,877 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-10 12:06:23,620 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-10 12:06:23,627 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-10 12:06:23,628 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-10 12:40:10,988 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-10 12:41:29,231 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-10 12:41:29,235 - ExecutorBridge - INFO - Best match: 'Google Chrome' with score 100
+2025-11-10 12:41:29,236 - ExecutorBridge - INFO - Successfully focused window: Google Chrome
+2025-11-12 11:08:18,072 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-12 11:10:47,338 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-12 11:10:47,340 - ExecutorBridge - INFO - Best match: 'Google Chrome' with score 100
+2025-11-12 11:10:47,341 - ExecutorBridge - INFO - Successfully focused window: Google Chrome
+2025-11-12 11:13:07,728 - ExecutorBridge - INFO - Attempting to focus window with title: spotify
+2025-11-12 11:13:07,759 - ExecutorBridge - INFO - Best match: 'Spotify' with score 100
+2025-11-12 11:13:07,760 - ExecutorBridge - INFO - Successfully focused window: Spotify
+2025-11-12 11:13:18,704 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-12 11:13:18,705 - ExecutorBridge - INFO - Best match: 'Capstone - Integrate two codes - Google Chrome' with score 100
+2025-11-12 11:13:18,707 - ExecutorBridge - INFO - Successfully focused window: Capstone - Integrate two codes - Google Chrome
+2025-11-12 11:13:19,689 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-12 11:13:19,691 - ExecutorBridge - INFO - Best match: 'Capstone - Integrate two codes - Google Chrome' with score 100
+2025-11-12 11:13:19,694 - ExecutorBridge - INFO - Successfully focused window: Capstone - Integrate two codes - Google Chrome
+2025-11-12 11:13:20,728 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-12 11:13:20,730 - ExecutorBridge - INFO - Best match: 'Capstone - Integrate two codes - Google Chrome' with score 100
+2025-11-12 11:13:20,732 - ExecutorBridge - INFO - Successfully focused window: Capstone - Integrate two codes - Google Chrome
+2025-11-12 11:13:34,407 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-12 11:13:34,409 - ExecutorBridge - INFO - Best match: 'Capstone - Integrate two codes - Google Chrome' with score 100
+2025-11-12 11:13:34,410 - ExecutorBridge - INFO - Successfully focused window: Capstone - Integrate two codes - Google Chrome
+2025-11-12 11:13:34,982 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-12 11:13:34,989 - ExecutorBridge - INFO - Best match: 'Capstone - Integrate two codes - Google Chrome' with score 100
+2025-11-12 11:13:34,990 - ExecutorBridge - INFO - Successfully focused window: Capstone - Integrate two codes - Google Chrome
+2025-11-12 11:45:12,458 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-12 11:45:49,832 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-12 11:45:49,844 - ExecutorBridge - INFO - Best match: 'Google Chrome' with score 100
+2025-11-12 11:45:49,845 - ExecutorBridge - INFO - Successfully focused window: Google Chrome
+2025-11-12 13:14:03,940 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-12 13:14:33,254 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-12 13:15:04,401 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-12 13:15:56,884 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-12 13:16:32,610 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-12 13:16:32,612 - ExecutorBridge - WARNING - No suitable window found for title 'whatsapp'. Best match: 'ansh.jpg - EVA-main - Visual Studio Code' with score 40
+2025-11-12 13:16:43,318 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
+2025-11-12 13:16:43,319 - ExecutorBridge - INFO - Best match: 'Capstone - Request for help - Google Chrome' with score 100
+2025-11-12 13:16:43,321 - ExecutorBridge - INFO - Successfully focused window: Capstone - Request for help - Google Chrome
+2025-11-12 13:17:36,914 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-12 13:17:36,916 - ExecutorBridge - WARNING - No suitable window found for title 'whatsapp'. Best match: 'ansh.jpg - EVA-main - Visual Studio Code' with score 40
+2025-11-12 13:17:54,672 - ExecutorBridge - INFO - Attempting to focus window with title: whatsapp
+2025-11-12 13:17:54,674 - ExecutorBridge - INFO - Best match: 'WhatsApp' with score 100
+2025-11-12 13:17:54,674 - ExecutorBridge - INFO - Successfully focused window: WhatsApp
+2025-11-12 13:18:45,866 - ExecutorBridge - INFO - Attempting to focus window with title: spotify
+2025-11-12 13:18:45,868 - ExecutorBridge - INFO - Best match: 'Spotify Premium' with score 100
+2025-11-12 13:18:45,868 - ExecutorBridge - INFO - Successfully focused window: Spotify Premium
+2025-11-12 13:19:25,423 - ExecutorBridge - INFO - Attempting to focus window with title: spotify
+2025-11-12 13:19:25,425 - ExecutorBridge - INFO - Best match: 'Spotify Premium' with score 100
+2025-11-12 13:19:25,425 - ExecutorBridge - INFO - Successfully focused window: Spotify Premium
+2025-11-12 13:21:50,723 - ExecutorBridge - INFO - C executor library loaded successfully
+2025-11-12 13:22:22,472 - ExecutorBridge - INFO - C executor library loaded successfully
