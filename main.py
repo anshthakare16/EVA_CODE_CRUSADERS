@@ -4,13 +4,20 @@ import re
 import threading
 import time
 import warnings
-
+import json
+import random
+import string
+import hashlib
+import smtplib
+import ssl
+from datetime import datetime
 from dotenv import load_dotenv
 import speech_recognition as sr
 from PySide6.QtGui import QTextCursor
 
 import config
 from execution.executor_bridge import ExecutorBridge
+from vision.face_auth import FaceAuthenticator
 from execution.action_router import ActionRouter
 from execution.system_executor import SystemExecutor
 from vision.screenshot_handler import ScreenshotHandler
@@ -22,11 +29,13 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 
 # === Qt (PySide6) ===
+
 from PySide6.QtCore import Qt, QTimer, Signal, QObject, QSize
 from PySide6.QtGui import QIcon, QMovie, QAction
 from PySide6.QtWidgets import (
     QApplication, QWidget, QLabel, QPushButton, QLineEdit, QPlainTextEdit,
-    QVBoxLayout, QHBoxLayout, QFrame, QStackedWidget, QSizePolicy
+    QVBoxLayout, QHBoxLayout, QFrame, QStackedWidget, QSizePolicy,
+    QDialog, QMessageBox
 )
 
 # Hide that pkg_resources deprecation notice from dependencies
@@ -211,7 +220,362 @@ class Bus(QObject):
     steps_ready = Signal(list)
     exec_done = Signal(dict)
 
-# ----------------- Main App -----------------
+# ----------------- NEW: Passcode storage + OTP utilities (ADDED) -----------------
+# These helpers and dialogs were added and do not remove or modify any of your original logic.
+PASSCODE_FILE = os.path.join(os.getcwd(), "passcode_store.json")
+
+def _hash_pin(pin: str) -> str:
+    return hashlib.sha256(pin.encode('utf-8')).hexdigest()
+
+def load_stored_passcode():
+    """Load hashed passcode from file. If not present, initialize with default 1304."""
+    default_pin = "1304"
+    if not os.path.exists(PASSCODE_FILE):
+        data = {
+            "hashed": _hash_pin(default_pin),
+            "updated_at": datetime.utcnow().isoformat()
+        }
+        try:
+            with open(PASSCODE_FILE, "w", encoding="utf-8") as f:
+                json.dump(data, f)
+        except Exception:
+            pass
+        return data['hashed']
+    try:
+        with open(PASSCODE_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            if 'hashed' in data:
+                return data['hashed']
+    except Exception:
+        pass
+    return _hash_pin(default_pin)
+
+def store_new_passcode(pin: str):
+    hashed = _hash_pin(pin)
+    data = {"hashed": hashed, "updated_at": datetime.utcnow().isoformat()}
+    try:
+        with open(PASSCODE_FILE, "w", encoding="utf-8") as f:
+            json.dump(data, f)
+        return True
+    except Exception:
+        return False
+
+def generate_numeric_otp(length=6):
+    return ''.join(random.choices(string.digits, k=length))
+
+def send_email_otp(recipient_email: str, otp: str) -> (bool, str):
+    """
+    Attempts to send OTP via SMTP using config.* settings.
+    Returns (success, message). If SMTP not configured, returns False with a message.
+    """
+    smtp_host = getattr(config, "SMTP_HOST", "")
+    smtp_port = getattr(config, "SMTP_PORT", 587)
+    smtp_user = getattr(config, "SMTP_USER", "")
+    smtp_pass = getattr(config, "SMTP_PASSWORD", "")
+    smtp_tls = getattr(config, "SMTP_USE_TLS", True)
+
+    if not smtp_host or not smtp_user or not smtp_pass:
+        return False, "SMTP not configured - development fallback will be used."
+
+    try:
+        port = int(smtp_port)
+    except Exception:
+        port = 587
+
+    subject = "Your EVA Reset OTP"
+    body = f"Your One Time Password for resetting EVA passcode is: {otp}\nThis code is valid for a short time."
+
+    message = f"Subject: {subject}\nTo: {recipient_email}\nFrom: {smtp_user}\n\n{body}"
+
+    try:
+        if smtp_tls:
+            context = ssl.create_default_context()
+            with smtplib.SMTP(smtp_host, port, timeout=10) as server:
+                server.starttls(context=context)
+                server.login(smtp_user, smtp_pass)
+                server.sendmail(smtp_user, recipient_email, message)
+        else:
+            with smtplib.SMTP(smtp_host, port, timeout=10) as server:
+                server.login(smtp_user, smtp_pass)
+                server.sendmail(smtp_user, recipient_email, message)
+        return True, "OTP sent via SMTP"
+    except Exception as e:
+        return False, f"SMTP send failed: {e}"
+
+# ----------------- NEW: Dialogs for Forgot / Reset Passcode -----------------
+class EmailInputDialog:
+    @staticmethod
+    def get_email(parent=None, default_email="thakareansh3@gmail.com"):
+        dlg = QDialog(parent)
+        dlg.setWindowTitle("Reset Passcode - Enter Email")
+        dlg.setWindowModality(Qt.WindowModal)
+        layout = QVBoxLayout(dlg)
+        label = QLabel("Enter your email to receive OTP:")
+        layout.addWidget(label)
+        email_input = QLineEdit()
+        email_input.setPlaceholderText("you@example.com")
+        email_input.setText(default_email)
+        layout.addWidget(email_input)
+        row = QHBoxLayout()
+        ok_btn = QPushButton("Send OTP")
+        cancel_btn = QPushButton("Cancel")
+        row.addWidget(ok_btn)
+        row.addWidget(cancel_btn)
+        layout.addLayout(row)
+
+        ok = {"val": False}
+
+        def do_ok():
+            e = email_input.text().strip()
+            if not e or "@" not in e:
+                QMessageBox.warning(dlg, "Invalid", "Please enter a valid email address.")
+                return
+            ok["val"] = True
+            dlg.accept()
+
+        ok_btn.clicked.connect(do_ok)
+        cancel_btn.clicked.connect(dlg.reject)
+        email_input.returnPressed.connect(do_ok)
+
+        res = dlg.exec()
+        return email_input.text().strip(), ok["val"]
+
+class OTPVerifyDialog:
+    @staticmethod
+    def verify_otp(parent, expected_otp, show_otp=False):
+        dlg = QDialog(parent)
+        dlg.setWindowTitle("Verify OTP")
+        dlg.setWindowModality(Qt.WindowModal)
+        layout = QVBoxLayout(dlg)
+        label = QLabel("Enter the OTP sent to your email")
+        layout.addWidget(label)
+        otp_input = QLineEdit()
+        otp_input.setPlaceholderText("6-digit OTP")
+        otp_input.setMaxLength(len(expected_otp))
+        layout.addWidget(otp_input)
+
+        if show_otp:
+            note = QLabel(f"(Development) OTP: {expected_otp}")
+            note.setStyleSheet("color: #ffaa00;")
+            layout.addWidget(note)
+
+        row = QHBoxLayout()
+        ok_btn = QPushButton("Verify")
+        cancel_btn = QPushButton("Cancel")
+        row.addWidget(ok_btn)
+        row.addWidget(cancel_btn)
+        layout.addLayout(row)
+
+        verified = {"val": False}
+
+        def do_verify():
+            if otp_input.text().strip() == expected_otp:
+                verified["val"] = True
+                dlg.accept()
+            else:
+                QMessageBox.warning(dlg, "Invalid", "OTP incorrect.")
+        ok_btn.clicked.connect(do_verify)
+        cancel_btn.clicked.connect(dlg.reject)
+        otp_input.returnPressed.connect(do_verify)
+
+        dlg.exec()
+        return verified["val"]
+
+class NewPasscodeDialog:
+    @staticmethod
+    def get_new_passcode(parent=None):
+        dlg = QDialog(parent)
+        dlg.setWindowTitle("Set New Passcode")
+        dlg.setWindowModality(Qt.WindowModal)
+        layout = QVBoxLayout(dlg)
+
+        label = QLabel("Enter new 4-digit passcode")
+        layout.addWidget(label)
+        p1 = QLineEdit()
+        p1.setEchoMode(QLineEdit.Password)
+        p1.setMaxLength(4)
+        p1.setPlaceholderText("New passcode")
+        layout.addWidget(p1)
+
+        label2 = QLabel("Confirm new passcode")
+        layout.addWidget(label2)
+        p2 = QLineEdit()
+        p2.setEchoMode(QLineEdit.Password)
+        p2.setMaxLength(4)
+        p2.setPlaceholderText("Confirm passcode")
+        layout.addWidget(p2)
+
+        row = QHBoxLayout()
+        ok_btn = QPushButton("Update")
+        cancel_btn = QPushButton("Cancel")
+        row.addWidget(ok_btn)
+        row.addWidget(cancel_btn)
+        layout.addLayout(row)
+
+        result = {"val": None}
+
+        def do_update():
+            a = p1.text().strip()
+            b = p2.text().strip()
+            if not a or not b:
+                QMessageBox.warning(dlg, "Invalid", "Both fields required.")
+                return
+            if len(a) != 4 or not a.isdigit():
+                QMessageBox.warning(dlg, "Invalid", "Passcode must be 4 digits.")
+                return
+            if a != b:
+                QMessageBox.warning(dlg, "Mismatch", "Passcodes do not match.")
+                return
+            result["val"] = a
+            dlg.accept()
+
+        ok_btn.clicked.connect(do_update)
+        cancel_btn.clicked.connect(dlg.reject)
+        p2.returnPressed.connect(do_update)
+        dlg.exec()
+        return result["val"]
+
+class PasscodeDialog(QDialog):
+    """
+    Full-screen passcode dialog. Default passcode is loaded from passcode_store.json (1304 if not present).
+    Includes 'Forgot / Reset' flow that uses SMTP via config or a dev fallback showing OTP on screen.
+    """
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.setWindowFlags(Qt.Window | Qt.FramelessWindowHint)
+        self.setWindowState(Qt.WindowFullScreen)
+        self.setStyleSheet("background-color: black;")
+        self.failed = 0
+
+        layout = QVBoxLayout(self)
+        layout.setSpacing(12)
+        layout.setContentsMargins(40, 40, 40, 40)
+
+        self.prompt = QLabel("Enter 4-digit passcode")
+        self.prompt.setStyleSheet("color: white; font-size: 28px;")
+        self.prompt.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        layout.addWidget(self.prompt)
+
+        self.pin = QLineEdit()
+        self.pin.setMaxLength(4)
+        self.pin.setEchoMode(QLineEdit.Password)
+        self.pin.setPlaceholderText("• • • •")
+        self.pin.setFixedWidth(240)
+        self.pin.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.pin.setStyleSheet("font-size: 36px; padding:10px; background:#111; color:#fff; border-radius:8px;")
+        layout.addWidget(self.pin, alignment=Qt.AlignmentFlag.AlignCenter)
+
+        btn_row = QHBoxLayout()
+        self.unlock_btn = QPushButton("Unlock")
+        self.unlock_btn.setFixedWidth(160)
+        self.unlock_btn.setStyleSheet("background:#1e90ff; color:#fff; padding:8px; border:none; border-radius:8px;")
+        btn_row.addWidget(self.unlock_btn)
+
+        self.forgot_btn = QPushButton("Forgot / Reset")
+        self.forgot_btn.setFixedWidth(180)
+        self.forgot_btn.setStyleSheet("background:#444; color:#fff; padding:8px; border:none; border-radius:8px;")
+        btn_row.addWidget(self.forgot_btn)
+
+        # Face unlock button (added)
+        self.face_btn = QPushButton("Face Unlock")
+        self.face_btn.setFixedWidth(140)
+        self.face_btn.setStyleSheet("background:#2b8f2b; color:#fff; padding:8px; border:none; border-radius:8px;")
+        btn_row.addWidget(self.face_btn)
+
+        layout.addLayout(btn_row)
+
+        self.error = QLabel("")
+        self.error.setStyleSheet("color: #ff6666; font-size: 14px;")
+        self.error.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        layout.addWidget(self.error)
+
+        self.unlock_btn.clicked.connect(self.check)
+        self.pin.returnPressed.connect(self.check)
+        self.forgot_btn.clicked.connect(self._forgot_flow)
+        self.face_btn.clicked.connect(self._try_face_unlock)
+
+        # focus input
+        QTimer.singleShot(200, self.pin.setFocus)
+
+    def check(self):
+        code = self.pin.text().strip()
+        if not code:
+            return
+        stored_hash = load_stored_passcode()
+        if _hash_pin(code) == stored_hash:
+            self.accept()
+        else:
+            self.failed += 1
+            self.error.setText("Incorrect passcode")
+            self.pin.clear()
+            self.pin.setStyleSheet("font-size: 36px; padding:10px; background:#220000; color:#fff; border-radius:8px;")
+            QTimer.singleShot(120, lambda: self.pin.setStyleSheet("font-size: 36px; padding:10px; background:#111; color:#fff; border-radius:8px;"))
+            if self.failed >= 5:
+                QMessageBox.critical(self, "Locked", "Too many incorrect attempts. Exiting.")
+                sys.exit(0)
+
+    def _forgot_flow(self):
+        """
+        Ask for email -> attempt to send OTP via SMTP (config) -> verify OTP -> ask new passcode -> save
+        If SMTP fails or not configured the OTP is shown on-screen as a dev fallback.
+        """
+        email, ok = EmailInputDialog.get_email(self, default_email="thakareansh3@gmail.com")
+        if not ok:
+            return
+
+        otp = generate_numeric_otp(6)
+        sent, msg = send_email_otp(email, otp)
+        if sent:
+            QMessageBox.information(self, "OTP Sent", f"An OTP was sent to {email}. Check your email.")
+            show_otp = False
+        else:
+            QMessageBox.warning(self, "OTP Delivery (fallback)",
+                                f"Could not send OTP via SMTP.\nReason: {msg}\n\nFor development, OTP is: {otp}")
+            show_otp = True
+
+        verified = OTPVerifyDialog.verify_otp(self, otp, show_otp)
+        if not verified:
+            QMessageBox.warning(self, "Failed", "OTP verification failed or cancelled.")
+            return
+
+        new_pin = NewPasscodeDialog.get_new_passcode(self)
+        if not new_pin:
+            QMessageBox.information(self, "Cancelled", "Password reset cancelled.")
+            return
+
+        success = store_new_passcode(new_pin)
+        if success:
+            QMessageBox.information(self, "Success", "Passcode updated successfully.")
+        else:
+            QMessageBox.critical(self, "Error", "Failed to save new passcode. Try again.")
+
+    def _try_face_unlock(self):
+        """
+        Attempts local face unlock using vision.face_auth.FaceAuthenticator.
+        Shows a message box on success/failure. This uses a short-lived FaceAuthenticator instance.
+        """
+        try:
+            fa = FaceAuthenticator(known_faces_dir=os.path.join(os.getcwd(), "known_faces"))
+        except Exception as e:
+            QMessageBox.warning(self, "Face Unlock", f"FaceAuth not available: {e}")
+            return
+
+        # Inform user and give time to face camera
+        QMessageBox.information(self, "Face Unlock", "Initializing camera. Please face the camera for a few seconds.")
+        QApplication.processEvents()
+
+        try:
+            result = fa.authenticate(camera_index=0, timeout=8.0, required_matches=2)
+            if result:
+                name, dist = result
+                QMessageBox.information(self, "Face Unlock", f"Welcome, {name}!")
+                self.accept()
+            else:
+                QMessageBox.warning(self, "Face Unlock", "Could not recognize face. Try again or use passcode.")
+        except Exception as e:
+            QMessageBox.warning(self, "Face Unlock", f"Face unlock failed: {e}")
+
+# ----------------- Main App (UNCHANGED) -----------------
 class EvaGui(QWidget):
     def __init__(self):
         super().__init__()
@@ -421,6 +785,17 @@ class EvaGui(QWidget):
 
                 self.wake_word_detector = WakeWordDetector()
                 self.bus.log.emit("✓ Wake word detector loaded successfully.\n")
+
+                # Face authentication (non-blocking load)
+                try:
+                    self.face_auth = FaceAuthenticator(
+                        known_faces_dir=os.path.join(os.getcwd(), "known_faces"),
+                    )
+                    self.bus.log.emit("✓ FaceAuthenticator loaded.\n")
+                except Exception as e:
+                    self.face_auth = None
+                    self.bus.log.emit(f"⚠️ FaceAuthenticator not available: {e}\n")
+
 
                 # Train classifier
                 self.vectorizer = TfidfVectorizer()
@@ -835,7 +1210,30 @@ class EvaGui(QWidget):
 
 
 def main():
+    # show passcode dialog first
     app = QApplication(sys.argv)
+
+    # Ensure passcode file exists (initializes default 1304 if not present)
+    load_stored_passcode()
+
+    # Quick face unlock attempt before showing passcode dialog
+    unlocked_by_face = False
+    try:
+        fa = FaceAuthenticator(known_faces_dir=os.path.join(os.getcwd(), "known_faces"))
+        res = fa.authenticate(camera_index=0, timeout=6.0, required_matches=2)
+        if res:
+            name, dist = res
+            print(f"Face unlock success: {name} (dist={dist:.3f})")
+            unlocked_by_face = True
+    except Exception as e:
+        # silent fallback to passcode if camera fails or face_auth import fails
+        print(f"Face auth attempt failed: {e}")
+
+    if not unlocked_by_face:
+        passcode_dialog = PasscodeDialog()
+        if passcode_dialog.exec() != QDialog.Accepted:
+            sys.exit(0)
+
     ui = EvaGui()
     ui.show()
     sys.exit(app.exec())

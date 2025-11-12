@@ -47,3 +47,8 @@ RECORD_SECONDS = 5
 
 # Session Settings
 SESSION_TIMEOUT = 10  # seconds
+SMTP_HOST = "smtp.gmail.com"
+SMTP_PORT = 587
+SMTP_USER = "thakareansh3@gmail.com"
+SMTP_PASSWORD = "nstv grxw kuxu glrl"
+SMTP_USE_TLS = True
