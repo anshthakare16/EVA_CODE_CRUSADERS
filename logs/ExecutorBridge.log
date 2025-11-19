@@ -1371,3 +1371,4 @@
 2025-11-19 17:44:15,142 - ExecutorBridge - INFO - Attempting to focus window with title: Chrome
 2025-11-19 17:44:15,148 - ExecutorBridge - INFO - Best match: 'Google Chrome' with score 100
 2025-11-19 17:44:15,149 - ExecutorBridge - INFO - Successfully focused window: Google Chrome
+2025-11-19 18:36:57,009 - ExecutorBridge - INFO - C executor library loaded successfully
