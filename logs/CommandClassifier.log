@@ -1,0 +1,223 @@
+2025-10-15 11:48:21,967 - CommandClassifier - INFO - Training command classification model...
+2025-10-15 11:48:22,256 - CommandClassifier - INFO - Model trained with 46 examples
+2025-10-15 11:48:22,256 - CommandClassifier - INFO - Categories: ['APP_LAUNCH' 'IN_APP_ACTION' 'WEB_ACTION']
+2025-10-15 12:12:38,150 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-15 12:21:42,857 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-15 12:23:06,102 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-15 12:26:18,932 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-15 12:28:07,286 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-15 12:29:01,047 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-15 12:29:28,227 - CommandClassifier - INFO - Classified: 'Open YouTube.' → APP_LAUNCH (confidence: 74.77%)
+2025-10-15 12:29:39,311 - CommandClassifier - INFO - Classified: 'You' → IN_APP_ACTION (confidence: 73.62%)
+2025-10-15 12:29:59,242 - CommandClassifier - INFO - Classified: 'Open Google Chrome.' → APP_LAUNCH (confidence: 51.29%)
+2025-10-15 12:30:10,815 - CommandClassifier - INFO - Classified: 'Now type YouTube.' → IN_APP_ACTION (confidence: 64.60%)
+2025-10-15 12:30:30,059 - CommandClassifier - INFO - Classified: 'Now click on' → IN_APP_ACTION (confidence: 73.62%)
+2025-10-15 12:30:58,844 - CommandClassifier - INFO - Classified: 'Sir, Mr. Beast.' → IN_APP_ACTION (confidence: 73.62%)
+2025-10-15 12:31:15,786 - CommandClassifier - INFO - Classified: 'Sir, Mr. Beast.' → IN_APP_ACTION (confidence: 73.62%)
+2025-10-15 12:31:34,672 - CommandClassifier - INFO - Classified: 'Let's Google Chrome.' → IN_APP_ACTION (confidence: 54.49%)
+2025-10-15 12:31:48,899 - CommandClassifier - INFO - Classified: 'You' → IN_APP_ACTION (confidence: 73.62%)
+2025-10-15 12:32:26,321 - CommandClassifier - INFO - Classified: 'Open.  What's up?  Open.  What's up?' → APP_LAUNCH (confidence: 58.59%)
+2025-10-15 12:32:40,883 - CommandClassifier - INFO - Classified: 'Open what's up.' → APP_LAUNCH (confidence: 58.59%)
+2025-10-15 12:33:06,571 - CommandClassifier - INFO - Classified: 'You' → IN_APP_ACTION (confidence: 73.62%)
+2025-10-15 12:33:20,853 - CommandClassifier - INFO - Classified: 'Open the chat of your...' → APP_LAUNCH (confidence: 58.59%)
+2025-10-15 12:33:32,842 - CommandClassifier - INFO - Classified: 'Close, what's up?' → IN_APP_ACTION (confidence: 73.62%)
+2025-10-15 12:34:01,916 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-15 12:34:21,642 - CommandClassifier - INFO - Classified: 'Set my brightness to 10%' → IN_APP_ACTION (confidence: 73.62%)
+2025-10-15 12:34:58,546 - CommandClassifier - INFO - Classified: 'So it's my volume could be 20%' → IN_APP_ACTION (confidence: 73.62%)
+2025-10-15 15:38:18,133 - CommandClassifier - INFO - Classified: 'You' → IN_APP_ACTION (confidence: 73.62%)
+2025-10-15 16:00:10,588 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-15 16:10:19,803 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-15 16:12:30,479 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-15 16:15:27,671 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-15 16:15:40,200 - CommandClassifier - INFO - Classified: 'Jarvis?' → IN_APP_ACTION (confidence: 73.62%)
+2025-10-15 16:17:07,471 - CommandClassifier - INFO - Classified: 'open spotify and place a fire' → APP_LAUNCH (confidence: 60.52%)
+2025-10-15 16:17:32,748 - CommandClassifier - INFO - Classified: 'This is a fire on Spotify.' → IN_APP_ACTION (confidence: 67.03%)
+2025-10-15 16:18:21,054 - CommandClassifier - INFO - Classified: 'set my volume to 30%' → IN_APP_ACTION (confidence: 73.62%)
+2025-10-15 16:19:28,162 - CommandClassifier - INFO - Classified: 'I'm blue, too.' → IN_APP_ACTION (confidence: 73.62%)
+2025-10-15 16:20:11,496 - CommandClassifier - INFO - Classified: 'Shut down my laptop.' → IN_APP_ACTION (confidence: 73.62%)
+2025-10-21 01:07:00,013 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-21 01:07:28,899 - CommandClassifier - INFO - Classified: 'Do you have this?' → IN_APP_ACTION (confidence: 73.62%)
+2025-10-21 01:07:51,143 - CommandClassifier - INFO - Classified: 'Analyse my screen.' → IN_APP_ACTION (confidence: 73.62%)
+2025-10-27 17:57:49,727 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-27 17:58:07,040 - CommandClassifier - INFO - Classified: 'service' → IN_APP_ACTION (confidence: 73.62%)
+2025-10-27 17:58:44,794 - CommandClassifier - INFO - Classified: 'Play a YouTube video of Mr. Waste.' → IN_APP_ACTION (confidence: 71.24%)
+2025-10-27 17:59:16,921 - CommandClassifier - INFO - Classified: 'Open Google Chrome.' → APP_LAUNCH (confidence: 51.29%)
+2025-10-27 17:59:35,810 - CommandClassifier - INFO - Classified: 'Clio's Google Chrome.' → IN_APP_ACTION (confidence: 54.49%)
+2025-10-27 17:59:55,663 - CommandClassifier - INFO - Classified: 'Send high to 4-7 watts up.' → IN_APP_ACTION (confidence: 76.95%)
+2025-10-27 18:00:41,577 - CommandClassifier - INFO - Classified: 'Send high to polymorphism on whatsapp.' → IN_APP_ACTION (confidence: 73.68%)
+2025-10-27 18:01:31,112 - CommandClassifier - INFO - Classified: 'Send high to polymorphism.' → IN_APP_ACTION (confidence: 76.95%)
+2025-10-27 18:02:15,178 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-27 18:02:27,416 - CommandClassifier - INFO - Classified: 'set volume to 30%' → IN_APP_ACTION (confidence: 73.62%)
+2025-10-30 17:23:49,958 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 17:24:06,522 - CommandClassifier - INFO - Classified: 'Open Spotify.' → APP_LAUNCH (confidence: 60.52%)
+2025-10-30 17:24:30,993 - CommandClassifier - INFO - Classified: '0.5, close 0.5.' → IN_APP_ACTION (confidence: 73.62%)
+2025-10-30 17:27:45,383 - CommandClassifier - INFO - Classified: 'Open, what is up?' → APP_LAUNCH (confidence: 58.59%)
+2025-10-30 17:27:59,787 - CommandClassifier - INFO - Classified: 'Open what's up' → APP_LAUNCH (confidence: 58.59%)
+2025-10-30 17:28:19,016 - CommandClassifier - INFO - Classified: 'Send high to Thakre' → IN_APP_ACTION (confidence: 76.95%)
+2025-10-30 17:28:41,434 - CommandClassifier - INFO - Classified: 'Set system volume to 30%' → IN_APP_ACTION (confidence: 73.62%)
+2025-10-30 19:44:40,880 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 19:54:48,636 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 19:57:12,545 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 20:05:32,090 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 20:07:50,170 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 20:11:35,065 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 20:15:04,340 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 20:25:18,556 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 20:25:59,902 - CommandClassifier - INFO - Classifying: 'open spotify'
+2025-10-30 20:25:59,902 - CommandClassifier - INFO - Classified: 'open spotify' → APP_LAUNCH (confidence: 90.00%)
+2025-10-30 20:26:17,061 - CommandClassifier - INFO - Classifying: 'close spotify'
+2025-10-30 20:26:17,061 - CommandClassifier - INFO - Classified: 'close spotify' → IN_APP_ACTION (confidence: 85.00%)
+2025-10-30 20:33:59,300 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 20:34:37,070 - CommandClassifier - INFO - Classifying: 'Open spotify'
+2025-10-30 20:34:37,072 - CommandClassifier - INFO - Classified: 'Open spotify' → APP_LAUNCH (confidence: 90.00%)
+2025-10-30 20:34:53,886 - CommandClassifier - INFO - Classifying: 'Thank you.'
+2025-10-30 20:34:53,886 - CommandClassifier - INFO - Classified: 'Thank you.' → CONVERSATION (confidence: 50.00%)
+2025-10-30 20:45:15,287 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 20:46:43,289 - CommandClassifier - INFO - Classifying: 'set system volume to 30%'
+2025-10-30 20:46:43,289 - CommandClassifier - INFO - Classified: 'set system volume to 30%' → SYSTEM_ACTION (volume) (confidence: 95.00%)
+2025-10-30 20:47:02,495 - CommandClassifier - INFO - Classifying: 'open spotify'
+2025-10-30 20:47:02,495 - CommandClassifier - INFO - Classified: 'open spotify' → APP_LAUNCH (confidence: 90.00%)
+2025-10-30 20:47:21,034 - CommandClassifier - INFO - Classifying: 'Thank you.'
+2025-10-30 20:47:21,034 - CommandClassifier - INFO - Classified: 'Thank you.' → CONVERSATION (confidence: 50.00%)
+2025-10-30 22:19:44,936 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 22:20:38,193 - CommandClassifier - INFO - Classifying: 'set system volume to 30%'
+2025-10-30 22:20:38,193 - CommandClassifier - INFO - Classified: 'set system volume to 30%' → SYSTEM_ACTION (volume) (confidence: 95.00%)
+2025-10-30 22:20:53,697 - CommandClassifier - INFO - Classifying: 'Thank you.'
+2025-10-30 22:20:53,697 - CommandClassifier - INFO - Classified: 'Thank you.' → CONVERSATION (confidence: 50.00%)
+2025-10-30 22:21:09,092 - CommandClassifier - INFO - Classifying: 'Thank you.'
+2025-10-30 22:21:09,092 - CommandClassifier - INFO - Classified: 'Thank you.' → CONVERSATION (confidence: 50.00%)
+2025-10-30 22:36:38,979 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 22:36:59,291 - CommandClassifier - INFO - Classifying: 'volume to 30 percent'
+2025-10-30 22:36:59,291 - CommandClassifier - INFO - Classified: 'volume to 30 percent' → SYSTEM_ACTION (volume) (confidence: 95.00%)
+2025-10-30 22:37:15,020 - CommandClassifier - INFO - Classifying: 'Thank you.'
+2025-10-30 22:37:15,020 - CommandClassifier - INFO - Classified: 'Thank you.' → CONVERSATION (confidence: 50.00%)
+2025-10-30 22:37:30,630 - CommandClassifier - INFO - Classifying: 'set brightness to 1%'
+2025-10-30 22:37:30,630 - CommandClassifier - INFO - Classified: 'set brightness to 1%' → SYSTEM_ACTION (brightness) (confidence: 95.00%)
+2025-10-30 22:37:46,322 - CommandClassifier - INFO - Classifying: 'Wow!'
+2025-10-30 22:37:46,322 - CommandClassifier - INFO - Classified: 'Wow!' → CONVERSATION (confidence: 50.00%)
+2025-10-30 22:38:02,000 - CommandClassifier - INFO - Classifying: 'set volume to 50%'
+2025-10-30 22:38:02,000 - CommandClassifier - INFO - Classified: 'set volume to 50%' → SYSTEM_ACTION (volume) (confidence: 95.00%)
+2025-10-30 22:38:17,944 - CommandClassifier - INFO - Classifying: 'Thank you.'
+2025-10-30 22:38:17,944 - CommandClassifier - INFO - Classified: 'Thank you.' → CONVERSATION (confidence: 50.00%)
+2025-10-30 22:38:33,465 - CommandClassifier - INFO - Classifying: 'Thank you.'
+2025-10-30 22:38:33,465 - CommandClassifier - INFO - Classified: 'Thank you.' → CONVERSATION (confidence: 50.00%)
+2025-10-30 22:38:49,060 - CommandClassifier - INFO - Classifying: 'Open VSCode'
+2025-10-30 22:38:49,060 - CommandClassifier - INFO - Classified: 'Open VSCode' → APP_LAUNCH (confidence: 90.00%)
+2025-10-30 22:39:04,734 - CommandClassifier - INFO - Classifying: 'Thank you.'
+2025-10-30 22:39:04,734 - CommandClassifier - INFO - Classified: 'Thank you.' → CONVERSATION (confidence: 50.00%)
+2025-10-30 22:46:35,467 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 22:46:57,539 - CommandClassifier - INFO - Classifying: 'set volume to 30%'
+2025-10-30 22:46:57,539 - CommandClassifier - INFO - Classified: 'set volume to 30%' → SYSTEM_ACTION (volume) (confidence: 95.00%)
+2025-10-30 22:47:12,967 - CommandClassifier - INFO - Classifying: 'Thank you.'
+2025-10-30 22:47:12,967 - CommandClassifier - INFO - Classified: 'Thank you.' → CONVERSATION (confidence: 50.00%)
+2025-10-30 22:47:28,418 - CommandClassifier - INFO - Classifying: 'set bright'
+2025-10-30 22:47:28,418 - CommandClassifier - INFO - Classified: 'set bright' → CONVERSATION (confidence: 50.00%)
+2025-10-30 22:47:43,844 - CommandClassifier - INFO - Classifying: 'set'
+2025-10-30 22:47:43,844 - CommandClassifier - INFO - Classified: 'set' → CONVERSATION (confidence: 50.00%)
+2025-10-30 22:47:59,202 - CommandClassifier - INFO - Classifying: 'Thank you.'
+2025-10-30 22:47:59,202 - CommandClassifier - INFO - Classified: 'Thank you.' → CONVERSATION (confidence: 50.00%)
+2025-10-30 22:48:14,644 - CommandClassifier - INFO - Classifying: 'Thank you.'
+2025-10-30 22:48:14,644 - CommandClassifier - INFO - Classified: 'Thank you.' → CONVERSATION (confidence: 50.00%)
+2025-10-30 22:48:29,927 - CommandClassifier - INFO - Classifying: 'Open VSCode'
+2025-10-30 22:48:29,927 - CommandClassifier - INFO - Classified: 'Open VSCode' → APP_LAUNCH (confidence: 90.00%)
+2025-10-30 22:48:45,328 - CommandClassifier - INFO - Classifying: 'Thank you.'
+2025-10-30 22:48:45,328 - CommandClassifier - INFO - Classified: 'Thank you.' → CONVERSATION (confidence: 50.00%)
+2025-10-30 22:49:00,666 - CommandClassifier - INFO - Classifying: 'Thank you.'
+2025-10-30 22:49:00,666 - CommandClassifier - INFO - Classified: 'Thank you.' → CONVERSATION (confidence: 50.00%)
+2025-10-30 22:58:07,255 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 23:03:39,191 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 23:04:05,215 - CommandClassifier - INFO - Classifying: 'open spotify'
+2025-10-30 23:04:05,215 - CommandClassifier - INFO - Classified: 'open spotify' → APP_LAUNCH (confidence: 90.00%)
+2025-10-30 23:04:25,596 - CommandClassifier - INFO - Classifying: 'set volume to 30%'
+2025-10-30 23:04:25,596 - CommandClassifier - INFO - Classified: 'set volume to 30%' → SYSTEM_ACTION (volume) (confidence: 95.00%)
+2025-10-30 23:04:46,021 - CommandClassifier - INFO - Classifying: 'set brightness to 2%'
+2025-10-30 23:04:46,021 - CommandClassifier - INFO - Classified: 'set brightness to 2%' → SYSTEM_ACTION (brightness) (confidence: 95.00%)
+2025-10-30 23:05:06,266 - CommandClassifier - INFO - Classifying: 'Open VSCode'
+2025-10-30 23:05:06,266 - CommandClassifier - INFO - Classified: 'Open VSCode' → APP_LAUNCH (confidence: 90.00%)
+2025-10-30 23:13:05,496 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 23:13:30,282 - CommandClassifier - INFO - Classifying: 'set volume to 30'
+2025-10-30 23:13:30,282 - CommandClassifier - INFO - Classified: 'set volume to 30' → SYSTEM_ACTION (volume) (confidence: 95.00%)
+2025-10-30 23:13:51,513 - CommandClassifier - INFO - Classifying: 'set volume to 100'
+2025-10-30 23:13:51,513 - CommandClassifier - INFO - Classified: 'set volume to 100' → SYSTEM_ACTION (volume) (confidence: 95.00%)
+2025-10-30 23:14:12,418 - CommandClassifier - INFO - Classifying: 'Open Spotify.'
+2025-10-30 23:14:12,418 - CommandClassifier - INFO - Classified: 'Open Spotify.' → APP_LAUNCH (confidence: 90.00%)
+2025-10-30 23:14:36,613 - CommandClassifier - INFO - Classifying: 'Close Spotify.'
+2025-10-30 23:14:36,613 - CommandClassifier - INFO - Classified: 'Close Spotify.' → IN_APP_ACTION (confidence: 85.00%)
+2025-10-30 23:14:57,019 - CommandClassifier - INFO - Classifying: 'open whatsapp'
+2025-10-30 23:14:57,019 - CommandClassifier - INFO - Classified: 'open whatsapp' → APP_LAUNCH (confidence: 90.00%)
+2025-10-30 23:15:19,119 - CommandClassifier - INFO - Classifying: 'open crazy 2.0 text'
+2025-10-30 23:15:19,119 - CommandClassifier - INFO - Classified: 'open crazy 2.0 text' → APP_LAUNCH (confidence: 90.00%)
+2025-10-30 23:15:42,663 - CommandClassifier - INFO - Classifying: 'In this navigate to crazy 2.0'
+2025-10-30 23:15:42,663 - CommandClassifier - INFO - Classified: 'In this navigate to crazy 2.0' → CONVERSATION (confidence: 50.00%)
+2025-10-30 23:16:03,268 - CommandClassifier - INFO - Classifying: 'Thank you.'
+2025-10-30 23:16:03,268 - CommandClassifier - INFO - Classified: 'Thank you.' → CONVERSATION (confidence: 50.00%)
+2025-10-30 23:16:23,493 - CommandClassifier - INFO - Classifying: 'Thank you.'
+2025-10-30 23:16:23,493 - CommandClassifier - INFO - Classified: 'Thank you.' → CONVERSATION (confidence: 50.00%)
+2025-10-30 23:16:43,671 - CommandClassifier - INFO - Classifying: 'Thank you.'
+2025-10-30 23:16:43,671 - CommandClassifier - INFO - Classified: 'Thank you.' → CONVERSATION (confidence: 50.00%)
+2025-10-30 23:17:04,314 - CommandClassifier - INFO - Classifying: 'navigate to my notes'
+2025-10-30 23:17:04,314 - CommandClassifier - INFO - Classified: 'navigate to my notes' → CONVERSATION (confidence: 50.00%)
+2025-10-30 23:17:25,870 - CommandClassifier - INFO - Classifying: 'Thank you.'
+2025-10-30 23:17:25,871 - CommandClassifier - INFO - Classified: 'Thank you.' → CONVERSATION (confidence: 50.00%)
+2025-10-30 23:17:46,014 - CommandClassifier - INFO - Classifying: 'Thank you.'
+2025-10-30 23:17:46,014 - CommandClassifier - INFO - Classified: 'Thank you.' → CONVERSATION (confidence: 50.00%)
+2025-10-30 23:18:06,231 - CommandClassifier - INFO - Classifying: 'Thank you.'
+2025-10-30 23:18:06,231 - CommandClassifier - INFO - Classified: 'Thank you.' → CONVERSATION (confidence: 50.00%)
+2025-10-30 23:18:26,416 - CommandClassifier - INFO - Classifying: 'Thank you.'
+2025-10-30 23:18:26,416 - CommandClassifier - INFO - Classified: 'Thank you.' → CONVERSATION (confidence: 50.00%)
+2025-10-30 23:18:46,702 - CommandClassifier - INFO - Classifying: 'Thank you.'
+2025-10-30 23:18:46,702 - CommandClassifier - INFO - Classified: 'Thank you.' → CONVERSATION (confidence: 50.00%)
+2025-10-30 23:29:17,762 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 23:29:17,762 - CommandClassifier - INFO - Classifying: 'set volume to 30%'
+2025-10-30 23:29:17,762 - CommandClassifier - INFO - Classified: 'set volume to 30%' → SYSTEM_ACTION (volume) (confidence: 95.00%)
+2025-10-30 23:29:38,710 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 23:29:38,710 - CommandClassifier - INFO - Classifying: 'Thank you.'
+2025-10-30 23:29:38,711 - CommandClassifier - INFO - Classified: 'Thank you.' → CONVERSATION (confidence: 50.00%)
+2025-10-30 23:29:58,858 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 23:29:58,861 - CommandClassifier - INFO - Classifying: 'Open Whatsapp'
+2025-10-30 23:29:58,861 - CommandClassifier - INFO - Classified: 'Open Whatsapp' → APP_LAUNCH (confidence: 90.00%)
+2025-10-30 23:30:20,941 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 23:30:20,941 - CommandClassifier - INFO - Classifying: 'Thank you for watching.'
+2025-10-30 23:30:20,941 - CommandClassifier - INFO - Classified: 'Thank you for watching.' → CONVERSATION (confidence: 50.00%)
+2025-10-30 23:30:41,731 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 23:30:41,731 - CommandClassifier - INFO - Classifying: 'navigate to my notes chat'
+2025-10-30 23:30:41,731 - CommandClassifier - INFO - Classified: 'navigate to my notes chat' → CONVERSATION (confidence: 50.00%)
+2025-10-30 23:31:01,946 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 23:31:01,946 - CommandClassifier - INFO - Classifying: 'Open spotify'
+2025-10-30 23:31:01,947 - CommandClassifier - INFO - Classified: 'Open spotify' → APP_LAUNCH (confidence: 90.00%)
+2025-10-30 23:31:25,931 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 23:31:25,931 - CommandClassifier - INFO - Classifying: 'Play the song.'
+2025-10-30 23:31:25,931 - CommandClassifier - INFO - Classified: 'Play the song.' → IN_APP_ACTION (confidence: 85.00%)
+2025-10-30 23:31:46,936 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 23:31:46,936 - CommandClassifier - INFO - Classifying: 'Play the song sapphire on it.'
+2025-10-30 23:31:46,936 - CommandClassifier - INFO - Classified: 'Play the song sapphire on it.' → IN_APP_ACTION (confidence: 85.00%)
+2025-10-30 23:39:08,655 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 23:39:08,655 - CommandClassifier - INFO - Classifying: 'open spotify'
+2025-10-30 23:39:08,655 - CommandClassifier - INFO - Classified: 'open spotify' → APP_LAUNCH (confidence: 90.00%)
+2025-10-30 23:39:33,134 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 23:39:33,134 - CommandClassifier - INFO - Classifying: 'now play sapphire on'
+2025-10-30 23:39:33,134 - CommandClassifier - INFO - Classified: 'now play sapphire on' → IN_APP_ACTION (confidence: 85.00%)
+2025-10-30 23:39:54,037 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 23:39:54,038 - CommandClassifier - INFO - Classifying: 'now place a fire on it'
+2025-10-30 23:39:54,038 - CommandClassifier - INFO - Classified: 'now place a fire on it' → CONVERSATION (confidence: 50.00%)
+2025-10-30 23:40:14,683 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 23:40:14,683 - CommandClassifier - INFO - Classifying: 'place a fire.'
+2025-10-30 23:40:14,683 - CommandClassifier - INFO - Classified: 'place a fire.' → CONVERSATION (confidence: 50.00%)
+2025-10-30 23:40:34,916 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 23:40:34,921 - CommandClassifier - INFO - Classifying: 'Play Sapphire'
+2025-10-30 23:40:34,921 - CommandClassifier - INFO - Classified: 'Play Sapphire' → IN_APP_ACTION (confidence: 85.00%)
+2025-10-30 23:40:55,185 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 23:40:55,185 - CommandClassifier - INFO - Classifying: 'Thank you.'
+2025-10-30 23:40:55,186 - CommandClassifier - INFO - Classified: 'Thank you.' → CONVERSATION (confidence: 50.00%)
+2025-10-30 23:41:15,616 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 23:41:15,616 - CommandClassifier - INFO - Classifying: 'Play music.'
+2025-10-30 23:41:15,616 - CommandClassifier - INFO - Classified: 'Play music.' → IN_APP_ACTION (confidence: 85.00%)
+2025-10-30 23:41:35,985 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 23:41:35,985 - CommandClassifier - INFO - Classifying: 'Play the next video.'
+2025-10-30 23:41:35,985 - CommandClassifier - INFO - Classified: 'Play the next video.' → IN_APP_ACTION (confidence: 85.00%)
+2025-10-30 23:41:56,305 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 23:41:56,305 - CommandClassifier - INFO - Classifying: 'Thank you.'
+2025-10-30 23:41:56,306 - CommandClassifier - INFO - Classified: 'Thank you.' → CONVERSATION (confidence: 50.00%)
+2025-10-30 23:42:16,644 - CommandClassifier - INFO - Classification model loaded successfully
+2025-10-30 23:42:16,644 - CommandClassifier - INFO - Classifying: 'Play the previous song.'
+2025-10-30 23:42:16,644 - CommandClassifier - INFO - Classified: 'Play the previous song.' → IN_APP_ACTION (confidence: 85.00%)

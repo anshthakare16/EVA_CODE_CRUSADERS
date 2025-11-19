@@ -1,0 +1,350 @@
+2025-10-10 13:12:26 - EVA - INFO - Initializing EVA Assistant...
+2025-10-10 13:12:26 - WakeWordDetector - ERROR - Failed to initialize wake word detector: create() missing 1 required positional argument: 'access_key'
+2025-10-10 13:12:28 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-10 13:12:29 - TextToSpeech - INFO - Text-to-speech initialized
+2025-10-10 13:12:29 - CommandProcessor - ERROR - Error loading model: 
+Traceback (most recent call last):
+  File "C:\Users\sabni\Desktop\ansh\EVA_JARVIS\models\command_processor.py", line 243, in load_model
+    self.pipeline = joblib.load(self.model_path)
+  File "C:\Users\sabni\Desktop\ansh\EVA_JARVIS\eva_env\lib\site-packages\joblib\numpy_pickle.py", line 749, in load
+    obj = _unpickle(
+  File "C:\Users\sabni\Desktop\ansh\EVA_JARVIS\eva_env\lib\site-packages\joblib\numpy_pickle.py", line 626, in _unpickle
+    obj = unpickler.load()
+  File "C:\Users\sabni\AppData\Local\Programs\Python\Python310\lib\pickle.py", line 1211, in load
+    raise EOFError
+EOFError
+2025-10-10 13:12:29 - CommandProcessor - INFO - Creating default command processing model...
+2025-10-10 13:19:07 - EVA - INFO - Initializing EVA Assistant...
+2025-10-10 13:19:07 - WakeWordDetector - ERROR - Failed to initialize wake word detector: create() missing 1 required positional argument: 'access_key'
+2025-10-10 13:19:08 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-10 13:19:09 - TextToSpeech - INFO - Text-to-speech initialized
+2025-10-10 13:19:09 - CommandProcessor - ERROR - Error loading model: 
+Traceback (most recent call last):
+  File "C:\Users\sabni\Desktop\ansh\EVA_JARVIS\models\command_processor.py", line 243, in load_model
+    self.pipeline = joblib.load(self.model_path)
+  File "C:\Users\sabni\Desktop\ansh\EVA_JARVIS\eva_env\lib\site-packages\joblib\numpy_pickle.py", line 749, in load
+    obj = _unpickle(
+  File "C:\Users\sabni\Desktop\ansh\EVA_JARVIS\eva_env\lib\site-packages\joblib\numpy_pickle.py", line 626, in _unpickle
+    obj = unpickler.load()
+  File "C:\Users\sabni\AppData\Local\Programs\Python\Python310\lib\pickle.py", line 1211, in load
+    raise EOFError
+EOFError
+2025-10-10 13:19:09 - CommandProcessor - INFO - Creating default command processing model...
+2025-10-10 13:25:40 - EVA - INFO - Initializing EVA Assistant...
+2025-10-10 13:25:40 - WakeWordDetector - ERROR - Failed to initialize wake word detector: create() missing 1 required positional argument: 'access_key'
+2025-10-10 13:25:41 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-10 13:25:41 - TextToSpeech - INFO - Text-to-speech initialized
+2025-10-10 13:25:41 - CommandProcessor - ERROR - Error loading model: 
+Traceback (most recent call last):
+  File "C:\Users\sabni\Desktop\ansh\EVA_JARVIS\models\command_processor.py", line 289, in load_model
+    self.pipeline = joblib.load(self.model_path)
+  File "C:\Users\sabni\Desktop\ansh\EVA_JARVIS\eva_env\lib\site-packages\joblib\numpy_pickle.py", line 749, in load
+    obj = _unpickle(
+  File "C:\Users\sabni\Desktop\ansh\EVA_JARVIS\eva_env\lib\site-packages\joblib\numpy_pickle.py", line 626, in _unpickle
+    obj = unpickler.load()
+  File "C:\Users\sabni\AppData\Local\Programs\Python\Python310\lib\pickle.py", line 1211, in load
+    raise EOFError
+EOFError
+2025-10-10 13:25:41 - CommandProcessor - INFO - Creating default command processing model...
+2025-10-10 13:25:41 - CommandProcessor - INFO - Training on full dataset (56 samples)
+2025-10-10 13:25:41 - CommandProcessor - INFO - Model saved to C:\Users\sabni\Desktop\ansh\EVA_JARVIS\models\model_weights\command_model.pkl
+2025-10-10 13:25:41 - CommandProcessor - INFO - Default model created and saved
+2025-10-10 13:29:39 - EVA - INFO - Initializing EVA Assistant...
+2025-10-10 13:29:39 - WakeWordDetector - ERROR - Failed to initialize wake word detector: create() missing 1 required positional argument: 'access_key'
+2025-10-10 13:29:41 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-10 13:29:41 - TextToSpeech - INFO - Text-to-speech initialized
+2025-10-10 13:29:41 - CommandProcessor - INFO - Model loaded from C:\Users\sabni\Desktop\ansh\EVA_JARVIS\models\model_weights\command_model.pkl
+2025-10-10 13:29:41 - StepGenerator - WARNING - Model file is empty: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\models\model_weights\step_model.pkl
+2025-10-10 13:29:41 - StepGenerator - ERROR - Error loading model: 'StepGenerator' object has no attribute 'create_default_model'
+Traceback (most recent call last):
+  File "C:\Users\sabni\Desktop\ansh\EVA_JARVIS\models\step_generator.py", line 140, in load_model
+    self.create_default_model()
+AttributeError: 'StepGenerator' object has no attribute 'create_default_model'
+2025-10-10 13:31:28 - EVA - INFO - Initializing EVA Assistant...
+2025-10-10 13:31:28 - WakeWordDetector - ERROR - Failed to initialize wake word detector: create() missing 1 required positional argument: 'access_key'
+2025-10-10 13:31:30 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-10 13:31:30 - TextToSpeech - INFO - Text-to-speech initialized
+2025-10-10 13:31:30 - CommandProcessor - INFO - Model loaded from C:\Users\sabni\Desktop\ansh\EVA_JARVIS\models\model_weights\command_model.pkl
+2025-10-10 13:31:30 - StepGenerator - WARNING - Model file is empty: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\models\model_weights\step_model.pkl
+2025-10-10 13:31:30 - StepGenerator - ERROR - Error loading model: 'StepGenerator' object has no attribute 'self'
+Traceback (most recent call last):
+  File "C:\Users\sabni\Desktop\ansh\EVA_JARVIS\models\step_generator.py", line 140, in load_model
+    self.self.create_default_rules()
+AttributeError: 'StepGenerator' object has no attribute 'self'
+2025-10-10 13:32:47 - EVA - INFO - Initializing EVA Assistant...
+2025-10-10 13:32:47 - WakeWordDetector - ERROR - Failed to initialize wake word detector: create() missing 1 required positional argument: 'access_key'
+2025-10-10 13:32:48 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-10 13:32:49 - TextToSpeech - INFO - Text-to-speech initialized
+2025-10-10 13:32:49 - CommandProcessor - INFO - Model loaded from C:\Users\sabni\Desktop\ansh\EVA_JARVIS\models\model_weights\command_model.pkl
+2025-10-10 13:32:49 - StepGenerator - WARNING - Model file is empty: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\models\model_weights\step_model.pkl
+2025-10-10 13:32:49 - StepGenerator - INFO - Step rules saved to C:\Users\sabni\Desktop\ansh\EVA_JARVIS\models\model_weights\step_model.pkl
+2025-10-10 13:32:49 - ScreenAnalyzer - INFO - Gemini screen analyzer initialized
+2025-10-10 13:32:49 - ExecutorBridge - ERROR - Failed to load C library: Could not find module 'C:\Users\sabni\Desktop\ansh\EVA_JARVIS\execution\c_executors\executor.dll' (or one of its dependencies). Try using the full path with constructor syntax.
+2025-10-10 13:32:49 - ExecutorBridge - WARNING - Falling back to Python automation (PyAutoGUI)
+2025-10-10 13:33:44 - EVA - INFO - Initializing EVA Assistant...
+2025-10-10 13:33:44 - WakeWordDetector - ERROR - Failed to initialize wake word detector: create() missing 1 required positional argument: 'access_key'
+2025-10-10 13:33:45 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-10 13:33:45 - TextToSpeech - INFO - Text-to-speech initialized
+2025-10-10 13:33:45 - CommandProcessor - INFO - Model loaded from C:\Users\sabni\Desktop\ansh\EVA_JARVIS\models\model_weights\command_model.pkl
+2025-10-10 13:33:45 - StepGenerator - INFO - Model loaded from C:\Users\sabni\Desktop\ansh\EVA_JARVIS\models\model_weights\step_model.pkl
+2025-10-10 13:33:45 - ScreenAnalyzer - INFO - Gemini screen analyzer initialized
+2025-10-10 13:33:45 - ExecutorBridge - ERROR - Failed to load C library: Could not find module 'C:\Users\sabni\Desktop\ansh\EVA_JARVIS\execution\c_executors\executor.dll' (or one of its dependencies). Try using the full path with constructor syntax.
+2025-10-10 13:33:45 - ExecutorBridge - WARNING - Falling back to Python automation (PyAutoGUI)
+2025-10-10 13:33:46 - EVA - INFO - EVA is now active. Say 'JARVIS' to begin...
+2025-10-10 13:33:46 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-10 13:33:47 - SpeechToText - INFO - Recording...
+2025-10-10 13:33:54 - SpeechToText - INFO - Transcription: 
+2025-10-10 13:33:55 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-10 13:33:55 - SpeechToText - INFO - Recording...
+2025-10-10 13:34:02 - SpeechToText - INFO - Transcription: 
+2025-10-10 13:34:03 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-10 13:34:03 - SpeechToText - INFO - Recording...
+2025-10-10 13:34:09 - SpeechToText - INFO - Transcription: 
+2025-10-10 13:34:10 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-10 13:34:11 - SpeechToText - INFO - Recording...
+2025-10-10 13:34:17 - SpeechToText - INFO - Transcription: 
+2025-10-10 13:34:18 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-10 13:34:18 - SpeechToText - INFO - Recording...
+2025-10-10 13:34:25 - SpeechToText - INFO - Transcription: 
+2025-10-10 13:34:27 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-10 13:34:27 - SpeechToText - INFO - Recording...
+2025-10-10 13:34:34 - SpeechToText - INFO - Transcription:  I don't think so.  Jarvis?
+2025-10-10 13:34:34 - EVA - INFO - Wake word detected!
+2025-10-10 13:34:37 - SessionManager - INFO - Session started
+2025-10-10 13:34:37 - EVA - INFO - Listening...
+2025-10-10 13:34:37 - SpeechToText - INFO - Recording...
+2025-10-10 13:34:46 - SpeechToText - INFO - Transcription:  Open Spotify
+2025-10-10 13:34:46 - EVA - INFO - Screen Resolution: 1920x1080
+2025-10-10 13:34:46 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133446_580677.png
+2025-10-10 13:34:46 - EVA - INFO - Screenshot captured: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133446_580677.png
+2025-10-10 13:34:47 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-10 13:34:47 - EVA - INFO - Screen analysis: Unable to analyze screen
+2025-10-10 13:34:47 - CommandProcessor - INFO - Raw: 'Open Spotify' -> Processed: 'OPEN_APP:chrome' (confidence: 23.26%)
+2025-10-10 13:34:47 - CommandProcessor - WARNING - Low confidence (23.26%), using fallback
+2025-10-10 13:34:47 - EVA - INFO - Processed command: OPEN_APP:spotify
+2025-10-10 13:34:47 - StepGenerator - INFO - Generated 4 steps for 'OPEN_APP'
+2025-10-10 13:34:47 - EVA - INFO - Generated 4 execution steps
+2025-10-10 13:34:47 - EVA - INFO - Executing step 1/4: Press Windows key
+2025-10-10 13:34:48 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133447_914704.png
+2025-10-10 13:34:48 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-10 13:34:49 - EVA - INFO - Executing step 2/4: Wait for start menu
+2025-10-10 13:34:49 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133449_320756.png
+2025-10-10 13:34:50 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-10 13:34:51 - EVA - INFO - Executing step 3/4: Type application name
+2025-10-10 13:34:52 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133451_650760.png
+2025-10-10 13:34:52 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-10 13:34:53 - EVA - INFO - Executing step 4/4: Press Enter
+2025-10-10 13:34:54 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133453_942544.png
+2025-10-10 13:34:55 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-10 13:34:56 - EVA - INFO - Listening...
+2025-10-10 13:34:57 - SpeechToText - INFO - Recording...
+2025-10-10 13:35:07 - SpeechToText - INFO - Transcription:  I'm going to have to go to the other side.  Che.  Che, you're not going to have to go to the other side.
+2025-10-10 13:35:07 - EVA - INFO - Screen Resolution: 1920x1080
+2025-10-10 13:35:07 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133507_624835.png
+2025-10-10 13:35:07 - EVA - INFO - Screenshot captured: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133507_624835.png
+2025-10-10 13:35:08 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-10 13:35:08 - EVA - INFO - Screen analysis: Unable to analyze screen
+2025-10-10 13:35:08 - CommandProcessor - INFO - Raw: 'I'm going to have to go to the other side.  Che.  Che, you're not going to have to go to the other side.' -> Processed: 'WINDOW_ACTION:fullscreen' (confidence: 13.91%)
+2025-10-10 13:35:08 - CommandProcessor - WARNING - Low confidence (13.91%), using fallback
+2025-10-10 13:35:08 - EVA - INFO - Processed command: EXECUTE:im going to have to go to the other side che che youre not going to have to go to the other side
+2025-10-10 13:35:08 - StepGenerator - INFO - Generated 1 steps for 'EXECUTE'
+2025-10-10 13:35:08 - EVA - INFO - Generated 1 execution steps
+2025-10-10 13:35:08 - EVA - INFO - Executing step 1/1: Execute: EXECUTE:im going to have to go to the other side che che youre not going to have to go to the other side
+2025-10-10 13:35:08 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133508_513605.png
+2025-10-10 13:35:09 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-10 13:35:09 - ExecutorBridge - WARNING - Unknown action type: GENERIC
+2025-10-10 13:35:10 - EVA - INFO - Listening...
+2025-10-10 13:35:11 - SpeechToText - INFO - Recording...
+2025-10-10 13:35:17 - SpeechToText - INFO - Transcription:  Continue playing the song that is already there.
+2025-10-10 13:35:17 - EVA - INFO - Screen Resolution: 1920x1080
+2025-10-10 13:35:18 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133517_957404.png
+2025-10-10 13:35:18 - EVA - INFO - Screenshot captured: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133517_957404.png
+2025-10-10 13:35:18 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-10 13:35:18 - EVA - INFO - Screen analysis: Unable to analyze screen
+2025-10-10 13:35:18 - CommandProcessor - INFO - Raw: 'Continue playing the song that is already there.' -> Processed: 'TYPE_TEXT:this is a test' (confidence: 5.74%)
+2025-10-10 13:35:18 - CommandProcessor - WARNING - Low confidence (5.74%), using fallback
+2025-10-10 13:35:18 - EVA - INFO - Processed command: EXECUTE:continue playing the song that is already there
+2025-10-10 13:35:18 - StepGenerator - INFO - Generated 1 steps for 'EXECUTE'
+2025-10-10 13:35:18 - EVA - INFO - Generated 1 execution steps
+2025-10-10 13:35:18 - EVA - INFO - Executing step 1/1: Execute: EXECUTE:continue playing the song that is already there
+2025-10-10 13:35:19 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133518_987458.png
+2025-10-10 13:35:20 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-10 13:35:20 - ExecutorBridge - WARNING - Unknown action type: GENERIC
+2025-10-10 13:35:21 - EVA - INFO - Listening...
+2025-10-10 13:35:22 - SpeechToText - INFO - Recording...
+2025-10-10 13:35:29 - SpeechToText - INFO - Transcription:  I think that I got buttered in and I'm sweating a lot.
+2025-10-10 13:35:29 - EVA - INFO - Screen Resolution: 1920x1080
+2025-10-10 13:35:29 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133529_140036.png
+2025-10-10 13:35:29 - EVA - INFO - Screenshot captured: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133529_140036.png
+2025-10-10 13:35:29 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-10 13:35:29 - EVA - INFO - Screen analysis: Unable to analyze screen
+2025-10-10 13:35:29 - CommandProcessor - INFO - Raw: 'I think that I got buttered in and I'm sweating a lot.' -> Processed: 'CLOSE_APP:current' (confidence: 7.14%)
+2025-10-10 13:35:29 - CommandProcessor - WARNING - Low confidence (7.14%), using fallback
+2025-10-10 13:35:29 - EVA - INFO - Processed command: EXECUTE:i think that i got buttered in and im sweating a lot
+2025-10-10 13:35:29 - StepGenerator - INFO - Generated 1 steps for 'EXECUTE'
+2025-10-10 13:35:29 - EVA - INFO - Generated 1 execution steps
+2025-10-10 13:35:29 - EVA - INFO - Executing step 1/1: Execute: EXECUTE:i think that i got buttered in and im sweating a lot
+2025-10-10 13:35:30 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133530_022815.png
+2025-10-10 13:35:30 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-10 13:35:30 - ExecutorBridge - WARNING - Unknown action type: GENERIC
+2025-10-10 13:35:31 - EVA - INFO - Listening...
+2025-10-10 13:35:32 - SpeechToText - INFO - Recording...
+2025-10-10 13:35:49 - SpeechToText - INFO - Transcription:  Can you give me one, can you?  Go on.
+2025-10-10 13:35:49 - EVA - INFO - Screen Resolution: 1920x1080
+2025-10-10 13:35:49 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133549_131302.png
+2025-10-10 13:35:49 - EVA - INFO - Screenshot captured: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133549_131302.png
+2025-10-10 13:35:50 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-10 13:35:50 - EVA - INFO - Screen analysis: Unable to analyze screen
+2025-10-10 13:35:50 - CommandProcessor - INFO - Raw: 'Can you give me one, can you?  Go on.' -> Processed: 'WINDOW_ACTION:fullscreen' (confidence: 13.54%)
+2025-10-10 13:35:50 - CommandProcessor - WARNING - Low confidence (13.54%), using fallback
+2025-10-10 13:35:50 - EVA - INFO - Processed command: EXECUTE:can you give me one can you go on
+2025-10-10 13:35:50 - StepGenerator - INFO - Generated 1 steps for 'EXECUTE'
+2025-10-10 13:35:50 - EVA - INFO - Generated 1 execution steps
+2025-10-10 13:35:50 - EVA - INFO - Executing step 1/1: Execute: EXECUTE:can you give me one can you go on
+2025-10-10 13:35:50 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133550_239296.png
+2025-10-10 13:35:51 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-10 13:35:51 - ExecutorBridge - WARNING - Unknown action type: GENERIC
+2025-10-10 13:35:52 - EVA - INFO - Listening...
+2025-10-10 13:35:53 - SpeechToText - INFO - Recording...
+2025-10-10 13:36:00 - SpeechToText - INFO - Transcription:  Oh, drop that line.  Okay.  Good.  Oh, please.
+2025-10-10 13:36:00 - EVA - INFO - Screen Resolution: 1920x1080
+2025-10-10 13:36:01 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133600_934775.png
+2025-10-10 13:36:01 - EVA - INFO - Screenshot captured: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133600_934775.png
+2025-10-10 13:36:01 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-10 13:36:01 - EVA - INFO - Screen analysis: Unable to analyze screen
+2025-10-10 13:36:01 - CommandProcessor - INFO - Raw: 'Oh, drop that line.  Okay.  Good.  Oh, please.' -> Processed: 'CLOSE_APP:current' (confidence: 7.14%)
+2025-10-10 13:36:01 - CommandProcessor - WARNING - Low confidence (7.14%), using fallback
+2025-10-10 13:36:01 - EVA - INFO - Processed command: EXECUTE:oh drop that line okay good oh please
+2025-10-10 13:36:01 - StepGenerator - INFO - Generated 1 steps for 'EXECUTE'
+2025-10-10 13:36:01 - EVA - INFO - Generated 1 execution steps
+2025-10-10 13:36:01 - EVA - INFO - Executing step 1/1: Execute: EXECUTE:oh drop that line okay good oh please
+2025-10-10 13:36:01 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133601_737281.png
+2025-10-10 13:36:02 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-10 13:36:02 - ExecutorBridge - WARNING - Unknown action type: GENERIC
+2025-10-10 13:36:03 - EVA - INFO - Listening...
+2025-10-10 13:36:04 - SpeechToText - INFO - Recording...
+2025-10-10 13:36:13 - SpeechToText - INFO - Transcription:  to most fortify.
+2025-10-10 13:36:13 - EVA - INFO - Screen Resolution: 1920x1080
+2025-10-10 13:36:13 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133613_531634.png
+2025-10-10 13:36:13 - EVA - INFO - Screenshot captured: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133613_531634.png
+2025-10-10 13:36:14 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-10 13:36:14 - EVA - INFO - Screen analysis: Unable to analyze screen
+2025-10-10 13:36:14 - CommandProcessor - INFO - Raw: 'to most fortify.' -> Processed: 'CLOSE_APP:current' (confidence: 7.14%)
+2025-10-10 13:36:14 - CommandProcessor - WARNING - Low confidence (7.14%), using fallback
+2025-10-10 13:36:14 - EVA - INFO - Processed command: EXECUTE:to most fortify
+2025-10-10 13:36:14 - StepGenerator - INFO - Generated 1 steps for 'EXECUTE'
+2025-10-10 13:36:14 - EVA - INFO - Generated 1 execution steps
+2025-10-10 13:36:14 - EVA - INFO - Executing step 1/1: Execute: EXECUTE:to most fortify
+2025-10-10 13:36:14 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133614_618550.png
+2025-10-10 13:36:15 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-10 13:36:15 - ExecutorBridge - WARNING - Unknown action type: GENERIC
+2025-10-10 13:36:16 - EVA - INFO - Listening...
+2025-10-10 13:36:17 - SpeechToText - INFO - Recording...
+2025-10-10 13:36:32 - SpeechToText - INFO - Transcription:  Who point?  It's a little bit long.  It's a little bit long.
+2025-10-10 13:36:32 - EVA - INFO - Screen Resolution: 1920x1080
+2025-10-10 13:36:33 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133632_902411.png
+2025-10-10 13:36:33 - EVA - INFO - Screenshot captured: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133632_902411.png
+2025-10-10 13:36:33 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-10 13:36:33 - EVA - INFO - Screen analysis: Unable to analyze screen
+2025-10-10 13:36:33 - CommandProcessor - INFO - Raw: 'Who point?  It's a little bit long.  It's a little bit long.' -> Processed: 'CLOSE_APP:current' (confidence: 7.14%)
+2025-10-10 13:36:33 - CommandProcessor - WARNING - Low confidence (7.14%), using fallback
+2025-10-10 13:36:33 - EVA - INFO - Processed command: EXECUTE:who point its a little bit long its a little bit long
+2025-10-10 13:36:33 - StepGenerator - INFO - Generated 1 steps for 'EXECUTE'
+2025-10-10 13:36:33 - EVA - INFO - Generated 1 execution steps
+2025-10-10 13:36:33 - EVA - INFO - Executing step 1/1: Execute: EXECUTE:who point its a little bit long its a little bit long
+2025-10-10 13:36:33 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133633_765158.png
+2025-10-10 13:36:34 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-10 13:36:34 - ExecutorBridge - WARNING - Unknown action type: GENERIC
+2025-10-10 13:36:35 - EVA - INFO - Listening...
+2025-10-10 13:36:36 - SpeechToText - INFO - Recording...
+2025-10-10 13:36:43 - SpeechToText - INFO - Transcription: 
+2025-10-10 13:36:43 - EVA - INFO - Listening...
+2025-10-10 13:36:44 - SpeechToText - INFO - Recording...
+2025-10-10 13:36:46 - EVA - INFO - Shutting down EVA...
+2025-10-10 13:36:46 - EVA - INFO - EVA stopped
+2025-10-10 13:36:58 - EVA - INFO - Initializing EVA Assistant...
+2025-10-10 13:36:58 - WakeWordDetector - ERROR - Failed to initialize wake word detector: create() missing 1 required positional argument: 'access_key'
+2025-10-10 13:37:00 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-10 13:37:00 - TextToSpeech - INFO - Text-to-speech initialized
+2025-10-10 13:37:00 - CommandProcessor - INFO - Model loaded from C:\Users\sabni\Desktop\ansh\EVA_JARVIS\models\model_weights\command_model.pkl
+2025-10-10 13:37:00 - StepGenerator - INFO - Model loaded from C:\Users\sabni\Desktop\ansh\EVA_JARVIS\models\model_weights\step_model.pkl
+2025-10-10 13:37:00 - ScreenAnalyzer - INFO - Gemini screen analyzer initialized
+2025-10-10 13:37:00 - ExecutorBridge - ERROR - Failed to load C library: Could not find module 'C:\Users\sabni\Desktop\ansh\EVA_JARVIS\execution\c_executors\executor.dll' (or one of its dependencies). Try using the full path with constructor syntax.
+2025-10-10 13:37:00 - ExecutorBridge - WARNING - Falling back to Python automation (PyAutoGUI)
+2025-10-10 13:37:00 - EVA - INFO - EVA is now active. Say 'JARVIS' to begin...
+2025-10-10 13:37:01 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-10 13:37:02 - SpeechToText - INFO - Recording...
+2025-10-10 13:37:08 - SpeechToText - INFO - Transcription:  Jarvis
+2025-10-10 13:37:08 - EVA - INFO - Wake word detected!
+2025-10-10 13:37:11 - SessionManager - INFO - Session started
+2025-10-10 13:37:11 - EVA - INFO - Listening...
+2025-10-10 13:37:12 - SpeechToText - INFO - Recording...
+2025-10-10 13:37:18 - SpeechToText - INFO - Transcription:  Open any folder on my desktop.
+2025-10-10 13:37:18 - EVA - INFO - Screen Resolution: 1920x1080
+2025-10-10 13:37:18 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133718_783704.png
+2025-10-10 13:37:18 - EVA - INFO - Screenshot captured: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133718_783704.png
+2025-10-10 13:37:20 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-10 13:37:20 - EVA - INFO - Screen analysis: Unable to analyze screen
+2025-10-10 13:37:20 - CommandProcessor - INFO - Raw: 'Open any folder on my desktop.' -> Processed: 'OPEN_APP:chrome' (confidence: 9.92%)
+2025-10-10 13:37:20 - CommandProcessor - WARNING - Low confidence (9.92%), using fallback
+2025-10-10 13:37:20 - EVA - INFO - Processed command: OPEN_APP:any folder on my desktop
+2025-10-10 13:37:20 - StepGenerator - INFO - Generated 4 steps for 'OPEN_APP'
+2025-10-10 13:37:20 - EVA - INFO - Generated 4 execution steps
+2025-10-10 13:37:20 - EVA - INFO - Executing step 1/4: Press Windows key
+2025-10-10 13:37:20 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133720_170909.png
+2025-10-10 13:37:20 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-10 13:37:21 - EVA - INFO - Executing step 2/4: Wait for start menu
+2025-10-10 13:37:22 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133721_620346.png
+2025-10-10 13:37:22 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-10 13:37:23 - EVA - INFO - Executing step 3/4: Type application name
+2025-10-10 13:37:24 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133724_033976.png
+2025-10-10 13:37:25 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-10 13:37:27 - EVA - INFO - Executing step 4/4: Press Enter
+2025-10-10 13:37:27 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133727_375325.png
+2025-10-10 13:37:28 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-10 13:37:29 - EVA - INFO - Listening...
+2025-10-10 13:37:30 - SpeechToText - INFO - Recording...
+2025-10-10 13:37:37 - SpeechToText - INFO - Transcription:  No, we didn't get it.  You'd be it.
+2025-10-10 13:37:37 - EVA - INFO - Screen Resolution: 1920x1080
+2025-10-10 13:37:37 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133737_480188.png
+2025-10-10 13:37:37 - EVA - INFO - Screenshot captured: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133737_480188.png
+2025-10-10 13:37:38 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-10 13:37:38 - EVA - INFO - Screen analysis: Unable to analyze screen
+2025-10-10 13:37:38 - CommandProcessor - INFO - Raw: 'No, we didn't get it.  You'd be it.' -> Processed: 'MOUSE_CLICK:current' (confidence: 15.88%)
+2025-10-10 13:37:38 - CommandProcessor - WARNING - Low confidence (15.88%), using fallback
+2025-10-10 13:37:38 - EVA - INFO - Processed command: EXECUTE:no we didnt get it youd be it
+2025-10-10 13:37:38 - StepGenerator - INFO - Generated 1 steps for 'EXECUTE'
+2025-10-10 13:37:38 - EVA - INFO - Generated 1 execution steps
+2025-10-10 13:37:38 - EVA - INFO - Executing step 1/1: Execute: EXECUTE:no we didnt get it youd be it
+2025-10-10 13:37:38 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133738_543326.png
+2025-10-10 13:37:39 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-10 13:37:39 - ExecutorBridge - WARNING - Unknown action type: GENERIC
+2025-10-10 13:37:40 - EVA - INFO - Listening...
+2025-10-10 13:37:41 - SpeechToText - INFO - Recording...
+2025-10-10 13:37:47 - SpeechToText - INFO - Transcription:  Open folder
+2025-10-10 13:37:47 - EVA - INFO - Screen Resolution: 1920x1080
+2025-10-10 13:37:47 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133747_796387.png
+2025-10-10 13:37:47 - EVA - INFO - Screenshot captured: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133747_796387.png
+2025-10-10 13:37:48 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-10 13:37:48 - EVA - INFO - Screen analysis: Unable to analyze screen
+2025-10-10 13:37:48 - CommandProcessor - INFO - Raw: 'Open folder' -> Processed: 'OPEN_APP:chrome' (confidence: 23.26%)
+2025-10-10 13:37:48 - CommandProcessor - WARNING - Low confidence (23.26%), using fallback
+2025-10-10 13:37:48 - EVA - INFO - Processed command: OPEN_APP:folder
+2025-10-10 13:37:48 - StepGenerator - INFO - Generated 4 steps for 'OPEN_APP'
+2025-10-10 13:37:48 - EVA - INFO - Generated 4 execution steps
+2025-10-10 13:37:48 - EVA - INFO - Executing step 1/4: Press Windows key
+2025-10-10 13:37:48 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133748_564830.png
+2025-10-10 13:37:49 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-10 13:37:49 - EVA - INFO - Executing step 2/4: Wait for start menu
+2025-10-10 13:37:50 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133749_978937.png
+2025-10-10 13:37:51 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-10 13:37:52 - EVA - INFO - Executing step 3/4: Type application name
+2025-10-10 13:37:52 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133752_396777.png
+2025-10-10 13:37:53 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-10 13:37:55 - EVA - INFO - Executing step 4/4: Press Enter
+2025-10-10 13:37:56 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\sabni\Desktop\ansh\EVA_JARVIS\temp_screenshots\screen_20251010_133755_763282.png
+2025-10-10 13:37:56 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-10 13:37:57 - EVA - INFO - Listening...
+2025-10-10 13:37:58 - SpeechToText - INFO - Recording...
+2025-10-10 13:38:07 - EVA - INFO - Shutting down EVA...
+2025-10-10 13:38:07 - EVA - INFO - EVA stopped

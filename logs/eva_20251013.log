@@ -1,0 +1,92 @@
+2025-10-13 23:19:18 - EVA - INFO - Initializing EVA Assistant...
+2025-10-13 23:19:18 - WakeWordDetector - ERROR - Failed to initialize wake word detector: create() missing 1 required positional argument: 'access_key'
+2025-10-13 23:19:19 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-13 23:19:19 - TextToSpeech - INFO - Text-to-speech initialized
+2025-10-13 23:19:19 - CommandProcessor - INFO - Model loaded from C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\models\model_weights\command_model.pkl
+2025-10-13 23:19:19 - StepGenerator - INFO - Model loaded from C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\models\model_weights\step_model.pkl
+2025-10-13 23:19:19 - ScreenAnalyzer - INFO - Gemini screen analyzer initialized
+2025-10-13 23:19:19 - ExecutorBridge - ERROR - Failed to load C library: Could not find module 'C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\execution\c_executors\executor.dll' (or one of its dependencies). Try using the full path with constructor syntax.
+2025-10-13 23:19:19 - ExecutorBridge - WARNING - Falling back to Python automation (PyAutoGUI)
+2025-10-13 23:19:19 - EVA - INFO - EVA is now active. Say 'JARVIS' to begin...
+2025-10-13 23:19:20 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-13 23:19:21 - SpeechToText - INFO - Recording...
+2025-10-13 23:19:27 - SpeechToText - INFO - Transcription: 
+2025-10-13 23:19:28 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-13 23:19:28 - SpeechToText - INFO - Recording...
+2025-10-13 23:19:34 - SpeechToText - INFO - Transcription:  You
+2025-10-13 23:19:34 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-13 23:19:34 - SpeechToText - INFO - Recording...
+2025-10-13 23:19:40 - SpeechToText - INFO - Transcription: 
+2025-10-13 23:19:41 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-13 23:19:41 - SpeechToText - INFO - Recording...
+2025-10-13 23:19:47 - SpeechToText - INFO - Transcription: 
+2025-10-13 23:19:48 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-13 23:19:48 - SpeechToText - INFO - Recording...
+2025-10-13 23:19:53 - SpeechToText - INFO - Transcription: 
+2025-10-13 23:19:54 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-13 23:19:54 - SpeechToText - INFO - Recording...
+2025-10-13 23:20:00 - SpeechToText - INFO - Transcription: 
+2025-10-13 23:20:01 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-13 23:20:01 - SpeechToText - INFO - Recording...
+2025-10-13 23:20:07 - SpeechToText - INFO - Transcription: 
+2025-10-13 23:20:07 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-13 23:20:07 - SpeechToText - INFO - Recording...
+2025-10-13 23:20:13 - SpeechToText - INFO - Transcription:  You
+2025-10-13 23:20:14 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-13 23:20:14 - SpeechToText - INFO - Recording...
+2025-10-13 23:20:20 - SpeechToText - INFO - Transcription: 
+2025-10-13 23:20:20 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-13 23:20:20 - SpeechToText - INFO - Recording...
+2025-10-13 23:20:26 - SpeechToText - INFO - Transcription: 
+2025-10-13 23:20:27 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-13 23:20:27 - SpeechToText - INFO - Recording...
+2025-10-13 23:20:33 - SpeechToText - INFO - Transcription:  You know what I'm talking about?  You know what I'm talking about?  You know what I'm talking about?
+2025-10-13 23:20:33 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-13 23:20:33 - SpeechToText - INFO - Recording...
+2025-10-13 23:20:39 - SpeechToText - INFO - Transcription: 
+2025-10-13 23:20:40 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-13 23:20:40 - SpeechToText - INFO - Recording...
+2025-10-13 23:20:52 - SpeechToText - INFO - Transcription:  Thank you.
+2025-10-13 23:20:53 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-13 23:20:53 - SpeechToText - INFO - Recording...
+2025-10-13 23:21:00 - SpeechToText - INFO - Transcription:  Garvis.
+2025-10-13 23:21:01 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-13 23:21:01 - SpeechToText - INFO - Recording...
+2025-10-13 23:21:07 - SpeechToText - INFO - Transcription:  Thank you.  Thank you.
+2025-10-13 23:21:07 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-13 23:21:07 - SpeechToText - INFO - Recording...
+2025-10-13 23:21:14 - SpeechToText - INFO - Transcription:  ...  ...  ...  ...  ...
+2025-10-13 23:21:15 - SpeechToText - INFO - Faster Whisper model loaded: base
+2025-10-13 23:21:15 - SpeechToText - INFO - Recording...
+2025-10-13 23:21:21 - SpeechToText - INFO - Transcription:  Jarvis.
+2025-10-13 23:21:21 - EVA - INFO - Wake word detected!
+2025-10-13 23:21:26 - SessionManager - INFO - Session started
+2025-10-13 23:21:26 - EVA - INFO - Listening...
+2025-10-13 23:21:26 - SpeechToText - INFO - Recording...
+2025-10-13 23:21:33 - SpeechToText - INFO - Transcription:  Open-spot-a-fe.
+2025-10-13 23:21:33 - EVA - INFO - Screen Resolution: 1920x1080
+2025-10-13 23:21:33 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251013_232133_570867.png
+2025-10-13 23:21:33 - EVA - INFO - Screenshot captured: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251013_232133_570867.png
+2025-10-13 23:21:34 - ScreenAnalyzer - ERROR - Screen analysis error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-13 23:21:34 - EVA - INFO - Screen analysis: Unable to analyze screen
+2025-10-13 23:21:34 - CommandProcessor - INFO - Raw: 'Open-spot-a-fe.' -> Processed: 'CLOSE_APP:current' (confidence: 7.14%)
+2025-10-13 23:21:34 - CommandProcessor - WARNING - Low confidence (7.14%), using fallback
+2025-10-13 23:21:34 - EVA - INFO - Processed command: OPEN_APP:openspotafe
+2025-10-13 23:21:34 - StepGenerator - INFO - Generated 4 steps for 'OPEN_APP'
+2025-10-13 23:21:34 - EVA - INFO - Generated 4 execution steps
+2025-10-13 23:21:34 - EVA - INFO - Executing step 1/4: Press Windows key
+2025-10-13 23:21:34 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251013_232134_410709.png
+2025-10-13 23:21:35 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-13 23:21:35 - EVA - INFO - Executing step 2/4: Wait for start menu
+2025-10-13 23:21:35 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251013_232135_765022.png
+2025-10-13 23:21:36 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-13 23:21:37 - EVA - INFO - Executing step 3/4: Type application name
+2025-10-13 23:21:37 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251013_232137_504473.png
+2025-10-13 23:21:38 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-13 23:21:39 - EVA - INFO - Executing step 4/4: Press Enter
+2025-10-13 23:21:39 - ScreenshotHandler - INFO - Screenshot saved: C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\temp_screenshots\screen_20251013_232139_487218.png
+2025-10-13 23:21:40 - ScreenAnalyzer - ERROR - Coordinate extraction error: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-13 23:21:43 - EVA - INFO - Listening...
+2025-10-13 23:21:43 - SpeechToText - INFO - Recording...
+2025-10-13 23:21:45 - EVA - INFO - Shutting down EVA...
+2025-10-13 23:21:48 - EVA - INFO - EVA stopped

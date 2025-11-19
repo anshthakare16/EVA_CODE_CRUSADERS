@@ -1,0 +1,44 @@
+2025-10-14 21:05:07,323 - StepGenerator - INFO - Model loaded from C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\models\model_weights\step_model.pkl
+2025-10-14 21:05:26,612 - StepGenerator - INFO - Generated 1 steps for 'EXECUTE'
+2025-10-14 21:05:35,680 - StepGenerator - INFO - Generated 1 steps for 'EXECUTE'
+2025-10-14 21:05:44,784 - StepGenerator - INFO - Generated 1 steps for 'EXECUTE'
+2025-10-14 21:05:53,882 - StepGenerator - INFO - Generated 1 steps for 'EXECUTE'
+2025-10-14 21:06:02,999 - StepGenerator - INFO - Generated 1 steps for 'EXECUTE'
+2025-10-14 21:06:12,072 - StepGenerator - INFO - Generated 1 steps for 'EXECUTE'
+2025-10-14 21:06:21,154 - StepGenerator - INFO - Generated 1 steps for 'EXECUTE'
+2025-10-14 21:06:30,242 - StepGenerator - INFO - Generated 1 steps for 'EXECUTE'
+2025-10-14 21:06:39,777 - StepGenerator - INFO - Generated 1 steps for 'EXECUTE'
+2025-10-14 21:06:49,935 - StepGenerator - INFO - Generated 1 steps for 'EXECUTE'
+2025-10-14 21:11:55,868 - StepGenerator - INFO - Model loaded from C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\models\model_weights\step_model.pkl
+2025-10-14 21:15:41,634 - StepGenerator - INFO - Model loaded from C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\models\model_weights\step_model.pkl
+2025-10-14 21:19:56,114 - StepGenerator - INFO - Model loaded from C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\models\model_weights\step_model.pkl
+2025-10-14 21:20:41,339 - StepGenerator - INFO - Generated 4 steps for 'OPEN_APP'
+2025-10-14 21:21:49,314 - StepGenerator - INFO - Generated 4 steps for 'OPEN_APP'
+2025-10-14 21:22:39,211 - StepGenerator - INFO - Generated 1 steps for 'EXECUTE'
+2025-10-14 21:23:07,015 - StepGenerator - INFO - Generated 4 steps for 'OPEN_APP'
+2025-10-15 10:48:00,035 - StepGenerator - INFO - Model loaded from C:\Users\yasha\OneDrive\Desktop\EVA_JARVIS\models\model_weights\step_model.pkl
+2025-10-15 10:48:34,643 - StepGenerator - INFO - Generated 4 steps for 'OPEN_APP'
+2025-10-30 19:44:40,880 - StepGenerator - INFO - Step rules loaded from C:\Users\yasha\OneDrive\Desktop\EVA-main\models\model_weights\step_model.pkl
+2025-10-30 19:54:48,637 - StepGenerator - INFO - Step rules loaded from C:\Users\yasha\OneDrive\Desktop\EVA-main\models\model_weights\step_model.pkl
+2025-10-30 19:57:12,547 - StepGenerator - INFO - Step rules loaded from C:\Users\yasha\OneDrive\Desktop\EVA-main\models\model_weights\step_model.pkl
+2025-10-30 20:05:32,094 - StepGenerator - INFO - Step rules loaded from C:\Users\yasha\OneDrive\Desktop\EVA-main\models\model_weights\step_model.pkl
+2025-10-30 20:07:50,172 - StepGenerator - INFO - Step rules loaded from C:\Users\yasha\OneDrive\Desktop\EVA-main\models\model_weights\step_model.pkl
+2025-10-30 20:11:35,067 - StepGenerator - INFO - Step rules loaded from C:\Users\yasha\OneDrive\Desktop\EVA-main\models\model_weights\step_model.pkl
+2025-10-30 20:15:04,342 - StepGenerator - INFO - Step rules loaded from C:\Users\yasha\OneDrive\Desktop\EVA-main\models\model_weights\step_model.pkl
+2025-10-30 20:25:18,558 - StepGenerator - INFO - Step rules loaded from C:\Users\yasha\OneDrive\Desktop\EVA-main\models\model_weights\step_model.pkl
+2025-10-30 20:25:59,904 - StepGenerator - INFO - Generating steps for: {'classification': {'category': 'APP_LAUNCH', 'confidence': 0.9, 'subcategory': None, 'requires_screen_analysis': False, 'raw_command': 'open spotify', 'app_name': 'spotify'}, 'entities': {'app_name': 'spotify', 'action': 'launch'}, 'raw_command': 'open spotify'}
+2025-10-30 20:25:59,904 - StepGenerator - INFO - Screen context: 
+2025-10-30 20:25:59,906 - StepGenerator - INFO - ✓ Generated 1 steps
+2025-10-30 20:25:59,906 - StepGenerator - INFO -   Step 1: Analyze screen to execute: open spotify
+2025-10-30 20:33:59,307 - StepGenerator - INFO - Step rules loaded from C:\Users\yasha\OneDrive\Desktop\EVA-main\models\model_weights\step_model.pkl
+2025-10-30 20:34:37,074 - StepGenerator - INFO - Generating steps for: {'classification': {'category': 'APP_LAUNCH', 'confidence': 0.9, 'subcategory': None, 'requires_screen_analysis': False, 'raw_command': 'Open spotify', 'app_name': 'spotify'}, 'entities': {'app_name': 'spotify', 'action': 'launch'}, 'raw_command': 'Open spotify'}
+2025-10-30 20:34:37,074 - StepGenerator - INFO - Screen context: 
+2025-10-30 20:34:37,074 - StepGenerator - INFO - ✓ Generated 1 steps
+2025-10-30 20:34:37,074 - StepGenerator - INFO -   Step 1: Analyze screen to execute: Open spotify
+2025-10-30 20:45:15,302 - StepGenerator - INFO - Step rules saved to C:\Users\yasha\OneDrive\Desktop\EVA-main\models\model_weights\step_model.pkl
+2025-10-30 20:45:15,302 - StepGenerator - INFO - ✓ Default step rules created
+2025-10-30 20:47:02,499 - StepGenerator - INFO - Generating steps for: {'classification': {'category': 'APP_LAUNCH', 'confidence': 0.9, 'subcategory': None, 'requires_screen_analysis': False, 'raw_command': 'open spotify', 'app_name': 'spotify'}, 'entities': {'app_name': 'spotify', 'action': 'launch'}, 'raw_command': 'open spotify'}
+2025-10-30 20:47:02,499 - StepGenerator - INFO - Screen context: 
+2025-10-30 20:47:02,499 - StepGenerator - INFO - ✓ Generated 1 steps
+2025-10-30 20:47:02,499 - StepGenerator - INFO -   Step 1: Analyze screen to execute: open spotify
+2025-10-30 22:19:44,939 - StepGenerator - INFO - Step rules loaded from C:\Users\yasha\OneDrive\Desktop\EVA-main\models\model_weights\step_model.pkl
