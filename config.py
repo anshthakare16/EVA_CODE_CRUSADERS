@@ -8,7 +8,6 @@ GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
 if not GEMINI_API_KEY:
     raise ValueError("GEMINI_API_KEY not found in .env file. Please get a key from Google AI Studio and add it to your .env file.")
 
-
 # Wake Word
 WAKE_WORD = "jarvis"
 GOODBYE_PHRASE = "goodbye jarvis"
@@ -28,11 +27,11 @@ WHISPER_COMPUTE_TYPE = "int8"
 LOG_LEVEL = logging.INFO
 
 # Gemini Settings (for screen summary + coordinate filtering ONLY)
-GEMINI_MODEL = "models/gemini-2.0-flash-exp"
+GEMINI_MODEL = "gemini-1.5-flash"
 GEMINI_FALLBACK_MODELS = [
-    "models/gemini-2.0-flash-exp",
-    "models/gemini-1.5-flash",
-    "models/gemini-1.5-pro"
+    "gemini-1.5-flash",
+    "gemini-1.5-pro",
+    "gemini-2.0-flash-exp"
 ]
 GEMINI_TEMPERATURE = 0.3
 GEMINI_MAX_RETRIES = 3

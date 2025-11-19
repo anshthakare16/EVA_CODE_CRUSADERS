@@ -147,7 +147,7 @@ STEP_TEMPLATES = {
         {"action_type": "WAIT", "parameters": {"duration": 1}, "description": "Wait for search"},
         {"action_type": "TYPE_TEXT", "parameters": {"text": "{recipient}"}, "description": "Search: {recipient}"},
         {"action_type": "WAIT", "parameters": {"duration": 2}, "description": "Wait for search results"},
-#   {"action_type": "PRESS_KEY", "parameters": {"key": "tab"}, "description": "Press Tab"},
+        {"action_type": "PRESS_KEY", "parameters": {"key": "tab"}, "description": "Press Tab"},
         {"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Press Enter"},
     ],
     "type_and_send_message": [
