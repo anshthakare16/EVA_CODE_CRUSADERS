@@ -39,28 +39,27 @@ class ActionRouter:
                 if action_type == "PRESS_KEY":
                     params = step.get('parameters', {})
                     key_str = params.get('key', '')
-    
+
                     if key_str:
-                        # Special handling for Windows key - use pyautogui
-                        if 'LWIN' in key_str.upper() or 'WIN' in key_str.upper():
-                            import pyautogui
-                            if '+' in key_str:
-                                # Combo like "LWIN+A" or "win+a"
-                                keys = key_str.lower().replace('lwin', 'win').split('+')
-                                pyautogui.hotkey(*keys)
-                                logger.info(f" -> Pressed combo via pyautogui: {key_str}")
-                            else:
-                                # Just Windows key alone
+                        import pyautogui  # Use pyautogui for combos including shift, alt
+        
+                        if '+' in key_str:
+                            # combo like 'shift+=', 'shift+8', 'alt+2', etc.
+                            keys = key_str.lower().split('+')
+                            pyautogui.hotkey(*keys)
+                            logger.info(f" -> Pressed combo via pyautogui: {key_str}")
+                            time.sleep(0.1)
+                        else:
+                            # single key: use C executor bridge or pyautogui press
+                            if 'LWIN' in key_str.upper() or 'WIN' in key_str.upper():
                                 pyautogui.press('win')
                                 logger.info(f" -> Pressed Windows key via pyautogui")
-                            time.sleep(0.5)  # Longer wait for Windows key
-                        else:
-                            # All other keys use C library
-                            self.system_executor.executor.execute_action("PRESS_KEY", {}, {"key": key_str})
-                            logger.info(f" -> Pressed key(s) '{key_str}' via ExecutorBridge")
-                            time.sleep(0.1)
-                
-                                # ===== WAIT =====
+                                time.sleep(0.5)
+                            else:
+                                self.system_executor.executor.execute_action("PRESS_KEY", {}, {"key": key_str})
+                                logger.info(f" -> Pressed key(s) '{key_str}' via ExecutorBridge")
+                                time.sleep(0.1)              
+                                 # ===== WAIT =====
                 elif action_type == 'WAIT':
                     duration = params.get('duration', value or 0.5)
                     time.sleep(float(duration))
@@ -113,8 +112,20 @@ class ActionRouter:
                 elif action_type == 'TYPE_TEXT':
                     text_to_type = params.get('text', value)
                     if text_to_type:
-                        self.system_executor.executor.execute_action("TYPE_TEXT", {}, {"text": text_to_type})
-                        logger.info(f" -> Action successful: Typed '{text_to_type}'")
+                        text_to_type = str(text_to_type)
+        
+                        # Check if text contains any digits
+                        has_digits = any(char.isdigit() for char in text_to_type)
+        
+                        if has_digits:
+                            # Use pyautogui for typing numbers
+                            import pyautogui
+                            pyautogui.write(text_to_type, interval=0.05)
+                            logger.info(f" -> Action successful: Typed '{text_to_type}' (using pyautogui)")
+                        else:
+                            # Use C executor for letters only
+                            self.system_executor.executor.execute_action("TYPE_TEXT", {}, {"text": text_to_type})
+                            logger.info(f" -> Action successful: Typed '{text_to_type}' (using C executor)")
                 
                 # ===== KEYBOARD_ACTION =====
                 elif action_type == 'KEYBOARD_ACTION':
@@ -147,11 +158,17 @@ class ActionRouter:
                         
                         logger.info(f" -> Vision: Found {len(elements)} elements")
                         
-                        profile_name = entities.get('profile_name') if entities else None
+                        # Extract profile_name from step parameters first, then fall back to entities
+                        profile_name = params.get('profile_name')
+                        if not profile_name and entities:
+                            profile_name = entities.get('profile_name')
+                        
+                        logger.info(f" -> Profile name for selection: {profile_name}")
+                        logger.info(f" -> Screenshot path: {screenshot_path}")
                         
                         try:
                             coordinate = self.screen_analyzer.select_coordinate(
-                                elements, target_description, step, profile_name=profile_name
+                                elements, target_description, step, profile_name=profile_name, screenshot_path=screenshot_path
                             )
                         except Exception as e:
                             logger.error(f" -> Vision: Error in coordinate selection: {e}")

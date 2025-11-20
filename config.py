@@ -27,11 +27,12 @@ WHISPER_COMPUTE_TYPE = "int8"
 LOG_LEVEL = logging.INFO
 
 # Gemini Settings (for screen summary + coordinate filtering ONLY)
-GEMINI_MODEL = "gemini-1.5-flash"
+GEMINI_MODEL = "gemini-2.0-flash"
 GEMINI_FALLBACK_MODELS = [
-    "gemini-1.5-flash",
+    "gemini-2.0-flash",
+    "gemini-2.0-flash-exp",
     "gemini-1.5-pro",
-    "gemini-2.0-flash-exp"
+    "gemini-1.5-flash"
 ]
 GEMINI_TEMPERATURE = 0.3
 GEMINI_MAX_RETRIES = 3

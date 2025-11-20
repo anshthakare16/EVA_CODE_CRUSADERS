@@ -7,10 +7,11 @@ logger = logging.getLogger("StepGenerator")
 class StepGenerator:
     def __init__(self, api_key):
         genai.configure(api_key=api_key)
-        models = [
-            'gemini-1.5-flash',
-            'gemini-1.5-pro',
+        models_to_try = [
+            'gemini-2.0-flash',
             'gemini-2.0-flash-exp',
+            'gemini-1.5-pro',
+            'gemini-1.5-flash',
         ]
         for model_name in models_to_try:
             try:

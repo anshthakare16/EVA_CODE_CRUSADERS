@@ -147,7 +147,8 @@ class ActionRouter:
                         
                         logger.info(f" -> Vision: Found {len(elements)} elements")
                         
-                        profile_name = entities.get('profile_name') if entities else None
+                        # Extract profile_name from step parameters (which contain the replaced {profile_name} value)
+                        profile_name = step['parameters'].get('profile_name')
                         
                         try:
                             coordinate = self.screen_analyzer.select_coordinate(

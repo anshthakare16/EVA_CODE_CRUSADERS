@@ -96,6 +96,117 @@ MODEL1_TRAINING_DATA = [
     ("email to shriya", "SENDMAIL"),
     ("compose a mail to anu", "SENDMAIL"),
     ("send an email", "SENDMAIL"),
+    # === CALCULATOR Commands ===
+    ("open calculator", "CALCULATOR"),
+    ("launch calculator", "CALCULATOR"),
+    ("calculator", "CALCULATOR"),
+    ("calculate 25 plus 30", "CALCULATOR"),
+    ("calculate 100 minus 50", "CALCULATOR"),
+    ("multiply 12 by 8", "CALCULATOR"),
+    ("divide 144 by 12", "CALCULATOR"),
+    ("calculate square root of 144", "CALCULATOR"),
+    ("calculate 25 percent of 200", "CALCULATOR"),
+    ("clear calculator", "CALCULATOR"),
+    ("calculator equals", "CALCULATOR"),
+    ("switch calculator to scientific mode", "CALCULATOR"),
+    ("switch calculator to standard mode", "CALCULATOR"),
+    ("calculate sine of 45", "CALCULATOR"),
+    ("calculate cosine of 90", "CALCULATOR"),
+    ("calculate tangent of 30", "CALCULATOR"),
+    ("calculator memory store", "CALCULATOR"),
+    ("calculator memory recall", "CALCULATOR"),
+    ("calculator power 2 to the 8", "CALCULATOR"),
+    ("calculate factorial of 5", "CALCULATOR"),
+    ("add 15 and 25", "CALCULATOR"),
+    ("subtract 50 from 100", "CALCULATOR"),
+    ("what is 12 times 9", "CALCULATOR"),
+    ("divide 200 by 4", "CALCULATOR"),
+    ("square of 15", "CALCULATOR"),
+    # === CAMERA Commands ===
+    ("open camera", "CAMERA"),
+    ("launch camera", "CAMERA"),
+    ("start camera", "CAMERA"),
+    ("take photo", "CAMERA"),
+    ("capture photo", "CAMERA"),
+    ("snap a photo", "CAMERA"),
+    ("take a picture", "CAMERA"),
+    ("capture a picture", "CAMERA"),
+    ("snap a picture", "CAMERA"),
+    ("click a photo", "CAMERA"),
+    ("click a picture", "CAMERA"),
+    ("take selfie", "CAMERA"),
+    ("capture selfie", "CAMERA"),
+    ("snap selfie", "CAMERA"),
+    ("take a selfie", "CAMERA"),
+    ("camera on", "CAMERA"),
+    ("activate camera", "CAMERA"),
+    ("camera app", "CAMERA"),
+    ("open camera app", "CAMERA"),
+    ("launch camera app", "CAMERA"),
+    ("camera front", "CAMERA"),
+    ("switch to front camera", "CAMERA"),
+    ("camera back", "CAMERA"),
+    ("switch to back camera", "CAMERA"),
+    ("take a video", "CAMERA"),
+    ("record video", "CAMERA"),
+    ("capture video", "CAMERA"),
+    ("video recording", "CAMERA"),
+    ("start recording", "CAMERA"),
+    ("stop recording", "CAMERA"),
+    ("flash on", "CAMERA"),
+    ("flash off", "CAMERA"),
+    ("enable flash", "CAMERA"),
+    ("disable flash", "CAMERA"),
+    ("night mode", "CAMERA"),
+    ("portrait mode", "CAMERA"),
+    ("panorama mode", "CAMERA"),
+    ("zoom in camera", "CAMERA"),
+    ("zoom out camera", "CAMERA"),
+    ("camera zoom", "CAMERA"),
+    ("focus on face", "CAMERA"),
+    ("smile detection", "CAMERA"),
+    ("take burst photo", "CAMERA"),
+    ("picture perfect", "CAMERA"),
+    ("shoot", "CAMERA"),
+    ("music play pause", "SPOTIFY_CONTROL"),
+    ("music pause", "SPOTIFY_CONTROL"),
+    ("music play", "SPOTIFY_CONTROL"),
+    ("music next song", "SPOTIFY_CONTROL"),
+    ("music next", "SPOTIFY_CONTROL"),
+    ("music previous song", "SPOTIFY_CONTROL"),
+    ("music previous", "SPOTIFY_CONTROL"),
+    ("music back", "SPOTIFY_CONTROL"),
+    # === CLOCK ALARM Commands ===
+    ("set alarm for 7 am", "CLOCK_ALARM"),
+    ("set alarm at 8 30", "CLOCK_ALARM"),
+    ("create alarm for 6 pm", "CLOCK_ALARM"),
+    ("wake me up at 9 am", "CLOCK_ALARM"),
+("alarm for 5 30 pm", "CLOCK_ALARM"),
+("set alarm for 6:15 am", "CLOCK_ALARM"),
+("set alarm 10 pm", "CLOCK_ALARM"),
+("create alarm 7:45", "CLOCK_ALARM"),
+("wake me at 5 am", "CLOCK_ALARM"),
+("alarm at 11 30 pm", "CLOCK_ALARM"),
+("set alarm for 12 pm", "CLOCK_ALARM"),
+("set alarm for noon", "CLOCK_ALARM"),
+("set alarm for midnight", "CLOCK_ALARM"),
+("alarm for 8 in the morning", "CLOCK_ALARM"),
+("set alarm 9 30 am", "CLOCK_ALARM"),
+("create alarm at 6:00 pm", "CLOCK_ALARM"),
+("wake me up 7:30 am", "CLOCK_ALARM"),
+("set an alarm for 4 pm", "CLOCK_ALARM"),
+("alarm 10:15 am", "CLOCK_ALARM"),
+("set morning alarm at 6", "CLOCK_ALARM"),
+("create alarm 5 45 pm", "CLOCK_ALARM"),
+("alarm for 3:30 in the afternoon", "CLOCK_ALARM"),
+("set alarm for 2 am", "CLOCK_ALARM"),
+("wake up alarm 8 am", "CLOCK_ALARM"),
+("set alarm for quarter past 7", "CLOCK_ALARM"),
+("alarm for half past 9 am", "CLOCK_ALARM"),
+("set alarm 11:00 pm", "CLOCK_ALARM"),
+("create wake up alarm 6:30", "CLOCK_ALARM"),
+("set daily alarm 7 am", "CLOCK_ALARM"),
+("alarm for 4:20 pm", "CLOCK_ALARM"),
 ]
 
 STEP_TEMPLATES = {
@@ -125,6 +236,7 @@ STEP_TEMPLATES = {
         {"action_type": "WAIT", "parameters": {"duration": 2}, "description": "Wait for Chrome"},
         {"action_type": "FOCUS_WINDOW", "parameters": {"title": "Chrome"}, "description": "Focus Chrome window"},
         {"action_type": "WAIT", "parameters": {"duration": 0.5}, "description": "Wait for focus"},
+        {"action_type": "CONDITIONAL", "parameters": {"condition": "is_default_profile"}, "description": "Check if default profile"},
         {"action_type": "SCREEN_ANALYSIS", "parameters": {"profile_name": "{profile_name}"}, "description": "Select profile: {profile_name}"},
         {"action_type": "WAIT", "parameters": {"duration": 1}, "description": "Profile loaded"},
     ],
@@ -155,6 +267,59 @@ STEP_TEMPLATES = {
         {"action_type": "TYPE_TEXT", "parameters": {"text": "{message_content}"}, "description": "Type message"},
         {"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Send message"},
     ],
+    "set_alarm": [
+    {"action_type": "PRESS_KEY", "parameters": {"key": "win"}, "description": "Open Start Menu"},
+    {"action_type": "TYPE_TEXT", "parameters": {"text": "clock"}, "description": "Type clock"},
+    {"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Open Clock app"},
+    {"action_type": "WAIT", "parameters": {"duration": 2}, "description": "Wait for app to open"},
+    {"action_type": "PRESS_KEY", "parameters": {"key": "down"}, "description": "Navigate down"},
+    {"action_type": "PRESS_KEY", "parameters": {"key": "down"}, "description": "Navigate to Alarm section"},
+    {"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Open Alarms"},
+    {"action_type": "PRESS_KEY", "parameters": {"key": "tab"}, "description": "Tab once"},
+    {"action_type": "PRESS_KEY", "parameters": {"key": "tab"}, "description": "Tab twice"},
+    {"action_type": "PRESS_KEY", "parameters": {"key": "tab"}, "description": "Tab three times"},
+    {"action_type": "PRESS_KEY", "parameters": {"key": "tab"}, "description": "Tab four times"},
+    {"action_type": "PRESS_KEY", "parameters": {"key": "tab"}, "description": "Tab five times"},
+    {"action_type": "PRESS_KEY", "parameters": {"key": "tab"}, "description": "Tab six times"},
+    {"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Add new alarm"},
+    {"action_type": "TYPE_TEXT", "parameters": {"text": "{hour}"}, "description": "Type hour"},
+    {"action_type": "PRESS_KEY", "parameters": {"key": "tab"}, "description": "Move to minute"},
+    {"action_type": "TYPE_TEXT", "parameters": {"text": "{minute}"}, "description": "Type minute"},
+    {"action_type": "PRESS_KEY", "parameters": {"key": "tab"}, "description": "Tab 1"},
+    {"action_type": "PRESS_KEY", "parameters": {"key": "tab"}, "description": "Tab 2"},
+    {"action_type": "PRESS_KEY", "parameters": {"key": "tab"}, "description": "Tab 3"},
+    {"action_type": "PRESS_KEY", "parameters": {"key": "tab"}, "description": "Tab 4"},
+    {"action_type": "PRESS_KEY", "parameters": {"key": "tab"}, "description": "Tab 5"},
+    {"action_type": "PRESS_KEY", "parameters": {"key": "tab"}, "description": "Tab to Save button"},
+    {"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Save alarm"},
+],
+
+"open_camera": [
+    {"action_type": "PRESS_KEY", "parameters": {"key": "win"}, "description": "Open Start Menu"},
+    {"action_type": "WAIT", "parameters": {"duration": 1.5}, "description": "Wait for menu"},
+    {"action_type": "TYPE_TEXT", "parameters": {"text": "camera"}, "description": "Type camera"},
+    {"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Launch Camera app"},
+    {"action_type": "WAIT", "parameters": {"duration": 5.0}, "description": "Wait for Camera to open"},
+],
+"spotify_playpause": [
+    {"action_type": "PRESS_KEY", "parameters": {"key": "space"}, "description": "Play/Pause Spotify"},
+],
+"spotify_next": [
+    {"action_type": "PRESS_KEY", "parameters": {"key": "ctrl+right"}, "description": "Next song"},
+],
+"spotify_previous": [
+    {"action_type": "PRESS_KEY", "parameters": {"key": "ctrl+left"}, "description": "Previous song"},
+    {"action_type": "PRESS_KEY", "parameters": {"key": "ctrl+left"}, "description": "Previous song"},
+],
+
+
+"open_calculator": [
+    {"action_type": "PRESS_KEY", "parameters": {"key": "win"}, "description": "Open Start Menu"},
+    {"action_type": "WAIT", "parameters": {"duration": 1.0}, "description": "Wait for menu"},
+    {"action_type": "TYPE_TEXT", "parameters": {"text": "calculator"}, "description": "Type calculator"},
+    {"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Launch Calculator"},
+    {"action_type": "WAIT", "parameters": {"duration": 2.0}, "description": "Wait for app to load"},
+],
 }
 
 MODEL2_STEP_RULES = {
@@ -246,6 +411,7 @@ MODEL2_STEP_RULES = {
     "DEFAULT": [
         {"action_type": "SYSTEM_ACTION", "parameters": {"action": "<systemaction>"}, "description": "Execute <systemaction>"}
     ]
+
 },
 
 
@@ -276,6 +442,7 @@ MODEL2_STEP_RULES = {
     "SEND_MESSAGE_PHASE_2": [
         *STEP_TEMPLATES["type_and_send_message"],
     ],
+    "CALCULATOR": [],
 }
 
 # ----------------- Utility: asset path helper -----------------
@@ -999,7 +1166,11 @@ class EvaGui(QWidget):
         if command_type == "SEND_MESSAGE":
             self._handle_interactive_messaging()
         else:
-            self.current_steps = self._generate_steps_model2(command_type, self.current_extracted_keywords)
+            if command_type == "CAMERA" or command_type == "SPOTIFY_CONTROL" or command_type == "CLOCK_ALARM":
+                self.current_steps = self._generate_steps_model2(command_type, self.current_extracted_keywords, prompt)
+            else:
+                self.current_steps = self._generate_steps_model2(command_type, self.current_extracted_keywords)
+
             self._display_step_results()
             self._execute_steps()  # Automatic execution
 
@@ -1253,10 +1424,64 @@ class EvaGui(QWidget):
             if 'to' in raw_command_lower:
                 to_idx = raw_command_lower.split().index('to')
                 extracted['recipient'] = ' '.join(raw_command.split()[to_idx + 1:])
+        elif command_type == "CALCULATOR":
+            import re
+            # Extract numbers and operation
+            numbers = re.findall(r'\d+', raw_command)
+            extracted['number1'] = numbers[0] if len(numbers) > 0 else ''
+            extracted['number2'] = numbers[1] if len(numbers) > 1 else ''
+    
+            # Extract operation type
+            if any(word in raw_command_lower for word in ['plus', 'add', '+']):
+                extracted['operation'] = 'plus'
+            elif any(word in raw_command_lower for word in ['minus', 'subtract', '-']):
+                extracted['operation'] = 'minus'
+            elif any(word in raw_command_lower for word in ['multiply', 'times', '*', 'by']):
+                extracted['operation'] = 'multiply'
+            elif any(word in raw_command_lower for word in ['divide', '/']):
+                extracted['operation'] = 'divide'
+            elif 'square root' in raw_command_lower or 'sqrt' in raw_command_lower:
+                extracted['operation'] = 'square root'
+            elif 'clear' in raw_command_lower:
+                extracted['operation'] = 'clear'
+            elif 'scientific' in raw_command_lower:
+                extracted['operation'] = 'scientific'
+            elif 'standard' in raw_command_lower:
+                extracted['operation'] = 'standard'
+        elif command_type == "CAMERA":
+            extracted['action_content'] = 'take_photo'
+            if "open" in raw_command_lower:
+                extracted['action_content'] = 'open_camera'
+        elif command_type == "CLOCK_ALARM":
+            import re
+            # Extract time from command
+            # Patterns: "7 am", "8:30", "9 30 pm", etc.
+    
+            # Try matching HH:MM format
+            match = re.search(r'(\d{1,2}):(\d{2})', raw_command)
+            if match:
+                extracted['hour'] = match.group(1)
+                extracted['minute'] = match.group(2)
+            else:
+                # Try matching separate hour and minute
+                numbers = re.findall(r'\d{1,2}', raw_command)
+                if len(numbers) >= 1:
+                    extracted['hour'] = numbers[0]
+                    extracted['minute'] = numbers[1] if len(numbers) > 1 else '00'
+    
+            # Check for AM/PM
+            if 'pm' in raw_command_lower and extracted.get('hour'):
+                hour = int(extracted['hour'])
+                if hour < 12:
+                    extracted['hour'] = str(hour + 12)
+            elif 'am' in raw_command_lower and extracted.get('hour'):
+                hour = int(extracted['hour'])
+                if hour == 12:
+                    extracted['hour'] = '0'
 
         return extracted
 
-    def _generate_steps_model2(self, command_type, extracted_keywords):
+    def _generate_steps_model2(self, command_type, extracted_keywords, raw_command=None):
     # Special handling for SYSTEM commands (nested dict)
         if command_type == "SYSTEM":
             control_type = extracted_keywords.get('control_type', '').upper()
@@ -1301,6 +1526,137 @@ class EvaGui(QWidget):
                 generated_steps.append(step_copy)
         
             return generated_steps
+        elif command_type == "CLOCK_ALARM":
+            steps = []
+    
+            hour = extracted_keywords.get('hour', '7')
+            minute = extracted_keywords.get('minute', '00')
+    
+            # Get the template and replace placeholders
+            for step in STEP_TEMPLATES["set_alarm"]:
+                step_copy = {
+            "action_type": step["action_type"],
+            "parameters": dict(step["parameters"]),
+            "description": step["description"]
+                }
+        
+                # Replace hour and minute placeholders
+                if "text" in step_copy["parameters"]:
+                    step_copy["parameters"]["text"] = step_copy["parameters"]["text"].replace("{hour}", hour)
+                    step_copy["parameters"]["text"] = step_copy["parameters"]["text"].replace("{minute}", minute)
+        
+                step_copy["description"] = step_copy["description"].replace("{hour}", hour)
+                step_copy["description"] = step_copy["description"].replace("{minute}", minute)
+        
+                steps.append(step_copy)
+    
+            return steps
+
+
+
+        elif command_type == "SPOTIFY_CONTROL":
+            steps = []
+            raw_lower = raw_command.lower() if raw_command else ""
+
+            # Open Spotify first (reuse open_app_windows template by modifying text param)
+            steps.extend([
+                {"action_type": "PRESS_KEY", "parameters": {"key": "win"}, "description": "Open Start Menu"},
+                {"action_type": "WAIT", "parameters": {"duration": 1.5}, "description": "Wait for Start menu"},
+                {"action_type": "TYPE_TEXT", "parameters": {"text": "spotify"}, "description": "Type spotify"},
+                {"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Launch Spotify"},
+                {"action_type": "WAIT", "parameters": {"duration": 5}, "description": "Wait for Spotify to open"},
+            ])
+
+            if "play pause" in raw_lower or raw_lower.strip().endswith("pause") or raw_lower.strip().endswith("play"):
+                steps.extend(STEP_TEMPLATES["spotify_playpause"])
+            elif "next" in raw_lower:
+                steps.extend(STEP_TEMPLATES["spotify_next"])
+            elif "previous" in raw_lower or "go back" in raw_lower:
+                steps.extend(STEP_TEMPLATES["spotify_previous"])
+
+            return steps
+
+
+        elif command_type == "CAMERA":
+            steps = []
+
+            if raw_command is not None:
+                raw_lower = raw_command.lower()
+            else:
+                raw_lower = ""
+
+            # Always open camera first
+            steps.extend(STEP_TEMPLATES["open_camera"])
+            steps.append({"action_type": "WAIT", "parameters": {"duration": 5}, "description": "Wait to open camera"})
+
+            # Check if trigger words to take photo
+            if any(word in raw_lower for word in ["photo", "take", "capture", "selfie"]):
+                steps.append({"action_type": "PRESS_KEY", "parameters": {"key": "space"}, "description": "Take photo"})
+
+            return steps
+    
+
+
+
+        elif command_type == "CALCULATOR":
+            steps = []
+        
+            # Extract operation details from command
+            operation = extracted_keywords.get('operation', '').lower()
+            num1 = extracted_keywords.get('number1', '')
+            num2 = extracted_keywords.get('number2', '')
+        
+            # Open calculator first
+            steps.extend(STEP_TEMPLATES["open_calculator"])
+        
+            # Handle different calculator operations
+            if 'plus' in operation or 'add' in operation:
+                for digit in str(num1):
+                    steps.append({"action_type": "PRESS_KEY", "parameters": {"key": digit}, "description": f"Press {digit}"})
+                steps.append({"action_type": "PRESS_KEY", "parameters": {"key": "shift+="}, "description": "Press plus"})
+                for digit in str(num2):
+                    steps.append({"action_type": "PRESS_KEY", "parameters": {"key": digit}, "description": f"Press {digit}"})
+                steps.append({"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Calculate result"})
+        
+            elif 'minus' in operation or 'subtract' in operation:
+                for digit in str(num1):
+                    steps.append({"action_type": "PRESS_KEY", "parameters": {"key": digit}, "description": f"Press {digit}"})
+                steps.append({"action_type": "PRESS_KEY", "parameters": {"key": "-"}, "description": "Press minus"})
+                for digit in str(num2):
+                    steps.append({"action_type": "PRESS_KEY", "parameters": {"key": digit}, "description": f"Press {digit}"})
+                steps.append({"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Calculate result"})
+        
+            elif 'multiply' in operation or 'times' in operation:
+                for digit in str(num1):
+                    steps.append({"action_type": "PRESS_KEY", "parameters": {"key": digit}, "description": f"Press {digit}"})
+                steps.append({"action_type": "PRESS_KEY", "parameters": {"key": "shift+8"}, "description": "Press multiply"})
+                for digit in str(num2):
+                    steps.append({"action_type": "PRESS_KEY", "parameters": {"key": digit}, "description": f"Press {digit}"})
+                steps.append({"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Calculate result"})
+        
+            elif 'divide' in operation:
+                for digit in str(num1):
+                    steps.append({"action_type": "PRESS_KEY", "parameters": {"key": digit}, "description": f"Press {digit}"})
+                steps.append({"action_type": "PRESS_KEY", "parameters": {"key": "/"}, "description": "Press divide"})
+                for digit in str(num2):
+                    steps.append({"action_type": "PRESS_KEY", "parameters": {"key": digit}, "description": f"Press {digit}"})
+                steps.append({"action_type": "PRESS_KEY", "parameters": {"key": "enter"}, "description": "Calculate result"})
+        
+            elif 'square' in operation and 'root' in operation:
+                for digit in str(num1):
+                    steps.append({"action_type": "PRESS_KEY", "parameters": {"key": digit}, "description": f"Press {digit}"})
+                steps.append({"action_type": "PRESS_KEY", "parameters": {"key": "shift+2"}, "description": "Press square root"})
+        
+            elif 'clear' in operation:
+                steps.append({"action_type": "PRESS_KEY", "parameters": {"key": "escape"}, "description": "Clear calculator"})
+        
+            elif 'scientific' in operation:
+                steps.append({"action_type": "PRESS_KEY", "parameters": {"key": "alt+2"}, "description": "Switch to scientific mode"})
+        
+            elif 'standard' in operation:
+                steps.append({"action_type": "PRESS_KEY", "parameters": {"key": "alt+1"}, "description": "Switch to standard mode"})
+        
+            return steps
     
         # For all other command types, use existing logic
         if command_type not in MODEL2_STEP_RULES:
@@ -1313,7 +1669,8 @@ class EvaGui(QWidget):
             if step.get("action_type") == "CONDITIONAL":
                 condition = step["parameters"].get("condition")
                 if condition == "search_query_exists":
-                    if not extracted_keywords.get('search_query'):
+                    search_query = extracted_keywords.get('search_query')
+                    if not search_query:
                         break
                     else:
                         continue
@@ -1391,12 +1748,50 @@ class EvaGui(QWidget):
             if keyword in text_l:
                 website = url
                 break
-        query_text = text_l
-        for pattern in [r'with chrome profile [\w\s]+', r'chrome profile [\w\s]+', r'profile [\w\s]+']:
-            query_text = re.sub(pattern, '', query_text)
-        skip_words = {'with', 'chrome', 'search', 'for', 'open', 'go', 'to', 'on', 'in', 'and', 'youtube', 'google', 'gmail', 'facebook', 'profile'}
-        query_words = [w for w in query_text.split() if w not in skip_words and w.strip()]
-        return website, ' '.join(query_words) if query_words else None
+        
+        # ✅ FIXED: More intelligent search query extraction
+        query = None
+        
+        # Step 1: Look for explicit "search <query>" pattern
+        # Match: "search <query>" or "search for <query>" (stop at website keywords)
+        website_keywords = '|'.join(list(websites.keys()))
+        search_pattern = rf'(?:search|query)\s+(?:for\s+)?(.+?)(?:\s+(?:on|at|in)\s+(?:{website_keywords}))?$'
+        search_match = re.search(search_pattern, text_l)
+        
+        if search_match:
+            query = search_match.group(1).strip()
+            # Remove "on" / "at" / "in" if they appear at the end
+            query = re.sub(r'\s+(?:on|at|in)$', '', query)
+            
+            # Remove website names from query
+            website_list = list(websites.keys())
+            query_words = [w for w in query.split() if w not in website_list]
+            query = ' '.join(query_words) if query_words else None
+        
+        # Step 2: If no search keyword found, try to extract remaining words
+        if not query:
+            query_text = text_l
+            
+            # Remove profile patterns
+            profile_patterns = [
+                r'with\s+chrome\s+profile\s+\w+',
+                r'chrome\s+profile\s+\w+',
+                r'with\s+profile\s+\w+',
+                r'use\s+profile\s+\w+',
+                r'profile\s+\w+',
+            ]
+            
+            for pattern in profile_patterns:
+                query_text = re.sub(pattern, '', query_text)
+            
+            # Remove structural and website keywords
+            skip_words = {'with', 'chrome', 'for', 'open', 'go', 'to', 'on', 'in', 'and', 'profile', 'use', 'the', 'a', 'an', 'at', 'search', 'query'}
+            skip_words.update(list(websites.keys()))
+            
+            query_words = [w for w in query_text.split() if w not in skip_words and w.strip()]
+            query = ' '.join(query_words) if query_words else None
+        
+        return website, query
 
     def _extract_app_name(self, words, trigger_words):
         for trigger in trigger_words:
