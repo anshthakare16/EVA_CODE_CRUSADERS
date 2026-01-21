@@ -1,0 +1,49 @@
+# Core Dependencies
+faster-whisper
+pyaudio
+pyttsx3
+speechrecognition
+pvporcupine
+groq
+python-dotenv
+
+# NLP & ML
+scikit-learn
+joblib
+numpy
+thefuzz
+python-levenshtein
+
+# Vision & Screen
+google-genai
+pillow
+pyautogui
+mss
+
+# Web Automation
+selenium
+webdriver-manager
+
+# OmniParser Dependencies
+torch
+torchvision
+ultralytics
+paddlepaddle
+paddleocr
+
+# System Control
+pycaw
+wmi
+comtypes
+
+# Utilities
+colorama
+pygetwindow
+pywin32
+openai
+easyocr
+pynput
+PySide6
+supervision
+
+#pip install faster-whisper pyaudio pyttsx3 SpeechRecognition pvporcupine groq python-dotenv scikit-learn joblib numpy thefuzz python-Levenshtein google-generativeai pillow pyautogui mss torch torchvision ultralytics paddlepaddle paddleocr pycaw wmi comtypes colorama pygetwindow pywin32 openai
